@@ -1,7 +1,7 @@
 Name	Type	References	Description
 oid	oid		Row identifier
 pubname	name		Name of the publication
-pubowner	oid	pg_publication.[object Object]	Owner of the publication
+pubowner	oid	pg_publication.oid	Owner of the publication
 puballtables	bool		If true, this publication automatically includes all tables in the database, including any that will be created in the future.
 pubinsert	bool		If true, INSERT operations are replicated for tables in the publication.
 pubupdate	bool		If true, UPDATE operations are replicated for tables in the publication.

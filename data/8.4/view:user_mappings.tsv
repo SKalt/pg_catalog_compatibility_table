@@ -1,7 +1,7 @@
 Name	Type	References	Description
 umid	oid	pg_user_mapping.oid	OID of the user mapping
-srvid	oid	pg_foreign_server.oid	The OID of the foreign server that contains this\n mapping
+srvid	oid	pg_foreign_server.oid	The OID of the foreign server that contains this mapping
 srvname	text	 	Name of the foreign server
-umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user\n mapping is public
+umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user mapping is public
 usename	name	 	Name of the local user to be mapped
-umoptions	text[]	 	User mapping specific options, as "keyword=value" strings, if the current\n user is the owner of the foreign server, else null.
+umoptions	text[]	 	User mapping specific options, as "keyword=value" strings, if the current user is the owner of the foreign server, else null.

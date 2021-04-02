@@ -1,4 +1,4 @@
 Name	Type	Description
 abbrev	text	Time zone abbreviation
-utc_offset	interval	Offset from UTC (positive means east of\n Greenwich)
+utc_offset	interval	Offset from UTC (positive means east of Greenwich)
 is_dst	boolean	True if this is a daylight-savings abbreviation

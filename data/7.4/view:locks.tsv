@@ -1,7 +1,7 @@
 Name	Type	References	Description
-relation	oid	pg_class.oid	OID of the locked relation, or NULL if the lockable\n object is a transaction ID
-database	oid	pg_database.oid	OID of the database in which the locked relation\n exists, or zero if the locked relation is a globally-shared table, or NULL if the lockable object is a transaction ID
-transaction	xid	 	ID of a transaction, or NULL if the lockable object\n is a relation
-pid	integer	 	process ID of a server process holding or awaiting\n this lock
-mode	text	 	name of the lock mode held or desired by this process\n (see Section 12.3.1)
+relation	oid	pg_class.oid	OID of the locked relation, or NULL if the lockable object is a transaction ID
+database	oid	pg_database.oid	OID of the database in which the locked relation exists, or zero if the locked relation is a globally-shared table, or NULL if the lockable object is a transaction ID
+transaction	xid	 	ID of a transaction, or NULL if the lockable object is a relation
+pid	integer	 	process ID of a server process holding or awaiting this lock
+mode	text	 	name of the lock mode held or desired by this process (see Section 12.3.1)
 granted	boolean	 	true if lock is held, false if lock is awaited

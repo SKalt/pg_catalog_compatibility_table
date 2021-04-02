@@ -1,4 +1,4 @@
 Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
 lomowner	oid	pg_authid.oid	Owner of the large object
-lomacl	aclitem[]	 	Access privileges; see GRANT and\nREVOKE for details
+lomacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details

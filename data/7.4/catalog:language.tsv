@@ -1,7 +1,7 @@
 Name	Type	References	Description
-lanname	name	 	Name of the language (to be specified when creating a\n function)
-lanispl	bool	 	This is false for internal languages (such as\n SQL) and true for user-defined languages. Currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime.
-lanpltrusted	bool	 	This is a trusted language. See under CREATE LANGUAGE what this means. If this\n is an internal language (lanispl is false) then this column is meaningless.
-lanplcallfoid	oid	pg_proc.oid	For noninternal languages this references the\n language handler, which is a special function that is responsible for executing all functions that are written in the particular language.
-lanvalidator	oid	pg_proc.oid	This references a language validator function that is\n responsible for checking the syntax and validity of new functions when they are created. See under CREATE LANGUAGE for further information about validators.
+lanname	name	 	Name of the language (to be specified when creating a function)
+lanispl	bool	 	This is false for internal languages (such as SQL) and true for user-defined languages. Currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime.
+lanpltrusted	bool	 	This is a trusted language. See under CREATE LANGUAGE what this means. If this is an internal language (lanispl is false) then this column is meaningless.
+lanplcallfoid	oid	pg_proc.oid	For noninternal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language.
+lanvalidator	oid	pg_proc.oid	This references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. See under CREATE LANGUAGE for further information about validators.
 lanacl	aclitem[]	 	Access privileges

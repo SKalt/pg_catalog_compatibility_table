@@ -1,5 +1,5 @@
 Name	Type	References	Description
-rcrelid	oid	pg_class.oid	The table this check\n constraint is on
+rcrelid	oid	pg_class.oid	The table this check constraint is on
 rcname	name	 	Constraint name
-rcbin	text	 	An internal representation\n of the constraint expression
-rcsrc	text	 	A human-readable\n representation of the consraint expression
+rcbin	text	 	An internal representation of the constraint expression
+rcsrc	text	 	A human-readable representation of the consraint expression

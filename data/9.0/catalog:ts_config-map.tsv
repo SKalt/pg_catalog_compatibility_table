@@ -1,5 +1,5 @@
 Name	Type	References	Description
-mapcfg	oid	pg_ts_config.oid	The OID of the pg_ts_config entry owning this map\n entry
-maptokentype	integer	 	A token type emitted by the configuration's\n parser
-mapseqno	integer	 	Order in which to consult this entry (lower\n mapseqnos first)
+mapcfg	oid	pg_ts_config.oid	The OID of the pg_ts_config entry owning this map entry
+maptokentype	integer	 	A token type emitted by the configuration's parser
+mapseqno	integer	 	Order in which to consult this entry (lower mapseqnos first)
 mapdict	oid	pg_ts_dict.oid	The OID of the text search dictionary to consult

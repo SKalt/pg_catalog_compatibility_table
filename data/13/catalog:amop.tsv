@@ -1,10 +1,10 @@
 Name	Type	References	Description
 oid	oid		Row identifier
-amopfamily	oid	pg_amop.[object Object]	The operator family this entry is for
-amoplefttype	oid	pg_amop.[object Object]	Left-hand input data type of operator
-amoprighttype	oid	pg_amop.[object Object]	Right-hand input data type of operator
+amopfamily	oid	pg_amop.oid	The operator family this entry is for
+amoplefttype	oid	pg_amop.oid	Left-hand input data type of operator
+amoprighttype	oid	pg_amop.oid	Right-hand input data type of operator
 amopstrategy	int2		Operator strategy number
 amoppurpose	char		Operator purpose, either s for search or o for ordering
-amopopr	oid	pg_amop.[object Object]	OID of the operator
-amopmethod	oid	pg_amop.[object Object]	Index access method operator family is for
-amopsortfamily	oid	pg_amop.[object Object]	The B-tree operator family this entry sorts according to, if an ordering operator; zero if a search operator
+amopopr	oid	pg_amop.oid	OID of the operator
+amopmethod	oid	pg_amop.oid	Index access method operator family is for
+amopsortfamily	oid	pg_amop.oid	The B-tree operator family this entry sorts according to, if an ordering operator; zero if a search operator

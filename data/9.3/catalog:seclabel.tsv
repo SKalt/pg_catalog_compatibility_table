@@ -1,6 +1,6 @@
 Name	Type	References	Description
 objoid	oid	any OID column	The OID of the object this security label pertains to
 classoid	oid	pg_class.oid	The OID of the system catalog this object appears in
-objsubid	int4	 	For a security label on a table column, this is the column\nnumber (the objoid and classoid refer to the table itself). For all other object types, this column is zero.
+objsubid	int4	 	For a security label on a table column, this is the column number (the objoid and classoid refer to the table itself). For all other object types, this column is zero.
 provider	text	 	The label provider associated with this label.
 label	text	 	The security label applied to this object.

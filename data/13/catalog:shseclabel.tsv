@@ -1,5 +1,5 @@
 Name	Type	References	Description
 objoid	oid		The OID of the object this security label pertains to
-classoid	oid	pg_shseclabel.[object Object]	The OID of the system catalog this object appears in
+classoid	oid	pg_shseclabel.oid	The OID of the system catalog this object appears in
 provider	text		The label provider associated with this label.
 label	text		The security label applied to this object.

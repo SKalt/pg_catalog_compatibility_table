@@ -4,9 +4,9 @@ setting	text	Current value of the parameter
 unit	text	Implicit unit of the parameter
 category	text	Logical group of the parameter
 short_desc	text	A brief description of the parameter
-extra_desc	text	Additional, more detailed, information about the\n parameter
+extra_desc	text	Additional, more detailed, information about the parameter
 context	text	Context required to set the parameter's value
-vartype	text	Parameter type (bool,\n integer, real, or string)
+vartype	text	Parameter type (bool, integer, real, or string)
 source	text	Source of the current parameter value
-min_val	text	Minimum allowed value of the parameter (NULL for\n non-numeric values)
-max_val	text	Maximum allowed value of the parameter (NULL for\n non-numeric values)
+min_val	text	Minimum allowed value of the parameter (NULL for non-numeric values)
+max_val	text	Maximum allowed value of the parameter (NULL for non-numeric values)

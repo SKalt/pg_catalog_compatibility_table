@@ -1,7 +1,7 @@
 Name	Type	References	Description
-collname	name	 	Collation name (unique per namespace and\n encoding)
-collnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this\n collation
+collname	name	 	Collation name (unique per namespace and encoding)
+collnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this collation
 collowner	oid	pg_authid.oid	Owner of the collation
-collencoding	int4	 	Encoding in which the collation is applicable, or -1\n if it works for any encoding
-collcollate	name	 	LC_COLLATE for this collation\n object
-collctype	name	 	LC_CTYPE for this collation\n object
+collencoding	int4	 	Encoding in which the collation is applicable, or -1 if it works for any encoding
+collcollate	name	 	LC_COLLATE for this collation object
+collctype	name	 	LC_CTYPE for this collation object

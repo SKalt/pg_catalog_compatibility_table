@@ -1,12 +1,12 @@
 Name	Type	References	Description
-indexrelid	oid	pg_class.oid	The oid of the pg_class\n entry for this index
-indrelid	oid	pg_class.oid	The oid of the pg_class\n entry for the table this index is for
-indproc	oid	pg_proc.oid	The registered procedure if\n this is a functional index
-indkey	int2vector	pg_attribute.attnum	This is an vector (array)\n of up to INDEX_MAX_KEYS values that indicate which table columns this index pertains to. For example a value of 1 3 would mean that the first and the third column make up the index key.
-indclass	oidvector	pg_opclass.oid	For each column in the\n index key this contains a reference to the "operator class" to use. See pg_opclass for details.
+indexrelid	oid	pg_class.oid	The oid of the pg_class entry for this index
+indrelid	oid	pg_class.oid	The oid of the pg_class entry for the table this index is for
+indproc	oid	pg_proc.oid	The registered procedure if this is a functional index
+indkey	int2vector	pg_attribute.attnum	This is an vector (array) of up to INDEX_MAX_KEYS values that indicate which table columns this index pertains to. For example a value of 1 3 would mean that the first and the third column make up the index key.
+indclass	oidvector	pg_opclass.oid	For each column in the index key this contains a reference to the "operator class" to use. See pg_opclass for details.
 indisclustered	bool	 	unused
 indislossy	bool	 	???
-indisunique	bool	 	If true, this is a unique\n index.
-indisprimary	bool	 	If true, this index is a\n unique index that represents the primary key of the table.
+indisunique	bool	 	If true, this is a unique index.
+indisprimary	bool	 	If true, this index is a unique index that represents the primary key of the table.
 indreference	oid	 	unused
-indpred	text	 	Query plan for partial\n index predicate (not functional)
+indpred	text	 	Query plan for partial index predicate (not functional)

@@ -1,4 +1,4 @@
 Name	Type	References	Description
 groname	name	pg_authid.rolname	Name of the group
 grosysid	oid	pg_authid.oid	ID of this group
-grolist	oid[]	pg_authid.oid	An array containing the IDs of the roles in this\n group
+grolist	oid[]	pg_authid.oid	An array containing the IDs of the roles in this group

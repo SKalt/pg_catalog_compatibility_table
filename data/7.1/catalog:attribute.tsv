@@ -1,16 +1,16 @@
 Name	Type	References	Description
-attrelid	oid	pg_class.oid	The table this column\n belongs to
+attrelid	oid	pg_class.oid	The table this column belongs to
 attname	name	 	Column name
-atttypid	oid	pg_type.oid	The data type of this\n column
-attdispersion	float4	 	attdispersion is the dispersion\n statistic of the column (0.0 to 1.0), or zero if the statistic has not been calculated, or -1.0 if VACUUM found that the column contains no duplicate entries (in which case the dispersion should be taken as 1.0/numberOfRows for the current table size). The -1.0 hack is useful because the number of rows may be updated more often than attdispersion is. We assume that the column will retain its no-duplicate-entry property.
-attlen	int2	 	This is a copy of the\n pg_type.typlen for this column's type.
-attnum	int2	 	The number of the column.\n Ordinary columns are numbered from 1 up. System columns, such as oid, have (arbitrary) negative numbers.
-attnelems	int4	 	Number of dimensions, if\n the column is an array
-attcacheoff	int4	 	Always -1 in storage, but\n when loaded into a tuple descriptor in memory this may be updated cache the offset of the attribute within the tuple.
-atttypmod	int4	 	atttypmod records type-specific data\n supplied at table creation time (for example, the maximum length of a varchar column). It is passed to type-specific input and output functions as the third argument. The value will generally be -1 for types that do not need typmod.
+atttypid	oid	pg_type.oid	The data type of this column
+attdispersion	float4	 	attdispersion is the dispersion statistic of the column (0.0 to 1.0), or zero if the statistic has not been calculated, or -1.0 if VACUUM found that the column contains no duplicate entries (in which case the dispersion should be taken as 1.0/numberOfRows for the current table size). The -1.0 hack is useful because the number of rows may be updated more often than attdispersion is. We assume that the column will retain its no-duplicate-entry property.
+attlen	int2	 	This is a copy of the pg_type.typlen for this column's type.
+attnum	int2	 	The number of the column. Ordinary columns are numbered from 1 up. System columns, such as oid, have (arbitrary) negative numbers.
+attnelems	int4	 	Number of dimensions, if the column is an array
+attcacheoff	int4	 	Always -1 in storage, but when loaded into a tuple descriptor in memory this may be updated cache the offset of the attribute within the tuple.
+atttypmod	int4	 	atttypmod records type-specific data supplied at table creation time (for example, the maximum length of a varchar column). It is passed to type-specific input and output functions as the third argument. The value will generally be -1 for types that do not need typmod.
 attbyval	bool	 	A copy of pg_type.typbyval of this column's type
 attstorage	char	 	A copy of pg_type.typstorage of this column's type
-attisset	bool	 	If true, this attribute is\n a set. In that case, what is really stored in the attribute is the OID of a tuple in the pg_proc catalog. The pg_proc tuple contains the query string that defines this set - i.e., the query to run to get the set. So the atttypid (see above) refers to the type returned by this query, but the actual length of this attribute is the length (size) of an oid. --- At least this is the theory. All this is probably quite broken these days.
+attisset	bool	 	If true, this attribute is a set. In that case, what is really stored in the attribute is the OID of a tuple in the pg_proc catalog. The pg_proc tuple contains the query string that defines this set - i.e., the query to run to get the set. So the atttypid (see above) refers to the type returned by this query, but the actual length of this attribute is the length (size) of an oid. --- At least this is the theory. All this is probably quite broken these days.
 attalign	char	 	A copy of pg_type.typalign of this column's type
-attnotnull	bool	 	This represents a NOT NULL\n constraint. It is possible to change this field to enable or disable the constraint.
-atthasdef	bool	 	This column has a default\n value, in which case there will be a corresponding entry in the pg_attrdef catalog that actually defines the value.
+attnotnull	bool	 	This represents a NOT NULL constraint. It is possible to change this field to enable or disable the constraint.
+atthasdef	bool	 	This column has a default value, in which case there will be a corresponding entry in the pg_attrdef catalog that actually defines the value.

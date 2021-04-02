@@ -1,14 +1,14 @@
 Name	Type	References	Description
 tgrelid	oid	pg_class.oid	The table this trigger is on
-tgname	name	 	Trigger name (must be unique among triggers of same\n table)
+tgname	name	 	Trigger name (must be unique among triggers of same table)
 tgfoid	oid	pg_proc.oid	The function to be called
 tgtype	int2	 	Bit mask identifying trigger conditions
 tgenabled	bool	 	True if trigger is enabled
-tgisconstraint	bool	 	True if trigger implements a referential integrity\n constraint
+tgisconstraint	bool	 	True if trigger implements a referential integrity constraint
 tgconstrname	name	 	Referential integrity constraint name
-tgconstrrelid	oid	pg_class.oid	The table referenced by an referential integrity\n constraint
+tgconstrrelid	oid	pg_class.oid	The table referenced by an referential integrity constraint
 tgdeferrable	bool	 	True if deferrable
 tginitdeferred	bool	 	True if initially deferred
-tgnargs	int2	 	Number of argument strings passed to trigger\n function
+tgnargs	int2	 	Number of argument strings passed to trigger function
 tgattr	int2vector	 	Currently unused
-tgargs	bytea	 	Argument strings to pass to trigger, each\n null-terminated
+tgargs	bytea	 	Argument strings to pass to trigger, each null-terminated

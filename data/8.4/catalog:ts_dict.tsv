@@ -1,6 +1,6 @@
 Name	Type	References	Description
 dictname	name	 	Text search dictionary name
-dictnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this\n dictionary
+dictnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this dictionary
 dictowner	oid	pg_authid.oid	Owner of the dictionary
-dicttemplate	oid	pg_ts_template.oid	The OID of the text search template for this\n dictionary
+dicttemplate	oid	pg_ts_template.oid	The OID of the text search template for this dictionary
 dictinitoption	text	 	Initialization option string for the template

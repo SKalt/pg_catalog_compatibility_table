@@ -1,4 +1,4 @@
 Name	Type	References	Description
 oid	oid		Row identifier
-prpubid	oid	pg_publication_rel.[object Object]	Reference to publication
-prrelid	oid	pg_publication_rel.[object Object]	Reference to relation
+prpubid	oid	pg_publication_rel.oid	Reference to publication
+prrelid	oid	pg_publication_rel.oid	Reference to relation

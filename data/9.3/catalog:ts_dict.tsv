@@ -1,5 +1,5 @@
 Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
 dictname	name	 	Text search dictionary name
 dictnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this dictionary
 dictowner	oid	pg_authid.oid	Owner of the dictionary

@@ -1,5 +1,5 @@
 Name	Type	References	Description
 spcname	name	 	Tablespace name
-spcowner	int4	pg_shadow.usesysid	Owner of the tablespace, usually the user who created\n it
+spcowner	int4	pg_shadow.usesysid	Owner of the tablespace, usually the user who created it
 spclocation	text	 	Location (directory path) of the tablespace
 spcacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details.

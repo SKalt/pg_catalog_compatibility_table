@@ -1,22 +1,22 @@
 Name	Type	References	Description
-relname	name	 	Name of the table, index,\n view, etc.
-reltype	oid	pg_type.oid	The data type that\n corresponds to this table (not functional, only set for system tables)
+relname	name	 	Name of the table, index, view, etc.
+reltype	oid	pg_type.oid	The data type that corresponds to this table (not functional, only set for system tables)
 relowner	int4	pg_shadow.usesysid	Owner of the relation
-relam	oid	pg_am.oid	If this is an index, the\n access method used (btree, hash, etc.)
-relfilenode	oid	 	Name of the on-disk file of\n this relation
-relpages	int4	 	Size of the on-disk\n representation of this table in pages (size BLCKSZ). This is only an approximate value which is calculated during vacuum.
-reltuples	int4	 	Number of tuples in the\n table. This is only an estimate used by the planner, updated by VACUUM.
-reltoastrelid	oid	pg_class.oid	Oid of the TOAST table\n associated with this table, 0 if none. The TOAST table stores large attributes "out of line" in a secondary table.
-reltoastidxid	oid	pg_class.oid	Oid of the index on the\n TOAST table for this table, 0 if none
-relhasindex	bool	 	True if this is a table and\n it has at least one index
-relisshared	bool	 	XXX (This is not what it\n seems to be.)
-relkind	char	 	'r' = ordinary table, 'i' =\n index, 'S' = sequence, 'v' = view, 's' = special, 't' = secondary TOAST table
-relnatts	int2	 	Number of columns in the\n relation, besides system columns. There must be this many corresponding entries in pg_attribute. See also pg_attribute.attnum.
-relchecks	int2	 	Number of check constraints\n on the table; see pg_relcheck catalog
-reltriggers	int2	 	Number of triggers on the\n table; see pg_trigger catalog
-relukeys	int2	 	unused (Not the number of unique keys or\n something.)
-relfkeys	int2	 	Number foreign keys on the\n table
-relhaspkey	bool	 	unused (No, this does not\n say whether the table has a primary key. It's really unused.)
+relam	oid	pg_am.oid	If this is an index, the access method used (btree, hash, etc.)
+relfilenode	oid	 	Name of the on-disk file of this relation
+relpages	int4	 	Size of the on-disk representation of this table in pages (size BLCKSZ). This is only an approximate value which is calculated during vacuum.
+reltuples	int4	 	Number of tuples in the table. This is only an estimate used by the planner, updated by VACUUM.
+reltoastrelid	oid	pg_class.oid	Oid of the TOAST table associated with this table, 0 if none. The TOAST table stores large attributes "out of line" in a secondary table.
+reltoastidxid	oid	pg_class.oid	Oid of the index on the TOAST table for this table, 0 if none
+relhasindex	bool	 	True if this is a table and it has at least one index
+relisshared	bool	 	XXX (This is not what it seems to be.)
+relkind	char	 	'r' = ordinary table, 'i' = index, 'S' = sequence, 'v' = view, 's' = special, 't' = secondary TOAST table
+relnatts	int2	 	Number of columns in the relation, besides system columns. There must be this many corresponding entries in pg_attribute. See also pg_attribute.attnum.
+relchecks	int2	 	Number of check constraints on the table; see pg_relcheck catalog
+reltriggers	int2	 	Number of triggers on the table; see pg_trigger catalog
+relukeys	int2	 	unused (Not the number of unique keys or something.)
+relfkeys	int2	 	Number foreign keys on the table
+relhaspkey	bool	 	unused (No, this does not say whether the table has a primary key. It's really unused.)
 relhasrules	bool	 	Table has rules
-relhassubclass	bool	 	At least one table inherits\n this one
-relacl	aclitem[]	 	Access permissions. See the\n descriptions of GRANT and REVOKE for details.
+relhassubclass	bool	 	At least one table inherits this one
+relacl	aclitem[]	 	Access permissions. See the descriptions of GRANT and REVOKE for details.

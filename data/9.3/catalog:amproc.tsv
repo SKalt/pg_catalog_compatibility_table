@@ -1,5 +1,5 @@
 Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
 amprocfamily	oid	pg_opfamily.oid	The operator family this entry is for
 amproclefttype	oid	pg_type.oid	Left-hand input data type of associated operator
 amprocrighttype	oid	pg_type.oid	Right-hand input data type of associated operator

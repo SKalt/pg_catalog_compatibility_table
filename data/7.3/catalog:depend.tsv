@@ -1,8 +1,8 @@
 Name	Type	References	Description
-classid	oid	pg_class.oid	The oid of the system catalog the dependent object is\n in
+classid	oid	pg_class.oid	The oid of the system catalog the dependent object is in
 objid	oid	any oid attribute	The oid of the specific dependent object
-objsubid	int4	 	For a table attribute, this is the attribute's column\n number (the objid and classid refer to the table itself). For all other object types, this field is presently zero.
-refclassid	oid	pg_class.oid	The oid of the system catalog the referenced object\n is in
+objsubid	int4	 	For a table attribute, this is the attribute's column number (the objid and classid refer to the table itself). For all other object types, this field is presently zero.
+refclassid	oid	pg_class.oid	The oid of the system catalog the referenced object is in
 refobjid	oid	any oid attribute	The oid of the specific referenced object
-refobjsubid	int4	 	For a table attribute, this is the attribute's column\n number (the refobjid and refclassid refer to the table itself). For all other object types, this field is presently zero.
-deptype	char	 	A code defining the specific semantics of this\n dependency relationship.
+refobjsubid	int4	 	For a table attribute, this is the attribute's column number (the refobjid and refclassid refer to the table itself). For all other object types, this field is presently zero.
+deptype	char	 	A code defining the specific semantics of this dependency relationship.

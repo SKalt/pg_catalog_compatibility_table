@@ -1,4 +1,4 @@
 Name	Type	References	Description
-relname	name	 	Notify condition name. (The name need not match any\n actual relation in the database; the term "relname" is historical.)
-listenerpid	int4	 	PID of the backend process that created this\n entry.
-notification	int4	 	Zero if no event is pending for this listener. If an\n event is pending, the PID of the backend that sent the notification.
+relname	name	 	Notify condition name. (The name need not match any actual relation in the database; the term "relname" is historical.)
+listenerpid	int4	 	PID of the backend process that created this entry.
+notification	int4	 	Zero if no event is pending for this listener. If an event is pending, the PID of the backend that sent the notification.

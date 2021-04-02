@@ -1,4 +1,4 @@
 Name	Type	References	Description
 ftrelid	oid	pg_class.oid	OID of the pg_class entry for this foreign table
 ftserver	oid	pg_foreign_server.oid	OID of the foreign server for this foreign table
-ftoptions	text[]	 	Foreign table options, as “keyword=value” strings
+ftoptions	text[]	 	Foreign table options, as "keyword=value” strings

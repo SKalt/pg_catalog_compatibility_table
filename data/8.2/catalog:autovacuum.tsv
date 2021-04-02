@@ -1,11 +1,11 @@
 Name	Type	References	Description
 vacrelid	oid	pg_class.oid	The table this entry is for
-enabled	bool	 	If false, this table will not be autovacuumed, except\n to prevent transaction ID wraparound
+enabled	bool	 	If false, this table will not be autovacuumed, except to prevent transaction ID wraparound
 vac_base_thresh	integer	 	Minimum number of modified tuples before vacuum
-vac_scale_factor	float4	 	Multiplier for reltuples\n to add to vac_base_thresh
+vac_scale_factor	float4	 	Multiplier for reltuples to add to vac_base_thresh
 anl_base_thresh	integer	 	Minimum number of modified tuples before analyze
-anl_scale_factor	float4	 	Multiplier for reltuples\n to add to anl_base_thresh
-vac_cost_delay	integer	 	Custom vacuum_cost_delay\n parameter
-vac_cost_limit	integer	 	Custom vacuum_cost_limit\n parameter
-freeze_min_age	integer	 	Custom vacuum_freeze_min_age\n parameter
+anl_scale_factor	float4	 	Multiplier for reltuples to add to anl_base_thresh
+vac_cost_delay	integer	 	Custom vacuum_cost_delay parameter
+vac_cost_limit	integer	 	Custom vacuum_cost_limit parameter
+freeze_min_age	integer	 	Custom vacuum_freeze_min_age parameter
 freeze_max_age	integer	 	Custom autovacuum_freeze_max_age parameter

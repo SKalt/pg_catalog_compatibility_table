@@ -1,6 +1,6 @@
 Name	Type	References	Description
-lanname	name	 	Name of the language (to be specified when creating a\n function)
-lanispl	bool	 	This is false for internal languages (such as SQL)\n and true for dynamically loaded language handler modules. It essentially means that, if it is true, the language may be dropped.
-lanpltrusted	bool	 	This is a trusted language. See under CREATE LANGUAGE what this means. If this is\n an internal language (lanispl is false) then this field is meaningless.
-lanplcallfoid	oid	pg_proc.oid	For non-internal languages this references the\n language handler, which is a special function that is responsible for executing all functions that are written in the particular language.
+lanname	name	 	Name of the language (to be specified when creating a function)
+lanispl	bool	 	This is false for internal languages (such as SQL) and true for dynamically loaded language handler modules. It essentially means that, if it is true, the language may be dropped.
+lanpltrusted	bool	 	This is a trusted language. See under CREATE LANGUAGE what this means. If this is an internal language (lanispl is false) then this field is meaningless.
+lanplcallfoid	oid	pg_proc.oid	For non-internal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language.
 lancompiler	text	 	not currently used

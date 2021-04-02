@@ -1,8 +1,8 @@
 Name	Type	References	Description
 oid	oid		Row identifier
 collname	name		Collation name (unique per namespace and encoding)
-collnamespace	oid	pg_collation.[object Object]	The OID of the namespace that contains this collation
-collowner	oid	pg_collation.[object Object]	Owner of the collation
+collnamespace	oid	pg_collation.oid	The OID of the namespace that contains this collation
+collowner	oid	pg_collation.oid	Owner of the collation
 collprovider	char		Provider of the collation: d = database default, c = libc, i = icu
 collisdeterministic	bool		Is the collation deterministic?
 collencoding	int4		Encoding in which the collation is applicable, or -1 if it works for any encoding

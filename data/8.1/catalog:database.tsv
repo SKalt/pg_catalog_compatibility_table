@@ -1,13 +1,13 @@
 Name	Type	References	Description
 datname	name	 	Database name
-datdba	oid	pg_authid.oid	Owner of the database, usually the user who created\n it
+datdba	oid	pg_authid.oid	Owner of the database, usually the user who created it
 encoding	int4	 	Character encoding for this database
-datistemplate	bool	 	If true then this database can be used in the\n TEMPLATE clause of CREATE DATABASE to create a new database as a clone of this one.
-datallowconn	bool	 	If false then no one can connect to this database.\n This is used to protect the template0 database from being altered.
-datconnlimit	int4	 	Sets maximum number of concurrent connections that\n can be made to this database. -1 means no limit.
-datlastsysoid	oid	 	Last system OID in the database; useful particularly\n to pg_dump
-datvacuumxid	xid	 	All rows inserted or deleted by transaction IDs\n before this one have been marked as known committed or known aborted in this database. This is used to determine when commit-log space can be recycled.
-datfrozenxid	xid	 	All rows inserted by transaction IDs before this one\n have been relabeled with a permanent ("frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems.
-dattablespace	oid	pg_tablespace.oid	The default tablespace for the database. Within this\n database, all tables for which pg_class.reltablespace is zero will be stored in this tablespace; in particular, all the non-shared system catalogs will be there.
-datconfig	text[]	 	Session defaults for run-time configuration\n variables
+datistemplate	bool	 	If true then this database can be used in the TEMPLATE clause of CREATE DATABASE to create a new database as a clone of this one.
+datallowconn	bool	 	If false then no one can connect to this database. This is used to protect the template0 database from being altered.
+datconnlimit	int4	 	Sets maximum number of concurrent connections that can be made to this database. -1 means no limit.
+datlastsysoid	oid	 	Last system OID in the database; useful particularly to pg_dump
+datvacuumxid	xid	 	All rows inserted or deleted by transaction IDs before this one have been marked as known committed or known aborted in this database. This is used to determine when commit-log space can be recycled.
+datfrozenxid	xid	 	All rows inserted by transaction IDs before this one have been relabeled with a permanent ("frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems.
+dattablespace	oid	pg_tablespace.oid	The default tablespace for the database. Within this database, all tables for which pg_class.reltablespace is zero will be stored in this tablespace; in particular, all the non-shared system catalogs will be there.
+datconfig	text[]	 	Session defaults for run-time configuration variables
 datacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details.

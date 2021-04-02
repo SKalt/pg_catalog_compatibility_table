@@ -1,8 +1,8 @@
 Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
 collname	name	 	Collation name (unique per namespace and encoding)
 collnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this collation
 collowner	oid	pg_authid.oid	Owner of the collation
-collencoding	int4	 	Encoding in which the collation is applicable, or -1 if it\nworks for any encoding
-collcollate	name	 	LC_COLLATE for this collation\nobject
+collencoding	int4	 	Encoding in which the collation is applicable, or -1 if it works for any encoding
+collcollate	name	 	LC_COLLATE for this collation object
 collctype	name	 	LC_CTYPE for this collation object

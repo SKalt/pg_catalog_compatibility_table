@@ -1,5 +1,5 @@
 Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
 opfmethod	oid	pg_am.oid	Index access method operator family is for
 opfname	name	 	Name of this operator family
 opfnamespace	oid	pg_namespace.oid	Namespace of this operator family

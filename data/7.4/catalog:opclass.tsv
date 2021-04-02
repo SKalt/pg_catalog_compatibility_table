@@ -4,5 +4,5 @@ opcname	name	 	Name of this operator class
 opcnamespace	oid	pg_namespace.oid	Namespace of this operator class
 opcowner	int4	pg_shadow.usesysid	Operator class owner
 opcintype	oid	pg_type.oid	Input data type of the operator class
-opcdefault	bool	 	True if this operator class is the default for\n opcintype
+opcdefault	bool	 	True if this operator class is the default for opcintype
 opckeytype	oid	pg_type.oid	Type of index data, or zero if same as opcintype

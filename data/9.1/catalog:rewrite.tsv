@@ -1,9 +1,9 @@
 Name	Type	References	Description
 rulename	name	 	Rule name
 ev_class	oid	pg_class.oid	The table this rule is for
-ev_attr	int2	 	The column this rule is for (currently, always -1 to\n indicate the whole table)
+ev_attr	int2	 	The column this rule is for (currently, always -1 to indicate the whole table)
 ev_type	char	 	Event type that the rule is for: 1 = SELECT, 2 = UPDATE, 3 = INSERT, 4 = DELETE
-ev_enabled	char	 	Controls in which \n session_replication_role modes the rule fires. O = rule fires in "origin" and "local" modes, D = rule is disabled, R = rule fires in "replica" mode, A = rule fires always.
+ev_enabled	char	 	Controls in which session_replication_role modes the rule fires. O = rule fires in "origin" and "local" modes, D = rule is disabled, R = rule fires in "replica" mode, A = rule fires always.
 is_instead	bool	 	True if the rule is an INSTEAD rule
-ev_qual	pg_node_tree	 	Expression tree (in the form of a nodeToString() representation) for the\n rule's qualifying condition
-ev_action	pg_node_tree	 	Query tree (in the form of a nodeToString() representation) for the\n rule's action
+ev_qual	pg_node_tree	 	Expression tree (in the form of a nodeToString() representation) for the rule's qualifying condition
+ev_action	pg_node_tree	 	Query tree (in the form of a nodeToString() representation) for the rule's action

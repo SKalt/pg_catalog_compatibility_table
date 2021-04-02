@@ -120,12 +120,9 @@ const getUrls = async (version) => {
   }
 };
 /** @param {string} s */
-const tsvEscape = (s) =>
-  s
-    .replace("\t", "\\t")
-    .replace("\n", "\\n")
-    .replace("\r", "")
-    .replace(/\s+/g, " ");
+const normalizeStr = (s) => s.normalize().replace(/[“”]/, '"');
+/** @param {string} s */
+const tsvEscape = (s) => normalizeStr(s.replace(/\s+/g, " "));
 /** @param {string[][]} rows */
 const toTsv = (rows) => [...rows].map((row) => row.join("\t")).join("\n");
 /**
@@ -274,8 +271,8 @@ const parseTsv = (rawRows, relation, version) => {
       version,
       column: getCol(cells),
       type: getType(cells),
-      references: getRefs(cells),
-      description: getDesc(cells),
+      references: getRefs(cells).trim(),
+      description: getDesc(cells).replace(/\.*$/, ""), //.replace(/\.*$/g, "."),
     })
   );
 };
@@ -329,22 +326,34 @@ const gatherRows = () => {
   /** @type {Record<string, PgCatRow[]>} */
   const index = {};
   /** @param {PgCatRow} row */
+  const f = (row) =>
+    [row.relation, row.column, row.type, row.references, row.description].join(
+      "\t"
+    );
+  /** @param {PgCatRow} row */
   const insert = (row) => {
-    const id = `${row.relation}\t${row.column}\t${row.type}`;
+    const id = f(row).toLowerCase();
     index[id] = [...(index[id] || []), row];
   };
   /** @returns {string} */
   const serialize = () => {
     return [
-      ["relation", "column", "type", "version"].join("\t"),
+      [
+        "relation",
+        "column",
+        "type",
+        "references",
+        "description",
+        "version",
+      ].join("\t"),
       ...Object.entries(index)
         .sort(([a], [b]) => byString(a, b))
-        .map(([relColAndType, rows]) => {
+        .map(([_, rows]) => {
           const versions = rows
             .map((row) => row.version)
             .sort(byFloat)
             .join(",");
-          return `${relColAndType}\t${versions}`;
+          return `${f(rows[0])}\t${versions}`;
         }),
     ].join("\n");
   };
