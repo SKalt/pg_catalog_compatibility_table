@@ -1,0 +1,16 @@
+{
+  "name": "pg_catalog_docs_history",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Steven Kalt <kalt.steven@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5"
+  }
+}
