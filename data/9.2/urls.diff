@@ -1,0 +1,15 @@
+--- ./data/9.1/urls.cleaned.txt	2021-01-22 21:37:28.995438929 -0500
++++ ./data/9.2/urls.cleaned.txt	2021-01-22 21:37:30.999565896 -0500
+@@ -33,10 +33,12 @@
+ catalog-pg-opfamily.html
+ catalog-pg-pltemplate.html
+ catalog-pg-proc.html
++catalog-pg-range.html
+ catalog-pg-rewrite.html
+ catalog-pg-seclabel.html
+ catalog-pg-shdepend.html
+ catalog-pg-shdescription.html
++catalog-pg-shseclabel.html
+ catalog-pg-statistic.html
+ catalog-pg-tablespace.html
+ catalog-pg-trigger.html

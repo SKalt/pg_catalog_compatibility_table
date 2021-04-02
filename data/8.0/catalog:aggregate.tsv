@@ -1,0 +1,6 @@
+Name	Type	References	Description
+aggfnoid	regproc	pg_proc.oid	pg_proc OID of the\n aggregate function
+aggtransfn	regproc	pg_proc.oid	Transition function
+aggfinalfn	regproc	pg_proc.oid	Final function (zero if none)
+aggtranstype	oid	pg_type.oid	The type of the aggregate function's internal\n transition (state) data
+agginitval	text	 	The initial value of the transition state. This is a\n text field containing the initial value in its external string representation. If the value is null, the transition state value starts out null.

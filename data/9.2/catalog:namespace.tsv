@@ -1,0 +1,4 @@
+Name	Type	References	Description
+nspname	name	 	Name of the namespace
+nspowner	oid	pg_authid.oid	Owner of the namespace
+nspacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details

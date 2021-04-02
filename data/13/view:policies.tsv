@@ -1,0 +1,9 @@
+Name	Type	References	Description
+schemaname	name	pg_policies.nspname	Name of schema containing table policy is on
+tablename	name	pg_policies.relname	Name of table policy is on
+policyname	name	pg_policies.polname	Name of policy
+permissive	text		Is the policy permissive or restrictive?
+roles	name[]		The roles to which this policy applies
+cmd	text		The command type to which the policy is applied
+qual	text		The expression added to the security barrier qualifications for queries that this policy applies to
+with_check	text		The expression added to the WITH CHECK qualifications for queries that attempt to add rows to this table

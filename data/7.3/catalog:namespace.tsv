@@ -1,0 +1,4 @@
+Name	Type	References	Description
+nspname	name	 	Name of the namespace
+nspowner	int4	pg_shadow.usesysid	Owner (creator) of the namespace
+nspacl	aclitem[]	 	Access permissions

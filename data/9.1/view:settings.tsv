@@ -1,0 +1,17 @@
+Name	Type	Description
+name	text	Run-time configuration parameter name
+setting	text	Current value of the parameter
+unit	text	Implicit unit of the parameter
+category	text	Logical group of the parameter
+short_desc	text	A brief description of the parameter
+extra_desc	text	Additional, more detailed, description of the\n parameter
+context	text	Context required to set the parameter's value (see\n below)
+vartype	text	Parameter type (bool,\n enum, integer, real, or string)
+source	text	Source of the current parameter value
+min_val	text	Minimum allowed value of the parameter (null for\n non-numeric values)
+max_val	text	Maximum allowed value of the parameter (null for\n non-numeric values)
+enumvals	text[]	Allowed values of an enum parameter (null for\n non-enum values)
+boot_val	text	Parameter value assumed at server startup if the\n parameter is not otherwise set
+reset_val	text	Value that RESET would reset\n the parameter to in the current session
+sourcefile	text	Configuration file the current value was set in (null\n for values set from sources other than configuration files, or when examined by a non-superuser); helpful when using include directives in configuration files
+sourceline	integer	Line number within the configuration file the current\n value was set at (null for values set from sources other than configuration files, or when examined by a non-superuser)

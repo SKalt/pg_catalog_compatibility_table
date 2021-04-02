@@ -1,0 +1,3 @@
+Name	Type	References	Description
+objoid	oid	any oid attribute	The oid of the object this\n description pertains to
+description	text	 	Arbitrary text that serves\n as the description of this object.

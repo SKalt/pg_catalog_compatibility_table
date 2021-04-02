@@ -1,0 +1,12 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing sequence
+sequencename	name	pg_class.relname	Name of sequence
+sequenceowner	name	pg_authid.rolname	Name of sequence's owner
+data_type	regtype	pg_type.oid	Data type of the sequence
+start_value	bigint	 	Start value of the sequence
+min_value	bigint	 	Minimum value of the sequence
+max_value	bigint	 	Maximum value of the sequence
+increment_by	bigint	 	Increment value of the sequence
+cycle	boolean	 	Whether the sequence cycles
+cache_size	bigint	 	Cache size of the sequence
+last_value	bigint	 	The last sequence value written to disk. If caching is used, this value can be greater than the last value handed out from the sequence. Null if the sequence has not been read from yet. Also, if the current user does not have USAGE or SELECT privilege on the sequence, the value is null.

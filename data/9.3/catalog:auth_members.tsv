@@ -1,0 +1,5 @@
+Name	Type	References	Description
+roleid	oid	pg_authid.oid	ID of a role that has a member
+member	oid	pg_authid.oid	ID of a role that is a member of roleid
+grantor	oid	pg_authid.oid	ID of the role that granted this membership
+admin_option	bool	 	True if member can grant\nmembership in roleid to others

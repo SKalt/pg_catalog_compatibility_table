@@ -1,0 +1,9 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing table
+tablename	name	pg_class.relname	Name of table
+tableowner	name	pg_authid.rolname	Name of table's owner
+tablespace	name	pg_tablespace.spcname	Name of tablespace containing table (null if default for database)
+hasindexes	boolean	pg_class.relhasindex	True if table has (or recently had) any indexes
+hasrules	boolean	pg_class.relhasrules	True if table has (or once had) rules
+hastriggers	boolean	pg_class.relhastriggers	True if table has (or once had) triggers
+rowsecurity	boolean	pg_class.relrowsecurity	True if row security is enabled on the table

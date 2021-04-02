@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+tmplname	name	 	Text search template name
+tmplnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this template
+tmplinit	regproc	pg_proc.oid	OID of the template's initialization function
+tmpllexize	regproc	pg_proc.oid	OID of the template's lexize function

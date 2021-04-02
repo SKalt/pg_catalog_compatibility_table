@@ -1,0 +1,14 @@
+Name	Type	References	Description
+tgrelid	oid	pg_class.oid	The table this trigger is on
+tgname	name	 	Trigger name (need not be unique)
+tgfoid	oid	pg_proc.oid	The function to be called
+tgtype	int2	 	Bitmask identifying trigger conditions
+tgenabled	bool	 	True if trigger is enabled (not presently checked\n everywhere it should be, so disabling a trigger by setting this false does not work reliably)
+tgisconstraint	bool	 	True if trigger is a RI constraint
+tgconstrname	name	 	RI constraint name
+tgconstrrelid	oid	pg_class.oid	The table referenced by an RI constraint
+tgdeferrable	bool	 	True if deferrable
+tginitdeferred	bool	 	True if initially deferred
+tgnargs	int2	 	Number of argument strings passed to trigger\n function
+tgattr	int2vector	 	Currently unused
+tgargs	bytea	 	Argument strings to pass to trigger, each\n null-terminated

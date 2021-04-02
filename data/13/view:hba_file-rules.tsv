@@ -1,0 +1,10 @@
+Name	Type	References	Description
+line_number	int4		Line number of this rule in pg_hba.conf
+type	text		Type of connection
+database	text[]		List of database name(s) to which this rule applies
+user_name	text[]		List of user and group name(s) to which this rule applies
+address	text		Host name or IP address, or one of all, samehost, or samenet, or null for local connections
+netmask	text		IP address mask, or null if not applicable
+auth_method	text		Authentication method
+options	text[]		Options specified for authentication method, if any
+error	text		If not null, an error message indicating why this line could not be processed

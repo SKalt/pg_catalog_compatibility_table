@@ -1,0 +1,17 @@
+Name	Type	References	Description
+oprname	name	 	Name of the operator
+oprowner	int4	pg_shadow.usesysid	Owner (creator) of the\n operator
+oprprec	int2	 	unused
+oprkind	char	 	'b' = infix ("both"), 'l' = prefix ("left"), 'r' = postfix ("right")
+oprisleft	bool	 	unused
+oprcanhash	bool	 	This operator supports hash\n joins.
+oprleft	oid	pg_type.oid	Type of the left\n operand
+oprright	oid	pg_type.oid	Type of the right\n operand
+oprresult	oid	pg_type.oid	Type of the result
+oprcom	oid	pg_operator.oid	Commutator of this\n operator, if any
+oprnegate	oid	pg_operator.oid	Negator of this operator,\n if any
+oprlsortop	oid	pg_operator.oid	If this operator supports\n merge joins, the operator that sorts the type of the left-hand operand
+oprrsortop	oid	pg_operator.oid	If this operator supports\n merge joins, the operator that sorts the type of the right-hand operand
+oprcode	regproc	 	Function that implements\n this operator
+oprrest	regproc	 	Restriction selectivity\n estimation function for this operator
+oprjoin	regproc	 	Join selectivity estimation\n function for this operator

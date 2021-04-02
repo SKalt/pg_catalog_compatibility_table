@@ -1,0 +1,8 @@
+Name	Type	References	Description
+extname	name	 	Name of the extension
+extowner	oid	pg_authid.oid	Owner of the extension
+extnamespace	oid	pg_namespace.oid	Schema containing the extension's exported\n objects
+extrelocatable	bool	 	True if extension can be relocated to another\n schema
+extversion	text	 	Version name for the extension
+extconfig	oid[]	pg_class.oid	Array of regclass OIDs for the\n extension's configuration table(s), or NULL if none
+extcondition	text[]	 	Array of WHERE-clause filter\n conditions for the extension's configuration table(s), or NULL if none

@@ -1,0 +1,29 @@
+Name	Type	References	Description
+amname	name	 	Name of the access method
+amstrategies	int2	 	Number of operator strategies for this access method,\n or zero if access method does not have a fixed set of operator strategies
+amsupport	int2	 	Number of support routines for this access\n method
+amcanorder	bool	 	Does the access method support ordered scans sorted\n by the indexed column's value?
+amcanorderbyop	bool	 	Does the access method support ordered scans sorted\n by the result of an operator on the indexed column?
+amcanbackward	bool	 	Does the access method support backward\n scanning?
+amcanunique	bool	 	Does the access method support unique indexes?
+amcanmulticol	bool	 	Does the access method support multicolumn\n indexes?
+amoptionalkey	bool	 	Does the access method support a scan without any\n constraint for the first index column?
+amsearchnulls	bool	 	Does the access method support IS\n NULL/NOT NULL searches?
+amstorage	bool	 	Can index storage data type differ from column data\n type?
+amclusterable	bool	 	Can an index of this type be clustered on?
+ampredlocks	bool	 	Does an index of this type manage fine-grained\n predicate locks?
+amkeytype	oid	pg_type.oid	Type of data stored in index, or zero if not a fixed\n type
+aminsert	regproc	pg_proc.oid	"Insert this tuple"\n function
+ambeginscan	regproc	pg_proc.oid	"Prepare for index scan"\n function
+amgettuple	regproc	pg_proc.oid	"Next valid tuple"\n function, or zero if none
+amgetbitmap	regproc	pg_proc.oid	"Fetch all valid tuples"\n function, or zero if none
+amrescan	regproc	pg_proc.oid	"(Re)start index scan"\n function
+amendscan	regproc	pg_proc.oid	"Clean up after index\n scan" function
+ammarkpos	regproc	pg_proc.oid	"Mark current scan\n position" function
+amrestrpos	regproc	pg_proc.oid	"Restore marked scan\n position" function
+ambuild	regproc	pg_proc.oid	"Build new index"\n function
+ambuildempty	regproc	pg_proc.oid	"Build empty index"\n function
+ambulkdelete	regproc	pg_proc.oid	Bulk-delete function
+amvacuumcleanup	regproc	pg_proc.oid	Post-VACUUM cleanup\n function
+amcostestimate	regproc	pg_proc.oid	Function to estimate cost of an index scan
+amoptions	regproc	pg_proc.oid	Function to parse and validate reloptions for an index

@@ -1,0 +1,13 @@
+Name	Type	Description
+oid	oid	Row identifier (hidden attribute; must be explicitly\nselected)
+rolname	name	Role name
+rolsuper	bool	Role has superuser privileges
+rolinherit	bool	Role automatically inherits privileges of roles it is a member\nof
+rolcreaterole	bool	Role can create more roles
+rolcreatedb	bool	Role can create databases
+rolcatupdate	bool	Role can update system catalogs directly. (Even a superuser\ncannot do this unless this column is true)
+rolcanlogin	bool	Role can log in. That is, this role can be given as the initial\nsession authorization identifier
+rolreplication	bool	Role is a replication role. That is, this role can initiate\nstreaming replication (see Section 25.2.5) and set/unset the system backup mode using pg_start_backup and pg_stop_backup
+rolconnlimit	int4	For roles that can log in, this sets maximum number of\nconcurrent connections this role can make. -1 means no limit.
+rolpassword	text	Password (possibly encrypted); null if none. If the password is\nencrypted, this column will begin with the string md5 followed by a 32-character hexadecimal MD5 hash. The MD5 hash will be of the user's password concatenated to their user name. For example, if user joe has password xyzzy, PostgreSQL will store the md5 hash of xyzzyjoe. A password that does not follow that format is assumed to be unencrypted.
+rolvaliduntil	timestamptz	Password expiry time (only used for password authentication);\nnull if no expiration

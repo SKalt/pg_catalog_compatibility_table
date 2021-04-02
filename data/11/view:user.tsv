@@ -1,0 +1,10 @@
+Name	Type	Description
+usename	name	User name
+usesysid	oid	ID of this user
+usecreatedb	bool	User can create databases
+usesuper	bool	User is a superuser
+userepl	bool	User can initiate streaming replication and put the system in and out of backup mode.
+usebypassrls	bool	User bypasses every row level security policy, see Section 5.7 for more information.
+passwd	text	Not the password (always reads as ********)
+valuntil	abstime	Password expiry time (only used for password authentication)
+useconfig	text[]	Session defaults for run-time configuration variables

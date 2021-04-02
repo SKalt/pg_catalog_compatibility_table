@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+amname	name		Name of the access method
+amhandler	regproc	pg_am.[object Object]	OID of a handler function that is responsible for supplying information about the access method
+amtype	char		t = table (including materialized views), i = index.

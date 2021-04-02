@@ -1,0 +1,4 @@
+Name	Type	References	Description
+groname	name	pg_group.rolname	Name of the group
+grosysid	oid	pg_group.oid	ID of this group
+grolist	oid[]	pg_group.oid	An array containing the IDs of the roles in this group

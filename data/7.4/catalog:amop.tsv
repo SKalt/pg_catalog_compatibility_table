@@ -1,0 +1,5 @@
+Name	Type	References	Description
+amopclaid	oid	pg_opclass.oid	The index operator class this entry is for
+amopstrategy	int2	 	Operator strategy number
+amopreqcheck	bool	 	Index hit must be rechecked
+amopopr	oid	pg_operator.oid	OID of the operator

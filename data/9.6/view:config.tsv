@@ -1,0 +1,3 @@
+Name	Type	Description
+name	text	The parameter name
+setting	text	The parameter value

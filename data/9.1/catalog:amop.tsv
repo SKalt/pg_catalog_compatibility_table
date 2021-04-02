@@ -1,0 +1,9 @@
+Name	Type	References	Description
+amopfamily	oid	pg_opfamily.oid	The operator family this entry is for
+amoplefttype	oid	pg_type.oid	Left-hand input data type of operator
+amoprighttype	oid	pg_type.oid	Right-hand input data type of operator
+amopstrategy	int2	 	Operator strategy number
+amoppurpose	char	 	Operator purpose, either s\n for search or o for ordering
+amopopr	oid	pg_operator.oid	OID of the operator
+amopmethod	oid	pg_am.oid	Index access method operator family is for
+amopsortfamily	oid	pg_opfamily.oid	The btree operator family this entry sorts according\n to, if an ordering operator; zero if a search operator

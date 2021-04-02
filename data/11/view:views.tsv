@@ -1,0 +1,5 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing view
+viewname	name	pg_class.relname	Name of view
+viewowner	name	pg_authid.rolname	Name of view's owner
+definition	text	 	View definition (a reconstructed SELECT query)

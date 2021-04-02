@@ -1,0 +1,6 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing table and index
+tablename	name	pg_class.relname	Name of table the index is for
+indexname	name	pg_class.relname	Name of index
+tablespace	name	pg_tablespace.spcname	Name of tablespace containing index (null if default\n for database)
+indexdef	text	 	Index definition (a reconstructed CREATE INDEX command)

@@ -1,0 +1,5 @@
+Name	Type	Description
+name	text	Time zone name
+abbrev	text	Time zone abbreviation
+utc_offset	interval	Offset from UTC (positive means east of\n Greenwich)
+is_dst	boolean	True if currently observing daylight savings

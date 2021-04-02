@@ -1,0 +1,8 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing materialized view
+matviewname	name	pg_class.relname	Name of materialized view
+matviewowner	name	pg_authid.rolname	Name of materialized view's owner
+tablespace	name	pg_tablespace.spcname	Name of tablespace containing materialized view (null if\ndefault for database)
+hasindexes	boolean	 	True if materialized view has (or recently had) any\nindexes
+ispopulated	boolean	 	True if materialized view is currently populated
+definition	text	 	Materialized view definition (a reconstructed SELECT query)

@@ -1,0 +1,16 @@
+Name	Type	References	Description
+proname	name	 	Name of the function
+pronamespace	oid	pg_namespace.oid	The OID of the namespace that contains this\n function
+proowner	int4	pg_shadow.usesysid	Owner (creator) of the function
+prolang	oid	pg_language.oid	Implementation language or call interface of this\n function
+proisagg	bool	 	Function is an aggregate function
+prosecdef	bool	 	Function is a security definer (i.e., a "setuid" function)
+proisstrict	bool	 	Function returns null if any call argument is null.\n In that case the function won't actually be called at all. Functions that are not "strict" must be prepared to handle null inputs.
+proretset	bool	 	Function returns a set (ie, multiple values of the\n specified data type)
+provolatile	char	 	provolatile tells\n whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for "immutable" functions, which always deliver the same result for the same inputs. It is s for "stable" functions, whose results (for fixed inputs) do not change within a scan. It is v for "volatile" functions, whose results may change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)
+pronargs	int2	 	Number of arguments
+prorettype	oid	pg_type.oid	Data type of the return value
+proargtypes	oidvector	pg_type.oid	A vector with the data types of the function\n arguments
+prosrc	text	 	This tells the function handler how to invoke the\n function. It might be the actual source code of the function for interpreted languages, a link symbol, a file name, or just about anything else, depending on the implementation language/call convention.
+probin	bytea	 	Additional information about how to invoke the\n function. Again, the interpretation is language-specific.
+proacl	aclitem[]	 	Access permissions

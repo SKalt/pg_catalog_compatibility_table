@@ -1,0 +1,24 @@
+Name	Type	References	Description
+amname	name	 	Name of the access method
+amstrategies	int2	 	Number of operator strategies for this access\n method
+amsupport	int2	 	Number of support routines for this access\n method
+amorderstrategy	int2	 	Zero if the index offers no sort order, otherwise the\n strategy number of the strategy operator that describes the sort order
+amcanunique	bool	 	Does the access method support unique indexes?
+amcanmulticol	bool	 	Does the access method support multicolumn\n indexes?
+amoptionalkey	bool	 	Does the access method support a scan without any\n constraint for the first index column?
+amindexnulls	bool	 	Does the access method support null index\n entries?
+amstorage	bool	 	Can index storage data type differ from column data\n type?
+amclusterable	bool	 	Can an index of this type be clustered on?
+aminsert	regproc	pg_proc.oid	"Insert this tuple"\n function
+ambeginscan	regproc	pg_proc.oid	"Start new scan"\n function
+amgettuple	regproc	pg_proc.oid	"Next valid tuple"\n function
+amgetmulti	regproc	pg_proc.oid	"Fetch multiple tuples"\n function
+amrescan	regproc	pg_proc.oid	"Restart this scan"\n function
+amendscan	regproc	pg_proc.oid	"End this scan"\n function
+ammarkpos	regproc	pg_proc.oid	"Mark current scan\n position" function
+amrestrpos	regproc	pg_proc.oid	"Restore marked scan\n position" function
+ambuild	regproc	pg_proc.oid	"Build new index"\n function
+ambulkdelete	regproc	pg_proc.oid	Bulk-delete function
+amvacuumcleanup	regproc	pg_proc.oid	Post-VACUUM cleanup\n function
+amcostestimate	regproc	pg_proc.oid	Function to estimate cost of an index scan
+amoptions	regproc	pg_proc.oid	Function to parse and validate reloptions for an index

@@ -1,0 +1,4 @@
+Name	Type	References	Description
+groname	name	 	Name of the group
+grosysid	int4	 	An arbitrary number to identify this group
+grolist	int4[]	pg_shadow.usesysid	An array containing the ids of the users in this\n group

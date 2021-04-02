@@ -1,0 +1,4 @@
+Name	Type	References	Description
+pubname	name	pg_publication.pubname	Name of publication
+schemaname	name	pg_namespace.nspname	Name of schema containing table
+tablename	name	pg_class.relname	Name of table

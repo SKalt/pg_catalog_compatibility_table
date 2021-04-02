@@ -1,0 +1,20 @@
+Name	Type	References	Description
+amname	name	 	name of the access method
+amowner	int4	pg_shadow.usesysid	user ID of the owner (currently not used)
+amstrategies	int2	 	number of operator strategies for this access\n method
+amsupport	int2	 	number of support routines for this access\n method
+amorderstrategy	int2	 	zero if the index offers no sort order, otherwise the\n strategy number of the strategy operator that describes the sort order
+amcanunique	bool	 	does AM support unique indexes?
+amcanmulticol	bool	 	does AM support multicolumn indexes?
+amindexnulls	bool	 	does AM support NULL index entries?
+amconcurrent	bool	 	does AM support concurrent updates?
+amgettuple	regproc	pg_proc.oid	"next valid tuple"\n function
+aminsert	regproc	pg_proc.oid	"insert this tuple"\n function
+ambeginscan	regproc	pg_proc.oid	"start new scan"\n function
+amrescan	regproc	pg_proc.oid	"restart this scan"\n function
+amendscan	regproc	pg_proc.oid	"end this scan"\n function
+ammarkpos	regproc	pg_proc.oid	"mark current scan\n position" function
+amrestrpos	regproc	pg_proc.oid	"restore marked scan\n position" function
+ambuild	regproc	pg_proc.oid	"build new index"\n function
+ambulkdelete	regproc	pg_proc.oid	bulk-delete function
+amcostestimate	regproc	pg_proc.oid	estimate cost of an indexscan

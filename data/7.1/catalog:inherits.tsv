@@ -1,0 +1,4 @@
+Name	Type	References	Description
+inhrelid	oid	pg_class.oid	This is the reference to\n the subtable, that is, it records the fact that the identified table is inherited from some other table.
+inhparent	oid	pg_class.oid	This is the reference to\n the parent table, from which the table referenced by inhrelid inherited from.
+inhseqno	int4	 	If there is more than one\n subtable/parent pair (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. The count starts at 1.

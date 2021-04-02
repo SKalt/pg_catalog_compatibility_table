@@ -1,0 +1,14 @@
+Name	Type	References	Description
+locktype	text	 	type of the lockable object: relation, extend,\n page, tuple, transactionid, object, userlock, or advisory
+database	oid	pg_database.oid	OID of the database in which the object exists, or\n zero if the object is a shared object, or NULL if the object is a transaction ID
+relation	oid	pg_class.oid	OID of the relation, or NULL if the object is not a\n relation or part of a relation
+page	integer	 	Page number within the relation, or NULL if the\n object is not a tuple or relation page
+tuple	smallint	 	Tuple number within the page, or NULL if the object\n is not a tuple
+transactionid	xid	 	ID of a transaction, or NULL if the object is not a\n transaction ID
+classid	oid	pg_class.oid	OID of the system catalog containing the object, or\n NULL if the object is not a general database object
+objid	oid	any OID column	OID of the object within its system catalog, or NULL\n if the object is not a general database object
+objsubid	smallint	 	For a table column, this is the column number (the\n classid and objid refer to the table itself). For all other object types, this column is zero. NULL if the object is not a general database object
+transaction	xid	 	ID of the transaction that is holding or awaiting\n this lock
+pid	integer	 	Process ID of the server process holding or awaiting\n this lock. NULL if the lock is held by a prepared transaction
+mode	text	 	Name of the lock mode held or desired by this process\n (see Section 12.3.1)
+granted	boolean	 	True if lock is held, false if lock is awaited

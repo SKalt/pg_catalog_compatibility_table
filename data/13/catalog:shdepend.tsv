@@ -1,0 +1,8 @@
+Name	Type	References	Description
+dbid	oid	pg_shdepend.[object Object]	The OID of the database the dependent object is in, or zero for a shared object
+classid	oid	pg_shdepend.[object Object]	The OID of the system catalog the dependent object is in
+objid	oid		The OID of the specific dependent object
+objsubid	int4		For a table column, this is the column number (the objid and classid refer to the table itself). For all other object types, this column is zero.
+refclassid	oid	pg_shdepend.[object Object]	The OID of the system catalog the referenced object is in (must be a shared catalog)
+refobjid	oid		The OID of the specific referenced object
+deptype	char		A code defining the specific semantics of this dependency relationship; see text

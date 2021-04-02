@@ -1,0 +1,10 @@
+Name	Type	References	Description
+oid	oid	 	Row identifier (hidden attribute; must be explicitly\nselected)
+amopfamily	oid	pg_opfamily.oid	The operator family this entry is for
+amoplefttype	oid	pg_type.oid	Left-hand input data type of operator
+amoprighttype	oid	pg_type.oid	Right-hand input data type of operator
+amopstrategy	int2	 	Operator strategy number
+amoppurpose	char	 	Operator purpose, either s for search\nor o for ordering
+amopopr	oid	pg_operator.oid	OID of the operator
+amopmethod	oid	pg_am.oid	Index access method operator family is for
+amopsortfamily	oid	pg_opfamily.oid	The btree operator family this entry sorts according to, if an\nordering operator; zero if a search operator

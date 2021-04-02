@@ -1,0 +1,10 @@
+Name	Type	References	Description
+usename	name	pg_shadow.rolname	User name
+usesysid	oid	pg_shadow.oid	ID of this user
+usecreatedb	bool		User can create databases
+usesuper	bool		User is a superuser
+userepl	bool		User can initiate streaming replication and put the system in and out of backup mode.
+usebypassrls	bool		User bypasses every row level security policy, see Section 5.8 for more information.
+passwd	text		Password (possibly encrypted); null if none. See pg_authid for details of how encrypted passwords are stored.
+valuntil	timestamptz		Password expiry time (only used for password authentication)
+useconfig	text[]		Session defaults for run-time configuration variables

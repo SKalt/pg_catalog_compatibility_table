@@ -1,0 +1,5 @@
+Name	Type	References	Description
+opfmethod	oid	pg_am.oid	Index access method operator family is for
+opfname	name	 	Name of this operator family
+opfnamespace	oid	pg_namespace.oid	Namespace of this operator family
+opfowner	oid	pg_authid.oid	Owner of the operator family

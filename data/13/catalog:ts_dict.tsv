@@ -1,0 +1,7 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+dictname	name		Text search dictionary name
+dictnamespace	oid	pg_ts_dict.[object Object]	The OID of the namespace that contains this dictionary
+dictowner	oid	pg_ts_dict.[object Object]	Owner of the dictionary
+dicttemplate	oid	pg_ts_dict.[object Object]	The OID of the text search template for this dictionary
+dictinitoption	text		Initialization option string for the template

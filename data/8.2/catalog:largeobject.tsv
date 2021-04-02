@@ -1,0 +1,4 @@
+Name	Type	Description
+loid	oid	Identifier of the large object that includes this\n page	 
+pageno	int4	Page number of this page within its large object\n (counting from zero)	 
+data	bytea	Actual data stored in the large object. This will\n never be more than LOBLKSIZE bytes and may be less	 

@@ -1,0 +1,39 @@
+--- ./data/9.4/urls.cleaned.txt	2021-01-22 21:37:35.303848780 -0500
++++ ./data/9.5/urls.cleaned.txt	2021-01-22 21:37:37.203977820 -0500
+@@ -33,16 +33,18 @@
+ catalog-pg-operator.html
+ catalog-pg-opfamily.html
+ catalog-pg-pltemplate.html
++catalog-pg-policy.html
+ catalog-pg-proc.html
+ catalog-pg-range.html
++catalog-pg-replication-origin.html
+ catalog-pg-rewrite.html
+-catalog-pg-replication-slots.html
+ catalog-pg-seclabel.html
+ catalog-pg-shdepend.html
+ catalog-pg-shdescription.html
+ catalog-pg-shseclabel.html
+ catalog-pg-statistic.html
+ catalog-pg-tablespace.html
++catalog-pg-transform.html
+ catalog-pg-trigger.html
+ catalog-pg-ts-config.html
+ catalog-pg-ts-config-map.html
+@@ -55,12 +57,16 @@
+ view-pg-available-extensions.html
+ view-pg-available-extension-versions.html
+ view-pg-cursors.html
++view-pg-file-settings.html
+ view-pg-group.html
+ view-pg-indexes.html
+ view-pg-locks.html
+ view-pg-matviews.html
++view-pg-policies.html
+ view-pg-prepared-statements.html
+ view-pg-prepared-xacts.html
++view-pg-replication-origin-status.html
++view-pg-replication-slots.html
+ view-pg-roles.html
+ view-pg-rules.html
+ view-pg-seclabels.html

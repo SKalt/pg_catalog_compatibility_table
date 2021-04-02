@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+conname	name		Conversion name (unique within a namespace)
+connamespace	oid	pg_conversion.[object Object]	The OID of the namespace that contains this conversion
+conowner	oid	pg_conversion.[object Object]	Owner of the conversion
+conforencoding	int4		Source encoding ID
+contoencoding	int4		Destination encoding ID
+conproc	regproc	pg_conversion.[object Object]	Conversion function
+condefault	bool		True if this is the default conversion

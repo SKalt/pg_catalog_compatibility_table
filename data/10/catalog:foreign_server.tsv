@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
+srvname	name	 	Name of the foreign server
+srvowner	oid	pg_authid.oid	Owner of the foreign server
+srvfdw	oid	pg_foreign_data_wrapper.oid	OID of the foreign-data wrapper of this foreign server
+srvtype	text	 	Type of the server (optional)
+srvversion	text	 	Version of the server (optional)
+srvacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details
+srvoptions	text[]	 	Foreign server specific options, as “keyword=value” strings

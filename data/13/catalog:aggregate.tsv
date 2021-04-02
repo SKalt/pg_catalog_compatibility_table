@@ -1,0 +1,23 @@
+Name	Type	References	Description
+aggfnoid	regproc	pg_aggregate.[object Object]	pg_proc OID of the aggregate function
+aggkind	char		Aggregate kind: n for “normal” aggregates, o for “ordered-set” aggregates, or h for “hypothetical-set” aggregates
+aggnumdirectargs	int2		Number of direct (non-aggregated) arguments of an ordered-set or hypothetical-set aggregate, counting a variadic array as one argument. If equal to pronargs, the aggregate must be variadic and the variadic array describes the aggregated arguments as well as the final direct arguments. Always zero for normal aggregates.
+aggtransfn	regproc	pg_aggregate.[object Object]	Transition function
+aggfinalfn	regproc	pg_aggregate.[object Object]	Final function (zero if none)
+aggcombinefn	regproc	pg_aggregate.[object Object]	Combine function (zero if none)
+aggserialfn	regproc	pg_aggregate.[object Object]	Serialization function (zero if none)
+aggdeserialfn	regproc	pg_aggregate.[object Object]	Deserialization function (zero if none)
+aggmtransfn	regproc	pg_aggregate.[object Object]	Forward transition function for moving-aggregate mode (zero if none)
+aggminvtransfn	regproc	pg_aggregate.[object Object]	Inverse transition function for moving-aggregate mode (zero if none)
+aggmfinalfn	regproc	pg_aggregate.[object Object]	Final function for moving-aggregate mode (zero if none)
+aggfinalextra	bool		True to pass extra dummy arguments to aggfinalfn
+aggmfinalextra	bool		True to pass extra dummy arguments to aggmfinalfn
+aggfinalmodify	char		Whether aggfinalfn modifies the transition state value: r if it is read-only, s if the aggtransfn cannot be applied after the aggfinalfn, or w if it writes on the value
+aggmfinalmodify	char		Like aggfinalmodify, but for the aggmfinalfn
+aggsortop	oid	pg_aggregate.[object Object]	Associated sort operator (zero if none)
+aggtranstype	oid	pg_aggregate.[object Object]	Data type of the aggregate function's internal transition (state) data
+aggtransspace	int4		Approximate average size (in bytes) of the transition state data, or zero to use a default estimate
+aggmtranstype	oid	pg_aggregate.[object Object]	Data type of the aggregate function's internal transition (state) data for moving-aggregate mode (zero if none)
+aggmtransspace	int4		Approximate average size (in bytes) of the transition state data for moving-aggregate mode, or zero to use a default estimate
+agginitval	text		The initial value of the transition state. This is a text field containing the initial value in its external string representation. If this field is null, the transition state value starts out null.
+aggminitval	text		The initial value of the transition state for moving-aggregate mode. This is a text field containing the initial value in its external string representation. If this field is null, the transition state value starts out null.

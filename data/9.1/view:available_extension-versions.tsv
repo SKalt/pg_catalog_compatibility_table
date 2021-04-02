@@ -1,0 +1,9 @@
+Name	Type	Description
+name	name	Extension name
+version	text	Version name
+installed	bool	True if this version of this extension is currently\n installed
+superuser	bool	True if only superusers are allowed to install this\n extension
+relocatable	bool	True if extension can be relocated to another\n schema
+schema	name	Name of the schema that the extension must be\n installed into, or NULL if partially or fully relocatable
+requires	name[]	Names of prerequisite extensions, or NULL if none
+comment	text	Comment string from the extension's control file

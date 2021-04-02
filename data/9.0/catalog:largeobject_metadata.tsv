@@ -1,0 +1,3 @@
+Name	Type	References	Description
+lomowner	oid	pg_authid.oid	Owner of the large object
+lomacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details

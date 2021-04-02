@@ -1,0 +1,12 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	Name of schema containing table
+tablename	name	pg_class.relname	Name of table
+attname	name	pg_attribute.attname	Name of the column described by this row
+inherited	bool	 	If true, this row includes inheritance child columns,\n not just the values in the specified table
+null_frac	real	 	Fraction of column entries that are null
+avg_width	integer	 	Average width in bytes of column's entries
+n_distinct	real	 	If greater than zero, the estimated number of\n distinct values in the column. If less than zero, the negative of the number of distinct values divided by the number of rows. (The negated form is used when ANALYZE believes that the number of distinct values is likely to increase as the table grows; the positive form is used when the column seems to have a fixed number of possible values.) For example, -1 indicates a unique column in which the number of distinct values is the same as the number of rows.
+most_common_vals	anyarray	 	A list of the most common values in the column. (Null\n if no values seem to be more common than any others.) For some data types such as tsvector, this is a list of the most common element values rather than values of the type itself.
+most_common_freqs	real[]	 	A list of the frequencies of the most common values\n or elements, i.e., number of occurrences of each divided by total number of rows. (Null when most_common_vals is.) For some data types such as tsvector, it can also store some additional information, making it longer than the most_common_vals array.
+histogram_bounds	anyarray	 	A list of values that divide the column's values into\n groups of approximately equal population. The values in most_common_vals, if present, are omitted from this histogram calculation. (This column is null if the column data type does not have a < operator or if the most_common_vals list accounts for the entire population.)
+correlation	real	 	Statistical correlation between physical row ordering\n and logical ordering of the column values. This ranges from -1 to +1. When the value is near -1 or +1, an index scan on the column will be estimated to be cheaper than when it is near zero, due to reduction of random access to the disk. (This column is null if the column data type does not have a < operator.)

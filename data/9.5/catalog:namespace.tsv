@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
+nspname	name	 	Name of the namespace
+nspowner	oid	pg_authid.oid	Owner of the namespace
+nspacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details

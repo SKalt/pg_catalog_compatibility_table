@@ -1,0 +1,9 @@
+Name	Type	References	Description
+usename	name	 	User name
+usesysid	int4	 	User id (arbitrary number used to reference this\n user)
+usecreatedb	bool	 	User may create databases
+usesuper	bool	 	User is a superuser
+usecatupd	bool	 	User may update system catalogs. (Even a superuser\n may not do this unless this column is true.)
+passwd	text	 	Not the password (always reads as ********)
+valuntil	abstime	 	Account expiry time (only used for password\n authentication)
+useconfig	text[]	 	Session defaults for run-time configuration\n variables

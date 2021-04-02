@@ -1,0 +1,10 @@
+Name	Type	References	Description
+usename	name	pg_authid.rolname	User name
+usesysid	oid	pg_authid.oid	ID of this user
+usecreatedb	bool	 	User can create databases
+usesuper	bool	 	User is a superuser
+usecatupd	bool	 	User can update system catalogs. (Even a superuser cannot do\nthis unless this column is true.)
+userepl	bool	 	User can initiate streaming replication and put the system in\nand out of backup mode.
+passwd	text	 	Password (possibly encrypted); null if none. See pg_authid\nfor details of how encrypted passwords are stored.
+valuntil	abstime	 	Password expiry time (only used for password\nauthentication)
+useconfig	text[]	 	Session defaults for run-time configuration variables

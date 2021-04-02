@@ -1,0 +1,6 @@
+Name	Type	References	Description
+spcname	name	 	Tablespace name
+spcowner	oid	pg_authid.oid	Owner of the tablespace, usually the user who created\n it
+spclocation	text	 	Location (directory path) of the tablespace
+spcacl	aclitem[]	 	Access privileges; see GRANT and REVOKE for details
+spcoptions	text[]	 	Tablespace-level options, as "keyword=value" strings

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+castsource	oid	pg_type.oid	OID of the source data type
+casttarget	oid	pg_type.oid	OID of the target data type
+castfunc	oid	pg_proc.oid	The OID of the function to use to perform this cast.\n Zero is stored if the data types are binary compatible (that is, no run-time operation is needed to perform the cast).
+castcontext	char	 	Indicates what contexts the cast may be invoked in.\n e means only as an explicit cast (using CAST, ::, or function-call syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases.

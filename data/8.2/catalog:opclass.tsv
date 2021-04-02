@@ -1,0 +1,8 @@
+Name	Type	References	Description
+opcamid	oid	pg_am.oid	Index access method operator class is for
+opcname	name	 	Name of this operator class
+opcnamespace	oid	pg_namespace.oid	Namespace of this operator class
+opcowner	oid	pg_authid.oid	Owner of the operator class
+opcintype	oid	pg_type.oid	Data type that the operator class indexes
+opcdefault	bool	 	True if this operator class is the default for\n opcintype
+opckeytype	oid	pg_type.oid	Type of data stored in index, or zero if same as\n opcintype

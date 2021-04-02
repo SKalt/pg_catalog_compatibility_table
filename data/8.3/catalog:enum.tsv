@@ -1,0 +1,3 @@
+Name	Type	References	Description
+enumtypid	oid	pg_type.oid	The OID of the pg_type\n entry owning this enum value
+enumlabel	name	 	The textual label for this enum value

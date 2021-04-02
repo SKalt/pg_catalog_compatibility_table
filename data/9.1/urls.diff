@@ -1,0 +1,46 @@
+--- ./data/9.0/urls.cleaned.txt	2021-01-22 21:37:26.091260550 -0500
++++ ./data/9.1/urls.cleaned.txt	2021-01-22 21:37:28.995438929 -0500
+@@ -10,6 +10,7 @@
+ catalog-pg-cast.html
+ catalog-pg-class.html
+ catalog-pg-constraint.html
++catalog-pg-collation.html
+ catalog-pg-conversion.html
+ catalog-pg-database.html
+ catalog-pg-db-role-setting.html
+@@ -17,8 +18,10 @@
+ catalog-pg-depend.html
+ catalog-pg-description.html
+ catalog-pg-enum.html
++catalog-pg-extension.html
+ catalog-pg-foreign-data-wrapper.html
+ catalog-pg-foreign-server.html
++catalog-pg-foreign-table.html
+ catalog-pg-index.html
+ catalog-pg-inherits.html
+ catalog-pg-language.html
+@@ -31,6 +34,7 @@
+ catalog-pg-pltemplate.html
+ catalog-pg-proc.html
+ catalog-pg-rewrite.html
++catalog-pg-seclabel.html
+ catalog-pg-shdepend.html
+ catalog-pg-shdescription.html
+ catalog-pg-statistic.html
+@@ -44,6 +48,8 @@
+ catalog-pg-type.html
+ catalog-pg-user-mapping.html
+ views-overview.html
++view-pg-available-extensions.html
++view-pg-available-extension-versions.html
+ view-pg-cursors.html
+ view-pg-group.html
+ view-pg-indexes.html
+@@ -52,6 +58,7 @@
+ view-pg-prepared-xacts.html
+ view-pg-roles.html
+ view-pg-rules.html
++view-pg-seclabels.html
+ view-pg-settings.html
+ view-pg-shadow.html
+ view-pg-stats.html

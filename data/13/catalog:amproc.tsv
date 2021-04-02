@@ -1,0 +1,7 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+amprocfamily	oid	pg_amproc.[object Object]	The operator family this entry is for
+amproclefttype	oid	pg_amproc.[object Object]	Left-hand input data type of associated operator
+amprocrighttype	oid	pg_amproc.[object Object]	Right-hand input data type of associated operator
+amprocnum	int2		Support function number
+amproc	regproc	pg_amproc.[object Object]	OID of the function

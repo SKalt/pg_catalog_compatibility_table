@@ -1,0 +1,3 @@
+Name	Type	References	Description
+prpubid	oid	pg_publication.oid	Reference to publication
+prrelid	oid	pg_class.oid	Reference to relation

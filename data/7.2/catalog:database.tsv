@@ -1,0 +1,10 @@
+Name	Type	References	Description
+datname	name	 	Database name
+datdba	int4	pg_shadow.usesysid	Owner of the database, initially who created it
+encoding	int4	 	Character/multibyte encoding for this database
+datistemplate	bool	 	If true then this database can be used in the\n "TEMPLATE" clause of CREATE DATABASE to create the new database as a clone of this one.
+datallowconn	bool	 	If false then no one can connect to this database.\n This is used to protect the template0 database from being altered.
+datlastsysoid	oid	 	Last system OID in the database; useful particularly\n to pg_dump
+datvacuumxid	xid	 	All tuples inserted or deleted by transaction IDs\n before this one have been marked as known committed or known aborted in this database. This is used to determine when commit-log space can be recycled.
+datfrozenxid	xid	 	All tuples inserted by transaction IDs before this\n one have been relabeled with a permanent ("frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wraparound problems.
+datpath	text	 	If the database is stored at an alternative location\n then this records the location. It's either an environment variable name or an absolute path, depending how it was entered.

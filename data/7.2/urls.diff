@@ -1,0 +1,16 @@
+--- ./data/7.1/urls.cleaned.txt	2021-01-22 21:35:57.939274285 -0500
++++ ./data/7.2/urls.cleaned.txt	2021-01-22 21:36:16.350020017 -0500
+@@ -9,8 +9,13 @@
+ catalog-pg-index.html
+ catalog-pg-inherits.html
+ catalog-pg-language.html
++catalog-pg-largeobject.html
++catalog-pg-listener.html
+ catalog-pg-operator.html
+ catalog-pg-proc.html
+ catalog-pg-relcheck.html
++catalog-pg-rewrite.html
+ catalog-pg-shadow.html
++catalog-pg-statistic.html
++catalog-pg-trigger.html
+ catalog-pg-type.html

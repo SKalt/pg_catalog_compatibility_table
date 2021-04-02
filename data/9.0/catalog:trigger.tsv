@@ -1,0 +1,16 @@
+Name	Type	References	Description
+tgrelid	oid	pg_class.oid	The table this trigger is on
+tgname	name	 	Trigger name (must be unique among triggers of same\n table)
+tgfoid	oid	pg_proc.oid	The function to be called
+tgtype	int2	 	Bit mask identifying trigger conditions
+tgenabled	char	 	Controls in which \n session_replication_role modes the trigger fires. O = trigger fires in "origin" and "local" modes, D = trigger is disabled, R = trigger fires in "replica" mode, A = trigger fires always.
+tgisinternal	bool	 	True if trigger is internally generated (usually, to\n enforce the constraint identified by tgconstraint)
+tgconstrrelid	oid	pg_class.oid	The table referenced by a referential integrity\n constraint
+tgconstrindid	oid	pg_class.oid	The index supporting a unique, primary key, or\n referential integrity constraint
+tgconstraint	oid	pg_constraint.oid	The pg_constraint entry\n associated with the trigger, if any
+tgdeferrable	bool	 	True if constraint trigger is deferrable
+tginitdeferred	bool	 	True if constraint trigger is initially deferred
+tgnargs	int2	 	Number of argument strings passed to trigger\n function
+tgattr	int2vector	pg_attribute.attnum	Column numbers, if trigger is column-specific;\n otherwise an empty array
+tgargs	bytea	 	Argument strings to pass to trigger, each\n NULL-terminated
+tgqual	text	 	Expression tree (in nodeToString() representation) for the\n trigger's WHEN condition, or null if none

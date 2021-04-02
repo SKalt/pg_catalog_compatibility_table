@@ -1,0 +1,16 @@
+Name	Type	References	Description
+conname	name	 	Constraint name (not necessarily unique!)
+connamespace	oid	pg_namespace.oid	The OID of the namespace that contains this\n constraint
+contype	char	 	c = check constraint,\n f = foreign key constraint, p = primary key constraint, u = unique constraint
+condeferrable	bool	 	Is the constraint deferrable?
+condeferred	bool	 	Is the constraint deferred by default?
+conrelid	oid	pg_class.oid	The table this constraint is on; 0 if not a table\n constraint
+contypid	oid	pg_type.oid	The domain this constraint is on; 0 if not a domain\n constraint
+confrelid	oid	pg_class.oid	If a foreign key, the referenced table; else 0
+confupdtype	char	 	Foreign key update action code
+confdeltype	char	 	Foreign key deletion action code
+confmatchtype	char	 	Foreign key match type
+conkey	int2[]	pg_attribute.attnum	If a table constraint, list of columns which the\n constraint constrains
+confkey	int2[]	pg_attribute.attnum	If a foreign key, list of the referenced columns
+conbin	text	 	If a check constraint, an internal representation of\n the expression
+consrc	text	 	If a check constraint, a human-readable\n representation of the expression
