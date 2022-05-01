@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+nspname	name		Name of the namespace
+nspowner	oid	pg_namespace.oid	Owner of the namespace
+nspacl	aclitem[]		Access privileges; see Section 5.7 for details

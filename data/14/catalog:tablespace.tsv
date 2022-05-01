@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+spcname	name		Tablespace name
+spcowner	oid	pg_tablespace.oid	Owner of the tablespace, usually the user who created it
+spcacl	aclitem[]		Access privileges; see Section 5.7 for details
+spcoptions	text[]		"Tablespace-level options, as ""keyword=value"" strings"

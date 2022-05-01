@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+adrelid	oid	pg_attrdef.oid	The table this column belongs to
+adnum	int2	pg_attrdef.attnum	The number of the column
+adbin	pg_node_tree		The column default value, in nodeToString() representation. Use pg_get_expr(adbin, adrelid) to convert it to an SQL expression.

@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		Row identifier
+prsname	name		Text search parser name
+prsnamespace	oid	pg_ts_parser.oid	The OID of the namespace that contains this parser
+prsstart	regproc	pg_ts_parser.oid	OID of the parser's startup function
+prstoken	regproc	pg_ts_parser.oid	OID of the parser's next-token function
+prsend	regproc	pg_ts_parser.oid	OID of the parser's shutdown function
+prsheadline	regproc	pg_ts_parser.oid	OID of the parser's headline function (zero if none)
+prslextype	regproc	pg_ts_parser.oid	OID of the parser's lextype function
