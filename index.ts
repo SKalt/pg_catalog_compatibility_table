@@ -179,10 +179,10 @@ const thirteenTableToCsv = ($: CheerioAPI): string => {
 
 /** generate a tsv name from a page name */
 const tsvName = (s: string): string => {
-  let match = /^(catalog|view)-pg-([\w-_]+).html$/i.exec(s);
+  let match = /^(catalog|view)-([\w-_]+).html$/i.exec(s);
   if (!match) throw new Error(`unable to parse '${s}'`);
   let [, cv, name] = match;
-  return `${cv}:${name.replace("-", "_")}.tsv`;
+  return `${cv}:${name.replace(/[-_]+/g, "_")}.tsv`;
 };
 
 /** scrape all catalog docs for a given postgres version */
