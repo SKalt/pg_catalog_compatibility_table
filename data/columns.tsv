@@ -1814,4 +1814,8 @@ views	viewname	name	pg_class.relname	Name of view	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.
 views	viewname	name	pg_views.relname	Name of view	13,14
 views	viewowner	name	pg_authid.rolname	Name of view's owner	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 views	viewowner	name	pg_shadow.usename	name of view's owner	7.4,8.0
+<<<<<<< HEAD
 views	viewowner	name	pg_views.rolname	Name of view's owner	13,14
+=======
+views	viewowner	name	pg_views.rolname	Name of view's owner	13
+>>>>>>> 9d5b8965eefed13e36987bfdb499a074f0168b79
