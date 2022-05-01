@@ -1,4 +1,5 @@
 relation	column	type	references	description	version
+aggregate					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 aggregate	aggbasetype	oid	pg_type.oid	The input datatype for this aggregate function	7.2
 aggregate	aggbasetype	oid	pg_type.oid	The type on which this function operates when invoked from SQL	7.1
 aggregate	aggcombinefn	regproc	pg_aggregate.oid	Combine function (zero if none)	13
@@ -47,6 +48,7 @@ aggregate	aggtransspace	int4		Approximate average size (in bytes) of the transit
 aggregate	aggtranstype	oid	pg_aggregate.oid	Data type of the aggregate function's internal transition (state) data	13
 aggregate	aggtranstype	oid	pg_type.oid	Data type of the aggregate function's internal transition (state) data	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 aggregate	aggtranstype	oid	pg_type.oid	The type of the aggregate function's internal transition (state) data	7.1,7.2,7.3,7.4,8.0
+am					14,14,14,14
 am	ambeginscan	regproc	pg_proc.oid	"Prepare for index scan" function	9.1,9.2,9.3,9.4,9.5
 am	ambeginscan	regproc	pg_proc.oid	"Start new scan" function	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
 am	ambuild	regproc	pg_proc.oid	"Build new index" function	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
@@ -101,6 +103,7 @@ am	amtype	char		t = table (including materialized views), i = index	12,13
 am	amvacuumcleanup	regproc	pg_proc.oid	Post-VACUUM cleanup function	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	oid	oid		Row identifier	12,13
 am	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+amop					14,14,14,14,14,14,14,14,14
 amop	amopclaid	oid	pg_opclass.oid	the index opclass this entry is for	7.3
 amop	amopclaid	oid	pg_opclass.oid	The index operator class this entry is for	7.4,8.0,8.1,8.2
 amop	amopfamily	oid	pg_amop.oid	The operator family this entry is for	13
@@ -123,6 +126,7 @@ amop	amopstrategy	int2		Operator strategy number	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
 amop	amopsubtype	oid	pg_type.oid	Subtype to distinguish multiple entries for one strategy; zero for default	8.0,8.1,8.2
 amop	oid	oid		Row identifier	12,13
 amop	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+amproc					14,14,14,14,14,14
 amproc	amopclaid	oid	pg_opclass.oid	the index opclass this entry is for	7.3
 amproc	amopclaid	oid	pg_opclass.oid	The index operator class this entry is for	7.4,8.0,8.1,8.2
 amproc	amproc	regproc	pg_amproc.oid	OID of the function	13
@@ -141,6 +145,7 @@ amproc	amprocrighttype	oid	pg_type.oid	Right-hand input data type of associated 
 amproc	amprocsubtype	oid	pg_type.oid	Subtype, if cross-type routine, else zero	8.0,8.1,8.2
 amproc	oid	oid		Row identifier	12,13
 amproc	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+attrdef					14,14,14,14
 attrdef	adbin	pg_node_tree		The column default value, in nodeToString() representation. Use pg_get_expr(adbin, adrelid) to convert it to an SQL expression	12,13
 attrdef	adbin	pg_node_tree		The internal representation of the column default value	9.1,9.2,9.3,9.4,9.5,9.6,10,11
 attrdef	adbin	text		An internal representation of the column default value	7.1,7.2,7.3
@@ -153,6 +158,7 @@ attrdef	adrelid	oid	pg_class.oid	The table this column belongs to	7.1,7.2,7.3,7.
 attrdef	adsrc	text		A human-readable representation of the default value	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 attrdef	oid	oid		Row identifier	12,13
 attrdef	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+attribute					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 attribute	attacl	aclitem[]		Column-level access privileges, if any have been granted specifically on this column	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 attribute	attalign	char		A copy of pg_type.typalign of this column's type	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 attribute	attbyval	bool		A copy of pg_type.typbyval of this column's type	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -207,6 +213,7 @@ attribute	atttypid	oid	pg_type.oid	The data type of this column	7.1,7.2,7.3,7.4,
 attribute	atttypmod	int4		atttypmod records type-specific data supplied at table creation time (for example, the maximum length of a varchar column). It is passed to type-specific input and output functions as the third argument. The value will generally be -1 for types that do not need typmod	7.1,7.2
 attribute	atttypmod	int4		atttypmod records type-specific data supplied at table creation time (for example, the maximum length of a varchar column). It is passed to type-specific input functions and length coercion functions. The value will generally be -1 for types that do not need atttypmod	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 attribute	atttypmod	int4		atttypmod records type-specific data supplied at table creation time (for example, the maximum length of a varchar column). It is passed to type-specific input functions and length coercion functions. The value will generally be -1 for types that do not need typmod	7.3
+auth_members					14,14,14,14
 auth_members	admin_option	bool		True if member can grant membership in roleid to others	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 auth_members	admin_option	bool		True if member may grant membership in roleid to others	8.1,8.2
 auth_members	grantor	oid	pg_auth_members.oid	ID of the role that granted this membership	13
@@ -215,6 +222,7 @@ auth_members	member	oid	pg_auth_members.oid	ID of a role that is a member of rol
 auth_members	member	oid	pg_authid.oid	ID of a role that is a member of roleid	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 auth_members	roleid	oid	pg_auth_members.oid	ID of a role that has a member	13
 auth_members	roleid	oid	pg_authid.oid	ID of a role that has a member	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+authid					14,14,14,14,14,14,14,14,14,14,14,14
 authid	oid	oid		Row identifier	12,13
 authid	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 authid	rolbypassrls	bool		Role bypasses every row level security policy, see Section 5.7 for more information	9.5,9.6,10,11
@@ -252,6 +260,7 @@ autovacuum	vac_cost_delay	integer		Custom vacuum_cost_delay parameter	8.1,8.2,8.
 autovacuum	vac_cost_limit	integer		Custom vacuum_cost_limit parameter	8.1,8.2,8.3
 autovacuum	vac_scale_factor	float4		Multiplier for reltuples to add to vac_base_thresh	8.1,8.2,8.3
 autovacuum	vacrelid	oid	pg_class.oid	The table this entry is for	8.1,8.2,8.3
+available_extension-versions					14,14,14,14,14,14,14,14,14
 available_extension-versions	comment	text		Comment string from the extension's control file	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 available_extension-versions	installed	bool		True if this version of this extension is currently installed	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 available_extension-versions	name	name		Extension name	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -262,10 +271,13 @@ available_extension-versions	superuser	bool		True if only superusers are allowed
 available_extension-versions	superuser	bool		True if only superusers are allowed to install this extension (but see trusted)	13
 available_extension-versions	trusted	bool		True if the extension can be installed by non-superusers with appropriate privileges	13
 available_extension-versions	version	text		Version name	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+available_extensions					14,14,14,14
 available_extensions	comment	text		Comment string from the extension's control file	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 available_extensions	default_version	text		Name of default version, or NULL if none is specified	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 available_extensions	installed_version	text		Currently installed version of the extension, or NULL if not installed	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 available_extensions	name	name		Extension name	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+backend_memory-contexts					14,14,14,14,14,14,14,14,14
+cast					14,14,14,14,14,14
 cast	castcontext	char		Indicates what contexts the cast can be invoked in. e means only as an explicit cast (using CAST or :: syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 cast	castcontext	char		Indicates what contexts the cast may be invoked in. e means only as an explicit cast (using CAST or :: syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases	8.0,8.1,8.2
 cast	castcontext	char		Indicates what contexts the cast may be invoked in. e means only as an explicit cast (using CAST, ::, or function-call syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases	7.3,7.4
@@ -280,6 +292,7 @@ cast	casttarget	oid	pg_cast.oid	OID of the target data type	13
 cast	casttarget	oid	pg_type.oid	OID of the target data type	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 cast	oid	oid		Row identifier	12,13
 cast	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+class					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 class	oid	oid		Row identifier	12,13
 class	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 class	relacl	aclitem[]		Access permissions. See the descriptions of GRANT and REVOKE for details	7.1,7.2,7.3
@@ -374,6 +387,7 @@ class	reltype	oid	pg_type.oid	The OID of the data type that corresponds to this 
 class	reltype	oid	pg_type.oid	The OID of the data type that corresponds to this table, if any (zero for indexes, which have no pg_type entry)	7.2,7.3,7.4
 class	relukeys	int2		unused (Not the number of unique keys or something.)	7.1
 class	relukeys	int2		Unused (not the number of unique keys)	7.2,7.3,7.4,8.0,8.1,8.2,8.3
+collation					14,14,14,14,14,14,14,14,14,14
 collation	collcollate	name		LC_COLLATE for this collation object	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 collation	collctype	name		LC_CTYPE for this collation object	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 collation	collencoding	int4		Encoding in which the collation is applicable, or -1 if it works for any encoding	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -387,8 +401,10 @@ collation	collprovider	char		Provider of the collation: d = database default, c 
 collation	collversion	text		Provider-specific version of the collation. This is recorded when the collation is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption	10,11,12,13
 collation	oid	oid		Row identifier	12,13
 collation	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+config					14,14
 config	name	text		The parameter name	9.6,10,11,12,13
 config	setting	text		The parameter value	9.6,10,11,12,13
+constraint					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 constraint	conbin	pg_node_tree		If a check constraint, an internal representation of the expression	9.1,9.2,9.3,9.4,9.5,9.6,10,11
 constraint	conbin	pg_node_tree		If a check constraint, an internal representation of the expression. (It's recommended to use pg_get_constraintdef() to extract the definition of a check constraint.)	12,13
 constraint	conbin	text		If a check constraint, an internal representation of the expression	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
@@ -442,6 +458,7 @@ constraint	convalidated	bool		Has the constraint been validated? Currently, can 
 constraint	convalidated	bool		Has the constraint been validated? Currently, can only be false for foreign keys and CHECK constraints	9.2,9.3,9.4,9.5,9.6,10,11,12,13
 constraint	oid	oid		Row identifier	12,13
 constraint	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+conversion					14,14,14,14,14,14,14,14
 conversion	condefault	bool		True if this is the default conversion	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 conversion	condefault	boolean		true if this is the default conversion	7.3
 conversion	conforencoding	int4		Source encoding ID	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -460,6 +477,7 @@ conversion	contoencoding	int4		Destination encoding ID	7.4,8.0,8.1,8.2,8.3,8.4,9
 conversion	contoencoding	int4		Destination(to) encoding ID	7.3
 conversion	oid	oid		Row identifier	12,13
 conversion	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+cursors					14,14,14,14,14,14
 cursors	creation_time	timestamptz		The time at which the cursor was declared	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 cursors	is_binary	bool		true if the cursor was declared BINARY; false otherwise	13
 cursors	is_binary	boolean		true if the cursor was declared BINARY; false otherwise	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -469,6 +487,7 @@ cursors	is_scrollable	bool		true if the cursor is scrollable (that is, it allows
 cursors	is_scrollable	boolean		true if the cursor is scrollable (that is, it allows rows to be retrieved in a nonsequential manner); false otherwise	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 cursors	name	text		The name of the cursor	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 cursors	statement	text		The verbatim query string submitted to declare this cursor	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+database					14,14,14,14,14,14,14,14,14,14,14,14,14,14
 database	datacl	aclitem[]		Access permissions	7.3
 database	datacl	aclitem[]		Access privileges	7.4
 database	datacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -504,11 +523,13 @@ database	encoding	int4		Character encoding for this database (pg_encoding_to_cha
 database	encoding	int4		Character/multibyte encoding for this database	7.1,7.2,7.3
 database	oid	oid		Row identifier	12,13
 database	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+db_role-setting					14,14,14
 db_role-setting	setconfig	text[]		Defaults for run-time configuration variables	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 db_role-setting	setdatabase	oid	pg_database.oid	The OID of the database the setting is applicable to, or zero if not database-specific	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 db_role-setting	setdatabase	oid	pg_db_role_setting.oid	The OID of the database the setting is applicable to, or zero if not database-specific	13
 db_role-setting	setrole	oid	pg_authid.oid	The OID of the role the setting is applicable to, or zero if not role-specific	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 db_role-setting	setrole	oid	pg_db_role_setting.oid	The OID of the role the setting is applicable to, or zero if not role-specific	13
+default_acl					14,14,14,14,14
 default_acl	defaclacl	aclitem[]		Access privileges that this type of object should have on creation	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 default_acl	defaclnamespace	oid	pg_default_acl.oid	The OID of the namespace associated with this entry, or 0 if none	13
 default_acl	defaclnamespace	oid	pg_namespace.oid	The OID of the namespace associated with this entry, or 0 if none	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -519,6 +540,7 @@ default_acl	defaclrole	oid	pg_authid.oid	The OID of the role associated with thi
 default_acl	defaclrole	oid	pg_default_acl.oid	The OID of the role associated with this entry	13
 default_acl	oid	oid		Row identifier	12,13
 default_acl	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+depend					14,14,14,14,14,14,14
 depend	classid	oid	pg_class.oid	The OID of the system catalog the dependent object is in	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 depend	classid	oid	pg_depend.oid	The OID of the system catalog the dependent object is in	13
 depend	deptype	char		A code defining the specific semantics of this dependency relationship	7.3
@@ -535,6 +557,7 @@ depend	refobjid	oid	any oid attribute	The oid of the specific referenced object	
 depend	refobjid	oid	any OID column	The OID of the specific referenced object	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 depend	refobjsubid	int4		For a table attribute, this is the attribute's column number (the refobjid and refclassid refer to the table itself). For all other object types, this field is presently zero	7.3
 depend	refobjsubid	int4		For a table column, this is the column number (the refobjid and refclassid refer to the table itself). For all other object types, this column is zero	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+description					14,14,14,14
 description	classoid	oid	pg_class.oid	The OID of the system catalog this object appears in	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 description	classoid	oid	pg_description.oid	The OID of the system catalog this object appears in	13
 description	description	text		Arbitrary text that serves as the description of this object	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -543,12 +566,14 @@ description	objoid	oid	any oid attribute	The oid of the object this description 
 description	objoid	oid	any OID column	The OID of the object this description pertains to	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 description	objsubid	int4		For a comment on a table attribute, this is the attribute's column number (the objoid and classoid refer to the table itself). For all other object types, this field is presently zero	7.2,7.3
 description	objsubid	int4		For a comment on a table column, this is the column number (the objoid and classoid refer to the table itself). For all other object types, this column is zero	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+enum					14,14,14,14
 enum	enumlabel	name		The textual label for this enum value	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 enum	enumsortorder	float4		The sort position of this enum value within its enum type	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 enum	enumtypid	oid	pg_enum.oid	The OID of the pg_type entry owning this enum value	13
 enum	enumtypid	oid	pg_type.oid	The OID of the pg_type entry owning this enum value	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 enum	oid	oid		Row identifier	12,13
 enum	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+event_trigger					14,14,14,14,14,14,14
 event_trigger	evtenabled	char		Controls in which session_replication_role modes the event trigger fires. O = trigger fires in "origin" and "local" modes, D = trigger is disabled, R = trigger fires in "replica" mode, A = trigger fires always	9.3,9.4,9.5,9.6
 event_trigger	evtenabled	char		Controls in which session_replication_role modes the event trigger fires. O = trigger fires in "origin” and “local” modes, D = trigger is disabled, R = trigger fires in “replica” mode, A = trigger fires always	10,11,12,13
 event_trigger	evtevent	name		Identifies the event for which this trigger fires	9.3,9.4,9.5,9.6,10,11,12,13
@@ -559,6 +584,7 @@ event_trigger	evtowner	oid	pg_authid.oid	Owner of the event trigger	9.3,9.4,9.5,
 event_trigger	evtowner	oid	pg_event_trigger.oid	Owner of the event trigger	13
 event_trigger	evttags	text[]		Command tags for which this trigger will fire. If NULL, the firing of this trigger is not restricted on the basis of the command tag	9.3,9.4,9.5,9.6,10,11,12,13
 event_trigger	oid	oid		Row identifier	13
+extension					14,14,14,14,14,14,14,14
 extension	extcondition	text[]		Array of WHERE-clause filter conditions for the extension's configuration table(s), or NULL if none	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 extension	extconfig	oid[]	pg_class.oid	Array of regclass OIDs for the extension's configuration table(s), or NULL if none	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 extension	extconfig	oid[]	pg_extension.oid	Array of regclass OIDs for the extension's configuration table(s), or NULL if none	13
@@ -571,6 +597,7 @@ extension	extrelocatable	bool		True if extension can be relocated to another sch
 extension	extversion	text		Version name for the extension	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 extension	oid	oid		Row identifier	12,13
 extension	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+file_settings					14,14,14,14,14,14,14
 file_settings	applied	bool		True if the value can be applied successfully	13
 file_settings	applied	boolean		True if the value can be applied successfully	9.5,9.6,10,11,12
 file_settings	error	text		If not null, an error message indicating why this entry could not be applied	9.5,9.6,10,11,12,13
@@ -581,6 +608,7 @@ file_settings	setting	text		Value to be assigned to the parameter	9.5,9.6,10,11,
 file_settings	sourcefile	text		Full path name of the configuration file	9.5,9.6,10,11,12,13
 file_settings	sourceline	int4		Line number within the configuration file where the entry appears	13
 file_settings	sourceline	integer		Line number within the configuration file where the entry appears	9.5,9.6,10,11,12
+foreign_data-wrapper					14,14,14,14,14,14,14
 foreign_data-wrapper	fdwacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 foreign_data-wrapper	fdwacl	aclitem[]		Access privileges; see Section 5.7 for details	12,13
 foreign_data-wrapper	fdwhandler	oid	pg_foreign_data_wrapper.oid	References a handler function that is responsible for supplying execution routines for the foreign-data wrapper. Zero if no handler is provided	13
@@ -595,6 +623,7 @@ foreign_data-wrapper	fdwvalidator	oid	pg_proc.oid	References a validator functio
 foreign_data-wrapper	fdwvalidator	oid	pg_proc.oid	References a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. Zero if no validator is provided	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_data-wrapper	oid	oid		Row identifier	12,13
 foreign_data-wrapper	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+foreign_server					14,14,14,14,14,14,14,14
 foreign_server	oid	oid		Row identifier	12,13
 foreign_server	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 foreign_server	srvacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -609,12 +638,14 @@ foreign_server	srvowner	oid	pg_authid.oid	Owner of the foreign server	8.4,9.0,9.
 foreign_server	srvowner	oid	pg_foreign_server.oid	Owner of the foreign server	13
 foreign_server	srvtype	text		Type of the server (optional)	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 foreign_server	srvversion	text		Version of the server (optional)	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+foreign_table					14,14,14
 foreign_table	ftoptions	text[]		Foreign table options, as "keyword=value" strings	9.1,9.2,9.3,9.4,9.5,9.6
 foreign_table	ftoptions	text[]		Foreign table options, as "keyword=value” strings	10,11,12,13
 foreign_table	ftrelid	oid	pg_class.oid	OID of the pg_class entry for this foreign table	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_table	ftrelid	oid	pg_foreign_table.oid	OID of the pg_class entry for this foreign table	13
 foreign_table	ftserver	oid	pg_foreign_server.oid	OID of the foreign server for this foreign table	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_table	ftserver	oid	pg_foreign_table.oid	OID of the foreign server for this foreign table	13
+group					14,14,14
 group	grolist	int4[]	pg_shadow.usesysid	An array containing the IDs of the users in this group	7.1,7.2,7.3,7.4,8.0
 group	grolist	oid[]	pg_authid.oid	An array containing the IDs of the roles in this group	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 group	grolist	oid[]	pg_group.oid	An array containing the IDs of the roles in this group	13
@@ -624,6 +655,7 @@ group	groname	name	pg_group.rolname	Name of the group	13
 group	grosysid	int4		An arbitrary number to identify this group	7.1,7.2,7.3,7.4,8.0
 group	grosysid	oid	pg_authid.oid	ID of this group	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 group	grosysid	oid	pg_group.oid	ID of this group	13
+hba_file-rules					14,14,14,14,14,14,14,14,14
 hba_file-rules	address	text		Host name or IP address, or one of all, samehost, or samenet, or null for local connections	10,11,12,13
 hba_file-rules	auth_method	text		Authentication method	10,11,12,13
 hba_file-rules	database	text[]		List of database name(s) to which this rule applies	10,11,12,13
@@ -634,6 +666,7 @@ hba_file-rules	netmask	text		IP address mask, or null if not applicable	10,11,12
 hba_file-rules	options	text[]		Options specified for authentication method, if any	10,11,12,13
 hba_file-rules	type	text		Type of connection	10,11,12,13
 hba_file-rules	user_name	text[]		List of user and group name(s) to which this rule applies	10,11,12,13
+index					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 index	indcheckxmin	bool		If true, queries must not use the index until the xmin of this pg_index row is below their TransactionXmin event horizon, because the table may contain broken HOT chains with incompatible rows that they can see	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 index	indclass	oidvector	pg_index.oid	For each column in the index key (indnkeyatts values), this contains the OID of the operator class to use. See pg_opclass for details	13
 index	indclass	oidvector	pg_opclass.oid	For each column in the index key (indnkeyatts values), this contains the OID of the operator class to use. See pg_opclass for details	11,12
@@ -688,6 +721,7 @@ index	indproc	regproc	pg_proc.oid	The registered procedure if this is a function
 index	indreference	oid		unused	7.1,7.2,7.3
 index	indrelid	oid	pg_class.oid	The OID of the pg_class entry for the table this index is for	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 index	indrelid	oid	pg_index.oid	The OID of the pg_class entry for the table this index is for	13
+indexes					14,14,14,14,14
 indexes	indexdef	text		Index definition (a reconstructed CREATE INDEX command)	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 indexes	indexdef	text		index definition (a reconstructed creation command)	7.4,8.0,8.1
 indexes	indexname	name	pg_class.relname	Name of index	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -698,6 +732,7 @@ indexes	tablename	name	pg_class.relname	Name of table the index is for	7.4,8.0,8
 indexes	tablename	name	pg_indexes.relname	Name of table the index is for	13
 indexes	tablespace	name	pg_indexes.spcname	Name of tablespace containing index (null if default for database)	13
 indexes	tablespace	name	pg_tablespace.spcname	Name of tablespace containing index (null if default for database)	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+inherits					14,14,14,14
 inherits	inhparent	oid	pg_class.oid	The OID of the parent table	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10
 inherits	inhparent	oid	pg_class.oid	The OID of the parent table or index	11,12
 inherits	inhparent	oid	pg_class.oid	This is the reference to the parent table, from which the table referenced by inhrelid inherited from	7.1
@@ -713,6 +748,7 @@ inherits	inhseqno	int4		If there is more than one direct parent for a child tabl
 inherits	inhseqno	int4		If there is more than one parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. The count starts at 1	7.3,7.4
 inherits	inhseqno	int4		If there is more than one parent for a subtable (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. The count starts at 1	7.2
 inherits	inhseqno	int4		If there is more than one subtable/parent pair (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. The count starts at 1	7.1
+init_privs					14,14,14,14,14
 init_privs	classoid	oid	pg_class.oid	The OID of the system catalog the object is in	9.6,10,11,12
 init_privs	classoid	oid	pg_init_privs.oid	The OID of the system catalog the object is in	13
 init_privs	initprivs	aclitem[]		The initial access privileges; see GRANT and REVOKE for details	9.6,10,11
@@ -721,6 +757,7 @@ init_privs	objoid	oid		The OID of the specific object	13
 init_privs	objoid	oid	any OID column	The OID of the specific object	9.6,10,11,12
 init_privs	objsubid	int4		For a table column, this is the column number (the objoid and classoid refer to the table itself). For all other object types, this column is zero	9.6,10,11,12,13
 init_privs	privtype	char		A code defining the type of initial privilege of this object; see text	9.6,10,11,12,13
+language					14,14,14,14,14,14,14,14,14
 language	lanacl	aclitem[]		Access permissions	7.3
 language	lanacl	aclitem[]		Access privileges	7.4
 language	lanacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -750,6 +787,7 @@ language	lanvalidator	oid	pg_proc.oid	This references a language validator funct
 language	lanvalidator	oid	pg_proc.oid	This references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. Zero if no validator is provided	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 language	oid	oid		Row identifier	12,13
 language	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+largeobject					14,14,14
 largeobject	data	bytea		Actual data stored in the large object. This will never be more than LOBLKSIZE bytes and may be less	7.4,8.0,8.1,8.2
 largeobject	data	bytea		Actual data stored in the large object. This will never be more than LOBLKSIZE bytes and might be less	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 largeobject	data	bytea		Actual data stored in the large object. This will never be more than LOBLKSIZE bytes, and may be less	7.2,7.3
@@ -757,6 +795,7 @@ largeobject	loid	oid		Identifier of the large object that includes this page	7.2
 largeobject	loid	oid	pg_largeobject.oid	Identifier of the large object that includes this page	13
 largeobject	loid	oid	pg_largeobject_metadata.oid	Identifier of the large object that includes this page	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 largeobject	pageno	int4		Page number of this page within its large object (counting from zero)	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+largeobject_metadata					14,14,14
 largeobject_metadata	lomacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 largeobject_metadata	lomacl	aclitem[]		Access privileges; see Section 5.7 for details	12,13
 largeobject_metadata	lomowner	oid	pg_authid.oid	Owner of the large object	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -772,6 +811,7 @@ listener	notification	int4	Zero if no event is pending for this listener. If an 
 listener	relname	name		Notify condition name. (The name need not match any actual relation in the database; the name relname is historical.)	7.4,8.0,8.1,8.4
 listener	relname	name		Notify condition name. (The name need not match any actual relation in the database; the term "relname" is historical.)	7.2,7.3
 listener	relname	name	Notify condition name. (The name need not match any actual relation in the database; the name relname is historical.)	 	8.2,8.3
+locks					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 locks	classid	oid	pg_class.oid	OID of the system catalog containing the lock target, or null if the target is not a general database object	9.2,9.3,9.4,9.5,9.6,10,11,12
 locks	classid	oid	pg_class.oid	OID of the system catalog containing the object, or null if the object is not a general database object	8.1,8.2,8.3,8.4,9.0,9.1
 locks	classid	oid	pg_locks.oid	OID of the system catalog containing the lock target, or null if the target is not a general database object	13
@@ -818,6 +858,7 @@ locks	tuple	smallint		Tuple number within the page, or null if the object is not
 locks	virtualtransaction	text		Virtual ID of the transaction that is holding or awaiting this lock	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 locks	virtualxid	text		Virtual ID of a transaction, or null if the object is not a virtual transaction ID	8.3,8.4,9.0,9.1
 locks	virtualxid	text		Virtual ID of the transaction targeted by the lock, or null if the target is not a virtual transaction ID	9.2,9.3,9.4,9.5,9.6,10,11,12,13
+matviews					14,14,14,14,14,14,14
 matviews	definition	text		Materialized view definition (a reconstructed SELECT query)	9.3,9.4,9.5,9.6,10,11,12,13
 matviews	hasindexes	bool		True if materialized view has (or recently had) any indexes	13
 matviews	hasindexes	boolean		True if materialized view has (or recently had) any indexes	9.3,9.4,9.5,9.6,10,11,12
@@ -831,6 +872,7 @@ matviews	schemaname	name	pg_matviews.nspname	Name of schema containing materiali
 matviews	schemaname	name	pg_namespace.nspname	Name of schema containing materialized view	9.3,9.4,9.5,9.6,10,11,12
 matviews	tablespace	name	pg_matviews.spcname	Name of tablespace containing materialized view (null if default for database)	13
 matviews	tablespace	name	pg_tablespace.spcname	Name of tablespace containing materialized view (null if default for database)	9.3,9.4,9.5,9.6,10,11,12
+namespace					14,14,14,14
 namespace	nspacl	aclitem[]		Access permissions	7.3
 namespace	nspacl	aclitem[]		Access privileges	7.4
 namespace	nspacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -842,6 +884,7 @@ namespace	nspowner	oid	pg_authid.oid	Owner of the namespace	8.1,8.2,8.3,8.4,9.0,
 namespace	nspowner	oid	pg_namespace.oid	Owner of the namespace	13
 namespace	oid	oid		Row identifier	12,13
 namespace	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+opclass					14,14,14,14,14,14,14,14,14
 opclass	oid	oid		Row identifier	12,13
 opclass	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 opclass	opcamid	oid	pg_am.oid	index access method opclass is for	7.3
@@ -868,6 +911,7 @@ opclass	opcowner	int4	pg_shadow.usesysid	opclass owner	7.3
 opclass	opcowner	int4	pg_shadow.usesysid	Operator class owner	7.4,8.0
 opclass	opcowner	oid	pg_authid.oid	Owner of the operator class	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 opclass	opcowner	oid	pg_opclass.oid	Owner of the operator class	13
+operator					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 operator	oid	oid		Row identifier	12,13
 operator	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 operator	oprcanhash	bool		This operator supports hash joins	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -907,6 +951,7 @@ operator	oprright	oid	pg_operator.oid	Type of the right operand	13
 operator	oprright	oid	pg_type.oid	Type of the right operand	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 operator	oprrsortop	oid	pg_operator.oid	If this operator supports merge joins, the operator that sorts the type of the right-hand operand	7.1,7.2
 operator	oprrsortop	oid	pg_operator.oid	If this operator supports merge joins, the operator that sorts the type of the right-hand operand (R<R)	7.3,7.4,8.0,8.1,8.2
+opfamily					14,14,14,14,14
 opfamily	oid	oid		Row identifier	12,13
 opfamily	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 opfamily	opfmethod	oid	pg_am.oid	Index access method operator family is for	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -916,6 +961,7 @@ opfamily	opfnamespace	oid	pg_namespace.oid	Namespace of this operator family	8.3
 opfamily	opfnamespace	oid	pg_opfamily.oid	Namespace of this operator family	13
 opfamily	opfowner	oid	pg_authid.oid	Owner of the operator family	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 opfamily	opfowner	oid	pg_opfamily.oid	Owner of the operator family	13
+partitioned_table					14,14,14,14,14,14,14,14
 partitioned_table	partattrs	int2vector	pg_attribute.attnum	This is an array of partnatts values that indicate which table columns are part of the partition key. For example, a value of 1 3 would mean that the first and the third table columns make up the partition key. A zero in this array indicates that the corresponding partition key column is an expression, rather than a simple column reference	10,11,12
 partitioned_table	partattrs	int2vector	pg_partitioned_table.attnum	This is an array of partnatts values that indicate which table columns are part of the partition key. For example, a value of 1 3 would mean that the first and the third table columns make up the partition key. A zero in this array indicates that the corresponding partition key column is an expression, rather than a simple column reference	13
 partitioned_table	partclass	oidvector	pg_opclass.oid	For each column in the partition key, this contains the OID of the operator class to use. See pg_opclass for details	10,11,12
@@ -939,6 +985,7 @@ pltemplate	tmpllibrary	text		Path of shared library that implements language	8.1
 pltemplate	tmplname	name		Name of the language this template is for	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 pltemplate	tmpltrusted	boolean		True if language is considered trusted	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 pltemplate	tmplvalidator	text		Name of validator function, or null if none	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+policies					14,14,14,14,14,14,14,14
 policies	cmd	text		The command type to which the policy is applied	9.5,9.6,10,11,12,13
 policies	permissive	text		Is the policy permissive or restrictive?	13
 policies	policyname	name	pg_policies.polname	Name of policy	13
@@ -951,6 +998,7 @@ policies	schemaname	name	pg_policies.nspname	Name of schema containing table pol
 policies	tablename	name	pg_class.relname	Name of table policy is on	9.5,9.6,10,11,12
 policies	tablename	name	pg_policies.relname	Name of table policy is on	13
 policies	with_check	text		The expression added to the WITH CHECK qualifications for queries that attempt to add rows to this table	9.5,9.6,10,11,12,13
+policy					14,14,14,14,14,14,14,14
 policy	oid	oid		Row identifier	13
 policy	polcmd	char		The command type to which the policy is applied: r for SELECT, a for INSERT, w for UPDATE, d for DELETE, or * for all	9.5,9.6,10,11,12,13
 policy	polname	name		The name of the policy	9.5,9.6,10,11,12,13
@@ -962,6 +1010,7 @@ policy	polrelid	oid	pg_policy.oid	The table to which the policy applies	13
 policy	polroles	oid[]	pg_authid.oid	The roles to which the policy is applied	9.5,9.6,10,11,12
 policy	polroles	oid[]	pg_policy.oid	The roles to which the policy is applied	13
 policy	polwithcheck	pg_node_tree		The expression tree to be added to the WITH CHECK qualifications for queries that attempt to add rows to the table	9.5,9.6,10,11,12,13
+prepared_statements					14,14,14,14,14,14,14
 prepared_statements	from_sql	bool		true if the prepared statement was created via the PREPARE SQL command; false if the statement was prepared via the frontend/backend protocol	13
 prepared_statements	from_sql	boolean		true if the prepared statement was created via the PREPARE SQL command; false if the statement was prepared via the frontend/backend protocol	9.6,10,11,12
 prepared_statements	from_sql	boolean		true if the prepared statement was created via the PREPARE SQL statement; false if the statement was prepared via the frontend/backend protocol	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
@@ -969,6 +1018,7 @@ prepared_statements	name	text		The identifier of the prepared statement	8.2,8.3,
 prepared_statements	parameter_types	regtype[]		The expected parameter types for the prepared statement in the form of an array of regtype. The OID corresponding to an element of this array can be obtained by casting the regtype value to oid	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 prepared_statements	prepare_time	timestamptz		The time at which the prepared statement was created	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 prepared_statements	statement	text		The query string submitted by the client to create this prepared statement. For prepared statements created via SQL, this is the PREPARE statement submitted by the client. For prepared statements created via the frontend/backend protocol, this is the text of the prepared statement itself	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+prepared_xacts					14,14,14,14,14
 prepared_xacts	database	name	pg_database.datname	Name of the database in which the transaction was executed	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 prepared_xacts	database	name	pg_prepared_xacts.datname	Name of the database in which the transaction was executed	13
 prepared_xacts	gid	text		Global transaction identifier that was assigned to the transaction	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -977,6 +1027,7 @@ prepared_xacts	owner	name	pg_prepared_xacts.rolname	Name of the user that execut
 prepared_xacts	prepared	timestamp with time zone		Time at which the transaction was prepared for commit	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 prepared_xacts	prepared	timestamptz		Time at which the transaction was prepared for commit	13
 prepared_xacts	transaction	xid		Numeric transaction identifier of the prepared transaction	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+proc					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 proc	oid	oid		Row identifier	12,13
 proc	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 proc	proacl	aclitem[]		Access permissions	7.3
@@ -1056,6 +1107,7 @@ proc	provariadic	oid	pg_type.oid	Data type of the variadic array parameter's ele
 proc	provolatile	char		provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for "immutable" functions, which always deliver the same result for the same inputs. It is s for "stable" functions, whose results (for fixed inputs) do not change within a scan. It is v for "volatile" functions, whose results may change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)	7.3,7.4,8.0,8.1,8.2
 proc	provolatile	char		provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for "immutable" functions, which always deliver the same result for the same inputs. It is s for "stable" functions, whose results (for fixed inputs) do not change within a scan. It is v for "volatile" functions, whose results might change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6
 proc	provolatile	char		provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for "immutable” functions, which always deliver the same result for the same inputs. It is s for “stable” functions, whose results (for fixed inputs) do not change within a scan. It is v for “volatile” functions, whose results might change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)	10,11,12,13
+publication					14,14,14,14,14,14,14,14,14
 publication	oid	oid		Row identifier	12,13
 publication	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	10,11
 publication	puballtables	bool		If true, this publication automatically includes all tables in the database, including any that will be created in the future	10,11,12,13
@@ -1067,17 +1119,20 @@ publication	pubowner	oid	pg_publication.oid	Owner of the publication	13
 publication	pubtruncate	bool		If true, TRUNCATE operations are replicated for tables in the publication	11,12,13
 publication	pubupdate	bool		If true, UPDATE operations are replicated for tables in the publication	10,11,12,13
 publication	pubviaroot	bool		If true, operations on a leaf partition are replicated using the identity and schema of its topmost partitioned ancestor mentioned in the publication instead of its own	13
+publication_rel					14,14,14
 publication_rel	oid	oid		Row identifier	13
 publication_rel	prpubid	oid	pg_publication.oid	Reference to publication	10,11,12
 publication_rel	prpubid	oid	pg_publication_rel.oid	Reference to publication	13
 publication_rel	prrelid	oid	pg_class.oid	Reference to relation	10,11,12
 publication_rel	prrelid	oid	pg_publication_rel.oid	Reference to relation	13
+publication_tables					14,14,14
 publication_tables	pubname	name	pg_publication.pubname	Name of publication	10,11,12
 publication_tables	pubname	name	pg_publication_tables.pubname	Name of publication	13
 publication_tables	schemaname	name	pg_namespace.nspname	Name of schema containing table	10,11,12
 publication_tables	schemaname	name	pg_publication_tables.nspname	Name of schema containing table	13
 publication_tables	tablename	name	pg_class.relname	Name of table	10,11,12
 publication_tables	tablename	name	pg_publication_tables.relname	Name of table	13
+range					14,14,14,14,14,14,14
 range	rngcanonical	regproc	pg_proc.oid	OID of the function to convert a range value into canonical form, or 0 if none	9.2,9.3,9.4,9.5,9.6,10,11,12
 range	rngcanonical	regproc	pg_range.oid	OID of the function to convert a range value into canonical form, or 0 if none	13
 range	rngcollation	oid	pg_collation.oid	OID of the collation used for range comparisons, or 0 if none	9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1095,14 +1150,17 @@ relcheck	rcname	name		Constraint name	7.1,7.2
 relcheck	rcrelid	oid	pg_class.oid	The table this check constraint is on	7.1,7.2
 relcheck	rcsrc	text		A human-readable representation of the consraint expression	7.1
 relcheck	rcsrc	text		A human-readable representation of the constraint expression	7.2
+replication_origin					14,14
 replication_origin	roident	oid		A unique, cluster-wide identifier for the replication origin. Should never leave the system	9.5,9.6,10,11,12,13
 replication_origin	roname	text		The external, user defined, name of a replication origin	9.5,9.6,10,11,12,13
+replication_origin-status					14,14,14,14
 replication_origin-status	external_id	text	pg_replication_origin.roname	external node identifier	9.5,9.6,10,11,12
 replication_origin-status	external_id	text	pg_replication_origin_status.roname	external node identifier	13
 replication_origin-status	local_id	Oid	pg_replication_origin.roident	internal node identifier	9.5,9.6,10,11,12
 replication_origin-status	local_id	oid	pg_replication_origin_status.roident	internal node identifier	13
 replication_origin-status	local_lsn	pg_lsn		This node's LSN at which remote_lsn has been replicated. Used to flush commit records before persisting data to disk when using asynchronous commits	9.5,9.6,10,11,12,13
 replication_origin-status	remote_lsn	pg_lsn		The origin node's LSN up to which data has been replicated	9.5,9.6,10,11,12,13
+replication_slots					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 replication_slots	active	bool		True if this slot is currently actively being used	13
 replication_slots	active	boolean		True if this slot is currently actively being used	9.4,9.5,9.6,10,11,12
 replication_slots	active_pid	int4		The process ID of the session using this slot if the slot is currently actively being used. NULL if inactive	13
@@ -1125,6 +1183,7 @@ replication_slots	temporary	bool		True if this is a temporary replication slot. 
 replication_slots	temporary	boolean		True if this is a temporary replication slot. Temporary slots are not saved to disk and are automatically dropped on error or when the session has finished	10,11,12
 replication_slots	wal_status	text		Availability of WAL files claimed by this slot. Possible values are: The last two states are seen only when max_slot_wal_keep_size is non-negative. If restart_lsn is NULL, this field is null	13
 replication_slots	xmin	xid		The oldest transaction that this slot needs the database to retain. VACUUM cannot remove tuples deleted by any later transaction	9.4,9.5,9.6,10,11,12,13
+rewrite					14,14,14,14,14,14,14,14
 rewrite	ev_action	pg_node_tree		Query tree (in the form of a nodeToString() representation) for the rule's action	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 rewrite	ev_action	text		Query tree (in the form of a nodeToString representation) for the rule's action	7.2,7.3
 rewrite	ev_action	text		Query tree (in the form of a nodeToString() representation) for the rule's action	7.4,8.0,8.1,8.2,8.3,8.4,9.0
@@ -1143,6 +1202,7 @@ rewrite	is_instead	bool		True if the rule is an INSTEAD rule	7.2,7.3,7.4,8.0,8.1
 rewrite	oid	oid		Row identifier	12,13
 rewrite	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 rewrite	rulename	name		Rule name	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+roles					14,14,14,14,14,14,14,14,14,14,14,14,14
 roles	oid	oid	pg_authid.oid	ID of role	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 roles	oid	oid	pg_roles.oid	ID of role	13
 roles	rolbypassrls	bool		Role bypasses every row level security policy, see Section 5.7 for more information	9.5,9.6,10,11
@@ -1167,6 +1227,7 @@ roles	rolreplication	bool		Role is a replication role. A replication role can in
 roles	rolreplication	bool		Role is a replication role. That is, this role can initiate streaming replication (see Section 25.2.5) and set/unset the system backup mode using pg_start_backup and pg_stop_backup	9.1,9.2,9.3,9.4,9.5
 roles	rolsuper	bool		Role has superuser privileges	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 roles	rolvaliduntil	timestamptz		Password expiry time (only used for password authentication); null if no expiration	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+rules					14,14,14,14
 rules	definition	text		Rule definition (a reconstructed creation command)	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 rules	rulename	name	pg_rewrite.rulename	Name of rule	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 rules	rulename	name	pg_rules.rulename	Name of rule	13
@@ -1174,6 +1235,7 @@ rules	schemaname	name	pg_namespace.nspname	Name of schema containing table	7.4,8
 rules	schemaname	name	pg_rules.nspname	Name of schema containing table	13
 rules	tablename	name	pg_class.relname	Name of table the rule is for	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 rules	tablename	name	pg_rules.relname	Name of table the rule is for	13
+seclabel					14,14,14,14,14
 seclabel	classoid	oid	pg_class.oid	The OID of the system catalog this object appears in	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 seclabel	classoid	oid	pg_seclabel.oid	The OID of the system catalog this object appears in	13
 seclabel	label	text		The security label applied to this object	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -1181,6 +1243,7 @@ seclabel	objoid	oid		The OID of the object this security label pertains to	13
 seclabel	objoid	oid	any OID column	The OID of the object this security label pertains to	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 seclabel	objsubid	int4		For a security label on a table column, this is the column number (the objoid and classoid refer to the table itself). For all other object types, this column is zero	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 seclabel	provider	text		The label provider associated with this label	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+seclabels					14,14,14,14,14,14,14,14
 seclabels	classoid	oid	pg_class.oid	The OID of the system catalog this object appears in	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 seclabels	classoid	oid	pg_seclabels.oid	The OID of the system catalog this object appears in	13
 seclabels	label	text	pg_seclabel.label	The security label applied to this object	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1194,6 +1257,7 @@ seclabels	objsubid	int4		For a security label on a table column, this is the col
 seclabels	objtype	text		The type of object to which this label applies, as text	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 seclabels	provider	text	pg_seclabel.provider	The label provider associated with this label	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 seclabels	provider	text	pg_seclabels.provider	The label provider associated with this label	13
+sequence					14,14,14,14,14,14,14,14
 sequence	seqcache	int8		Cache size of the sequence	10,11,12,13
 sequence	seqcycle	bool		Whether the sequence cycles	10,11,12,13
 sequence	seqincrement	int8		Increment value of the sequence	10,11,12,13
@@ -1204,6 +1268,7 @@ sequence	seqrelid	oid	pg_sequence.oid	The OID of the pg_class entry for this seq
 sequence	seqstart	int8		Start value of the sequence	10,11,12,13
 sequence	seqtypid	oid	pg_sequence.oid	Data type of the sequence	13
 sequence	seqtypid	oid	pg_type.oid	Data type of the sequence	10,11,12
+sequences					14,14,14,14,14,14,14,14,14,14,14
 sequences	cache_size	bigint		Cache size of the sequence	10,11,12
 sequences	cache_size	int8		Cache size of the sequence	13
 sequences	cycle	bool		Whether the sequence cycles	13
@@ -1226,6 +1291,7 @@ sequences	sequenceowner	name	pg_authid.rolname	Name of sequence's owner	10,11,12
 sequences	sequenceowner	name	pg_sequences.rolname	Name of sequence's owner	13
 sequences	start_value	bigint		Start value of the sequence	10,11,12
 sequences	start_value	int8		Start value of the sequence	13
+settings					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 settings	boot_val	text		Parameter value assumed at server startup if the parameter is not otherwise set	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 settings	category	text		Logical group of the parameter	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 settings	context	text		Context required to set the parameter's value	7.4,8.0,8.1,8.2,8.3,8.4,9.0
@@ -1253,6 +1319,7 @@ settings	sourceline	integer		Line number within the configuration file the curre
 settings	unit	text		Implicit unit of the parameter	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 settings	vartype	text		Parameter type (bool, enum, integer, real, or string)	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 settings	vartype	text		Parameter type (bool, integer, real, or string)	7.4,8.0,8.1,8.2,8.3
+shadow					14,14,14,14,14,14,14,14,14
 shadow	passwd	text		Password	7.1,7.2,7.3,7.4
 shadow	passwd	text		Password (possibly encrypted)	8.0,8.1,8.2,8.3,8.4
 shadow	passwd	text		Password (possibly encrypted); null if none. See pg_authid for details of how encrypted passwords are stored	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -1276,6 +1343,7 @@ shadow	usetrace	bool		not used	7.1,7.2
 shadow	valuntil	abstime		Account expiry time (only used for password authentication)	7.1,7.2,7.3,7.4
 shadow	valuntil	abstime		Password expiry time (only used for password authentication)	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 shadow	valuntil	timestamptz		Password expiry time (only used for password authentication)	12,13
+shdepend					14,14,14,14,14,14,14
 shdepend	classid	oid	pg_class.oid	The OID of the system catalog the dependent object is in	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 shdepend	classid	oid	pg_shdepend.oid	The OID of the system catalog the dependent object is in	13
 shdepend	dbid	oid	pg_database.oid	The OID of the database the dependent object is in, or zero for a shared object	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1288,21 +1356,25 @@ shdepend	refclassid	oid	pg_class.oid	The OID of the system catalog the reference
 shdepend	refclassid	oid	pg_shdepend.oid	The OID of the system catalog the referenced object is in (must be a shared catalog)	13
 shdepend	refobjid	oid		The OID of the specific referenced object	13
 shdepend	refobjid	oid	any OID column	The OID of the specific referenced object	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+shdescription					14,14,14
 shdescription	classoid	oid	pg_class.oid	The OID of the system catalog this object appears in	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 shdescription	classoid	oid	pg_shdescription.oid	The OID of the system catalog this object appears in	13
 shdescription	description	text		Arbitrary text that serves as the description of this object	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 shdescription	objoid	oid		The OID of the object this description pertains to	13
 shdescription	objoid	oid	any OID column	The OID of the object this description pertains to	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+shmem_allocations					14,14,14,14
 shmem_allocations	allocated_size	int8		Size of the allocation including padding. For anonymous allocations, no information about padding is available, so the size and allocated_size columns will always be equal. Padding is not meaningful for free memory, so the columns will be equal in that case also	13
 shmem_allocations	name	text		The name of the shared memory allocation. NULL for unused memory and <anonymous> for anonymous allocations	13
 shmem_allocations	off	int8		The offset at which the allocation starts. NULL for anonymous allocations, since details related to them are not known	13
 shmem_allocations	size	int8		Size of the allocation	13
+shseclabel					14,14,14,14
 shseclabel	classoid	oid	pg_class.oid	The OID of the system catalog this object appears in	9.2,9.3,9.4,9.5,9.6,10,11,12
 shseclabel	classoid	oid	pg_shseclabel.oid	The OID of the system catalog this object appears in	13
 shseclabel	label	text		The security label applied to this object	9.2,9.3,9.4,9.5,9.6,10,11,12,13
 shseclabel	objoid	oid		The OID of the object this security label pertains to	13
 shseclabel	objoid	oid	any OID column	The OID of the object this security label pertains to	9.2,9.3,9.4,9.5,9.6,10,11,12
 shseclabel	provider	text		The label provider associated with this label	9.2,9.3,9.4,9.5,9.6,10,11,12,13
+statistic					14,14,14,14,14,14,14,14,14,14,14
 statistic	staattnum	int2	pg_attribute.attnum	The number of the described column	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 statistic	staattnum	int2	pg_statistic.attnum	The number of the described column	13
 statistic	stacollN	oid	pg_collation.oid	The collation used to derive the statistics stored in the Nth "slot”. For example, a histogram slot for a collatable column would show the collation that defines the sort order of the data. Zero for noncollatable data	12
@@ -1330,6 +1402,7 @@ statistic	stavaluesN	text[]		Column data values of the appropriate kind for the 
 statistic	stavaluesN	text[]		Column data values of the appropriate kind for the Nth "slot", or NULL if the slot kind does not store any data values. For datatype independence, all column data values are converted to external textual form and stored as TEXT datums	7.2
 statistic	stawidth	int4		The average stored width, in bytes, of non-NULL entries	7.2,7.3
 statistic	stawidth	int4		The average stored width, in bytes, of nonnull entries	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+statistic_ext					14,14,14,14,14,14,14,14,14
 statistic_ext	oid	oid		Row identifier	13
 statistic_ext	stxdependencies	pg_dependencies		Functional dependency statistics, serialized as pg_dependencies type	10,11
 statistic_ext	stxkeys	int2vector	pg_attribute.attnum	An array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covered	10,11,12
@@ -1345,11 +1418,13 @@ statistic_ext	stxowner	oid	pg_statistic_ext.oid	Owner of the statistics object	1
 statistic_ext	stxrelid	oid	pg_class.oid	Table containing the columns described by this object	10,11,12
 statistic_ext	stxrelid	oid	pg_statistic_ext.oid	Table containing the columns described by this object	13
 statistic_ext	stxstattarget	int4		stxstattarget controls the level of detail of statistics accumulated for this statistics object by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the maximum of the statistics targets of the referenced columns, if set, or the system default statistics target. Positive values of stxstattarget determine the target number of "most common values” to collect	13
+statistic_ext-data					14,14,14,14,14
 statistic_ext-data	stxddependencies	pg_dependencies		Functional dependency statistics, serialized as pg_dependencies type	12,13
 statistic_ext-data	stxdmcv	pg_mcv_list		MCV (most-common values) list statistics, serialized as pg_mcv_list type	12,13
 statistic_ext-data	stxdndistinct	pg_ndistinct		N-distinct counts, serialized as pg_ndistinct type	12,13
 statistic_ext-data	stxoid	oid	pg_statistic_ext.oid	Extended statistic object containing the definition for this data	12
 statistic_ext-data	stxoid	oid	pg_statistic_ext_data.oid	Extended statistic object containing the definition for this data	13
+stats					14,14,14,14,14,14,14,14,14,14,14,14,14,14
 stats	attname	name	pg_attribute.attname	Name of the column described by this row	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 stats	attname	name	pg_stats.attname	Name of the column described by this row	13
 stats	avg_width	int4		Average width in bytes of column's entries	13
@@ -1378,6 +1453,7 @@ stats	schemaname	name	pg_namespace.nspname	Name of schema containing table	7.4,8
 stats	schemaname	name	pg_stats.nspname	Name of schema containing table	13
 stats	tablename	name	pg_class.relname	Name of table	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 stats	tablename	name	pg_stats.relname	Name of table	13
+stats_ext					14,14,14,14,14,14,14,14,14,14,14,14,14,14
 stats_ext	attnames	name[]	pg_attribute.attname	Names of the columns the extended statistics is defined on	12
 stats_ext	attnames	name[]	pg_stats_ext.attname	Names of the columns the extended statistics is defined on	13
 stats_ext	dependencies	pg_dependencies		Functional dependency statistics	12,13
@@ -1402,6 +1478,8 @@ stats_ext	statistics_schemaname	name	pg_namespace.nspname	Name of schema contain
 stats_ext	statistics_schemaname	name	pg_stats_ext.nspname	Name of schema containing extended statistic	13
 stats_ext	tablename	name	pg_class.relname	Name of table	12
 stats_ext	tablename	name	pg_stats_ext.relname	Name of table	13
+stats_ext-exprs					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
+subscription					14,14,14,14,14,14,14,14,14,14,14
 subscription	oid	oid		Row identifier	12,13
 subscription	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	10,11
 subscription	subconninfo	text		Connection string to the upstream database	10,11,12,13
@@ -1415,12 +1493,14 @@ subscription	subpublications	text[]		Array of subscribed publication names. Thes
 subscription	subpublications	text[]		Array of subscribed publication names. These reference the publications on the publisher server. For more on publications see Section 31.1	10,11
 subscription	subslotname	name		Name of the replication slot in the upstream database (also used for the local replication origin name); null represents NONE	10,11,12,13
 subscription	subsynccommit	text		Contains the value of the synchronous_commit setting for the subscription workers	10,11,12,13
+subscription_rel					14,14,14,14
 subscription_rel	srrelid	oid	pg_class.oid	Reference to relation	10,11,12
 subscription_rel	srrelid	oid	pg_subscription_rel.oid	Reference to relation	13
 subscription_rel	srsubid	oid	pg_subscription.oid	Reference to subscription	10,11,12
 subscription_rel	srsubid	oid	pg_subscription_rel.oid	Reference to subscription	13
 subscription_rel	srsublsn	pg_lsn		Remote LSN of the state change used for synchronization coordination when in s or r states, otherwise null	10,11,12,13
 subscription_rel	srsubstate	char		State code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)	10,11,12,13
+tables					14,14,14,14,14,14,14,14
 tables	hasindexes	bool	pg_tables.relhasindex	True if table has (or recently had) any indexes	13
 tables	hasindexes	boolean	pg_class.relhasindex	True if table has (or recently had) any indexes	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 tables	hasrules	bool	pg_tables.relhasrules	True if table has (or once had) rules	13
@@ -1440,6 +1520,7 @@ tables	tableowner	name	pg_shadow.usename	name of table's owner	7.4,8.0
 tables	tableowner	name	pg_tables.rolname	Name of table's owner	13
 tables	tablespace	name	pg_tables.spcname	Name of tablespace containing table (null if default for database)	13
 tables	tablespace	name	pg_tablespace.spcname	Name of tablespace containing table (null if default for database)	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+tablespace					14,14,14,14,14
 tablespace	oid	oid		Row identifier	12,13
 tablespace	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 tablespace	spcacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -1451,15 +1532,18 @@ tablespace	spcoptions	text[]		Tablespace-level options, as "keyword=value” str
 tablespace	spcowner	int4	pg_shadow.usesysid	Owner of the tablespace, usually the user who created it	8.0
 tablespace	spcowner	oid	pg_authid.oid	Owner of the tablespace, usually the user who created it	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 tablespace	spcowner	oid	pg_tablespace.oid	Owner of the tablespace, usually the user who created it	13
+timezone_abbrevs					14,14,14
 timezone_abbrevs	abbrev	text		Time zone abbreviation	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 timezone_abbrevs	is_dst	bool		True if this is a daylight-savings abbreviation	13
 timezone_abbrevs	is_dst	boolean		True if this is a daylight-savings abbreviation	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 timezone_abbrevs	utc_offset	interval		Offset from UTC (positive means east of Greenwich)	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+timezone_names					14,14,14,14
 timezone_names	abbrev	text		Time zone abbreviation	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 timezone_names	is_dst	bool		True if currently observing daylight savings	13
 timezone_names	is_dst	boolean		True if currently observing daylight savings	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 timezone_names	name	text		Time zone name	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 timezone_names	utc_offset	interval		Offset from UTC (positive means east of Greenwich)	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+transform					14,14,14,14,14
 transform	oid	oid		Row identifier	13
 transform	trffromsql	regproc	pg_proc.oid	The OID of the function to use when converting the data type for input to the procedural language (e.g., function parameters). Zero is stored if this operation is not supported	9.5,9.6,10,11,12
 transform	trffromsql	regproc	pg_transform.oid	The OID of the function to use when converting the data type for input to the procedural language (e.g., function parameters). Zero is stored if this operation is not supported	13
@@ -1469,6 +1553,7 @@ transform	trftosql	regproc	pg_proc.oid	The OID of the function to use when conve
 transform	trftosql	regproc	pg_transform.oid	The OID of the function to use when converting output from the procedural language (e.g., return values) to the data type. Zero is stored if this operation is not supported	13
 transform	trftype	oid	pg_transform.oid	OID of the data type this transform is for	13
 transform	trftype	oid	pg_type.oid	OID of the data type this transform is for	9.5,9.6,10,11,12
+trigger					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 trigger	oid	oid		Row identifier	12,13
 trigger	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 trigger	tgargs	bytea		Argument strings to pass to trigger, each NULL-terminated	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
@@ -1516,6 +1601,7 @@ trigger	tgrelid	oid	pg_trigger.oid	The table this trigger is on	13
 trigger	tgtype	int2		Bit mask identifying trigger conditions	7.4,8.0,8.1,8.2,8.3,8.4,9.0
 trigger	tgtype	int2		Bit mask identifying trigger firing conditions	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 trigger	tgtype	int2		Bitmask identifying trigger conditions	7.2,7.3
+ts_config					14,14,14,14,14
 ts_config	cfgname	name		Text search configuration name	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 ts_config	cfgnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this configuration	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_config	cfgnamespace	oid	pg_ts_config.oid	The OID of the namespace that contains this configuration	13
@@ -1525,6 +1611,7 @@ ts_config	cfgparser	oid	pg_ts_config.oid	The OID of the text search parser for t
 ts_config	cfgparser	oid	pg_ts_parser.oid	The OID of the text search parser for this configuration	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_config	oid	oid		Row identifier	12,13
 ts_config	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+ts_config-map					14,14,14,14
 ts_config-map	mapcfg	oid	pg_ts_config.oid	The OID of the pg_ts_config entry owning this map entry	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_config-map	mapcfg	oid	pg_ts_config_map.oid	The OID of the pg_ts_config entry owning this map entry	13
 ts_config-map	mapdict	oid	pg_ts_config_map.oid	The OID of the text search dictionary to consult	13
@@ -1533,6 +1620,7 @@ ts_config-map	mapseqno	int4		Order in which to consult this entry (lower mapseqn
 ts_config-map	mapseqno	integer		Order in which to consult this entry (lower mapseqnos first)	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_config-map	maptokentype	int4		A token type emitted by the configuration's parser	13
 ts_config-map	maptokentype	integer		A token type emitted by the configuration's parser	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+ts_dict					14,14,14,14,14,14
 ts_dict	dictinitoption	text		Initialization option string for the template	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 ts_dict	dictname	name		Text search dictionary name	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 ts_dict	dictnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this dictionary	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1543,6 +1631,7 @@ ts_dict	dicttemplate	oid	pg_ts_dict.oid	The OID of the text search template for 
 ts_dict	dicttemplate	oid	pg_ts_template.oid	The OID of the text search template for this dictionary	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_dict	oid	oid		Row identifier	12,13
 ts_dict	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
+ts_parser					14,14,14,14,14,14,14,14
 ts_parser	oid	oid		Row identifier	12,13
 ts_parser	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 ts_parser	prsend	regproc	pg_proc.oid	OID of the parser's shutdown function	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1558,6 +1647,7 @@ ts_parser	prsstart	regproc	pg_proc.oid	OID of the parser's startup function	8.3,
 ts_parser	prsstart	regproc	pg_ts_parser.oid	OID of the parser's startup function	13
 ts_parser	prstoken	regproc	pg_proc.oid	OID of the parser's next-token function	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_parser	prstoken	regproc	pg_ts_parser.oid	OID of the parser's next-token function	13
+ts_template					14,14,14,14,14
 ts_template	oid	oid		Row identifier	12,13
 ts_template	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 ts_template	tmplinit	regproc	pg_proc.oid	OID of the template's initialization function	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1567,6 +1657,7 @@ ts_template	tmpllexize	regproc	pg_ts_template.oid	OID of the template's lexize f
 ts_template	tmplname	name		Text search template name	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 ts_template	tmplnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this template	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 ts_template	tmplnamespace	oid	pg_ts_template.oid	The OID of the namespace that contains this template	13
+type					14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 type	oid	oid		Row identifier	12,13
 type	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 type	typacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	9.2,9.3,9.4,9.5,9.6,10,11
@@ -1690,6 +1781,7 @@ type	typtype	char		typtype is b for a basic type and c for a catalog type (i.e.,
 type	typtypmod	int4		 Domains use typtypmod to record the typmod to be applied to their base type (-1 if base type does not use a typmod). -1 if this type is not a domain 	8.2,8.3,8.4
 type	typtypmod	int4		 Domains use typtypmod to record the typmod to be applied to their base type (-1 if base type does not use a typmod). -1 if this type is not a domain. 	7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 type	typtypmod	int4		Domains use typtypmod to record the typmod to be applied to their base type (-1 if base type does not use a typmod). -1 if this type is not a domain	13
+user					14,14,14,14,14,14,14,14,14
 user	passwd	text		Not the password (always reads as ********)	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 user	usebypassrls	bool		User bypasses every row level security policy, see Section 5.7 for more information	9.5,9.6,10,11
 user	usebypassrls	bool		User bypasses every row level security policy, see Section 5.8 for more information	12,13
@@ -1706,6 +1798,7 @@ user	usesysid	oid		ID of this user	9.2,9.3,9.4,9.5,9.6,10,11,12,13
 user	valuntil	abstime		Account expiry time (only used for password authentication)	7.4
 user	valuntil	abstime		Password expiry time (only used for password authentication)	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 user	valuntil	timestamptz		Password expiry time (only used for password authentication)	12,13
+user_mapping					14,14,14,14
 user_mapping	oid	oid		Row identifier	12,13
 user_mapping	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
 user_mapping	umoptions	text[]		User mapping specific options, as "keyword=value" strings	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6
@@ -1714,6 +1807,7 @@ user_mapping	umserver	oid	pg_foreign_server.oid	The OID of the foreign server th
 user_mapping	umserver	oid	pg_user_mapping.oid	The OID of the foreign server that contains this mapping	13
 user_mapping	umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user mapping is public	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mapping	umuser	oid	pg_user_mapping.oid	OID of the local role being mapped, 0 if the user mapping is public	13
+user_mappings					14,14,14,14,14,14
 user_mappings	srvid	oid	pg_foreign_server.oid	The OID of the foreign server that contains this mapping	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mappings	srvid	oid	pg_user_mappings.oid	The OID of the foreign server that contains this mapping	13
 user_mappings	srvname	name	pg_foreign_server.srvname	Name of the foreign server	9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1727,6 +1821,7 @@ user_mappings	umoptions	text[]		User mapping specific options, as "keyword=value
 user_mappings	umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user mapping is public	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mappings	umuser	oid	pg_user_mappings.oid	OID of the local role being mapped, 0 if the user mapping is public	13
 user_mappings	usename	name		Name of the local user to be mapped	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+views					14,14,14,14
 views	definition	text		View definition (a reconstructed SELECT query)	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
 views	schemaname	name	pg_namespace.nspname	Name of schema containing view	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 views	schemaname	name	pg_views.nspname	Name of schema containing view	13
