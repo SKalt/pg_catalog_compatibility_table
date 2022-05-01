@@ -18,7 +18,7 @@ aggregate	agginitval	text		The initial value of the transition state. This is a 
 aggregate	agginitval	text		The initial value of the transition state. This is a text field containing the initial value in its external string representation. If the value is null, the transition state value starts out null	7.4,8.0
 aggregate	agginitval	text		The initial value of the transition state. This is a text field containing the initial value in its external string representation. If this field is null, the transition state value starts out null	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 aggregate	agginitval	text		The initial value of the transition state. This is a text field which will be cast to the type of aggtranstype	7.1
-aggregate	aggkind	char		"Aggregate kind: n for \"normal" aggregates, o for "ordered-set" aggregates, or h for "hypothetical-set" aggregates"	9.4,9.5,9.6,10,11,12,13,14
+aggregate	aggkind	char		"Aggregate kind: n for \"normal\" aggregates, o for \"ordered-set\" aggregates, or h for \"hypothetical-set\" aggregates"	9.4,9.5,9.6,10,11,12,13,14
 aggregate	aggmfinalextra	bool		True to pass extra dummy arguments to aggmfinalfn	9.4,9.5,9.6,10,11,12,13,14
 aggregate	aggmfinalfn	regproc	pg_aggregate.oid	Final function for moving-aggregate mode (zero if none)	13,14
 aggregate	aggmfinalfn	regproc	pg_proc.oid	Final function for moving-aggregate mode (zero if none)	9.4,9.5,9.6,10,11,12
@@ -46,10 +46,10 @@ aggregate	aggtransspace	int4		Approximate average size (in bytes) of the transit
 aggregate	aggtranstype	oid	pg_aggregate.oid	Data type of the aggregate function's internal transition (state) data	13,14
 aggregate	aggtranstype	oid	pg_type.oid	Data type of the aggregate function's internal transition (state) data	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 aggregate	aggtranstype	oid	pg_type.oid	The type of the aggregate function's internal transition (state) data	7.1,7.2,7.3,7.4,8.0
-am	ambeginscan	regproc	pg_proc.oid	"\"Prepare for index scan" function"	9.1,9.2,9.3,9.4,9.5
-am	ambeginscan	regproc	pg_proc.oid	"\"Start new scan" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
-am	ambuild	regproc	pg_proc.oid	"\"Build new index" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
-am	ambuildempty	regproc	pg_proc.oid	"\"Build empty index" function"	9.1,9.2,9.3,9.4,9.5
+am	ambeginscan	regproc	pg_proc.oid	"\"Prepare for index scan\" function"	9.1,9.2,9.3,9.4,9.5
+am	ambeginscan	regproc	pg_proc.oid	"\"Start new scan\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
+am	ambuild	regproc	pg_proc.oid	"\"Build new index\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	ambuildempty	regproc	pg_proc.oid	"\"Build empty index\" function"	9.1,9.2,9.3,9.4,9.5
 am	ambulkdelete	regproc	pg_proc.oid	Bulk-delete function	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amcanbackward	bool		Does the access method support backward scanning?	8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amcanmulticol	bool		does AM support multicolumn indexes?	7.3
@@ -66,28 +66,28 @@ am	amconcurrent	bool		does AM support concurrent updates?	7.3
 am	amconcurrent	bool		Does the access method support concurrent updates?	7.4,8.0,8.1
 am	amcostestimate	regproc	pg_proc.oid	estimate cost of an indexscan	7.3
 am	amcostestimate	regproc	pg_proc.oid	Function to estimate cost of an index scan	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
-am	amendscan	regproc	pg_proc.oid	"\"Clean up after index scan" function"	9.1,9.2,9.3,9.4,9.5
-am	amendscan	regproc	pg_proc.oid	"\"End this scan" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
-am	amgetbitmap	regproc	pg_proc.oid	"\"Fetch all valid tuples" function, or zero if none"	8.4,9.0,9.1,9.2,9.3,9.4,9.5
-am	amgetmulti	regproc	pg_proc.oid	"\"Fetch multiple tuples" function"	8.1,8.2,8.3
-am	amgettuple	regproc	pg_proc.oid	"\"Next valid tuple" function"	7.3,7.4,8.0,8.1,8.2,8.3
-am	amgettuple	regproc	pg_proc.oid	"\"Next valid tuple" function, or zero if none"	8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	amendscan	regproc	pg_proc.oid	"\"Clean up after index scan\" function"	9.1,9.2,9.3,9.4,9.5
+am	amendscan	regproc	pg_proc.oid	"\"End this scan\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
+am	amgetbitmap	regproc	pg_proc.oid	"\"Fetch all valid tuples\" function, or zero if none"	8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	amgetmulti	regproc	pg_proc.oid	"\"Fetch multiple tuples\" function"	8.1,8.2,8.3
+am	amgettuple	regproc	pg_proc.oid	"\"Next valid tuple\" function"	7.3,7.4,8.0,8.1,8.2,8.3
+am	amgettuple	regproc	pg_proc.oid	"\"Next valid tuple\" function, or zero if none"	8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amhandler	regproc	pg_am.oid	OID of a handler function that is responsible for supplying information about the access method	13,14
 am	amhandler	regproc	pg_proc.oid	OID of a handler function that is responsible for supplying information about the access method	9.6,10,11,12
 am	amindexnulls	bool		does AM support NULL index entries?	7.3
 am	amindexnulls	bool		Does the access method support null index entries?	7.4,8.0,8.1,8.2,8.3,8.4,9.0
-am	aminsert	regproc	pg_proc.oid	"\"Insert this tuple" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	aminsert	regproc	pg_proc.oid	"\"Insert this tuple\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amkeytype	oid	pg_type.oid	Type of data stored in index, or zero if not a fixed type	8.4,9.0,9.1,9.2,9.3,9.4,9.5
-am	ammarkpos	regproc	pg_proc.oid	"\"Mark current scan position" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	ammarkpos	regproc	pg_proc.oid	"\"Mark current scan position\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amname	name		Name of the access method	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 am	amoptionalkey	bool		Does the access method support a scan without any constraint for the first index column?	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amoptions	regproc	pg_proc.oid	Function to parse and validate reloptions for an index	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amorderstrategy	int2		Zero if the index offers no sort order, otherwise the strategy number of the strategy operator that describes the sort order	7.3,7.4,8.0,8.1,8.2
 am	amowner	int4	pg_shadow.usesysid	User ID of the owner (currently not used)	7.3,7.4,8.0
 am	ampredlocks	bool		Does an index of this type manage fine-grained predicate locks?	9.1,9.2,9.3,9.4,9.5
-am	amrescan	regproc	pg_proc.oid	"\"(Re)start index scan" function"	9.1,9.2,9.3,9.4,9.5
-am	amrescan	regproc	pg_proc.oid	"\"Restart this scan" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
-am	amrestrpos	regproc	pg_proc.oid	"\"Restore marked scan position" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
+am	amrescan	regproc	pg_proc.oid	"\"(Re)start index scan\" function"	9.1,9.2,9.3,9.4,9.5
+am	amrescan	regproc	pg_proc.oid	"\"Restart this scan\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0
+am	amrestrpos	regproc	pg_proc.oid	"\"Restore marked scan position\" function"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5
 am	amsearcharray	bool		Does the access method support ScalarArrayOpExpr searches?	9.2,9.3,9.4,9.5
 am	amsearchnulls	bool		Does the access method support IS NULL searches?	8.3,8.4
 am	amsearchnulls	bool		Does the access method support IS NULL/NOT NULL searches?	9.0,9.1,9.2,9.3,9.4,9.5
@@ -163,7 +163,7 @@ attribute	attcollation	oid	pg_attribute.oid	The defined collation of the column,
 attribute	attcollation	oid	pg_collation.oid	The defined collation of the column, or zero if the column is not of a collatable data type	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 attribute	attcompression	char		The current compression method of the column. Typically this is '\0' to specify use of the current default setting (see default_toast_compression). Otherwise, 'p' selects pglz compression, while 'l' selects LZ4 compression. However, this field is ignored whenever attstorage does not allow compression	14
 attribute	attdispersion	float4		attdispersion is the dispersion statistic of the column (0.0 to 1.0), or zero if the statistic has not been calculated, or -1.0 if VACUUM found that the column contains no duplicate entries (in which case the dispersion should be taken as 1.0/numberOfRows for the current table size). The -1.0 hack is useful because the number of rows may be updated more often than attdispersion is. We assume that the column will retain its no-duplicate-entry property	7.1
-attribute	attfdwoptions	text[]		"Attribute-level foreign data wrapper options, as \"keyword=value" strings"	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+attribute	attfdwoptions	text[]		"Attribute-level foreign data wrapper options, as \"keyword=value\" strings"	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 attribute	attgenerated	char		If a zero byte (''), then not a generated column. Otherwise, s = stored. (Other values might be added in the future.)	12,13,14
 attribute	atthasdef	bool		This column has a default expression or generation expression, in which case there will be a corresponding entry in the pg_attrdef catalog that actually defines the expression. (Check attgenerated to determine whether this is a default or a generation expression.)	12,13,14
 attribute	atthasdef	bool		This column has a default value, in which case there will be a corresponding entry in the pg_attrdef catalog that actually defines the value	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
@@ -181,21 +181,21 @@ attribute	attlen	int2		This is a copy of the pg_type.typlen for this column's ty
 attribute	attmissingval	anyarray		This column has a one element array containing the value used when the column is entirely missing from the row, as happens when the column is added with a non-volatile DEFAULT value after the row is created. The value is only used when atthasmissing is true. If there is no value the column is null	11,12,13,14
 attribute	attname	name		Column name	7.1,7.2,7.3
 attribute	attname	name		The column name	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-attribute	attndims	int4		"Number of dimensions, if the column is an array type; otherwise 0. (Presently, the number of dimensions of an array is not enforced, so any nonzero value effectively means \"it's an array")"	8.2,8.3,8.4
-attribute	attndims	int4		"Number of dimensions, if the column is an array type; otherwise 0. (Presently, the number of dimensions of an array is not enforced, so any nonzero value effectively means \"it's an array".)"	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+attribute	attndims	int4		"Number of dimensions, if the column is an array type; otherwise 0. (Presently, the number of dimensions of an array is not enforced, so any nonzero value effectively means \"it's an array\")"	8.2,8.3,8.4
+attribute	attndims	int4		"Number of dimensions, if the column is an array type; otherwise 0. (Presently, the number of dimensions of an array is not enforced, so any nonzero value effectively means \"it's an array\".)"	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 attribute	attnelems	int4		Number of dimensions, if the column is an array	7.1
 attribute	attnotnull	bool		This represents a NOT NULL constraint. It is possible to change this field to enable or disable the constraint	7.1,7.2,7.3
 attribute	attnotnull	bool		This represents a not-null constraint	9.5,9.6,10,11,12,13,14
 attribute	attnotnull	bool		This represents a not-null constraint. It is possible to change this column to enable or disable the constraint	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4
 attribute	attnum	int2		The number of the column. Ordinary columns are numbered from 1 up. System columns, such as ctid, have (arbitrary) negative numbers	12,13,14
 attribute	attnum	int2		The number of the column. Ordinary columns are numbered from 1 up. System columns, such as oid, have (arbitrary) negative numbers	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
-attribute	attoptions	text[]		"Attribute-level options, as \"keyword=value" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+attribute	attoptions	text[]		"Attribute-level options, as \"keyword=value\" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 attribute	attrelid	oid	pg_attribute.oid	The table this column belongs to	13,14
 attribute	attrelid	oid	pg_class.oid	The table this column belongs to	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is data type-dependent. For scalar data types, attstattarget is both the target number of \"most common values" to collect, and the target number of histogram bins to create"	8.2,8.3,8.4
-attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is data type-dependent. For scalar data types, attstattarget is both the target number of \"most common values" to collect, and the target number of histogram bins to create."	7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is datatype-dependent. For scalar datatypes, attstattarget is both the target number of \"most common values" to collect, and the target number of histogram bins to create."	7.3
-attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. The exact meaning of positive values is datatype-dependent. For scalar datatypes, attstattarget is both the target number of \"most common values" to collect, and the target number of histogram bins to create."	7.2
+attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is data type-dependent. For scalar data types, attstattarget is both the target number of \"most common values\" to collect, and the target number of histogram bins to create"	8.2,8.3,8.4
+attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is data type-dependent. For scalar data types, attstattarget is both the target number of \"most common values\" to collect, and the target number of histogram bins to create."	7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the system default statistics target. The exact meaning of positive values is datatype-dependent. For scalar datatypes, attstattarget is both the target number of \"most common values\" to collect, and the target number of histogram bins to create."	7.3
+attribute	attstattarget	int4		"attstattarget controls the level of detail of statistics accumulated for this column by ANALYZE. A zero value indicates that no statistics should be collected. The exact meaning of positive values is datatype-dependent. For scalar datatypes, attstattarget is both the target number of \"most common values\" to collect, and the target number of histogram bins to create."	7.2
 attribute	attstorage	char		A copy of pg_type.typstorage of this column's type	7.1,7.2
 attribute	attstorage	char		Normally a copy of pg_type.typstorage of this column's type. For TOAST-able data types, this can be altered after column creation to control storage policy	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 attribute	attstorage	char		Normally a copy of pg_type.typstorage of this column's type. For TOASTable datatypes, this can be altered after column creation to control storage policy	7.3
@@ -302,16 +302,16 @@ class	relam	oid	pg_class.oid	If this is a table or an index, the access method u
 class	relam	oid	pg_class.oid	If this is a table or an index, the access method used (heap, B-tree, hash, etc.); otherwise zero (zero occurs for sequences, as well as relations without storage, such as views)	14
 class	relchecks	int2		Number of CHECK constraints on the table; see pg_constraint catalog	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 class	relchecks	int2		Number of check constraints on the table; see pg_relcheck catalog	7.1,7.2
-class	relfilenode	oid		"Name of the on-disk file of this relation; zero means this is a \"mapped" relation whose disk file name is determined by low-level state"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+class	relfilenode	oid		"Name of the on-disk file of this relation; zero means this is a \"mapped\" relation whose disk file name is determined by low-level state"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 class	relfilenode	oid		Name of the on-disk file of this relation	7.1,7.2
 class	relfilenode	oid		Name of the on-disk file of this relation; 0 if none	7.3,7.4,8.0,8.1,8.2,8.3,8.4
 class	relfkeys	int2		Number foreign keys on the table	7.1
 class	relfkeys	int2		Unused (not the number of foreign keys on the table)	7.2,7.3,7.4,8.0,8.1,8.2,8.3
 class	relforcerowsecurity	bool		True if row level security (when enabled) will also apply to table owner; see pg_policy catalog	9.5,9.6,10,11,12,13
 class	relforcerowsecurity	bool		True if row-level security (when enabled) will also apply to table owner; see pg_policy catalog	14
-class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. Zero (InvalidTransactionId) if the relation is not a table"	8.2,8.3,8.4
-class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. Zero (InvalidTransactionId) if the relation is not a table."	9.0,9.1,9.2,9.3,9.4,9.5,9.6
-class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_xact to be shrunk. Zero (InvalidTransactionId) if the relation is not a table."	10,11,12,13,14
+class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. Zero (InvalidTransactionId) if the relation is not a table"	8.2,8.3,8.4
+class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. Zero (InvalidTransactionId) if the relation is not a table."	9.0,9.1,9.2,9.3,9.4,9.5,9.6
+class	relfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this table. This is used to track whether the table needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_xact to be shrunk. Zero (InvalidTransactionId) if the relation is not a table."	10,11,12,13,14
 class	relhasexclusion	bool		For a table, true if the table has (or once had) any exclusion constraints; for an index, true if the index supports an exclusion constraint	9.0
 class	relhasindex	bool		True if this is a table and it has (or recently had) any indexes	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 class	relhasindex	bool		True if this is a table and it has (or recently had) any indexes. This is set by CREATE INDEX, but not cleared immediately by DROP INDEX. VACUUM clears relhasindex if it finds the table has no indexes	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4
@@ -351,7 +351,7 @@ class	relnatts	int2		Number of user columns in the relation (system columns not 
 class	reloftype	oid	pg_class.oid	For typed tables, the OID of the underlying composite type, zero for all other relations	13
 class	reloftype	oid	pg_class.oid	For typed tables, the OID of the underlying composite type; zero for all other relations	14
 class	reloftype	oid	pg_type.oid	For typed tables, the OID of the underlying composite type, zero for all other relations	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-class	reloptions	text[]		"Access-method-specific options, as \"keyword=value" strings"	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+class	reloptions	text[]		"Access-method-specific options, as \"keyword=value\" strings"	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 class	relowner	int4	pg_shadow.usesysid	Owner of the relation	7.1,7.2,7.3,7.4,8.0
 class	relowner	oid	pg_authid.oid	Owner of the relation	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 class	relowner	oid	pg_class.oid	Owner of the relation	13,14
@@ -361,8 +361,8 @@ class	relpages	int4		Size of the on-disk representation of this table in pages (
 class	relpartbound	pg_node_tree		If table is a partition (see relispartition), internal representation of the partition bound	10,11,12,13,14
 class	relpersistence	char		p = permanent table, u = unlogged table, t = temporary table	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 class	relrefs	int2		Unused	7.2,7.3,7.4,8.0,8.1,8.2,8.3
-class	relreplident	char		"Columns used to form \"replica identity" for rows: d = default (primary key, if any), n = nothing, f = all columns i = index with indisreplident set, or default"	9.4
-class	relreplident	char		"Columns used to form \"replica identity" for rows: d = default (primary key, if any), n = nothing, f = all columns, i = index with indisreplident set (same as nothing if the index used has been dropped)"	9.5,9.6,10,11,12,13,14
+class	relreplident	char		"Columns used to form \"replica identity\" for rows: d = default (primary key, if any), n = nothing, f = all columns i = index with indisreplident set, or default"	9.4
+class	relreplident	char		"Columns used to form \"replica identity\" for rows: d = default (primary key, if any), n = nothing, f = all columns, i = index with indisreplident set (same as nothing if the index used has been dropped)"	9.5,9.6,10,11,12,13,14
 class	relrewrite	oid	pg_class.oid	For new relations being written during a DDL operation that requires a table rewrite, this contains the OID of the original relation; otherwise 0. That state is only visible internally; this field should never contain anything other than 0 for a user-visible relation	11,12,13
 class	relrewrite	oid	pg_class.oid	For new relations being written during a DDL operation that requires a table rewrite, this contains the OID of the original relation; otherwise zero. That state is only visible internally; this field should never contain anything other than zero for a user-visible relation	14
 class	relrowsecurity	bool		True if table has row level security enabled; see pg_policy catalog	9.5,9.6,10,11,12,13
@@ -371,9 +371,9 @@ class	reltablespace	oid	pg_class.oid	The tablespace in which this relation is st
 class	reltablespace	oid	pg_tablespace.oid	The tablespace in which this relation is stored. If zero, the database's default tablespace is implied. (Not meaningful if the relation has no on-disk file.)	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 class	reltoastidxid	oid	pg_class.oid	For a TOAST table, the OID of its index. 0 if not a TOAST table	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3
 class	reltoastidxid	oid	pg_class.oid	Oid of the index on the TOAST table for this table, 0 if none	7.1
-class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, 0 if none. The TOAST table stores large attributes \"out of line" in a secondary table"	8.2,8.3,8.4
-class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, 0 if none. The TOAST table stores large attributes \"out of line" in a secondary table."	7.1,7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
-class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, zero if none. The TOAST table stores large attributes \"out of line" in a secondary table."	14
+class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, 0 if none. The TOAST table stores large attributes \"out of line\" in a secondary table"	8.2,8.3,8.4
+class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, 0 if none. The TOAST table stores large attributes \"out of line\" in a secondary table."	7.1,7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+class	reltoastrelid	oid	pg_class.oid	"OID of the TOAST table associated with this table, zero if none. The TOAST table stores large attributes \"out of line\" in a secondary table."	14
 class	reltriggers	int2		Number of triggers on the table; see pg_trigger catalog	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3
 class	reltuples	float4		Number of live rows in the table. This is only an estimate used by the planner. It is updated by VACUUM, ANALYZE, and a few DDL commands such as CREATE INDEX	11,12,13
 class	reltuples	float4		Number of live rows in the table. This is only an estimate used by the planner. It is updated by VACUUM, ANALYZE, and a few DDL commands such as CREATE INDEX. If the table has never yet been vacuumed or analyzed, reltuples contains -1 indicating that the row count is unknown	14
@@ -502,13 +502,13 @@ database	datdba	int4	pg_shadow.usesysid	Owner of the database, initially who cre
 database	datdba	int4	pg_shadow.usesysid	Owner of the database, usually the user who created it	7.3,7.4,8.0
 database	datdba	oid	pg_authid.oid	Owner of the database, usually the user who created it	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 database	datdba	oid	pg_database.oid	Owner of the database, usually the user who created it	13,14
-database	datfrozenxid	xid		"All rows inserted by transaction IDs before this one have been relabeled with a permanent (\"frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems."	7.4,8.0,8.1
-database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values"	8.2,8.3,8.4
-database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values."	9.0,9.1,9.2,9.3,9.4,9.5,9.6
-database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_xact to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values."	10,11,12,13,14
-database	datfrozenxid	xid		"All tuples inserted by transaction IDs before this one have been relabeled with a permanent (\"frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wraparound problems."	7.2,7.3
-database	datistemplate	bool		"If true then this database can be used in the \"TEMPLATE" clause of CREATE DATABASE to create a new database as a clone of this one."	7.3
-database	datistemplate	bool		"If true then this database can be used in the \"TEMPLATE" clause of CREATE DATABASE to create the new database as a clone of this one."	7.1,7.2
+database	datfrozenxid	xid		"All rows inserted by transaction IDs before this one have been relabeled with a permanent (\"frozen\") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems."	7.4,8.0,8.1
+database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values"	8.2,8.3,8.4
+database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_clog to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values."	9.0,9.1,9.2,9.3,9.4,9.5,9.6
+database	datfrozenxid	xid		"All transaction IDs before this one have been replaced with a permanent (\"frozen\") transaction ID in this database. This is used to track whether the database needs to be vacuumed in order to prevent transaction ID wraparound or to allow pg_xact to be shrunk. It is the minimum of the per-table pg_class.relfrozenxid values."	10,11,12,13,14
+database	datfrozenxid	xid		"All tuples inserted by transaction IDs before this one have been relabeled with a permanent (\"frozen\") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wraparound problems."	7.2,7.3
+database	datistemplate	bool		"If true then this database can be used in the \"TEMPLATE\" clause of CREATE DATABASE to create a new database as a clone of this one."	7.3
+database	datistemplate	bool		"If true then this database can be used in the \"TEMPLATE\" clause of CREATE DATABASE to create the new database as a clone of this one."	7.1,7.2
 database	datistemplate	bool		If true then this database can be used in the TEMPLATE clause of CREATE DATABASE to create a new database as a clone of this one	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3
 database	datistemplate	bool		If true, then this database can be cloned by any user with CREATEDB privileges; if false, then only superusers or the owner of the database can clone it	9.4,9.5,9.6,10,11,12,13,14
 database	datlastsysoid	oid		Last oid in existence after the database was created; useful particularly to pg_dump	7.1
@@ -573,7 +573,7 @@ enum	enumtypid	oid	pg_enum.oid	The OID of the pg_type entry owning this enum val
 enum	enumtypid	oid	pg_type.oid	The OID of the pg_type entry owning this enum value	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 enum	oid	oid		Row identifier	12,13,14
 enum	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
-event_trigger	evtenabled	char		"Controls in which session_replication_role modes the event trigger fires. O = trigger fires in \"origin" and "local" modes, D = trigger is disabled, R = trigger fires in "replica" mode, A = trigger fires always."	9.3,9.4,9.5,9.6,10,11,12,13,14
+event_trigger	evtenabled	char		"Controls in which session_replication_role modes the event trigger fires. O = trigger fires in \"origin\" and \"local\" modes, D = trigger is disabled, R = trigger fires in \"replica\" mode, A = trigger fires always."	9.3,9.4,9.5,9.6,10,11,12,13,14
 event_trigger	evtevent	name		Identifies the event for which this trigger fires	9.3,9.4,9.5,9.6,10,11,12,13,14
 event_trigger	evtfoid	oid	pg_event_trigger.oid	The function to be called	13,14
 event_trigger	evtfoid	oid	pg_proc.oid	The function to be called	9.3,9.4,9.5,9.6,10,11,12
@@ -609,7 +609,7 @@ foreign_data-wrapper	fdwacl	aclitem[]		Access privileges; see Section 5.7 for de
 foreign_data-wrapper	fdwhandler	oid	pg_foreign_data_wrapper.oid	References a handler function that is responsible for supplying execution routines for the foreign-data wrapper. Zero if no handler is provided	13,14
 foreign_data-wrapper	fdwhandler	oid	pg_proc.oid	References a handler function that is responsible for supplying execution routines for the foreign-data wrapper. Zero if no handler is provided	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_data-wrapper	fdwname	name		Name of the foreign-data wrapper	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-foreign_data-wrapper	fdwoptions	text[]		"Foreign-data wrapper specific options, as \"keyword=value" strings"	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+foreign_data-wrapper	fdwoptions	text[]		"Foreign-data wrapper specific options, as \"keyword=value\" strings"	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 foreign_data-wrapper	fdwowner	oid	pg_authid.oid	Owner of the foreign-data wrapper	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_data-wrapper	fdwowner	oid	pg_foreign_data_wrapper.oid	Owner of the foreign-data wrapper	13,14
 foreign_data-wrapper	fdwvalidator	oid	pg_foreign_data_wrapper.oid	References a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. Zero if no validator is provided	13,14
@@ -625,13 +625,13 @@ foreign_server	srvfdw	oid	pg_foreign_data_wrapper.oid	OID of the foreign-data wr
 foreign_server	srvfdw	oid	pg_foreign_data_wrapper.oid	The OID of the foreign-data wrapper of this foreign server	8.4,9.0
 foreign_server	srvfdw	oid	pg_foreign_server.oid	OID of the foreign-data wrapper of this foreign server	13,14
 foreign_server	srvname	name		Name of the foreign server	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-foreign_server	srvoptions	text[]		"Foreign server specific options, as \"keyword=value" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-foreign_server	srvoptions	text[]		"Foreign server specific options, as \"keyword=value" strings."	8.4
+foreign_server	srvoptions	text[]		"Foreign server specific options, as \"keyword=value\" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+foreign_server	srvoptions	text[]		"Foreign server specific options, as \"keyword=value\" strings."	8.4
 foreign_server	srvowner	oid	pg_authid.oid	Owner of the foreign server	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_server	srvowner	oid	pg_foreign_server.oid	Owner of the foreign server	13,14
 foreign_server	srvtype	text		Type of the server (optional)	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 foreign_server	srvversion	text		Version of the server (optional)	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-foreign_table	ftoptions	text[]		"Foreign table options, as \"keyword=value" strings"	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+foreign_table	ftoptions	text[]		"Foreign table options, as \"keyword=value\" strings"	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 foreign_table	ftrelid	oid	pg_class.oid	OID of the pg_class entry for this foreign table	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 foreign_table	ftrelid	oid	pg_foreign_table.oid	OID of the pg_class entry for this foreign table	13
 foreign_table	ftrelid	oid	pg_foreign_table.oid	The OID of the pg_class entry for this foreign table	14
@@ -658,7 +658,7 @@ hba_file-rules	type	text		Type of connection	10,11,12,13,14
 hba_file-rules	user_name	text[]		List of user and group name(s) to which this rule applies	10,11,12,13,14
 index	indcheckxmin	bool		If true, queries must not use the index until the xmin of this pg_index row is below their TransactionXmin event horizon, because the table may contain broken HOT chains with incompatible rows that they can see	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 index	indclass	oidvector	pg_index.oid	For each column in the index key (indnkeyatts values), this contains the OID of the operator class to use. See pg_opclass for details	13,14
-index	indclass	oidvector	pg_opclass.oid	"For each column in the index key this contains a reference to the \"operator class" to use. See pg_opclass for details."	7.1,7.2,7.3
+index	indclass	oidvector	pg_opclass.oid	"For each column in the index key this contains a reference to the \"operator class\" to use. See pg_opclass for details."	7.1,7.2,7.3
 index	indclass	oidvector	pg_opclass.oid	For each column in the index key (indnkeyatts values), this contains the OID of the operator class to use. See pg_opclass for details	11,12
 index	indclass	oidvector	pg_opclass.oid	For each column in the index key this contains the OID of the operator class to use. See pg_opclass for details	7.4,8.0,8.1,8.2
 index	indclass	oidvector	pg_opclass.oid	For each column in the index key, this contains the OID of the operator class to use. See pg_opclass for details	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10
@@ -681,7 +681,7 @@ index	indisprimary	bool		If true, this index is a unique index that represents t
 index	indisprimary	bool		If true, this index represents the primary key of the table (indisunique should always be true when this is true)	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 index	indisprimary	bool		If true, this index represents the primary key of the table. (indisunique should always be true when this is true.)	7.2,7.3,7.4,8.0,8.1,8.2
 index	indisready	bool		If true, the index is currently ready for inserts. False means the index must be ignored by INSERT/UPDATE operations	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-index	indisreplident	bool		"If true this index has been chosen as \"replica identity" using ALTER TABLE ... REPLICA IDENTITY USING INDEX ..."	9.4,9.5,9.6,10,11,12,13,14
+index	indisreplident	bool		"If true this index has been chosen as \"replica identity\" using ALTER TABLE ... REPLICA IDENTITY USING INDEX ..."	9.4,9.5,9.6,10,11,12,13,14
 index	indisunique	bool		If true, this is a unique index	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 index	indisvalid	bool		If both this flag and indisready are true, the index is currently valid for queries. False means the index is possibly incomplete: it must still be modified by INSERT/UPDATE operations, but it cannot safely be used for queries. If it is unique, the uniqueness property is not guaranteed true either	9.2
 index	indisvalid	bool		If true, the index is currently valid for queries. False means the index is possibly incomplete: it must still be modified by INSERT/UPDATE operations, but it cannot safely be used for queries. If it is unique, the uniqueness property is not guaranteed true either	9.3,9.4,9.5,9.6,10,11,12,13,14
@@ -748,8 +748,8 @@ language	lanacl	aclitem[]		Access privileges	7.4
 language	lanacl	aclitem[]		Access privileges; see GRANT and REVOKE for details	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11
 language	lanacl	aclitem[]		Access privileges; see Section 5.7 for details	12,13,14
 language	lancompiler	text		not currently used	7.1,7.2
-language	laninline	oid	pg_language.oid	"This references a function that is responsible for executing \"inline" anonymous code blocks (DO blocks). Zero if inline blocks are not supported."	13,14
-language	laninline	oid	pg_proc.oid	"This references a function that is responsible for executing \"inline" anonymous code blocks (DO blocks). Zero if inline blocks are not supported."	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+language	laninline	oid	pg_language.oid	"This references a function that is responsible for executing \"inline\" anonymous code blocks (DO blocks). Zero if inline blocks are not supported."	13,14
+language	laninline	oid	pg_proc.oid	"This references a function that is responsible for executing \"inline\" anonymous code blocks (DO blocks). Zero if inline blocks are not supported."	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 language	lanispl	bool		This is false for internal languages (such as SQL) and true for dynamically loaded language handler modules. It essentially means that, if it is true, the language may be dropped	7.1,7.2
 language	lanispl	bool		This is false for internal languages (such as SQL) and true for user-defined languages. Currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism in the future	8.2
 language	lanispl	bool		This is false for internal languages (such as SQL) and true for user-defined languages. Currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime	7.3,7.4,8.0,8.1
@@ -791,7 +791,7 @@ listener	listenerpid	int4	PID of the server process that created this entry	 	8.
 listener	notification	int4		Zero if no event is pending for this listener. If an event is pending, the PID of the backend that sent the notification	7.2,7.3
 listener	notification	int4		Zero if no event is pending for this listener. If an event is pending, the PID of the server process that sent the notification	7.4,8.0,8.1,8.4
 listener	notification	int4	Zero if no event is pending for this listener. If an event is pending, the PID of the server process that sent the notification	 	8.2,8.3
-listener	relname	name		"Notify condition name. (The name need not match any actual relation in the database; the term \"relname" is historical.)"	7.2,7.3
+listener	relname	name		"Notify condition name. (The name need not match any actual relation in the database; the term \"relname\" is historical.)"	7.2,7.3
 listener	relname	name		Notify condition name. (The name need not match any actual relation in the database; the name relname is historical.)	7.4,8.0,8.1,8.4
 listener	relname	name	Notify condition name. (The name need not match any actual relation in the database; the name relname is historical.)	 	8.2,8.3
 locks	classid	oid	pg_class.oid	OID of the system catalog containing the lock target, or null if the target is not a general database object	9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -897,7 +897,7 @@ operator	oid	oid		Row identifier (hidden attribute; must be explicitly selected)
 operator	oprcanhash	bool		This operator supports hash joins	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 operator	oprcanmerge	bool		This operator supports merge joins	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 operator	oprcode	regproc		Function that implements this operator	7.1,7.2
-operator	oprcode	regproc	pg_operator.oid	"Function that implements this operator (zero for a not-yet-defined \"shell" operator)"	14
+operator	oprcode	regproc	pg_operator.oid	"Function that implements this operator (zero for a not-yet-defined \"shell\" operator)"	14
 operator	oprcode	regproc	pg_operator.oid	Function that implements this operator	13
 operator	oprcode	regproc	pg_proc.oid	Function that implements this operator	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 operator	oprcom	oid	pg_operator.oid	Commutator of this operator (zero if none)	14
@@ -908,9 +908,9 @@ operator	oprjoin	regproc		Join selectivity estimation function for this operator
 operator	oprjoin	regproc	pg_operator.oid	Join selectivity estimation function for this operator	13
 operator	oprjoin	regproc	pg_operator.oid	Join selectivity estimation function for this operator (zero if none)	14
 operator	oprjoin	regproc	pg_proc.oid	Join selectivity estimation function for this operator	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-operator	oprkind	char		"'b' = infix (\"both"), 'l' = prefix ("left"), 'r' = postfix ("right")"	7.1,7.2,7.3
-operator	oprkind	char		"b = infix (\"both"), l = prefix ("left"), r = postfix ("right")"	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
-operator	oprkind	char		"b = infix operator (\"both"), or l = prefix operator ("left")"	14
+operator	oprkind	char		"'b' = infix (\"both\"), 'l' = prefix (\"left\"), 'r' = postfix (\"right\")"	7.1,7.2,7.3
+operator	oprkind	char		"b = infix (\"both\"), l = prefix (\"left\"), r = postfix (\"right\")"	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+operator	oprkind	char		"b = infix operator (\"both\"), or l = prefix operator (\"left\")"	14
 operator	oprleft	oid	pg_operator.oid	Type of the left operand	13
 operator	oprleft	oid	pg_operator.oid	Type of the left operand (zero for a prefix operator)	14
 operator	oprleft	oid	pg_type.oid	Type of the left operand	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -931,7 +931,7 @@ operator	oprrest	regproc		Restriction selectivity estimation function for this o
 operator	oprrest	regproc	pg_operator.oid	Restriction selectivity estimation function for this operator	13
 operator	oprrest	regproc	pg_operator.oid	Restriction selectivity estimation function for this operator (zero if none)	14
 operator	oprrest	regproc	pg_proc.oid	Restriction selectivity estimation function for this operator	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-operator	oprresult	oid	pg_operator.oid	"Type of the result (zero for a not-yet-defined \"shell" operator)"	14
+operator	oprresult	oid	pg_operator.oid	"Type of the result (zero for a not-yet-defined \"shell\" operator)"	14
 operator	oprresult	oid	pg_operator.oid	Type of the result	13
 operator	oprresult	oid	pg_type.oid	Type of the result	7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 operator	oprright	oid	pg_operator.oid	Type of the right operand	13,14
@@ -1042,8 +1042,8 @@ proc	procost	float4		Estimated execution cost (in units of cpu_operator_cost); i
 proc	proisagg	bool		Function is an aggregate function	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10
 proc	proiscachable	bool		Function returns same result for same input values	7.1,7.2
 proc	proisinh	bool		unused	7.1,7.2
-proc	proisstrict	bool		"Function returns null if any call argument is null. In that case the function won't actually be called at all. Functions that are not \"strict" must be prepared to handle null inputs"	8.2,8.3,8.4
-proc	proisstrict	bool		"Function returns null if any call argument is null. In that case the function won't actually be called at all. Functions that are not \"strict" must be prepared to handle null inputs."	7.1,7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+proc	proisstrict	bool		"Function returns null if any call argument is null. In that case the function won't actually be called at all. Functions that are not \"strict\" must be prepared to handle null inputs"	8.2,8.3,8.4
+proc	proisstrict	bool		"Function returns null if any call argument is null. In that case the function won't actually be called at all. Functions that are not \"strict\" must be prepared to handle null inputs."	7.1,7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 proc	proistrusted	bool		not functional	7.1,7.2
 proc	proiswindow	bool		Function is a window function	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10
 proc	prokind	char		f for a normal function, p for a procedure, a for an aggregate function, or w for a window function	11,12,13,14
@@ -1075,7 +1075,7 @@ proc	prorettype	oid	pg_proc.oid	Data type of the return value	13,14
 proc	prorettype	oid	pg_type.oid	Data type of the return value	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 proc	prorettype	oid	pg_type.oid	Data type of the return value (0 if the function does not return a value)	7.1,7.2
 proc	prorows	float4		Estimated number of result rows (zero if not proretset)	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-proc	prosecdef	bool		"Function is a security definer (i.e., a \"setuid" function)"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+proc	prosecdef	bool		"Function is a security definer (i.e., a \"setuid\" function)"	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 proc	prosqlbody	pg_node_tree		Pre-parsed SQL function body. This is used for SQL-language functions when the body is given in SQL-standard notation rather than as a string literal. It's null in other cases	14
 proc	prosrc	text		This tells the function handler how to invoke the function. It might be the actual source code of the function for interpreted languages, a link symbol, a file name, or just about anything else, depending on the implementation language/call convention	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 proc	prosrc	text		This tells the function handler how to invoke the function. It might be the actual source code of the function for interpreted languages, a link symbol, a file name, or just about anything else, depending the implementation language/call convention	7.1
@@ -1089,8 +1089,8 @@ proc	protrftypes	oid[]		Data type OIDs for which to apply transforms	9.5,9.6,10,
 proc	protrftypes	oid[]	pg_proc.oid	An array of the argument/result data type(s) for which to apply transforms (from the function's TRANSFORM clause). Null if none	13,14
 proc	provariadic	oid	pg_proc.oid	Data type of the variadic array parameter's elements, or zero if the function does not have a variadic parameter	13,14
 proc	provariadic	oid	pg_type.oid	Data type of the variadic array parameter's elements, or zero if the function does not have a variadic parameter	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-proc	provolatile	char		"provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for \"immutable" functions, which always deliver the same result for the same inputs. It is s for "stable" functions, whose results (for fixed inputs) do not change within a scan. It is v for "volatile" functions, whose results may change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)"	7.3,7.4,8.0,8.1,8.2
-proc	provolatile	char		"provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for \"immutable" functions, which always deliver the same result for the same inputs. It is s for "stable" functions, whose results (for fixed inputs) do not change within a scan. It is v for "volatile" functions, whose results might change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)"	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+proc	provolatile	char		"provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for \"immutable\" functions, which always deliver the same result for the same inputs. It is s for \"stable\" functions, whose results (for fixed inputs) do not change within a scan. It is v for \"volatile\" functions, whose results may change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)"	7.3,7.4,8.0,8.1,8.2
+proc	provolatile	char		"provolatile tells whether the function's result depends only on its input arguments, or is affected by outside factors. It is i for \"immutable\" functions, which always deliver the same result for the same inputs. It is s for \"stable\" functions, whose results (for fixed inputs) do not change within a scan. It is v for \"volatile\" functions, whose results might change at any time. (Use v also for functions with side-effects, so that calls to them cannot get optimized away.)"	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 publication	oid	oid		Row identifier	12,13,14
 publication	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	10,11
 publication	puballtables	bool		If true, this publication automatically includes all tables in the database, including any that will be created in the future	10,11,12,13,14
@@ -1156,7 +1156,7 @@ replication_slots	plugin	name		The base name of the shared object containing the
 replication_slots	restart_lsn	pg_lsn		The address (LSN) of oldest WAL which still might be required by the consumer of this slot and thus won't be automatically removed during checkpoints	9.4,9.5,9.6,10
 replication_slots	restart_lsn	pg_lsn		The address (LSN) of oldest WAL which still might be required by the consumer of this slot and thus won't be automatically removed during checkpoints unless this LSN gets behind more than max_slot_wal_keep_size from the current LSN. NULL if the LSN of this slot has never been reserved	13,14
 replication_slots	restart_lsn	pg_lsn		The address (LSN) of oldest WAL which still might be required by the consumer of this slot and thus won't be automatically removed during checkpoints. NULL if the LSN of this slot has never been reserved	11,12
-replication_slots	safe_wal_size	int8		"The number of bytes that can be written to WAL such that this slot is not in danger of getting in state \"lost". It is NULL for lost slots, as well as if max_slot_wal_keep_size is -1."	13,14
+replication_slots	safe_wal_size	int8		"The number of bytes that can be written to WAL such that this slot is not in danger of getting in state \"lost\". It is NULL for lost slots, as well as if max_slot_wal_keep_size is -1."	13,14
 replication_slots	slot_name	name		A unique, cluster-wide identifier for the replication slot	9.4,9.5,9.6,10,11,12,13,14
 replication_slots	slot_type	text		The slot type - physical or logical	9.4,9.5,9.6,10,11,12
 replication_slots	slot_type	text		The slot type: physical or logical	13,14
@@ -1172,7 +1172,7 @@ rewrite	ev_attr	int2		The column this rule is for (currently, always -1 to indic
 rewrite	ev_attr	int2		The column this rule is for (currently, always zero to indicate the whole table)	7.2,7.3,7.4,8.0,8.1,8.2,8.3
 rewrite	ev_class	oid	pg_class.oid	The table this rule is for	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 rewrite	ev_class	oid	pg_rewrite.oid	The table this rule is for	13,14
-rewrite	ev_enabled	char		"Controls in which session_replication_role modes the rule fires. O = rule fires in \"origin" and "local" modes, D = rule is disabled, R = rule fires in "replica" mode, A = rule fires always."	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+rewrite	ev_enabled	char		"Controls in which session_replication_role modes the rule fires. O = rule fires in \"origin\" and \"local\" modes, D = rule is disabled, R = rule fires in \"replica\" mode, A = rule fires always."	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 rewrite	ev_qual	pg_node_tree		Expression tree (in the form of a nodeToString() representation) for the rule's qualifying condition	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 rewrite	ev_qual	text		Expression tree (in the form of a nodeToString representation) for the rule's qualifying condition	7.2,7.3
 rewrite	ev_qual	text		Expression tree (in the form of a nodeToString() representation) for the rule's qualifying condition	7.4,8.0,8.1,8.2,8.3,8.4,9.0
@@ -1349,30 +1349,30 @@ shseclabel	objoid	oid	any OID column	The OID of the object this security label p
 shseclabel	provider	text		The label provider associated with this label	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 statistic	staattnum	int2	pg_attribute.attnum	The number of the described column	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 statistic	staattnum	int2	pg_statistic.attnum	The number of the described column	13,14
-statistic	stacollN	oid	pg_collation.oid	"The collation used to derive the statistics stored in the Nth \"slot". For example, a histogram slot for a collatable column would show the collation that defines the sort order of the data. Zero for noncollatable data."	12
-statistic	stacollN	oid	pg_statistic.oid	"The collation used to derive the statistics stored in the Nth \"slot". For example, a histogram slot for a collatable column would show the collation that defines the sort order of the data. Zero for noncollatable data."	13,14
+statistic	stacollN	oid	pg_collation.oid	"The collation used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot for a collatable column would show the collation that defines the sort order of the data. Zero for noncollatable data."	12
+statistic	stacollN	oid	pg_statistic.oid	"The collation used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot for a collatable column would show the collation that defines the sort order of the data. Zero for noncollatable data."	13,14
 statistic	stadistinct	float4		The number of distinct non-NULL data values in the column. A value greater than zero is the actual number of distinct values. A value less than zero is the negative of a fraction of the number of rows in the table (for example, a column in which values appear about twice on the average could be represented by stadistinct = -0.5). A zero value means the number of distinct values is unknown	7.2,7.3
 statistic	stadistinct	float4		The number of distinct nonnull data values in the column. A value greater than zero is the actual number of distinct values. A value less than zero is the negative of a fraction of the number of rows in the table (for example, a column in which values appear about twice on the average could be represented by stadistinct = -0.5). A zero value means the number of distinct values is unknown	7.4,8.0,8.1,8.2,8.3,8.4
 statistic	stadistinct	float4		The number of distinct nonnull data values in the column. A value greater than zero is the actual number of distinct values. A value less than zero is the negative of a multiplier for the number of rows in the table; for example, a column in which about 80% of the values are nonnull and each nonnull value appears about twice on average could be represented by stadistinct = -0.4. A zero value means the number of distinct values is unknown	9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 statistic	stadistinct	float4		The number of distinct nonnull data values in the column. A value greater than zero is the actual number of distinct values. A value less than zero is the negative of a multiplier for the number of rows in the table; for example, a column in which values appear about twice on the average could be represented by stadistinct = -0.5. A zero value means the number of distinct values is unknown	9.0
 statistic	stainherit	bool		If true, the stats include inheritance child columns, not just the values in the specified relation	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-statistic	stakindN	int2		"A code number indicating the kind of statistics stored in the Nth \"slot" of the pg_statistic row"	8.2,8.3,8.4
-statistic	stakindN	int2		"A code number indicating the kind of statistics stored in the Nth \"slot" of the pg_statistic row."	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+statistic	stakindN	int2		"A code number indicating the kind of statistics stored in the Nth \"slot\" of the pg_statistic row"	8.2,8.3,8.4
+statistic	stakindN	int2		"A code number indicating the kind of statistics stored in the Nth \"slot\" of the pg_statistic row."	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 statistic	stanullfrac	float4		The fraction of the column's entries that are null	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-statistic	stanumbersN	float4[]		"Numerical statistics of the appropriate kind for the Nth \"slot", or null if the slot kind does not involve numerical values"	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-statistic	stanumbersN	float4[]		"Numerical statistics of the appropriate kind for the Nth \"slot", or null if the slot kind does not involve numerical values."	7.2,7.3,7.4,8.0,8.1
-statistic	staopN	oid	pg_operator.oid	"An operator used to derive the statistics stored in the Nth \"slot". For example, a histogram slot would show the < operator that defines the sort order of the data"	8.2,8.3,8.4
-statistic	staopN	oid	pg_operator.oid	"An operator used to derive the statistics stored in the Nth \"slot". For example, a histogram slot would show the < operator that defines the sort order of the data."	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
-statistic	staopN	oid	pg_statistic.oid	"An operator used to derive the statistics stored in the Nth \"slot". For example, a histogram slot would show the < operator that defines the sort order of the data. Zero if the statistics kind does not require an operator."	14
-statistic	staopN	oid	pg_statistic.oid	"An operator used to derive the statistics stored in the Nth \"slot". For example, a histogram slot would show the < operator that defines the sort order of the data."	13
+statistic	stanumbersN	float4[]		"Numerical statistics of the appropriate kind for the Nth \"slot\", or null if the slot kind does not involve numerical values"	8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+statistic	stanumbersN	float4[]		"Numerical statistics of the appropriate kind for the Nth \"slot\", or null if the slot kind does not involve numerical values."	7.2,7.3,7.4,8.0,8.1
+statistic	staopN	oid	pg_operator.oid	"An operator used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot would show the < operator that defines the sort order of the data"	8.2,8.3,8.4
+statistic	staopN	oid	pg_operator.oid	"An operator used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot would show the < operator that defines the sort order of the data."	7.2,7.3,7.4,8.0,8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+statistic	staopN	oid	pg_statistic.oid	"An operator used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot would show the < operator that defines the sort order of the data. Zero if the statistics kind does not require an operator."	14
+statistic	staopN	oid	pg_statistic.oid	"An operator used to derive the statistics stored in the Nth \"slot\". For example, a histogram slot would show the < operator that defines the sort order of the data."	13
 statistic	starelid	oid	pg_class.oid	The table or index that the described column belongs to	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 statistic	starelid	oid	pg_class.oid	The table that the described column belongs to	7.2,7.3,7.4
 statistic	starelid	oid	pg_statistic.oid	The table or index that the described column belongs to	13,14
-statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot", or null if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, or a related type such as an array's element type, so there is no way to define these columns' type more specifically than anyarray."	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot", or NULL if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, so there is no way to define these columns' type more specifically than anyarray"	8.2,8.3,8.4
-statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot", or null if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, so there is no way to define these columns' type more specifically than anyarray."	7.4,8.0,8.1,9.0,9.1
-statistic	stavaluesN	text[]		"Column data values of the appropriate kind for the Nth \"slot", or NULL if the slot kind does not store any data values. For data-type independence, all column data values are converted to external textual form and stored as TEXT datums."	7.3
-statistic	stavaluesN	text[]		"Column data values of the appropriate kind for the Nth \"slot", or NULL if the slot kind does not store any data values. For datatype independence, all column data values are converted to external textual form and stored as TEXT datums."	7.2
+statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot\", or null if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, or a related type such as an array's element type, so there is no way to define these columns' type more specifically than anyarray."	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot\", or NULL if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, so there is no way to define these columns' type more specifically than anyarray"	8.2,8.3,8.4
+statistic	stavaluesN	anyarray		"Column data values of the appropriate kind for the Nth \"slot\", or null if the slot kind does not store any data values. Each array's element values are actually of the specific column's data type, so there is no way to define these columns' type more specifically than anyarray."	7.4,8.0,8.1,9.0,9.1
+statistic	stavaluesN	text[]		"Column data values of the appropriate kind for the Nth \"slot\", or NULL if the slot kind does not store any data values. For data-type independence, all column data values are converted to external textual form and stored as TEXT datums."	7.3
+statistic	stavaluesN	text[]		"Column data values of the appropriate kind for the Nth \"slot\", or NULL if the slot kind does not store any data values. For datatype independence, all column data values are converted to external textual form and stored as TEXT datums."	7.2
 statistic	stawidth	int4		The average stored width, in bytes, of non-NULL entries	7.2,7.3
 statistic	stawidth	int4		The average stored width, in bytes, of nonnull entries	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 statistic_ext	oid	oid		Row identifier	13,14
@@ -1391,7 +1391,7 @@ statistic_ext	stxowner	oid	pg_authid.oid	Owner of the statistics object	10,11,12
 statistic_ext	stxowner	oid	pg_statistic_ext.oid	Owner of the statistics object	13,14
 statistic_ext	stxrelid	oid	pg_class.oid	Table containing the columns described by this object	10,11,12
 statistic_ext	stxrelid	oid	pg_statistic_ext.oid	Table containing the columns described by this object	13,14
-statistic_ext	stxstattarget	int4		"stxstattarget controls the level of detail of statistics accumulated for this statistics object by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the maximum of the statistics targets of the referenced columns, if set, or the system default statistics target. Positive values of stxstattarget determine the target number of \"most common values" to collect."	13,14
+statistic_ext	stxstattarget	int4		"stxstattarget controls the level of detail of statistics accumulated for this statistics object by ANALYZE. A zero value indicates that no statistics should be collected. A negative value says to use the maximum of the statistics targets of the referenced columns, if set, or the system default statistics target. Positive values of stxstattarget determine the target number of \"most common values\" to collect."	13,14
 statistic_ext-data	stxddependencies	pg_dependencies		Functional dependency statistics, serialized as pg_dependencies type	12,13,14
 statistic_ext-data	stxdexpr	pg_statistic[]		Per-expression statistics, serialized as an array of pg_statistic type	14
 statistic_ext-data	stxdmcv	pg_mcv_list		MCV (most-common values) list statistics, serialized as pg_mcv_list type	12,13,14
@@ -1524,7 +1524,7 @@ tablespace	spcacl	aclitem[]		Access privileges; see GRANT and REVOKE for details
 tablespace	spcacl	aclitem[]		Access privileges; see Section 5.7 for details	12,13,14
 tablespace	spclocation	text		Location (directory path) of the tablespace	8.0,8.1,8.2,8.3,8.4,9.0,9.1
 tablespace	spcname	name		Tablespace name	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-tablespace	spcoptions	text[]		"Tablespace-level options, as \"keyword=value" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+tablespace	spcoptions	text[]		"Tablespace-level options, as \"keyword=value\" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 tablespace	spcowner	int4	pg_shadow.usesysid	Owner of the tablespace, usually the user who created it	8.0
 tablespace	spcowner	oid	pg_authid.oid	Owner of the tablespace, usually the user who created it	8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 tablespace	spcowner	oid	pg_tablespace.oid	Owner of the tablespace, usually the user who created it	13,14
@@ -1574,12 +1574,12 @@ trigger	tgdeferrable	bool		True if constraint trigger is deferrable	8.3,8.4,9.0,
 trigger	tgdeferrable	bool		True if deferrable	7.2,7.3,7.4,8.0,8.1,8.2
 trigger	tgenabled	bool		True if trigger is enabled	8.1,8.2
 trigger	tgenabled	bool		True if trigger is enabled (not presently checked everywhere it should be, so disabling a trigger by setting this false does not work reliably)	7.2,7.3,7.4,8.0
-trigger	tgenabled	char		"Controls in which session_replication_role modes the trigger fires. O = trigger fires in \"origin" and "local" modes, D = trigger is disabled, R = trigger fires in "replica" mode, A = trigger fires always."	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+trigger	tgenabled	char		"Controls in which session_replication_role modes the trigger fires. O = trigger fires in \"origin\" and \"local\" modes, D = trigger is disabled, R = trigger fires in \"replica\" mode, A = trigger fires always."	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 trigger	tgfoid	oid	pg_proc.oid	The function to be called	7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 trigger	tgfoid	oid	pg_trigger.oid	The function to be called	13,14
 trigger	tginitdeferred	bool		True if constraint trigger is initially deferred	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 trigger	tginitdeferred	bool		True if initially deferred	7.2,7.3,7.4,8.0,8.1,8.2
-trigger	tgisconstraint	bool		"True if trigger is a \"constraint trigger""	8.3,8.4
+trigger	tgisconstraint	bool		"True if trigger is a \"constraint trigger\""	8.3,8.4
 trigger	tgisconstraint	bool		True if trigger implements a referential integrity constraint	7.4,8.0,8.1,8.2
 trigger	tgisconstraint	bool		True if trigger implements an RI constraint	7.3
 trigger	tgisconstraint	bool		True if trigger is a RI constraint	7.2
@@ -1663,8 +1663,8 @@ type	typalign	char		typalign is the alignment required when storing a value of t
 type	typanalyze	regproc	pg_proc.oid	Custom ANALYZE function, or 0 to use the standard function	8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 type	typanalyze	regproc	pg_type.oid	Custom ANALYZE function, or 0 to use the standard function	13
 type	typanalyze	regproc	pg_type.oid	Custom ANALYZE function, or zero to use the standard function	14
-type	typarray	oid	pg_type.oid	"If typarray is not 0 then it identifies another row in pg_type, which is the \"true" array type having this type as element"	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
-type	typarray	oid	pg_type.oid	"If typarray is not zero then it identifies another row in pg_type, which is the \"true" array type having this type as element"	14
+type	typarray	oid	pg_type.oid	"If typarray is not 0 then it identifies another row in pg_type, which is the \"true\" array type having this type as element"	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+type	typarray	oid	pg_type.oid	"If typarray is not zero then it identifies another row in pg_type, which is the \"true\" array type having this type as element"	14
 type	typbasetype	oid	pg_type.oid	 If this is a derived type (see typtype), then typbasetype identifies the type that this one is based on. Zero if not a derived type. 	7.3
 type	typbasetype	oid	pg_type.oid	 If this is a domain (see typtype), then typbasetype identifies the type that this one is based on. Zero if not a domain. 	7.4,8.0,8.1
 type	typbasetype	oid	pg_type.oid	 If this is a domain (see typtype), then typbasetype identifies the type that this one is based on. Zero if this type is not a domain 	8.2,8.3,8.4
@@ -1674,17 +1674,17 @@ type	typbyval	bool		typbyval determines whether internal routines pass a value o
 type	typbyval	bool		typbyval determines whether internal routines pass a value of this type by value or by reference. Only char, short, and int equivalent items can be passed by value, so if the type is not 1, 2, or 4 bytes long, PostgreSQL does not have the option of passing by value and so typbyval had better be false. Variable-length types are always passed by reference. Note that typbyval can be false even if the length would allow pass-by-value; this is currently true for type float4, for example	7.2,7.3
 type	typbyval	bool		typbyval determines whether internal routines pass a value of this type by value or by reference. typbyval had better be false if typlen is not 1, 2, or 4 (or 8 on machines where Datum is 8 bytes). Variable-length types are always passed by reference. Note that typbyval can be false even if the length would allow pass-by-value	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 type	typbyval	bool		typbyval determines whether internal routines pass a value of this type by value or by reference. typbyval had better be false if typlen is not 1, 2, or 4 (or 8 on machines where Datum is 8 bytes). Variable-length types are always passed by reference. Note that typbyval can be false even if the length would allow pass-by-value; this is currently true for type float4, for example	7.4,8.0,8.1,8.2,8.3
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 44-43"	8.4
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 45-45."	9.0
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 45-49."	9.1
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 45-51."	9.2
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 47-52."	9.3
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 48-53."	9.4
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 49-55."	9.5
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 50-56."	9.6
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 51.63."	10,13
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 51.64."	12
-type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred". See Table 52.63."	11,14
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 44-43"	8.4
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 45-45."	9.0
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 45-49."	9.1
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 45-51."	9.2
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 47-52."	9.3
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 48-53."	9.4
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 49-55."	9.5
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 50-56."	9.6
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 51.63."	10,13
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 51.64."	12
+type	typcategory	char		"typcategory is an arbitrary classification of data types that is used by the parser to determine which implicit casts should be \"preferred\". See Table 52.63."	11,14
 type	typcollation	oid	pg_collation.oid	 typcollation specifies the collation of the type. If the type does not support collations, this will be zero. A base type that supports collations will have a nonzero value here, typically DEFAULT_COLLATION_OID. A domain over a collatable type can have a collation OID different from its base type's, if one was specified for the domain. 	12
 type	typcollation	oid	pg_collation.oid	 typcollation specifies the collation of the type. If the type does not support collations, this will be zero. A base type that supports collations will have DEFAULT_COLLATION_OID here. A domain over a collatable type can have some other collation OID, if one was specified for the domain. 	9.1,9.2,9.3,9.4,9.5,9.6,10,11
 type	typcollation	oid	pg_type.oid	typcollation specifies the collation of the type. If the type does not support collations, this will be zero. A base type that supports collations will have a nonzero value here, typically DEFAULT_COLLATION_OID. A domain over a collatable type can have a collation OID different from its base type's, if one was specified for the domain	13,14
@@ -1704,12 +1704,12 @@ type	typdefaultbin	text		 If typdefaultbin is not null, it is the nodeToString()
 type	typdelim	char		Character that separates two values of this type when parsing array input	7.1
 type	typdelim	char		Character that separates two values of this type when parsing array input. Note that the delimiter is associated with the array element data type, not the array data type	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 type	typdelim	char		Character that separates two values of this type when parsing array input. Note that the delimiter is associated with the array element datatype, not the array datatype	7.2
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be N values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	7.3
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be N values of the typelem datatype with no other data. Variable-length array types have a header defined by the array subroutines."	7.2
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	7.4,8.0
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and point. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines"	8.2,8.3,8.4
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and point. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
-type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A non-zero typelem does not guarantee this type to be a \"real" array type; some ordinary fixed-length types can also be subscripted (e.g., oidvector). Variable-length types can not be turned into pseudo-arrays like that. Hence, the way to determine whether a type is a "true" array type is typelem != 0 and typlen < 0."	7.1
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true\" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be N values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	7.3
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true\" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be N values of the typelem datatype with no other data. Variable-length array types have a header defined by the array subroutines."	7.2
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true\" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and oidvector. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	7.4,8.0
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true\" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and point. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines"	8.2,8.3,8.4
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A \"true\" array type is variable length (typlen = -1), but some fixed-length (typlen > 0) types also have nonzero typelem, for example name and point. If a fixed-length type has a typelem then its internal representation must be some number of values of the typelem data type with no other data. Variable-length array types have a header defined by the array subroutines."	8.1,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13
+type	typelem	oid	pg_type.oid	"If typelem is not 0 then it identifies another row in pg_type. The current type can then be subscripted like an array yielding values of type typelem. A non-zero typelem does not guarantee this type to be a \"real\" array type; some ordinary fixed-length types can also be subscripted (e.g., oidvector). Variable-length types can not be turned into pseudo-arrays like that. Hence, the way to determine whether a type is a \"true\" array type is typelem != 0 and typlen < 0."	7.1
 type	typelem	oid	pg_type.oid	If typelem is not zero then it identifies another row in pg_type, defining the type yielded by subscripting. This should be zero if typsubscript is zero. However, it can be zero when typsubscript isn't zero, if the handler doesn't need typelem to determine the subscripting result type. Note that a typelem dependency is considered to imply physical containment of the element type in this type; so DDL changes on the element type might be restricted by the presence of this type	14
 type	typinput	regproc		Input function	7.1,7.2
 type	typinput	regproc	pg_proc.oid	Input conversion function	7.3
@@ -1719,7 +1719,7 @@ type	typisdefined	bool		???	7.1
 type	typisdefined	bool		True if the type is defined, false if this is a placeholder entry for a not-yet-defined type. When typisdefined is false, nothing except the type name and OID can be relied on	7.2
 type	typisdefined	bool		True if the type is defined, false if this is a placeholder entry for a not-yet-defined type. When typisdefined is false, nothing except the type name, namespace, and OID can be relied on	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 type	typispreferred	bool		True if the type is a preferred cast target within its typcategory	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-type	typlen	int2		"For a fixed-size type, typlen is the number of bytes in the internal representation of the type. But for a variable-length type, typlen is negative. -1 indicates a \"varlena" type (one that has a length word), -2 indicates a null-terminated C string."	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+type	typlen	int2		"For a fixed-size type, typlen is the number of bytes in the internal representation of the type. But for a variable-length type, typlen is negative. -1 indicates a \"varlena\" type (one that has a length word), -2 indicates a null-terminated C string."	7.3,7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
 type	typlen	int2		Length of the storage representation of the type, -1 if variable length	7.1,7.2
 type	typmodin	regproc	pg_proc.oid	Type modifier input function, or 0 if type does not support modifiers	8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 type	typmodin	regproc	pg_type.oid	Type modifier input function, or 0 if type does not support modifiers	13
@@ -1764,11 +1764,11 @@ type	typsend	regproc		unused	7.1,7.2
 type	typsend	regproc	pg_proc.oid	Output conversion function (binary format), or 0 if none	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 type	typsend	regproc	pg_type.oid	Output conversion function (binary format), or 0 if none	13
 type	typsend	regproc	pg_type.oid	Output conversion function (binary format), or zero if none	14
-type	typstorage	char		" typstorage tells for variable-length types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are 'p': Value must always be stored plain. 'e': Value can be stored in a \"secondary" relation (if relation has one, see pg_class.reltoastrelid). 'm': Value can be stored compressed inline. 'x': Value can be stored compressed inline or in "secondary". Note that 'm' fields can also be moved out to secondary storage, but only as a last resort ('e' and 'x' fields are moved first). "	7.1,7.2
-type	typstorage	char		" typstorage tells for varlena types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are 'p': Value must always be stored plain. 'e': Value can be stored in a \"secondary" relation (if relation has one, see pg_class.reltoastrelid). 'm': Value can be stored compressed inline. 'x': Value can be stored compressed inline or in "secondary". Note that 'm' fields can also be moved out to secondary storage, but only as a last resort ('e' and 'x' fields are moved first). "	7.3
-type	typstorage	char		" typstorage tells for varlena types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are p: Value must always be stored plain. e: Value can be stored in a \"secondary" relation (if relation has one, see pg_class.reltoastrelid). m: Value can be stored compressed inline. x: Value can be stored compressed inline or stored in "secondary" storage. Note that m columns can also be moved out to secondary storage, but only as a last resort (e and x columns are moved first). "	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
+type	typstorage	char		" typstorage tells for variable-length types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are 'p': Value must always be stored plain. 'e': Value can be stored in a \"secondary\" relation (if relation has one, see pg_class.reltoastrelid). 'm': Value can be stored compressed inline. 'x': Value can be stored compressed inline or in \"secondary\". Note that 'm' fields can also be moved out to secondary storage, but only as a last resort ('e' and 'x' fields are moved first). "	7.1,7.2
+type	typstorage	char		" typstorage tells for varlena types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are 'p': Value must always be stored plain. 'e': Value can be stored in a \"secondary\" relation (if relation has one, see pg_class.reltoastrelid). 'm': Value can be stored compressed inline. 'x': Value can be stored compressed inline or in \"secondary\". Note that 'm' fields can also be moved out to secondary storage, but only as a last resort ('e' and 'x' fields are moved first). "	7.3
+type	typstorage	char		" typstorage tells for varlena types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are p: Value must always be stored plain. e: Value can be stored in a \"secondary\" relation (if relation has one, see pg_class.reltoastrelid). m: Value can be stored compressed inline. x: Value can be stored compressed inline or stored in \"secondary\" storage. Note that m columns can also be moved out to secondary storage, but only as a last resort (e and x columns are moved first). "	7.4,8.0,8.1,8.2,8.3,8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 type	typstorage	char		typstorage tells for varlena types (those with typlen = -1) if the type is prepared for toasting and what the default strategy for attributes of this type should be. Possible values are: x is the usual choice for toast-able types. Note that m values can also be moved out to secondary storage, but only as a last resort (e and x values are moved first)	13,14
-type	typsubscript	regproc	pg_type.oid	"Subscripting handler function's OID, or zero if this type doesn't support subscripting. Types that are \"true" array types have typsubscript = array_subscript_handler, but other types may have other handler functions to implement specialized subscripting behavior."	14
+type	typsubscript	regproc	pg_type.oid	"Subscripting handler function's OID, or zero if this type doesn't support subscripting. Types that are \"true\" array types have typsubscript = array_subscript_handler, but other types may have other handler functions to implement specialized subscripting behavior."	14
 type	typtype	char		typtype is b for a base type and c for a complex type (i.e., a table's row type). If typtype is c, typrelid is the OID of the type's entry in pg_class	7.2
 type	typtype	char		typtype is b for a base type, c for a complex type (i.e., a table's row type), d for a derived type (i.e., a domain), or p for a pseudo-type. See also typrelid and typbasetype	7.3
 type	typtype	char		typtype is b for a base type, c for a composite type (e.g., a table's row type), d for a domain, e for an enum type, or p for a pseudo-type. See also typrelid and typbasetype	8.3,8.4,9.0,9.1
@@ -1799,8 +1799,8 @@ user	valuntil	abstime		Password expiry time (only used for password authenticati
 user	valuntil	timestamptz		Password expiry time (only used for password authentication)	12,13,14
 user_mapping	oid	oid		Row identifier	12,13,14
 user_mapping	oid	oid		Row identifier (hidden attribute; must be explicitly selected)	9.3,9.4,9.5,9.6,10,11
-user_mapping	umoptions	text[]		"User mapping specific options, as \"keyword=value" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-user_mapping	umoptions	text[]		"User mapping specific options, as \"keyword=value" strings."	8.4
+user_mapping	umoptions	text[]		"User mapping specific options, as \"keyword=value\" strings"	9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+user_mapping	umoptions	text[]		"User mapping specific options, as \"keyword=value\" strings."	8.4
 user_mapping	umserver	oid	pg_foreign_server.oid	The OID of the foreign server that contains this mapping	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mapping	umserver	oid	pg_user_mapping.oid	The OID of the foreign server that contains this mapping	13,14
 user_mapping	umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user mapping is public	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
@@ -1813,9 +1813,9 @@ user_mappings	srvname	name	pg_user_mappings.srvname	Name of the foreign server	1
 user_mappings	srvname	text		Name of the foreign server	8.4,9.0,9.1
 user_mappings	umid	oid	pg_user_mapping.oid	OID of the user mapping	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mappings	umid	oid	pg_user_mappings.oid	OID of the user mapping	13,14
-user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value" strings"	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
-user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value" strings, if the current user is the owner of the foreign server, else null"	9.0,9.1
-user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value" strings, if the current user is the owner of the foreign server, else null."	8.4
+user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value\" strings"	9.2,9.3,9.4,9.5,9.6,10,11,12,13,14
+user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value\" strings, if the current user is the owner of the foreign server, else null"	9.0,9.1
+user_mappings	umoptions	text[]		"User mapping specific options, as \"keyword=value\" strings, if the current user is the owner of the foreign server, else null."	8.4
 user_mappings	umuser	oid	pg_authid.oid	OID of the local role being mapped, 0 if the user mapping is public	8.4,9.0,9.1,9.2,9.3,9.4,9.5,9.6,10,11,12
 user_mappings	umuser	oid	pg_user_mappings.oid	OID of the local role being mapped, 0 if the user mapping is public	13
 user_mappings	umuser	oid	pg_user_mappings.oid	OID of the local role being mapped, or zero if the user mapping is public	14

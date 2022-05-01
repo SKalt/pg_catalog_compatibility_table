@@ -119,7 +119,7 @@ const normalizeStr = (s: string) => s.normalize().replace(/[“”]/g, '"');
 
 const tsvEscape = (s: string) => {
   let result = normalizeStr(s.replace(/\s+/g, " "));
-  return result.includes('"') ? `"${result.replace('"', '\\"')}"` : result;
+  return result.includes('"') ? `"${result.replace(/"/g, '\\"')}"` : result;
 };
 
 const toTsv = (rows: string[][]) =>

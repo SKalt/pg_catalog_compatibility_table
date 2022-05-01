@@ -13,16 +13,16 @@ amstorage	bool	 	Can index storage data type differ from column data type?
 amclusterable	bool	 	Can an index of this type be clustered on?
 ampredlocks	bool	 	Does an index of this type manage fine-grained predicate locks?
 amkeytype	oid	pg_type.oid	Type of data stored in index, or zero if not a fixed type
-aminsert	regproc	pg_proc.oid	"\"Insert this tuple" function"
-ambeginscan	regproc	pg_proc.oid	"\"Prepare for index scan" function"
-amgettuple	regproc	pg_proc.oid	"\"Next valid tuple" function, or zero if none"
-amgetbitmap	regproc	pg_proc.oid	"\"Fetch all valid tuples" function, or zero if none"
-amrescan	regproc	pg_proc.oid	"\"(Re)start index scan" function"
-amendscan	regproc	pg_proc.oid	"\"Clean up after index scan" function"
-ammarkpos	regproc	pg_proc.oid	"\"Mark current scan position" function"
-amrestrpos	regproc	pg_proc.oid	"\"Restore marked scan position" function"
-ambuild	regproc	pg_proc.oid	"\"Build new index" function"
-ambuildempty	regproc	pg_proc.oid	"\"Build empty index" function"
+aminsert	regproc	pg_proc.oid	"\"Insert this tuple\" function"
+ambeginscan	regproc	pg_proc.oid	"\"Prepare for index scan\" function"
+amgettuple	regproc	pg_proc.oid	"\"Next valid tuple\" function, or zero if none"
+amgetbitmap	regproc	pg_proc.oid	"\"Fetch all valid tuples\" function, or zero if none"
+amrescan	regproc	pg_proc.oid	"\"(Re)start index scan\" function"
+amendscan	regproc	pg_proc.oid	"\"Clean up after index scan\" function"
+ammarkpos	regproc	pg_proc.oid	"\"Mark current scan position\" function"
+amrestrpos	regproc	pg_proc.oid	"\"Restore marked scan position\" function"
+ambuild	regproc	pg_proc.oid	"\"Build new index\" function"
+ambuildempty	regproc	pg_proc.oid	"\"Build empty index\" function"
 ambulkdelete	regproc	pg_proc.oid	Bulk-delete function
 amvacuumcleanup	regproc	pg_proc.oid	Post-VACUUM cleanup function
 amcostestimate	regproc	pg_proc.oid	Function to estimate cost of an index scan

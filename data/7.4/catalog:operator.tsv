@@ -2,7 +2,7 @@ Name	Type	References	Description
 oprname	name	 	Name of the operator
 oprnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this operator
 oprowner	int4	pg_shadow.usesysid	Owner of the operator
-oprkind	char	 	"b = infix (\"both"), l = prefix ("left"), r = postfix ("right")"
+oprkind	char	 	"b = infix (\"both\"), l = prefix (\"left\"), r = postfix (\"right\")"
 oprcanhash	bool	 	This operator supports hash joins
 oprleft	oid	pg_type.oid	Type of the left operand
 oprright	oid	pg_type.oid	Type of the right operand

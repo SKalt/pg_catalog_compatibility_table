@@ -5,7 +5,7 @@ tgparentid	oid	pg_trigger.oid	Parent trigger that this trigger is cloned from, z
 tgname	name		Trigger name (must be unique among triggers of same table)
 tgfoid	oid	pg_trigger.oid	The function to be called
 tgtype	int2		Bit mask identifying trigger firing conditions
-tgenabled	char		"Controls in which session_replication_role modes the trigger fires. O = trigger fires in \"origin" and "local" modes, D = trigger is disabled, R = trigger fires in "replica" mode, A = trigger fires always."
+tgenabled	char		"Controls in which session_replication_role modes the trigger fires. O = trigger fires in \"origin\" and \"local\" modes, D = trigger is disabled, R = trigger fires in \"replica\" mode, A = trigger fires always."
 tgisinternal	bool		True if trigger is internally generated (usually, to enforce the constraint identified by tgconstraint)
 tgconstrrelid	oid	pg_trigger.oid	The table referenced by a referential integrity constraint
 tgconstrindid	oid	pg_trigger.oid	The index supporting a unique, primary key, referential integrity, or exclusion constraint
