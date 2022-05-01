@@ -1,7 +1,5 @@
-// TODO!
 import { promisify } from "util";
 import * as fs from "fs";
-const writeFile = promisify(fs.writeFile);
 const readFile = promisify(fs.readFile);
 
 const latest = "14";
@@ -62,9 +60,7 @@ const main = async () => {
     .map(([src, dst]) => `${src[0]} ||--|{ ${dst[0]} : ${dst[1]}`)
     .join("\n  ");
 
-  console.log(
-    "```mermaid\n" + `erDiagram\n  ${relations}\n\n  ${edges}\n` + "```"
-  );
+  console.log(`erDiagram\n  ${relations}\n\n  ${edges}\n`);
 };
 
 main().then(() => process.exit(0));

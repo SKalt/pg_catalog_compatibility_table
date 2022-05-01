@@ -7,6 +7,8 @@ lint:
 	pnpx tsc --noEmit --strict ./index.ts ./scripts/make_erd.ts
 clean:
 	rm -f ./data/*.tsv ./data/**/*.tsv
-./erd.md: ./data/columns.tsv ./scripts/make_erd.ts ./package.json
-	pnpx esbuild ./scripts/make_erd.ts --format=cjs | node > ./erd.md
-erd: ./erd.md
+./erd.mmd: ./data/columns.tsv ./scripts/make_erd.ts ./package.json
+	pnpx esbuild ./scripts/make_erd.ts --format=cjs | node > ./erd.mmd
+./erd.svg: ./erd.mmd
+	pnpx mmdc -i ./erd.mmd -o erd.svg
+erd: ./erd.svg
