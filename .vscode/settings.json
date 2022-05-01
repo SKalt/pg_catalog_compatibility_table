@@ -10,5 +10,10 @@
   "editor.formatOnSave": true,
   "prettier.documentSelectors": [
     "*.js"
+  ],
+  "cSpell.words": [
+    "CALSTABLE",
+    "structfield",
+    "structname"
   ]
 }

@@ -2,4 +2,4 @@ Name	Type	References	Description
 oid	oid		Row identifier
 umuser	oid	pg_user_mapping.oid	OID of the local role being mapped, 0 if the user mapping is public
 umserver	oid	pg_user_mapping.oid	The OID of the foreign server that contains this mapping
-umoptions	text[]		User mapping specific options, as "keyword=value” strings
+umoptions	text[]		User mapping specific options, as "keyword=value" strings
