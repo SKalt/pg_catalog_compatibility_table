@@ -6,7 +6,7 @@ datistemplate	bool	 	If true then this database can be used in the TEMPLATE clau
 datallowconn	bool	 	If false then no one can connect to this database. This is used to protect the template0 database from being altered.
 datlastsysoid	oid	 	Last system OID in the database; useful particularly to pg_dump
 datvacuumxid	xid	 	All rows inserted or deleted by transaction IDs before this one have been marked as known committed or known aborted in this database. This is used to determine when commit-log space can be recycled.
-datfrozenxid	xid	 	All rows inserted by transaction IDs before this one have been relabeled with a permanent ("frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems.
+datfrozenxid	xid	 	"All rows inserted by transaction IDs before this one have been relabeled with a permanent (\"frozen") transaction ID in this database. This is useful to check whether a database must be vacuumed soon to avoid transaction ID wrap-around problems."
 datpath	text	 	If the database is stored at an alternative location then this records the location. It's either an environment variable name or an absolute path, depending how it was entered.
 datconfig	text[]	 	Session defaults for run-time configuration variables
 datacl	aclitem[]	 	Access privileges
