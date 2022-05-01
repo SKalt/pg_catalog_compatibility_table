@@ -62,7 +62,9 @@ const main = async () => {
     .map(([src, dst]) => `${src[0]} ||--|{ ${dst[0]} : ${dst[1]}`)
     .join("\n  ");
 
-  console.log(`erDiagram\n  ${relations}\n\n  ${edges}`);
+  console.log(
+    "```mermaid\n" + `erDiagram\n  ${relations}\n\n  ${edges}\n` + "```"
+  );
 };
 
 main().then(() => process.exit(0));
