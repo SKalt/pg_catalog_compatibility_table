@@ -8,13 +8,13 @@ amcanunique	bool	 	does AM support unique indexes?
 amcanmulticol	bool	 	does AM support multicolumn indexes?
 amindexnulls	bool	 	does AM support NULL index entries?
 amconcurrent	bool	 	does AM support concurrent updates?
-amgettuple	regproc	pg_proc.oid	"\"next valid tuple\" function"
-aminsert	regproc	pg_proc.oid	"\"insert this tuple\" function"
-ambeginscan	regproc	pg_proc.oid	"\"start new scan\" function"
-amrescan	regproc	pg_proc.oid	"\"restart this scan\" function"
-amendscan	regproc	pg_proc.oid	"\"end this scan\" function"
-ammarkpos	regproc	pg_proc.oid	"\"mark current scan position\" function"
-amrestrpos	regproc	pg_proc.oid	"\"restore marked scan position\" function"
-ambuild	regproc	pg_proc.oid	"\"build new index\" function"
+amgettuple	regproc	pg_proc.oid	"""next valid tuple"" function"
+aminsert	regproc	pg_proc.oid	"""insert this tuple"" function"
+ambeginscan	regproc	pg_proc.oid	"""start new scan"" function"
+amrescan	regproc	pg_proc.oid	"""restart this scan"" function"
+amendscan	regproc	pg_proc.oid	"""end this scan"" function"
+ammarkpos	regproc	pg_proc.oid	"""mark current scan position"" function"
+amrestrpos	regproc	pg_proc.oid	"""restore marked scan position"" function"
+ambuild	regproc	pg_proc.oid	"""build new index"" function"
 ambulkdelete	regproc	pg_proc.oid	bulk-delete function
 amcostestimate	regproc	pg_proc.oid	estimate cost of an indexscan

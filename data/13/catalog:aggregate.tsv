@@ -1,6 +1,6 @@
 Name	Type	References	Description
 aggfnoid	regproc	pg_aggregate.oid	pg_proc OID of the aggregate function
-aggkind	char		"Aggregate kind: n for \"normal\" aggregates, o for \"ordered-set\" aggregates, or h for \"hypothetical-set\" aggregates"
+aggkind	char		"Aggregate kind: n for ""normal"" aggregates, o for ""ordered-set"" aggregates, or h for ""hypothetical-set"" aggregates"
 aggnumdirectargs	int2		Number of direct (non-aggregated) arguments of an ordered-set or hypothetical-set aggregate, counting a variadic array as one argument. If equal to pronargs, the aggregate must be variadic and the variadic array describes the aggregated arguments as well as the final direct arguments. Always zero for normal aggregates.
 aggtransfn	regproc	pg_aggregate.oid	Transition function
 aggfinalfn	regproc	pg_aggregate.oid	Final function (zero if none)
