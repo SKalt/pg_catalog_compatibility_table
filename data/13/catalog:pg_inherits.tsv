@@ -1,4 +1,4 @@
 Name	Type	References	Description
-inhrelid	oid	pg_inherits.oid	The OID of the child table or index
-inhparent	oid	pg_inherits.oid	The OID of the parent table or index
+inhrelid	oid	pg_class.oid	The OID of the child table or index
+inhparent	oid	pg_class.oid	The OID of the parent table or index
 inhseqno	int4		If there is more than one direct parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. The count starts at 1. Indexes cannot have multiple inheritance, since they can only inherit when using declarative partitioning.

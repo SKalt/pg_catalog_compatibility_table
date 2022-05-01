@@ -1,8 +1,8 @@
 Name	Type	References	Description
-schemaname	name	pg_sequences.nspname	Name of schema containing sequence
-sequencename	name	pg_sequences.relname	Name of sequence
-sequenceowner	name	pg_sequences.rolname	Name of sequence's owner
-data_type	regtype	pg_sequences.oid	Data type of the sequence
+schemaname	name	pg_namespace.nspname	Name of schema containing sequence
+sequencename	name	pg_class.relname	Name of sequence
+sequenceowner	name	pg_authid.rolname	Name of sequence's owner
+data_type	regtype	pg_type.oid	Data type of the sequence
 start_value	int8		Start value of the sequence
 min_value	int8		Minimum value of the sequence
 max_value	int8		Maximum value of the sequence

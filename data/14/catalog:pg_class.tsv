@@ -1,13 +1,13 @@
 Name	Type	References	Description
 oid	oid		Row identifier
 relname	name		Name of the table, index, view, etc.
-relnamespace	oid	pg_class.oid	The OID of the namespace that contains this relation
-reltype	oid	pg_class.oid	The OID of the data type that corresponds to this table's row type, if any; zero for indexes, sequences, and toast tables, which have no pg_type entry
-reloftype	oid	pg_class.oid	For typed tables, the OID of the underlying composite type; zero for all other relations
-relowner	oid	pg_class.oid	Owner of the relation
-relam	oid	pg_class.oid	If this is a table or an index, the access method used (heap, B-tree, hash, etc.); otherwise zero (zero occurs for sequences, as well as relations without storage, such as views)
+relnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this relation
+reltype	oid	pg_type.oid	The OID of the data type that corresponds to this table's row type, if any; zero for indexes, sequences, and toast tables, which have no pg_type entry
+reloftype	oid	pg_type.oid	For typed tables, the OID of the underlying composite type; zero for all other relations
+relowner	oid	pg_authid.oid	Owner of the relation
+relam	oid	pg_am.oid	If this is a table or an index, the access method used (heap, B-tree, hash, etc.); otherwise zero (zero occurs for sequences, as well as relations without storage, such as views)
 relfilenode	oid		"Name of the on-disk file of this relation; zero means this is a ""mapped"" relation whose disk file name is determined by low-level state"
-reltablespace	oid	pg_class.oid	The tablespace in which this relation is stored. If zero, the database's default tablespace is implied. (Not meaningful if the relation has no on-disk file.)
+reltablespace	oid	pg_tablespace.oid	The tablespace in which this relation is stored. If zero, the database's default tablespace is implied. (Not meaningful if the relation has no on-disk file.)
 relpages	int4		Size of the on-disk representation of this table in pages (of size BLCKSZ). This is only an estimate used by the planner. It is updated by VACUUM, ANALYZE, and a few DDL commands such as CREATE INDEX.
 reltuples	float4		Number of live rows in the table. This is only an estimate used by the planner. It is updated by VACUUM, ANALYZE, and a few DDL commands such as CREATE INDEX. If the table has never yet been vacuumed or analyzed, reltuples contains -1 indicating that the row count is unknown.
 relallvisible	int4		Number of pages that are marked all-visible in the table's visibility map. This is only an estimate used by the planner. It is updated by VACUUM, ANALYZE, and a few DDL commands such as CREATE INDEX.

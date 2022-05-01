@@ -1,6 +1,6 @@
 Name	Type	References	Description
 oid	oid		Row identifier
-defaclrole	oid	pg_default_acl.oid	The OID of the role associated with this entry
-defaclnamespace	oid	pg_default_acl.oid	The OID of the namespace associated with this entry, or 0 if none
+defaclrole	oid	pg_authid.oid	The OID of the role associated with this entry
+defaclnamespace	oid	pg_namespace.oid	The OID of the namespace associated with this entry, or 0 if none
 defaclobjtype	char		Type of object this entry is for: r = relation (table, view), S = sequence, f = function, T = type, n = schema
 defaclacl	aclitem[]		Access privileges that this type of object should have on creation

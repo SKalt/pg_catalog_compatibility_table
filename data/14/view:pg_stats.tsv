@@ -1,7 +1,7 @@
 Name	Type	References	Description
-schemaname	name	pg_stats.nspname	Name of schema containing table
-tablename	name	pg_stats.relname	Name of table
-attname	name	pg_stats.attname	Name of column described by this row
+schemaname	name	pg_namespace.nspname	Name of schema containing table
+tablename	name	pg_class.relname	Name of table
+attname	name	pg_attribute.attname	Name of column described by this row
 inherited	bool		If true, this row includes inheritance child columns, not just the values in the specified table
 null_frac	float4		Fraction of column entries that are null
 avg_width	int4		Average width in bytes of column's entries

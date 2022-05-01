@@ -1,7 +1,7 @@
 Name	Type	References	Description
-schemaname	name	pg_policies.nspname	Name of schema containing table policy is on
-tablename	name	pg_policies.relname	Name of table policy is on
-policyname	name	pg_policies.polname	Name of policy
+schemaname	name	pg_namespace.nspname	Name of schema containing table policy is on
+tablename	name	pg_class.relname	Name of table policy is on
+policyname	name	pg_policy.polname	Name of policy
 permissive	text		Is the policy permissive or restrictive?
 roles	name[]		The roles to which this policy applies
 cmd	text		The command type to which the policy is applied

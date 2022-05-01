@@ -1,7 +1,7 @@
 Name	Type	References	Description
-umid	oid	pg_user_mappings.oid	OID of the user mapping
-srvid	oid	pg_user_mappings.oid	The OID of the foreign server that contains this mapping
-srvname	name	pg_user_mappings.srvname	Name of the foreign server
-umuser	oid	pg_user_mappings.oid	OID of the local role being mapped, or zero if the user mapping is public
+umid	oid	pg_user_mapping.oid	OID of the user mapping
+srvid	oid	pg_foreign_server.oid	The OID of the foreign server that contains this mapping
+srvname	name	pg_foreign_server.srvname	Name of the foreign server
+umuser	oid	pg_authid.oid	OID of the local role being mapped, or zero if the user mapping is public
 usename	name		Name of the local user to be mapped
 umoptions	text[]		"User mapping specific options, as ""keyword=value"" strings"

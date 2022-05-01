@@ -11,4 +11,4 @@ rolpassword	text		Not the password (always reads as ********)
 rolvaliduntil	timestamptz		Password expiry time (only used for password authentication); null if no expiration
 rolbypassrls	bool		Role bypasses every row-level security policy, see Section 5.8 for more information.
 rolconfig	text[]		Role-specific defaults for run-time configuration variables
-oid	oid	pg_roles.oid	ID of role
+oid	oid	pg_authid.oid	ID of role

@@ -1,4 +1,4 @@
-https://www.postgresql.org/docs/7.3/catalogs.html#CATALOGS-OVERVIEW
+https://www.postgresql.org/docs/7.3/catalogs.html#CATALOGS-OVERVIEW.html
 https://www.postgresql.org/docs/7.3/catalog-pg-aggregate.html
 https://www.postgresql.org/docs/7.3/catalog-pg-am.html
 https://www.postgresql.org/docs/7.3/catalog-pg-amop.html

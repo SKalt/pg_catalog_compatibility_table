@@ -1,9 +1,9 @@
 Name	Type	References	Description
-schemaname	name	pg_stats_ext_exprs.nspname	Name of schema containing table
-tablename	name	pg_stats_ext_exprs.relname	Name of table the statistics object is defined on
-statistics_schemaname	name	pg_stats_ext_exprs.nspname	Name of schema containing extended statistics object
-statistics_name	name	pg_stats_ext_exprs.stxname	Name of extended statistics object
-statistics_owner	name	pg_stats_ext_exprs.rolname	Owner of the extended statistics object
+schemaname	name	pg_namespace.nspname	Name of schema containing table
+tablename	name	pg_class.relname	Name of table the statistics object is defined on
+statistics_schemaname	name	pg_namespace.nspname	Name of schema containing extended statistics object
+statistics_name	name	pg_statistic_ext.stxname	Name of extended statistics object
+statistics_owner	name	pg_authid.rolname	Owner of the extended statistics object
 expr	text		Expression included in the extended statistics object
 null_frac	float4		Fraction of expression entries that are null
 avg_width	int4		Average width in bytes of expression's entries

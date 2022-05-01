@@ -6,6 +6,6 @@ scrape: ./data/columns.tsv
 lint:
 	pnpx tsc --noEmit --strict ./index.ts ./scripts/make_erd.ts
 clean:
-	rm ./data/*.tsv ./data/**/*.tsv
+	rm -f ./data/*.tsv ./data/**/*.tsv
 erd: ./data/columns.tsv
-	pnpx esbuild ./scrips/make_erd.ts --format=cjs | node
+	pnpx esbuild ./scripts/make_erd.ts --format=cjs | node

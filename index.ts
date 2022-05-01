@@ -27,8 +27,6 @@ const versions = [
   "7.1",
 ];
 
-const pgCatalogIndex = "https://www.postgresql.org/docs/current/catalogs.html";
-
 // sorting
 const byFloat = (a: string, b: string) =>
   parseFloat(a) > parseFloat(b) ? 1 : parseFloat(b) > parseFloat(a) ? -1 : 0;
@@ -70,18 +68,18 @@ const tee =
     return data;
   };
 
-/** construct a postgres url */
-const makeIndex = (version: string, page = "catalogs") =>
+/** construct a postgres documentation page url */
+const makeUrl = (version: string, page = "catalogs") =>
   `https://www.postgresql.org/docs/${version}/${page}.html`;
 
-/** ... */
-const getIndex = async (
+/** get a documentation page's HTML as a string */
+const getPage = async (
   version: string,
   page: string = "catalogs"
 ): Promise<string> => {
-  const f = `./data/${version}/${page}.html`;
-  if (await fileExists(f)) return await readFile(f, "utf8");
-  return await get(makeIndex(version, page)).then(tee(f));
+  const target = `./data/${version}/${page}.html`;
+  if (await fileExists(target)) return await readFile(target, "utf8");
+  return await get(makeUrl(version, page)).then(tee(target));
 };
 
 /** find all links in the TOC page */
@@ -92,11 +90,7 @@ const getTableDocUrlsFromIndex = (html: string): string[] => {
     .filter(Boolean);
 };
 
-/**
- * @param {string} version
- * @param {string} page
- * @returns {Promise<string[]>}
- */
+/** find all the links on a given page */
 const getUrls = async (
   version: string,
   page: string = "catalogs"
@@ -105,20 +99,19 @@ const getUrls = async (
   console.log(`[debug] getting urls for v${version}`);
   if (fs.existsSync(f)) return (await readFile(f, "utf8")).split("\n");
   else {
-    const html = await getIndex(version, page);
-    const results = getTableDocUrlsFromIndex(html).map(
-      (page) => `https://www.postgresql.org/docs/${version}/${page}`
+    const results = getTableDocUrlsFromIndex(await getPage(version, page)).map(
+      (page) => makeUrl(version, page.replace(/\.html$/, ""))
     );
-    console.log({ results });
     tee(f)(results.join("\n"));
     return results;
   }
 };
 
-const normalizeStr = (s: string) => s.normalize().replace(/[“”]/g, '"');
+const normalizeStr = (s: string) =>
+  s.normalize().replace(/[“”]/g, '"').replace(/\s+/g, " ");
 
 const tsvEscape = (s: string) => {
-  let result = normalizeStr(s.replace(/\s+/g, " "));
+  let result = normalizeStr(s);
   return result.includes('"') ? `"${result.replace(/"/g, '""')}"` : result;
 };
 
@@ -135,7 +128,7 @@ const tableToTsv = ($: CheerioAPI): string => {
   );
   let _rows = $(table).find("table tbody tr");
   if (!_rows.length) {
-    console.log(`no rows found in\n${_rows.html}`);
+    console.log(`[error] no rows found in\n${_rows.html}`);
     throw new Error("no rows");
   }
   const rows = Array.from(_rows).map((tr) => {
@@ -167,7 +160,9 @@ const thirteenTableToCsv = ($: CheerioAPI): string => {
     const type_ = $(row).find(".type").first().text();
     const ref =
       colNames.length > 1
-        ? `${$(".structname").first().text()}.${$(colNames[1]).text()}`
+        ? `${$(row).find("a[href] .structname").first().text()}.${$(
+            colNames[1]
+          ).text()}`
         : "";
     const desc = Array.from($(row).nextAll("p"))
       .map((p) => $(p).text())
@@ -194,7 +189,7 @@ const processVersion = async (version: string) => {
     let _pages = urls
       .filter((url) => !/catalogs.html/.test(url))
       .filter((url) => !/catalogs(-overview)?/.test(url))
-      .filter((url) => !/views-(overview)?/.test(url));
+      .filter((url) => !/views(-overview)?/.test(url));
     for (let url of _pages) {
       await (async (url) => {
         const htmlName = last(url.split("/"));
@@ -237,8 +232,8 @@ const parseTsv = (
   let [header, ...rows] = rawRows;
   header = header.map((m) => m.toLowerCase());
   /**
-   * @param {string} h the header-cell value to lookup
-   * @returns {(cells: string[]) => string}
+   * look up a header in the headers array
+   * @param h the header-cell value to lookup
    */
   const lookup = (h: string): ((cells: string[]) => string) => {
     const i = header.indexOf(h);
