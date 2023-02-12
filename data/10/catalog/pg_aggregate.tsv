@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	aggfnoid	REGPROC		pg_proc.oid	"pg_proc oid of the aggregate function"
 1	aggkind	CHAR			"aggregate kind: n for “normal” aggregates, o for “ordered-set” aggregates, or h for “hypothetical-set” aggregates"
 2	aggnumdirectargs	INT2			"number of direct (non-aggregated) arguments of an ordered-set or hypothetical-set aggregate, counting a variadic array as one argument. if equal to pronargs, the aggregate must be variadic and the variadic array describes the aggregated arguments as well as the final direct arguments. always zero for normal aggregates."

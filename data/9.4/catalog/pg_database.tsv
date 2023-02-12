@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	datname	NAME			"database name"
 2	datdba	OID		pg_authid.oid	"owner of the database, usually the user who created it"

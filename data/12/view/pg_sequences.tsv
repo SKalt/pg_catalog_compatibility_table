@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME		pg_namespace.nspname	"name of schema containing sequence"
 1	sequencename	NAME		pg_class.relname	"name of sequence"
 2	sequenceowner	NAME		pg_authid.rolname	"name of sequence's owner"

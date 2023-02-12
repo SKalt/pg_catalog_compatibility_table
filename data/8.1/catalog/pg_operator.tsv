@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oprname	NAME			"name of the operator"
 1	oprnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this operator"
 2	oprowner	OID		pg_authid.oid	"owner of the operator"

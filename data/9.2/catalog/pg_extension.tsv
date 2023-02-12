@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	extname	NAME			"name of the extension"
 1	extowner	OID		pg_authid.oid	"owner of the extension"
 2	extnamespace	OID		pg_namespace.oid	"schema containing the extension's exported objects"

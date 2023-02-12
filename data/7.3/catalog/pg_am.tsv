@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amname	NAME			"name of the access method"
 1	amowner	INT4		pg_shadow.usesysid	"user id of the owner (currently not used)"
 2	amstrategies	INT2			"number of operator strategies for this access method"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	adrelid	OID		pg_class.oid	"the table this column belongs to"
 2	adnum	INT2		pg_attribute.attnum	"the number of the column"

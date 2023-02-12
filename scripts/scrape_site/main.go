@@ -83,7 +83,7 @@ type ColData struct {
 	References, Nullable, Description string // may be absent
 }
 
-const tsvHeader = "Index	Name	Type	References	Description\n"
+const tsvHeader = "Index	Name	Type	Nullable	References	Description\n"
 
 func (c ColData) TsvRow() string {
 	return fmt.Sprintf(

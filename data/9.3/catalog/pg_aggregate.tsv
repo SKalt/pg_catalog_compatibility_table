@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	aggfnoid	REGPROC		pg_proc.oid	"pg_proc oid of the aggregate function"
 1	aggtransfn	REGPROC		pg_proc.oid	"transition function"
 2	aggfinalfn	REGPROC		pg_proc.oid	"final function (zero if none)"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	rcrelid	OID		pg_class.oid	"the table this check constraint is on"
 1	rcname	NAME			"constraint name"
 2	rcbin	TEXT			"an internal representation of the constraint expression"

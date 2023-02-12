@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	enumtypid	OID		pg_type.oid	"the oid of the pg_type entry owning this enum value"
 1	enumsortorder	FLOAT4			"the sort position of this enum value within its enum type"
 2	enumlabel	NAME			"the textual label for this enum value"

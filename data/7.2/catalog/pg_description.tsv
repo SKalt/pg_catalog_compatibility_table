@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	objoid	OID		"any oid attribute"	"the oid of the object this description pertains to"
 1	classoid	OID		pg_class.oid	"the oid of the system catalog this object appears in"
 2	objsubid	INT4			"for a comment on a table attribute, this is the attribute's column number (the objoid and classoid refer to the table itself). for all other object types, this field is presently zero."

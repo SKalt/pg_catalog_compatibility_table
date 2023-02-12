@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	groname	NAME			"name of the group"
 1	grosysid	INT4			"an arbitrary number to identify this group"
 2	grolist	INT4[]		pg_shadow.usesysid	"an array containing the ids of the users in this group"

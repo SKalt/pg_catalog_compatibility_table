@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	tgrelid	OID		pg_class.oid	"the table this trigger is on"
 1	tgname	NAME			"trigger name (must be unique among triggers of same table)"
 2	tgfoid	OID		pg_proc.oid	"the function to be called"

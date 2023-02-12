@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	tmplname	NAME			"text search template name"
 1	tmplnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this template"
 2	tmplinit	REGPROC		pg_proc.oid	"oid of the template's initialization function"

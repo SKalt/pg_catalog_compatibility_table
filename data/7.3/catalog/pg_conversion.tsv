@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	conname	NAME			"conversion name (unique within a namespace)"
 1	connamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this conversion"
 2	conowner	INT4		pg_shadow.usesysid	"owner (creator) of the namespace"

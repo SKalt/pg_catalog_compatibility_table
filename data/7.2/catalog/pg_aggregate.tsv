@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	aggname	NAME			"name of the aggregate function"
 1	aggowner	INT4		pg_shadow.usesysid	"owner (creator) of the aggregate function"
 2	aggtransfn	"REGPROC (FUNCTION)"		pg_proc.oid	"transition function"

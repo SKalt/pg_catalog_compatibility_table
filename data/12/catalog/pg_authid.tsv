@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	rolname	NAME			"role name"
 2	rolsuper	BOOL			"role has superuser privileges"

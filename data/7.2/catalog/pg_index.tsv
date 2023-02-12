@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	indexrelid	OID		pg_class.oid	"the oid of the pg_class entry for this index"
 1	indrelid	OID		pg_class.oid	"the oid of the pg_class entry for the table this index is for"
 2	indproc	REGPROC		pg_proc.oid	"the registered procedure if this is a functional index"

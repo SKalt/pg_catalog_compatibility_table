@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	partrelid	OID		pg_class.oid	"the oid of the pg_class entry for this partitioned table"
 1	partstrat	CHAR			"partitioning strategy; l = list partitioned table, r = range partitioned table"
 2	partnatts	INT2			"the number of columns in partition key"

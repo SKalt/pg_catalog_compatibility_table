@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	prsname	NAME			"text search parser name"
 2	prsnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this parser"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oprname	NAME			"name of the operator"
 1	oprowner	INT4		pg_shadow.usesysid	"owner (creator) of the operator"
 2	oprprec	INT2			unused

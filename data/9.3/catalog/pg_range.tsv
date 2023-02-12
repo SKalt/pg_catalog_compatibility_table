@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	rngtypid	OID		pg_type.oid	"oid of the range type"
 1	rngsubtype	OID		pg_type.oid	"oid of the element type (subtype) of this range type"
 2	rngcollation	OID		pg_collation.oid	"oid of the collation used for range comparisons, or 0 if none"

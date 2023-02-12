@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	conname	NAME			"conversion name (unique within a namespace)"
 2	connamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this conversion"

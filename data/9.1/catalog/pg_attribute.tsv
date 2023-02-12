@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	attrelid	OID		pg_class.oid	"the table this column belongs to"
 1	attname	NAME			"the column name"
 2	atttypid	OID		pg_type.oid	"the data type of this column"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	fdwname	NAME			"name of the foreign-data wrapper"
 1	fdwowner	OID		pg_authid.oid	"owner of the foreign-data wrapper"
 2	fdwhandler	OID		pg_proc.oid	"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provided"

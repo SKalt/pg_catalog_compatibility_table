@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	classid	OID		pg_class.oid	"the oid of the system catalog the dependent object is in"
 1	objid	OID		"any oid column"	"the oid of the specific dependent object"
 2	objsubid	INT4			"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero"

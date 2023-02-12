@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	cfgname	NAME			"text search configuration name"
 1	cfgnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this configuration"
 2	cfgowner	OID		pg_authid.oid	"owner of the configuration"

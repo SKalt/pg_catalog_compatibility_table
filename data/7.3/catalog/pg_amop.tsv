@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amopclaid	OID		pg_opclass.oid	"the index opclass this entry is for"
 1	amopstrategy	INT2			"operator strategy number"
 2	amopreqcheck	BOOL			"index hit must be rechecked"

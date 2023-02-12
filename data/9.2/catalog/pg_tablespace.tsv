@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	spcname	NAME			"tablespace name"
 1	spcowner	OID		pg_authid.oid	"owner of the tablespace, usually the user who created it"
 2	spcacl	ACLITEM[]			"access privileges; see grant and revoke for details"

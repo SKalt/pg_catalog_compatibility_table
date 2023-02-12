@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	datname	NAME			"database name"
 1	datdba	OID		pg_authid.oid	"owner of the database, usually the user who created it"
 2	encoding	INT4			"character encoding for this database (pg_encoding_to_char() can translate this number to the encoding name)"

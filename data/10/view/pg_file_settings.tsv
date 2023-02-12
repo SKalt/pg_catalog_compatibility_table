@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	sourcefile	TEXT			"full path name of the configuration file"
 1	sourceline	INTEGER			"line number within the configuration file where the entry appears"
 2	seqno	INTEGER			"order in which the entries are processed (1..n)"

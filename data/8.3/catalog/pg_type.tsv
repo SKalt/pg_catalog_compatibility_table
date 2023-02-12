@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	typname	NAME			"data type name"
 1	typnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this type"
 2	typowner	OID		pg_authid.oid	"owner of the type"

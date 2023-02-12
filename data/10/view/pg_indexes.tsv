@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table and index"
 1	tablename	NAME		pg_class.relname	"name of table the index is for"
 2	indexname	NAME		pg_class.relname	"name of index"

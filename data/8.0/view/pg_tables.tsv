@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table"
 1	tablename	NAME		pg_class.relname	"name of table"
 2	tableowner	NAME		pg_shadow.usename	"name of table's owner"

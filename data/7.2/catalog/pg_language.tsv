@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	lanname	NAME			"name of the language (to be specified when creating a function)"
 1	lanispl	BOOL			"this is false for internal languages (such as sql) and true for dynamically loaded language handler modules. it essentially means that, if it is true, the language may be dropped."
 2	lanpltrusted	BOOL			"this is a trusted language. see under create language what this means. if this is an internal language (lanispl is false) then this field is meaningless."

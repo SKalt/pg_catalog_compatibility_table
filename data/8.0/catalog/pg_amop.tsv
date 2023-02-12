@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amopclaid	OID		pg_opclass.oid	"the index operator class this entry is for"
 1	amopsubtype	OID		pg_type.oid	"subtype to distinguish multiple entries for one strategy; zero for default"
 2	amopstrategy	INT2			"operator strategy number"

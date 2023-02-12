@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	rulename	NAME			"rule name"
 2	ev_class	OID		pg_class.oid	"the table this rule is for"

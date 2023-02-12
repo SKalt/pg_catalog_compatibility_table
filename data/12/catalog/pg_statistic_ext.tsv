@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	stxrelid	OID		pg_class.oid	"table containing the columns described by this object"
 1	stxname	NAME			"name of the statistics object"
 2	stxnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this statistics object"

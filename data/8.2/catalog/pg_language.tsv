@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	lanname	NAME			"name of the language"
 1	lanispl	BOOL			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism in the future"
 2	lanpltrusted	BOOL			"true if this is a trusted language, which means that it is believed not to grant access to anything outside the normal sql execution environment. only superusers may create functions in untrusted languages"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"time zone name"
 1	abbrev	TEXT			"time zone abbreviation"
 2	utc_offset	INTERVAL			"offset from utc (positive means east of greenwich)"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	nspname	NAME			"name of the namespace"
 2	nspowner	OID		pg_authid.oid	"owner of the namespace"

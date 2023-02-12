@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	srsubid	OID		pg_subscription.oid	"reference to subscription"
 1	srrelid	OID		pg_class.oid	"reference to relation"
 2	srsubstate	CHAR			"state code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)"

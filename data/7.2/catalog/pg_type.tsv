@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	typname	NAME			"data type name"
 1	typowner	INT4		pg_shadow.usesysid	"owner (creator) of the type"
 2	typlen	INT2			"length of the storage representation of the type, -1 if variable length"

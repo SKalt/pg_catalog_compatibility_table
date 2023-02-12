@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	opcmethod	OID		pg_am.oid	"index access method operator class is for"
 1	opcname	NAME			"name of this operator class"
 2	opcnamespace	OID		pg_namespace.oid	"namespace of this operator class"

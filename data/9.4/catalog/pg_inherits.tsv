@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	inhrelid	OID		pg_class.oid	"the oid of the child table"
 1	inhparent	OID		pg_class.oid	"the oid of the parent table"
 2	inhseqno	INT4			"if there is more than one direct parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. the count starts at 1."

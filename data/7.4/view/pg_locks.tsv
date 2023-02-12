@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	relation	OID		pg_class.oid	"oid of the locked relation, or null if the lockable object is a transaction id"
 1	database	OID		pg_database.oid	"oid of the database in which the locked relation exists, or zero if the locked relation is a globally-shared table, or null if the lockable object is a transaction id"
 2	transaction	XID			"id of a transaction, or null if the lockable object is a relation"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME		pg_namespace.nspname	"name of schema containing materialized view"
 1	matviewname	NAME		pg_class.relname	"name of materialized view"
 2	matviewowner	NAME		pg_authid.rolname	"name of materialized view's owner"

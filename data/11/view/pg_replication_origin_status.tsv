@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	local_id	OID		pg_replication_origin.roident	"internal node identifier"
 1	external_id	TEXT		pg_replication_origin.roname	"external node identifier"
 2	remote_lsn	PG_LSN			"the origin node's lsn up to which data has been replicated."

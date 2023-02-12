@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"the identifier of the prepared statement"
 1	statement	TEXT			"the query string submitted by the client to create this prepared statement. for prepared statements created via sql, this is the prepare statement submitted by the client. for prepared statements created via the frontend/backend protocol, this is the text of the prepared statement itself"
 2	prepare_time	TIMESTAMPTZ			"the time at which the prepared statement was created"

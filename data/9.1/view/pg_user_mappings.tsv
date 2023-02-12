@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	umid	OID		pg_user_mapping.oid	"oid of the user mapping"
 1	srvid	OID		pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"
 2	srvname	TEXT			"name of the foreign server"

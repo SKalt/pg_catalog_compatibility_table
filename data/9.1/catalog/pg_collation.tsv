@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	collname	NAME			"collation name (unique per namespace and encoding)"
 1	collnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this collation"
 2	collowner	OID		pg_authid.oid	"owner of the collation"

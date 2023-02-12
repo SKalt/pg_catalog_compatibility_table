@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amprocfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
 1	amproclefttype	OID		pg_type.oid	"left-hand input data type of associated operator"
 2	amprocrighttype	OID		pg_type.oid	"right-hand input data type of associated operator"

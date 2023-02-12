@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	locktype	TEXT			"type of the lockable object: relation, extend, page, tuple, transactionid, object, or userlock"
 1	database	OID		pg_database.oid	"oid of the database in which the object exists, or zero if the object is a shared object, or null if the object is a transaction id"
 2	relation	OID		pg_class.oid	"oid of the relation, or null if the object is not a relation or part of a relation"

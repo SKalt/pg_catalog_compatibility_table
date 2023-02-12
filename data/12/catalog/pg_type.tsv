@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	typname	NAME			"data type name"
 2	typnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this type"

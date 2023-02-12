@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	tmplname	NAME			"text search template name"
 2	tmplnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this template"

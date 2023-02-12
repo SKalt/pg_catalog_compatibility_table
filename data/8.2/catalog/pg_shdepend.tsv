@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	dbid	OID		pg_database.oid	"the oid of the database the dependent object is in, or zero for a shared object"
 1	classid	OID		pg_class.oid	"the oid of the system catalog the dependent object is in"
 2	objid	OID		"any oid column"	"the oid of the specific dependent object"

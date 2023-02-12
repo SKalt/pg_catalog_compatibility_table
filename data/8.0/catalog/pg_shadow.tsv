@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	usename	NAME			"user name"
 1	usesysid	INT4			"user id (arbitrary number used to reference this user)"
 2	usecreatedb	BOOL			"user may create databases"

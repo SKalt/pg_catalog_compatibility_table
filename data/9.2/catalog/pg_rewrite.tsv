@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	rulename	NAME			"rule name"
 1	ev_class	OID		pg_class.oid	"the table this rule is for"
 2	ev_attr	INT2			"the column this rule is for (currently, always -1 to indicate the whole table)"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
 1	amprocfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
 2	amproclefttype	OID		pg_type.oid	"left-hand input data type of associated operator"

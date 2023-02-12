@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	prsname	NAME			"text search parser name"
 1	prsnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this parser"
 2	prsstart	REGPROC		pg_proc.oid	"oid of the parser's startup function"

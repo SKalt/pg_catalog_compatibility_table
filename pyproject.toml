@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pg-catalog-compatibility-table"
+version = "0.1.0"
+description = "Illustrates differences in `pg_catalog` between postgres versions"
+authors = ["Steven Kalt <kalt.steven@gmail.com>"]
+license = "Postgres"
+readme = "README.md"
+packages = [{include = "pg_catalog_compatibility_table"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+mypy = "^1.0.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+bandit = "^1.7.4"
+
+
+[tool.poetry.group.exploration.dependencies]
+pandas = "^1.5.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

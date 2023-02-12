@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"run-time configuration parameter name"
 1	setting	TEXT			"current value of the parameter"
 2	category	TEXT			"logical group of the parameter"

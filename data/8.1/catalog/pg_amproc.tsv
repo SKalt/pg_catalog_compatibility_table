@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amopclaid	OID		pg_opclass.oid	"the index operator class this entry is for"
 1	amprocsubtype	OID		pg_type.oid	"subtype, if cross-type routine, else zero"
 2	amprocnum	INT2			"support procedure number"

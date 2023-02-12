@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	evtname	NAME			"trigger name (must be unique)"
 1	evtevent	NAME			"identifies the event for which this trigger fires"
 2	evtowner	OID		pg_authid.oid	"owner of the event trigger"

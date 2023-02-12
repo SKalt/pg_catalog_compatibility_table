@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	adrelid	OID		pg_class.oid	"the table this column belongs to"
 1	adnum	INT2		pg_attribute.attnum	"the number of the column"
 2	adbin	PG_NODE_TREE			"the internal representation of the column default value"

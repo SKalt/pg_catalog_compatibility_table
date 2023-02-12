@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	umuser	OID		pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is public"
 2	umserver	OID		pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"

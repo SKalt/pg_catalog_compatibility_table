@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	amname	NAME			"name of the access method"
 1	amstrategies	INT2			"number of operator strategies for this access method, or zero if access method does not have a fixed set of operator strategies"
 2	amsupport	INT2			"number of support routines for this access method"

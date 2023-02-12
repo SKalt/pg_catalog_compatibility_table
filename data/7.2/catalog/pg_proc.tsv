@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	proname	NAME			"name of the function"
 1	proowner	INT4		pg_shadow.usesysid	"owner (creator) of the function"
 2	prolang	OID		pg_language.oid	"implementation language or call interface of this function"

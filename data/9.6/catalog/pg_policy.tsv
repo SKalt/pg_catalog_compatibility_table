@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	polname	NAME			"the name of the policy"
 1	polrelid	OID		pg_class.oid	"the table to which the policy applies"
 2	polcmd	CHAR			"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"

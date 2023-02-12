@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	enumtypid	OID		pg_type.oid	"the oid of the pg_type entry owning this enum value"
 2	enumsortorder	FLOAT4			"the sort position of this enum value within its enum type"

@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	conname	NAME			"constraint name (not necessarily unique!)"
 1	connamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this constraint"
 2	contype	CHAR			"'c' = check constraint, 'f' = foreign key constraint, 'p' = primary key constraint, 'u' = unique constraint"

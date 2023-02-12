@@ -1,4 +1,4 @@
-Index	Name	Type	References	Description
+Index	Name	Type	Nullable	References	Description
 0	slot_name	NAME			"a unique, cluster-wide identifier for the replication slot"
 1	plugin	NAME			"the base name of the shared object containing the output plugin this logical slot is using, or null for physical slots."
 2	slot_type	TEXT			"the slot type - physical or logical"
