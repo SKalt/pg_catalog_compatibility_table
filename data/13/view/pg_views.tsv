@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME			"name of schema containing view"
 1	viewname	NAME			"name of view"
 2	viewowner	NAME			"name of view's owner"

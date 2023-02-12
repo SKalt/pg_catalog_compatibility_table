@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	line_number	INT4			"line number of this rule in pg_hba.conf"
 1	type	TEXT			"type of connection"
 2	database	TEXT[]			"list of database name(s) to which this rule applies"

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	umid	OID			"oid of the user mapping"
 1	srvid	OID			"the oid of the foreign server that contains this mapping"
 2	srvname	NAME			"name of the foreign server"

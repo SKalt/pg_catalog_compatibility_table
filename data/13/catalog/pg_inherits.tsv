@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	inhrelid	OID			"the oid of the child table or index"
 1	inhparent	OID			"the oid of the parent table or index"
 2	inhseqno	INT4			"if there is more than one direct parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. the count starts at 1.indexes cannot have multiple inheritance, since they can only inherit when using declarative partitioning."

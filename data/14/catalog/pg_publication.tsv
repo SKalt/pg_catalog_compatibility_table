@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	pubname	NAME			"name of the publication"
 2	pubowner	OID			"owner of the publication"

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	dbid	OID			"the oid of the database the dependent object is in, or zero for a shared object"
 1	classid	OID			"the oid of the system catalog the dependent object is in"
 2	objid	OID			"the oid of the specific dependent object"

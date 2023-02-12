@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	collname	NAME			"collation name (unique per namespace and encoding)"
 2	collnamespace	OID			"the oid of the namespace that contains this collation"

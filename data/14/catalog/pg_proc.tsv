@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	proname	NAME			"name of the function"
 2	pronamespace	OID			"the oid of the namespace that contains this function"

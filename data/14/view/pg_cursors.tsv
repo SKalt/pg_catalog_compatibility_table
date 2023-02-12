@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"the name of the cursor"
 1	statement	TEXT			"the verbatim query string submitted to declare this cursor"
 2	is_holdable	BOOL			"true if the cursor is holdable (that is, it can be accessed after the transaction that declared the cursor has committed); false otherwise"

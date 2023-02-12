@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	subdbid	OID			"oid of the database that the subscription resides in"
 2	subskiplsn	PG_LSN			"finish lsn of the transaction whose changes are to be skipped, if a valid lsn; otherwise 0/0."

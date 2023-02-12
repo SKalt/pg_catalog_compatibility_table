@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"the name of the shared memory allocation. null for unused memory and <anonymous> for anonymous allocations."
 1	off	INT8			"the offset at which the allocation starts. null for anonymous allocations, since details related to them are not known."
 2	size	INT8			"size of the allocation"

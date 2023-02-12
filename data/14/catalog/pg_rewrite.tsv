@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	rulename	NAME			"rule name"
 2	ev_class	OID			"the table this rule is for"

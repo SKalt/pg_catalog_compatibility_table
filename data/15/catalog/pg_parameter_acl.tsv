@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	parname	TEXT			"the name of a configuration parameter for which privileges are granted"
 2	paracl	ACLITEM[]			"access privileges; see section 5.7 for details"

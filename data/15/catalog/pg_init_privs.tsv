@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	objoid	OID			"the oid of the specific object"
 1	classoid	OID			"the oid of the system catalog the object is in"
 2	objsubid	INT4			"for a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero."

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	trftype	OID			"oid of the data type this transform is for"
 2	trflang	OID			"oid of the language this transform is for"

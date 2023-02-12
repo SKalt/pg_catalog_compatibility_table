@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	evtname	NAME			"trigger name (must be unique)"
 2	evtevent	NAME			"identifies the event for which this trigger fires"

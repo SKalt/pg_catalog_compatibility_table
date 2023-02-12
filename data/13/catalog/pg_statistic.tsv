@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	starelid	OID			"the table or index that the described column belongs to"
 1	staattnum	INT2			"the number of the described column"
 2	stainherit	BOOL			"if true, the stats include inheritance child columns, not just the values in the specified relation"

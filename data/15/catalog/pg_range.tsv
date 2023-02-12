@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	rngtypid	OID			"oid of the range type"
 1	rngsubtype	OID			"oid of the element type (subtype) of this range type"
 2	rngmultitypid	OID			"oid of the multirange type for this range type"

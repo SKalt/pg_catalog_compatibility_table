@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	indexrelid	OID			"the oid of the pg_class entry for this index"
 1	indrelid	OID			"the oid of the pg_class entry for the table this index is for"
 2	indnatts	INT2			"the total number of columns in the index (duplicates pg_class.relnatts); this number includes both key and included attributes"

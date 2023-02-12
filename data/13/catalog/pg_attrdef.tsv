@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	adrelid	OID			"the table this column belongs to"
 2	adnum	INT2			"the number of the column"

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	srsubid	OID			"reference to subscription"
 1	srrelid	OID			"reference to relation"
 2	srsubstate	CHAR			"state code: i = initialize, d = data is being copied, f = finished table copy, s = synchronized, r = ready (normal replication)"

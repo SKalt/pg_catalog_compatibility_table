@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	stxoid	OID			"extended statistics object containing the definition for this data"
 1	stxdinherit	BOOL			"if true, the stats include values from child tables, not just the values in the specified relation"
 2	stxdndistinct	PG_NDISTINCT			"n-distinct counts, serialized as pg_ndistinct type"

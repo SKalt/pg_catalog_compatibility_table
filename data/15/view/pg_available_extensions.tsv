@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	name	NAME			"extension name"
 1	default_version	TEXT			"name of default version, or null if none is specified"
 2	installed_version	TEXT			"currently installed version of the extension, or null if not installed"

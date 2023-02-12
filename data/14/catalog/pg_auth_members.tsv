@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	roleid	OID			"id of a role that has a member"
 1	member	OID			"id of a role that is a member of roleid"
 2	grantor	OID			"id of the role that granted this membership"

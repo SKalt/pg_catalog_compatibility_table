@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	attrelid	OID			"the table this column belongs to"
 1	attname	NAME			"the column name"
 2	atttypid	OID			"the data type of this column (zero for a dropped column)"

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME			"name of schema containing table policy is on"
 1	tablename	NAME			"name of table policy is on"
 2	policyname	NAME			"name of policy"

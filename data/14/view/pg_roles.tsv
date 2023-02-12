@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	rolname	NAME			"role name"
 1	rolsuper	BOOL			"role has superuser privileges"
 2	rolinherit	BOOL			"role automatically inherits privileges of roles it is a member of"

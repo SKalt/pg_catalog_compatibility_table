@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	schemaname	NAME			"name of schema containing materialized view"
 1	matviewname	NAME			"name of materialized view"
 2	matviewowner	NAME			"name of materialized view's owner"

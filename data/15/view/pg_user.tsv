@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	usename	NAME			"user name"
 1	usesysid	OID			"id of this user"
 2	usecreatedb	BOOL			"user can create databases"

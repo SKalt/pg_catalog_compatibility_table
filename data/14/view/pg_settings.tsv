@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	name	TEXT			"run-time configuration parameter name"
 1	setting	TEXT			"current value of the parameter"
 2	unit	TEXT			"implicit unit of the parameter"

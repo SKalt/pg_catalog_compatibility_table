@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	relname	NAME			"name of the table, index, view, etc."
 2	relnamespace	OID			"the oid of the namespace that contains this relation"

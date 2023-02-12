@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	conname	NAME			"conversion name (unique within a namespace)"
 2	connamespace	OID			"the oid of the namespace that contains this conversion"

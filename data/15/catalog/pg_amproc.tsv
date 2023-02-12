@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	amprocfamily	OID			"the operator family this entry is for"
 2	amproclefttype	OID			"left-hand input data type of associated operator"

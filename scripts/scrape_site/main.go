@@ -210,6 +210,7 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 			log.Fatal(err)
 		}
 	}()
+	tsv.WriteString(tsvHeader)
 	rows.Each(func(i int, tr *goquery.Selection) {
 		col := ColData{Index: i}
 		row := tr.Find(".column_definition").First()

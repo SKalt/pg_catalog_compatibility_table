@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	tgrelid	OID			"the table this trigger is on"
 2	tgparentid	OID			"parent trigger that this trigger is cloned from, zero if not a clone; this happens when partitions are created or attached to a partitioned table."

@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	oid	OID			"row identifier"
 1	srvname	NAME			"name of the foreign server"
 2	srvowner	OID			"owner of the foreign server"

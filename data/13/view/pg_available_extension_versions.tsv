@@ -1,3 +1,4 @@
+Index	Name	Type	Nullable	References	Description
 0	name	NAME			"extension name"
 1	version	TEXT			"version name"
 2	installed	BOOL			"true if this version of this extension is currently installed"
