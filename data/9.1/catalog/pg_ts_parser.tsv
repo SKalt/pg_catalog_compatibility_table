@@ -1,0 +1,8 @@
+Index	Name	Type	References	Description
+0	prsname	NAME			"text search parser name"
+1	prsnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this parser"
+2	prsstart	REGPROC		pg_proc.oid	"oid of the parser's startup function"
+3	prstoken	REGPROC		pg_proc.oid	"oid of the parser's next-token function"
+4	prsend	REGPROC		pg_proc.oid	"oid of the parser's shutdown function"
+5	prsheadline	REGPROC		pg_proc.oid	"oid of the parser's headline function"
+6	prslextype	REGPROC		pg_proc.oid	"oid of the parser's lextype function"

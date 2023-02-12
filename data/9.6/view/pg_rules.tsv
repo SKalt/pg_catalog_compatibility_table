@@ -1,0 +1,5 @@
+Index	Name	Type	References	Description
+0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table"
+1	tablename	NAME		pg_class.relname	"name of table the rule is for"
+2	rulename	NAME		pg_rewrite.rulename	"name of rule"
+3	definition	TEXT			"rule definition (a reconstructed creation command)"

@@ -1,0 +1,13 @@
+Index	Name	Type	References	Description
+0	datname	NAME			"database name"
+1	datdba	OID		pg_authid.oid	"owner of the database, usually the user who created it"
+2	encoding	INT4			"character encoding for this database"
+3	datistemplate	BOOL			"if true then this database can be used in the template clause of create database to create a new database as a clone of this one."
+4	datallowconn	BOOL			"if false then no one can connect to this database. this is used to protect the template0 database from being altered."
+5	datconnlimit	INT4			"sets maximum number of concurrent connections that can be made to this database. -1 means no limit."
+6	datlastsysoid	OID			"last system oid in the database; useful particularly to pg_dump"
+7	datvacuumxid	XID			"all rows inserted or deleted by transaction ids before this one have been marked as known committed or known aborted in this database. this is used to determine when commit-log space can be recycled."
+8	datfrozenxid	XID			"all rows inserted by transaction ids before this one have been relabeled with a permanent (""frozen"") transaction id in this database. this is useful to check whether a database must be vacuumed soon to avoid transaction id wrap-around problems."
+9	dattablespace	OID		pg_tablespace.oid	"the default tablespace for the database. within this database, all tables for which pg_class.reltablespace is zero will be stored in this tablespace; in particular, all the non-shared system catalogs will be there."
+10	datconfig	TEXT[]			"session defaults for run-time configuration variables"
+11	datacl	ACLITEM[]			"access privileges; see grant and revoke for details."

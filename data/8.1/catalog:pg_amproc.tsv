@@ -1,5 +1,0 @@
-Name	Type	References	Description
-amopclaid	oid	pg_opclass.oid	The index operator class this entry is for
-amprocsubtype	oid	pg_type.oid	Subtype, if cross-type routine, else zero
-amprocnum	int2	 	Support procedure number
-amproc	regproc	pg_proc.oid	OID of the procedure

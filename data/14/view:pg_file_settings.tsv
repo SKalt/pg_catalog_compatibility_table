@@ -1,8 +1,0 @@
-Name	Type	References	Description
-sourcefile	text		Full path name of the configuration file
-sourceline	int4		Line number within the configuration file where the entry appears
-seqno	int4		Order in which the entries are processed (1..n)
-name	text		Configuration parameter name
-setting	text		Value to be assigned to the parameter
-applied	bool		True if the value can be applied successfully
-error	text		If not null, an error message indicating why this entry could not be applied

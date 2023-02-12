@@ -1,0 +1,5 @@
+Index	Name	Type	References	Description
+0	opfmethod	OID		pg_am.oid	"index access method operator family is for"
+1	opfname	NAME			"name of this operator family"
+2	opfnamespace	OID		pg_namespace.oid	"namespace of this operator family"
+3	opfowner	OID		pg_authid.oid	"owner of the operator family"

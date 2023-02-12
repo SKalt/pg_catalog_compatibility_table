@@ -1,0 +1,4 @@
+0	oid	OID			"row identifier"
+1	enumtypid	OID			"the oid of the pg_type entry owning this enum value"
+2	enumsortorder	FLOAT4			"the sort position of this enum value within its enum type"
+3	enumlabel	NAME			"the textual label for this enum value"

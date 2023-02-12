@@ -1,3 +1,0 @@
-Name	Type	References	Description
-roident	Oid	 	A unique, cluster-wide identifier for the replication origin. Should never leave the system.
-roname	text	 	The external, user defined, name of a replication origin.

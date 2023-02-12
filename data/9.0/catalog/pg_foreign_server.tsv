@@ -1,0 +1,8 @@
+Index	Name	Type	References	Description
+0	srvname	NAME			"name of the foreign server"
+1	srvowner	OID		pg_authid.oid	"owner of the foreign server"
+2	srvfdw	OID		pg_foreign_data_wrapper.oid	"the oid of the foreign-data wrapper of this foreign server"
+3	srvtype	TEXT			"type of the server (optional)"
+4	srvversion	TEXT			"version of the server (optional)"
+5	srvacl	ACLITEM[]			"access privileges; see grant and revoke for details"
+6	srvoptions	TEXT[]			"foreign server specific options, as ""keyword=value"" strings"

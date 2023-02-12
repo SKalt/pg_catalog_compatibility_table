@@ -1,5 +1,0 @@
-Name	Type	References	Description
-srsubid	oid	pg_subscription.oid	Reference to subscription
-srrelid	oid	pg_class.oid	Reference to relation
-srsubstate	char		State code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)
-srsublsn	pg_lsn		Remote LSN of the state change used for synchronization coordination when in s or r states, otherwise null

@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table policy is on"
+1	tablename	NAME		pg_class.relname	"name of table policy is on"
+2	policyname	NAME		pg_policy.polname	"name of policy"
+3	polpermissive	TEXT			"is the policy permissive or restrictive?"
+4	roles	NAME[]			"the roles to which this policy applies"
+5	cmd	TEXT			"the command type to which the policy is applied"
+6	qual	TEXT			"the expression added to the security barrier qualifications for queries that this policy applies to"
+7	with_check	TEXT			"the expression added to the with check qualifications for queries that attempt to add rows to this table"

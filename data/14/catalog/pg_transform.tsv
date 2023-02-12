@@ -1,0 +1,5 @@
+0	oid	OID			"row identifier"
+1	trftype	OID			"oid of the data type this transform is for"
+2	trflang	OID			"oid of the language this transform is for"
+3	trffromsql	REGPROC			"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if the default behavior should be used."
+4	trftosql	REGPROC			"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if the default behavior should be used."

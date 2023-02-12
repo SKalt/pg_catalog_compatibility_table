@@ -1,0 +1,2 @@
+0	roident	OID			"a unique, cluster-wide identifier for the replication origin. should never leave the system."
+1	roname	TEXT			"the external, user defined, name of a replication origin."

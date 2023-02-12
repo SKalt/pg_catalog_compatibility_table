@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	nspname	NAME			"name of the namespace"
+1	nspowner	INT4		pg_shadow.usesysid	"owner (creator) of the namespace"
+2	nspacl	ACLITEM[]			"access permissions"

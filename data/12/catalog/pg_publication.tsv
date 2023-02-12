@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier"
+1	pubname	NAME			"name of the publication"
+2	pubowner	OID		pg_authid.oid	"owner of the publication"
+3	puballtables	BOOL			"if true, this publication automatically includes all tables in the database, including any that will be created in the future."
+4	pubinsert	BOOL			"if true, insert operations are replicated for tables in the publication."
+5	pubupdate	BOOL			"if true, update operations are replicated for tables in the publication."
+6	pubdelete	BOOL			"if true, delete operations are replicated for tables in the publication."
+7	pubtruncate	BOOL			"if true, truncate operations are replicated for tables in the publication."

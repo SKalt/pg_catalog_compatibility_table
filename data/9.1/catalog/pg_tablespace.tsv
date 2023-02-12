@@ -1,0 +1,6 @@
+Index	Name	Type	References	Description
+0	spcname	NAME			"tablespace name"
+1	spcowner	OID		pg_authid.oid	"owner of the tablespace, usually the user who created it"
+2	spclocation	TEXT			"location (directory path) of the tablespace"
+3	spcacl	ACLITEM[]			"access privileges; see grant and revoke for details"
+4	spcoptions	TEXT[]			"tablespace-level options, as ""keyword=value"" strings"

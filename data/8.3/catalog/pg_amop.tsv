@@ -1,0 +1,8 @@
+Index	Name	Type	References	Description
+0	amopfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
+1	amoplefttype	OID		pg_type.oid	"left-hand input data type of operator"
+2	amoprighttype	OID		pg_type.oid	"right-hand input data type of operator"
+3	amopstrategy	INT2			"operator strategy number"
+4	amopreqcheck	BOOL			"index hit must be rechecked"
+5	amopopr	OID		pg_operator.oid	"oid of the operator"
+6	amopmethod	OID		pg_am.oid	"index access method operator family is for"

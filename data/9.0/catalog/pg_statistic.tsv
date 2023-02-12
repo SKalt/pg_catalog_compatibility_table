@@ -1,0 +1,11 @@
+Index	Name	Type	References	Description
+0	starelid	OID		pg_class.oid	"the table or index that the described column belongs to"
+1	staattnum	INT2		pg_attribute.attnum	"the number of the described column"
+2	stainherit	BOOL			"if true, the stats include inheritance child columns, not just the values in the specified relation"
+3	stanullfrac	FLOAT4			"the fraction of the column's entries that are null"
+4	stawidth	INT4			"the average stored width, in bytes, of nonnull entries"
+5	stadistinct	FLOAT4			"the number of distinct nonnull data values in the column. a value greater than zero is the actual number of distinct values. a value less than zero is the negative of a multiplier for the number of rows in the table; for example, a column in which values appear about twice on the average could be represented by stadistinct = -0.5. a zero value means the number of distinct values is unknown."
+6	stakindn	INT2			"a code number indicating the kind of statistics stored in the nth ""slot"" of the pg_statistic row."
+7	staopn	OID		pg_operator.oid	"an operator used to derive the statistics stored in the nth ""slot"". for example, a histogram slot would show the < operator that defines the sort order of the data."
+8	stanumbersn	FLOAT4[]			"numerical statistics of the appropriate kind for the nth ""slot"", or null if the slot kind does not involve numerical values"
+9	stavaluesn	ANYARRAY			"column data values of the appropriate kind for the nth ""slot"", or null if the slot kind does not store any data values. each array's element values are actually of the specific column's data type, so there is no way to define these columns' type more specifically than anyarray."

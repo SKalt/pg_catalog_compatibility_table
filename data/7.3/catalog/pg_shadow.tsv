@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	usename	NAME			"user name"
+1	usesysid	INT4			"user id (arbitrary number used to reference this user)"
+2	usecreatedb	BOOL			"user may create databases"
+3	usesuper	BOOL			"user is a superuser"
+4	usecatupd	BOOL			"user may update system catalogs. (even a superuser may not do this unless this attribute is true.)"
+5	passwd	TEXT			password
+6	valuntil	ABSTIME			"account expiry time (only used for password authentication)"
+7	useconfig	TEXT[]			"session defaults for run-time configuration variables"

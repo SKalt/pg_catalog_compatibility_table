@@ -1,0 +1,5 @@
+0	pubname	NAME			"name of publication"
+1	schemaname	NAME			"name of schema containing table"
+2	tablename	NAME			"name of table"
+3	attnames	NAME[]			"names of table columns included in the publication. this contains all the columns of the table when the user didn't specify the column list for the table."
+4	rowfilter	TEXT			"expression for the table's publication qualifying condition"

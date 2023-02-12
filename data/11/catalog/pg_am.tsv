@@ -1,0 +1,5 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
+1	amname	NAME			"name of the access method"
+2	amhandler	REGPROC		pg_proc.oid	"oid of a handler function that is responsible for supplying information about the access method"
+3	amtype	CHAR			"currently always i to indicate an index access method; other values may be allowed in future"

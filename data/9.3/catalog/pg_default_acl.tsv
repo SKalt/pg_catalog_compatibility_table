@@ -1,0 +1,6 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
+1	defaclrole	OID		pg_authid.oid	"the oid of the role associated with this entry"
+2	defaclnamespace	OID		pg_namespace.oid	"the oid of the namespace associated with this entry, or 0 if none"
+3	defaclobjtype	CHAR			"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type"
+4	defaclacl	ACLITEM[]			"access privileges that this type of object should have on creation"

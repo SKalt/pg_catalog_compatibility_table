@@ -1,0 +1,3 @@
+0	oid	OID			"row identifier"
+1	pnpubid	OID			"reference to publication"
+2	pnnspid	OID			"reference to schema"

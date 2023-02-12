@@ -1,0 +1,5 @@
+0	oid	OID			"row identifier"
+1	opfmethod	OID			"index access method operator family is for"
+2	opfname	NAME			"name of this operator family"
+3	opfnamespace	OID			"namespace of this operator family"
+4	opfowner	OID			"owner of the operator family"

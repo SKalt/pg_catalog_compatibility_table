@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	nspname	NAME			"name of the namespace"
+1	nspowner	OID		pg_authid.oid	"owner of the namespace"
+2	nspacl	ACLITEM[]			"access privileges; see grant and revoke for details"

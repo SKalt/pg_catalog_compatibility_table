@@ -1,5 +1,0 @@
-Name	Type	References	Description
-adrelid	oid	pg_class.oid	The table this column belongs to
-adnum	int2	 	The number of the column; see pg_attribute.pg_attnum
-adbin	text	 	An internal representation of the column default value
-adsrc	text	 	A human-readable representation of the default value

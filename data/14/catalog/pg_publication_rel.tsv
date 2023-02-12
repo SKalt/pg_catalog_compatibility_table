@@ -1,0 +1,3 @@
+0	oid	OID			"row identifier"
+1	prpubid	OID			"reference to publication"
+2	prrelid	OID			"reference to relation"

@@ -1,8 +1,0 @@
-Name	Type	References	Description
-datname	name	 	Database name
-datdba	int4	pg_shadow.usesysid	Owner of the database, initially who created it
-encoding	int4	 	Character/multibyte encoding for this database
-datistemplate	bool	 	"If true then this database can be used in the ""TEMPLATE"" clause of CREATE DATABASE to create the new database as a clone of this one."
-datallowconn	bool	 	If false then no one can connect to this database. This is used to protect the template0 database from being altered.
-datlastsysoid	oid	 	Last oid in existence after the database was created; useful particularly to pg_dump
-datpath	text	 	If the database is stored at an alternative location then this records the location. It's either an environment variable name or an absolute path, depending how it was entered.

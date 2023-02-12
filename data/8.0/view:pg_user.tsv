@@ -1,9 +1,0 @@
-Name	Type	References	Description
-usename	name	 	User name
-usesysid	int4	 	User ID (arbitrary number used to reference this user)
-usecreatedb	bool	 	User may create databases
-usesuper	bool	 	User is a superuser
-usecatupd	bool	 	User may update system catalogs. (Even a superuser may not do this unless this column is true.)
-passwd	text	 	Not the password (always reads as ********)
-valuntil	abstime	 	Password expiry time (only used for password authentication)
-useconfig	text[]	 	Session defaults for run-time configuration variables

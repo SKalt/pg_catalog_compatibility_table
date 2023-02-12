@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	amopclaid	OID		pg_opclass.oid	"the index operator class this entry is for"
+1	amprocnum	INT2			"support procedure number"
+2	amproc	REGPROC		pg_proc.oid	"oid of the procedure"

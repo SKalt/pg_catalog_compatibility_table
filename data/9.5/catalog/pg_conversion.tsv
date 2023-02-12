@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
+1	conname	NAME			"conversion name (unique within a namespace)"
+2	connamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this conversion"
+3	conowner	OID		pg_authid.oid	"owner of the conversion"
+4	conforencoding	INT4			"source encoding id"
+5	contoencoding	INT4			"destination encoding id"
+6	conproc	REGPROC		pg_proc.oid	"conversion procedure"
+7	condefault	BOOL			"true if this is the default conversion"

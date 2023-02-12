@@ -1,5 +1,0 @@
-Name	Type	References	Description
-oid	oid		Row identifier
-enumtypid	oid	pg_type.oid	The OID of the pg_type entry owning this enum value
-enumsortorder	float4		The sort position of this enum value within its enum type
-enumlabel	name		The textual label for this enum value

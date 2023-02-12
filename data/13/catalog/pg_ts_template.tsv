@@ -1,0 +1,5 @@
+0	oid	OID			"row identifier"
+1	tmplname	NAME			"text search template name"
+2	tmplnamespace	OID			"the oid of the namespace that contains this template"
+3	tmplinit	REGPROC			"oid of the template's initialization function"
+4	tmpllexize	REGPROC			"oid of the template's lexize function"

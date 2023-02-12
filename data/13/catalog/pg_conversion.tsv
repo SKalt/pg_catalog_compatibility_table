@@ -1,0 +1,8 @@
+0	oid	OID			"row identifier"
+1	conname	NAME			"conversion name (unique within a namespace)"
+2	connamespace	OID			"the oid of the namespace that contains this conversion"
+3	conowner	OID			"owner of the conversion"
+4	conforencoding	INT4			"source encoding id"
+5	contoencoding	INT4			"destination encoding id"
+6	conproc	REGPROC			"conversion function"
+7	condefault	BOOL			"true if this is the default conversion"

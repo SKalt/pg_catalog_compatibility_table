@@ -1,0 +1,8 @@
+0	seqrelid	OID			"the oid of the pg_class entry for this sequence"
+1	seqtypid	OID			"data type of the sequence"
+2	seqstart	INT8			"start value of the sequence"
+3	seqincrement	INT8			"increment value of the sequence"
+4	seqmax	INT8			"maximum value of the sequence"
+5	seqmin	INT8			"minimum value of the sequence"
+6	seqcache	INT8			"cache size of the sequence"
+7	seqcycle	BOOL			"whether the sequence cycles"

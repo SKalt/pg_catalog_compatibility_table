@@ -1,0 +1,12 @@
+Index	Name	Type	References	Description
+0	indexrelid	OID		pg_class.oid	"the oid of the pg_class entry for this index"
+1	indrelid	OID		pg_class.oid	"the oid of the pg_class entry for the table this index is for"
+2	indnatts	INT2			"the number of columns in the index (duplicates pg_class.relnatts)"
+3	indisunique	BOOL			"if true, this is a unique index"
+4	indisprimary	BOOL			"if true, this index represents the primary key of the table. (indisunique should always be true when this is true.)"
+5	indisclustered	BOOL			"if true, the table was last clustered on this index"
+6	indisvalid	BOOL			"if true, the index is currently valid for queries. false means the index is possibly incomplete: it must still be modified by insert/update operations, but it cannot safely be used for queries. if it is unique, the uniqueness property is not true either"
+7	indkey	INT2VECTOR		pg_attribute.attnum	"this is an array of indnatts values that indicate which table columns this index indexes. for example a value of 1 3 would mean that the first and the third table columns make up the index key. a zero in this array indicates that the corresponding index attribute is an expression over the table columns, rather than a simple column reference."
+8	indclass	OIDVECTOR		pg_opclass.oid	"for each column in the index key this contains the oid of the operator class to use. see pg_opclass for details"
+9	indexprs	TEXT			"expression trees (in nodetostring() representation) for index attributes that are not simple column references. this is a list with one element for each zero entry in indkey. null if all index attributes are simple references"
+10	indpred	TEXT			"expression tree (in nodetostring() representation) for partial index predicate. null if not a partial index"

@@ -1,5 +1,0 @@
-Name	Type	References	Description
-schemaname	name	pg_namespace.nspname	name of schema containing table
-tablename	name	pg_class.relname	name of table the rule is for
-rulename	name	pg_rewrite.rulename	name of rule
-definition	text	 	rule definition (a reconstructed creation command)

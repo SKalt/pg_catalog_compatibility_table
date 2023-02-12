@@ -1,0 +1,6 @@
+Index	Name	Type	References	Description
+0	fdwname	NAME			"name of the foreign-data wrapper"
+1	fdwowner	OID		pg_authid.oid	"owner of the foreign-data wrapper"
+2	fdwvalidator	OID		pg_proc.oid	"references a validator function that is responsible for checking the validity of the generic options given to the foreign-data wrapper, as well as to foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provided."
+3	fdwacl	ACLITEM[]			"access privileges; see grant and revoke for details"
+4	fdwoptions	TEXT[]			"foreign-data wrapper specific options, as ""keyword=value"" strings"

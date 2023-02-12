@@ -1,0 +1,4 @@
+0	oid	OID			"row identifier"
+1	umuser	OID			"oid of the local role being mapped, 0 if the user mapping is public"
+2	umserver	OID			"the oid of the foreign server that contains this mapping"
+3	umoptions	TEXT[]			"user mapping specific options, as “keyword=value” strings"

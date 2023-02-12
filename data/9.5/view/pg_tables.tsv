@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table"
+1	tablename	NAME		pg_class.relname	"name of table"
+2	tableowner	NAME		pg_authid.rolname	"name of table's owner"
+3	tablespace	NAME		pg_tablespace.spcname	"name of tablespace containing table (null if default for database)"
+4	hasindexes	BOOLEAN		pg_class.relhasindex	"true if table has (or recently had) any indexes"
+5	hasrules	BOOLEAN		pg_class.relhasrules	"true if table has (or once had) rules"
+6	hastriggers	BOOLEAN		pg_class.relhastriggers	"true if table has (or once had) triggers"
+7	rowsecurity	BOOLEAN		pg_class.relrowsecurity	"true if row security is enabled on the table"

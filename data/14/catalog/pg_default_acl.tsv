@@ -1,0 +1,5 @@
+0	oid	OID			"row identifier"
+1	defaclrole	OID			"the oid of the role associated with this entry"
+2	defaclnamespace	OID			"the oid of the namespace associated with this entry, or zero if none"
+3	defaclobjtype	CHAR			"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schema"
+4	defaclacl	ACLITEM[]			"access privileges that this type of object should have on creation"

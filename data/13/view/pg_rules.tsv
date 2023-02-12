@@ -1,0 +1,4 @@
+0	schemaname	NAME			"name of schema containing table"
+1	tablename	NAME			"name of table the rule is for"
+2	rulename	NAME			"name of rule"
+3	definition	TEXT			"rule definition (a reconstructed creation command)"

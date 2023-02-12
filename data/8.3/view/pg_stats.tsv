@@ -1,0 +1,11 @@
+Index	Name	Type	References	Description
+0	schemaname	NAME		pg_namespace.nspname	"name of schema containing table"
+1	tablename	NAME		pg_class.relname	"name of table"
+2	attname	NAME		pg_attribute.attname	"name of the column described by this row"
+3	null_frac	REAL			"fraction of column entries that are null"
+4	avg_width	INTEGER			"average width in bytes of column's entries"
+5	n_distinct	REAL			"if greater than zero, the estimated number of distinct values in the column. if less than zero, the negative of the number of distinct values divided by the number of rows. (the negated form is used when analyze believes that the number of distinct values is likely to increase as the table grows; the positive form is used when the column seems to have a fixed number of possible values.) for example, -1 indicates a unique column in which the number of distinct values is the same as the number of rows"
+6	most_common_vals	ANYARRAY			"a list of the most common values in the column. (null if no values seem to be more common than any others.)"
+7	most_common_freqs	REAL[]			"a list of the frequencies of the most common values, i.e., number of occurrences of each divided by total number of rows. (null when most_common_vals is.)"
+8	histogram_bounds	ANYARRAY			"a list of values that divide the column's values into groups of approximately equal population. the values in most_common_vals, if present, are omitted from this histogram calculation. (this column is null if the column data type does not have a < operator or if the most_common_vals list accounts for the entire population.)"
+9	correlation	REAL			"statistical correlation between physical row ordering and logical ordering of the column values. this ranges from -1 to +1. when the value is near -1 or +1, an index scan on the column will be estimated to be cheaper than when it is near zero, due to reduction of random access to the disk. (this column is null if the column data type does not have a < operator.)"

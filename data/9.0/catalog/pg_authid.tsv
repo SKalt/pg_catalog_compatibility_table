@@ -1,0 +1,11 @@
+Index	Name	Type	References	Description
+0	rolname	NAME			"role name"
+1	rolsuper	BOOL			"role has superuser privileges"
+2	rolinherit	BOOL			"role automatically inherits privileges of roles it is a member of"
+3	rolcreaterole	BOOL			"role can create more roles"
+4	rolcreatedb	BOOL			"role can create databases"
+5	rolcatupdate	BOOL			"role can update system catalogs directly. (even a superuser cannot do this unless this column is true)"
+6	rolcanlogin	BOOL			"role can log in. that is, this role can be given as the initial session authorization identifier"
+7	rolconnlimit	INT4			"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit."
+8	rolpassword	TEXT			"password (possibly encrypted); null if none. if the password is encrypted, this column will contain the string md5 followed by a 32-character hexadecimal md5 hash. the md5 hash will be of the user's password concatenated to their username (for example, if user joe has password xyzzy, postgresql will store the md5 hash of xyzzyjoe)."
+9	rolvaliduntil	TIMESTAMPTZ			"password expiry time (only used for password authentication); null if no expiration"

@@ -1,0 +1,7 @@
+0	dbid	OID			"the oid of the database the dependent object is in, or zero for a shared object or a shared_dependency_pin entry"
+1	classid	OID			"the oid of the system catalog the dependent object is in, or zero for a shared_dependency_pin entry"
+2	objid	OID			"the oid of the specific dependent object, or zero for a shared_dependency_pin entry"
+3	objsubid	INT4			"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero."
+4	refclassid	OID			"the oid of the system catalog the referenced object is in (must be a shared catalog)"
+5	refobjid	OID			"the oid of the specific referenced object"
+6	deptype	CHAR			"a code defining the specific semantics of this dependency relationship; see text"

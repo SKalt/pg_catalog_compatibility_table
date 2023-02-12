@@ -1,5 +1,0 @@
-Name	Type	References	Description
-cfgname	name	 	Text search configuration name
-cfgnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this configuration
-cfgowner	oid	pg_authid.oid	Owner of the configuration
-cfgparser	oid	pg_ts_parser.oid	The OID of the text search parser for this configuration

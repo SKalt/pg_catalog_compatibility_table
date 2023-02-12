@@ -1,0 +1,4 @@
+0	local_id	OID			"internal node identifier"
+1	external_id	TEXT			"external node identifier"
+2	remote_lsn	PG_LSN			"the origin node's lsn up to which data has been replicated."
+3	local_lsn	PG_LSN			"this node's lsn at which remote_lsn has been replicated. used to flush commit records before persisting data to disk when using asynchronous commits."

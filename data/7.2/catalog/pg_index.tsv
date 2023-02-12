@@ -1,0 +1,11 @@
+Index	Name	Type	References	Description
+0	indexrelid	OID		pg_class.oid	"the oid of the pg_class entry for this index"
+1	indrelid	OID		pg_class.oid	"the oid of the pg_class entry for the table this index is for"
+2	indproc	REGPROC		pg_proc.oid	"the registered procedure if this is a functional index"
+3	indkey	INT2VECTOR		pg_attribute.attnum	"this is a vector (array) of up to index_max_keys values that indicate which table columns this index pertains to. for example a value of 1 3 would mean that the first and the third column make up the index key."
+4	indclass	OIDVECTOR		pg_opclass.oid	"for each column in the index key this contains a reference to the ""operator class"" to use. see pg_opclass for details."
+5	indisclustered	BOOL			unused
+6	indisunique	BOOL			"if true, this is a unique index."
+7	indisprimary	BOOL			"if true, this index represents the primary key of the table. (indisunique should always be true when this is true.)"
+8	indreference	OID			unused
+9	indpred	TEXT			"expression tree (in the form of a nodetostring representation) for partial index predicate"

@@ -1,8 +1,0 @@
-Name	Type	References	Description
-opcamid	oid	pg_am.oid	index access method opclass is for
-opcname	name	 	name of this opclass
-opcnamespace	oid	pg_namespace.oid	namespace of this opclass
-opcowner	int4	pg_shadow.usesysid	opclass owner
-opcintype	oid	pg_type.oid	type of input data for opclass
-opcdefault	bool	 	true if opclass is default for opcintype
-opckeytype	oid	pg_type.oid	type of index data, or zero if same as opcintype

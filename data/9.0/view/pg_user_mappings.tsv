@@ -1,0 +1,7 @@
+Index	Name	Type	References	Description
+0	umid	OID		pg_user_mapping.oid	"oid of the user mapping"
+1	srvid	OID		pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"
+2	srvname	TEXT			"name of the foreign server"
+3	umuser	OID		pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is public"
+4	usename	NAME			"name of the local user to be mapped"
+5	umoptions	TEXT[]			"user mapping specific options, as ""keyword=value"" strings, if the current user is the owner of the foreign server, else null"

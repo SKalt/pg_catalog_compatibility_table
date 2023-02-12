@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	loid	OID			"identifier of the large object that includes this page"
+1	pageno	INT4			"page number of this page within its large object (counting from zero)"
+2	data	BYTEA			"actual data stored in the large object. this will never be more than loblksize bytes and may be less."

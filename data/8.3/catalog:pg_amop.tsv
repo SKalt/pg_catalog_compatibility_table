@@ -1,8 +1,0 @@
-Name	Type	References	Description
-amopfamily	oid	pg_opfamily.oid	The operator family this entry is for
-amoplefttype	oid	pg_type.oid	Left-hand input data type of operator
-amoprighttype	oid	pg_type.oid	Right-hand input data type of operator
-amopstrategy	int2	 	Operator strategy number
-amopreqcheck	bool	 	Index hit must be rechecked
-amopopr	oid	pg_operator.oid	OID of the operator
-amopmethod	oid	pg_am.oid	Index access method operator family is for

@@ -1,0 +1,5 @@
+0	oid	OID			"row identifier"
+1	cfgname	NAME			"text search configuration name"
+2	cfgnamespace	OID			"the oid of the namespace that contains this configuration"
+3	cfgowner	OID			"owner of the configuration"
+4	cfgparser	OID			"the oid of the text search parser for this configuration"

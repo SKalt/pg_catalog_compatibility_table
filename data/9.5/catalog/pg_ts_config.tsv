@@ -1,0 +1,6 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
+1	cfgname	NAME			"text search configuration name"
+2	cfgnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this configuration"
+3	cfgowner	OID		pg_authid.oid	"owner of the configuration"
+4	cfgparser	OID		pg_ts_parser.oid	"the oid of the text search parser for this configuration"

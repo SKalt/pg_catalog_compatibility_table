@@ -1,0 +1,7 @@
+0	schemaname	NAME			"name of schema containing materialized view"
+1	matviewname	NAME			"name of materialized view"
+2	matviewowner	NAME			"name of materialized view's owner"
+3	tablespace	NAME			"name of tablespace containing materialized view (null if default for database)"
+4	hasindexes	BOOL			"true if materialized view has (or recently had) any indexes"
+5	ispopulated	BOOL			"true if materialized view is currently populated"
+6	definition	TEXT			"materialized view definition (a reconstructed select query)"

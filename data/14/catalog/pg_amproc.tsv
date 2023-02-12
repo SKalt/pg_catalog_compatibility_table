@@ -1,0 +1,6 @@
+0	oid	OID			"row identifier"
+1	amprocfamily	OID			"the operator family this entry is for"
+2	amproclefttype	OID			"left-hand input data type of associated operator"
+3	amprocrighttype	OID			"right-hand input data type of associated operator"
+4	amprocnum	INT2			"support function number"
+5	amproc	REGPROC			"oid of the function"

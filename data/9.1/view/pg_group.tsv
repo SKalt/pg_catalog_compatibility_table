@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	groname	NAME		pg_authid.rolname	"name of the group"
+1	grosysid	OID		pg_authid.oid	"id of this group"
+2	grolist	OID[]		pg_authid.oid	"an array containing the ids of the roles in this group"

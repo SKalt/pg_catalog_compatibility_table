@@ -1,5 +1,0 @@
-Name	Type	References	Description
-oid	oid	 	Row identifier (hidden attribute; must be explicitly selected)
-amname	name	 	Name of the access method
-amhandler	regproc	pg_proc.oid	OID of a handler function that is responsible for supplying information about the access method
-amtype	char	 	Currently always i to indicate an index access method; other values may be allowed in future

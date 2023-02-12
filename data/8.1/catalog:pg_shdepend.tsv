@@ -1,7 +1,0 @@
-Name	Type	References	Description
-dbid	oid	pg_database.oid	The OID of the database the dependent object is in, or zero for a shared object
-classid	oid	pg_class.oid	The OID of the system catalog the dependent object is in
-objid	oid	any OID column	The OID of the specific dependent object
-refclassid	oid	pg_class.oid	The OID of the system catalog the referenced object is in (must be a shared catalog)
-refobjid	oid	any OID column	The OID of the specific referenced object
-deptype	char	 	A code defining the specific semantics of this dependency relationship; see text.

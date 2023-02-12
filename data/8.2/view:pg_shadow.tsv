@@ -1,9 +1,0 @@
-Name	Type	References	Description
-usename	name	pg_authid.rolname	User name
-usesysid	oid	pg_authid.oid	ID of this user
-usecreatedb	bool	 	User may create databases
-usesuper	bool	 	User is a superuser
-usecatupd	bool	 	User may update system catalogs. (Even a superuser may not do this unless this column is true.)
-passwd	text	 	Password (possibly encrypted)
-valuntil	abstime	 	Password expiry time (only used for password authentication)
-useconfig	text[]	 	Session defaults for run-time configuration variables

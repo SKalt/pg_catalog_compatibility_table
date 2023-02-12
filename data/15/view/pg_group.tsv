@@ -1,0 +1,3 @@
+0	groname	NAME			"name of the group"
+1	grosysid	OID			"id of this group"
+2	grolist	OID[]			"an array containing the ids of the roles in this group"

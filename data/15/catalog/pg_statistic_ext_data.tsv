@@ -1,0 +1,6 @@
+0	stxoid	OID			"extended statistics object containing the definition for this data"
+1	stxdinherit	BOOL			"if true, the stats include values from child tables, not just the values in the specified relation"
+2	stxdndistinct	PG_NDISTINCT			"n-distinct counts, serialized as pg_ndistinct type"
+3	stxddependencies	PG_DEPENDENCIES			"functional dependency statistics, serialized as pg_dependencies type"
+4	stxdmcv	PG_MCV_LIST			"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
+5	stxdexpr	PG_STATISTIC[]			"per-expression statistics, serialized as an array of pg_statistic type"

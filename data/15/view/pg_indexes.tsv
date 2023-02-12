@@ -1,0 +1,5 @@
+0	schemaname	NAME			"name of schema containing table and index"
+1	tablename	NAME			"name of table the index is for"
+2	indexname	NAME			"name of index"
+3	tablespace	NAME			"name of tablespace containing index (null if default for database)"
+4	indexdef	TEXT			"index definition (a reconstructed create index command)"

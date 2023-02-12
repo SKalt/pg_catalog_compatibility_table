@@ -1,9 +1,0 @@
-Name	Type	References	Description
-aggname	name	 	Name of the aggregate function
-aggowner	int4	pg_shadow.usesysid	Owner (creator) of the aggregate function
-aggtransfn	regproc (function)	pg_proc.oid	Transition function
-aggfinalfn	regproc (function)	pg_proc.oid	Final function
-aggbasetype	oid	pg_type.oid	The input datatype for this aggregate function
-aggtranstype	oid	pg_type.oid	The type of the aggregate function's internal transition (state) data
-aggfinaltype	oid	pg_type.oid	The type of the result
-agginitval	text	 	The initial value of the transition state. This is a text field containing the initial value in its external string representation. If the field is NULL, the transition state value starts out NULL.

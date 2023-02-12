@@ -1,0 +1,3 @@
+0	pubname	NAME			"name of publication"
+1	schemaname	NAME			"name of schema containing table"
+2	tablename	NAME			"name of table"

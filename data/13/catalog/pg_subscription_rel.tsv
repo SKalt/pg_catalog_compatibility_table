@@ -1,0 +1,4 @@
+0	srsubid	OID			"reference to subscription"
+1	srrelid	OID			"reference to relation"
+2	srsubstate	CHAR			"state code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)"
+3	srsublsn	PG_LSN			"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"

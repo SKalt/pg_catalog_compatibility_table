@@ -1,0 +1,10 @@
+Index	Name	Type	References	Description
+0	usename	NAME		pg_authid.rolname	"user name"
+1	usesysid	OID		pg_authid.oid	"id of this user"
+2	usecreatedb	BOOL			"user can create databases"
+3	usesuper	BOOL			"user is a superuser"
+4	usecatupd	BOOL			"user can update system catalogs. (even a superuser cannot do this unless this column is true.)"
+5	userepl	BOOL			"user can initiate streaming replication and put the system in and out of backup mode."
+6	passwd	TEXT			"password (possibly encrypted); null if none. see pg_authid for details of how encrypted passwords are stored."
+7	valuntil	ABSTIME			"password expiry time (only used for password authentication)"
+8	useconfig	TEXT[]			"session defaults for run-time configuration variables"

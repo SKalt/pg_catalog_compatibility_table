@@ -1,0 +1,8 @@
+0	schemaname	NAME			"name of schema containing table"
+1	tablename	NAME			"name of table"
+2	tableowner	NAME			"name of table's owner"
+3	tablespace	NAME			"name of tablespace containing table (null if default for database)"
+4	hasindexes	BOOL			"true if table has (or recently had) any indexes"
+5	hasrules	BOOL			"true if table has (or once had) rules"
+6	hastriggers	BOOL			"true if table has (or once had) triggers"
+7	rowsecurity	BOOL			"true if row security is enabled on the table"

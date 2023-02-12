@@ -1,0 +1,5 @@
+Index	Name	Type	References	Description
+0	roleid	OID		pg_authid.oid	"id of a role that has a member"
+1	member	OID		pg_authid.oid	"id of a role that is a member of roleid"
+2	grantor	OID		pg_authid.oid	"id of the role that granted this membership"
+3	admin_option	BOOL			"true if member can grant membership in roleid to others"

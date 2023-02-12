@@ -1,6 +1,0 @@
-Name	Type	References	Description
-oid	oid		Row identifier
-tmplname	name		Text search template name
-tmplnamespace	oid	pg_namespace.oid	The OID of the namespace that contains this template
-tmplinit	regproc	pg_proc.oid	OID of the template's initialization function (zero if none)
-tmpllexize	regproc	pg_proc.oid	OID of the template's lexize function

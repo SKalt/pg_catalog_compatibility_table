@@ -1,0 +1,4 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier"
+1	lomowner	OID		pg_authid.oid	"owner of the large object"
+2	lomacl	ACLITEM[]			"access privileges; see section 5.7 for details"

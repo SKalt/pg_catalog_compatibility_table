@@ -1,0 +1,8 @@
+Index	Name	Type	References	Description
+0	conname	NAME			"conversion name (unique within a namespace)"
+1	connamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this conversion"
+2	conowner	INT4		pg_shadow.usesysid	"owner (creator) of the namespace"
+3	conforencoding	INT4			"source(for) encoding id"
+4	contoencoding	INT4			"destination(to) encoding id"
+5	conproc	REGPROC		pg_proc.oid	"conversion procedure"
+6	condefault	BOOLEAN			"true if this is the default conversion"

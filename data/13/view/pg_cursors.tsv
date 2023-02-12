@@ -1,0 +1,6 @@
+0	name	TEXT			"the name of the cursor"
+1	statement	TEXT			"the verbatim query string submitted to declare this cursor"
+2	is_holdable	BOOL			"true if the cursor is holdable (that is, it can be accessed after the transaction that declared the cursor has committed); false otherwise"
+3	is_binary	BOOL			"true if the cursor was declared binary; false otherwise"
+4	is_scrollable	BOOL			"true if the cursor is scrollable (that is, it allows rows to be retrieved in a nonsequential manner); false otherwise"
+5	creation_time	TIMESTAMPTZ			"the time at which the cursor was declared"

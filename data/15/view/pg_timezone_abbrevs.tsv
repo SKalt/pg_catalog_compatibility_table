@@ -1,0 +1,3 @@
+0	abbrev	TEXT			"time zone abbreviation"
+1	utc_offset	INTERVAL			"offset from utc (positive means east of greenwich)"
+2	is_dst	BOOL			"true if this is a daylight-savings abbreviation"

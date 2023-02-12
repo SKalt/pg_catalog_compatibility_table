@@ -1,0 +1,6 @@
+Index	Name	Type	References	Description
+0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
+1	opfmethod	OID		pg_am.oid	"index access method operator family is for"
+2	opfname	NAME			"name of this operator family"
+3	opfnamespace	OID		pg_namespace.oid	"namespace of this operator family"
+4	opfowner	OID		pg_authid.oid	"owner of the operator family"

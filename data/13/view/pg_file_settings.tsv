@@ -1,0 +1,7 @@
+0	sourcefile	TEXT			"full path name of the configuration file"
+1	sourceline	INT4			"line number within the configuration file where the entry appears"
+2	seqno	INT4			"order in which the entries are processed (1..n)"
+3	name	TEXT			"configuration parameter name"
+4	setting	TEXT			"value to be assigned to the parameter"
+5	applied	BOOL			"true if the value can be applied successfully"
+6	error	TEXT			"if not null, an error message indicating why this entry could not be applied"

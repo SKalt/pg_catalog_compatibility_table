@@ -1,0 +1,5 @@
+Index	Name	Type	References	Description
+0	schemaname	NAME		pg_namespace.nspname	"name of schema containing view"
+1	viewname	NAME		pg_class.relname	"name of view"
+2	viewowner	NAME		pg_authid.rolname	"name of view's owner"
+3	definition	TEXT			"view definition (a reconstructed select query)"

@@ -1,0 +1,9 @@
+Index	Name	Type	References	Description
+0	amopfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
+1	amoplefttype	OID		pg_type.oid	"left-hand input data type of operator"
+2	amoprighttype	OID		pg_type.oid	"right-hand input data type of operator"
+3	amopstrategy	INT2			"operator strategy number"
+4	amoppurpose	CHAR			"operator purpose, either s for search or o for ordering"
+5	amopopr	OID		pg_operator.oid	"oid of the operator"
+6	amopmethod	OID		pg_am.oid	"index access method operator family is for"
+7	amopsortfamily	OID		pg_opfamily.oid	"the btree operator family this entry sorts according to, if an ordering operator; zero if a search operator"

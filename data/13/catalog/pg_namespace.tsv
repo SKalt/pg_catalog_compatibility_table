@@ -1,0 +1,4 @@
+0	oid	OID			"row identifier"
+1	nspname	NAME			"name of the namespace"
+2	nspowner	OID			"owner of the namespace"
+3	nspacl	ACLITEM[]			"access privileges; see section 5.7 for details"
