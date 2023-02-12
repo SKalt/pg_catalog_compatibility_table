@@ -5,7 +5,7 @@ Index	Name	Type	Nullable	References	Description
 3	tgname	NAME			"trigger name (must be unique among triggers of same table)"
 4	tgfoid	OID			"the function to be called"
 5	tgtype	INT2			"bit mask identifying trigger firing conditions"
-6	tgenabled	CHAR			"controls in which session_replication_role modes the trigger fires. o = trigger fires in “origin” and “local” modes, d = trigger is disabled, r = trigger fires in “replica” mode, a = trigger fires always."
+6	tgenabled	CHAR			"controls in which session_replication_role modes the trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
 7	tgisinternal	BOOL			"true if trigger is internally generated (usually, to enforce the constraint identified by tgconstraint)"
 8	tgconstrrelid	OID			"the table referenced by a referential integrity constraint"
 9	tgconstrindid	OID			"the index supporting a unique, primary key, referential integrity, or exclusion constraint"

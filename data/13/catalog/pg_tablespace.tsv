@@ -3,4 +3,4 @@ Index	Name	Type	Nullable	References	Description
 1	spcname	NAME			"tablespace name"
 2	spcowner	OID			"owner of the tablespace, usually the user who created it"
 3	spcacl	ACLITEM[]			"access privileges; see section 5.7 for details"
-4	spcoptions	TEXT[]			"tablespace-level options, as “keyword=value” strings"
+4	spcoptions	TEXT[]			"tablespace-level options, as ""keyword=value"" strings"

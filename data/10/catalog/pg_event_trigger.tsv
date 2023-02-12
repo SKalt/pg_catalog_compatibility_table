@@ -3,5 +3,5 @@ Index	Name	Type	Nullable	References	Description
 1	evtevent	NAME			"identifies the event for which this trigger fires"
 2	evtowner	OID		pg_authid.oid	"owner of the event trigger"
 3	evtfoid	OID		pg_proc.oid	"the function to be called"
-4	evtenabled	CHAR			"controls in which session_replication_role modes the event trigger fires. o = trigger fires in “origin” and “local” modes, d = trigger is disabled, r = trigger fires in “replica” mode, a = trigger fires always."
+4	evtenabled	CHAR			"controls in which session_replication_role modes the event trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
 5	evttags	TEXT[]			"command tags for which this trigger will fire. if null, the firing of this trigger is not restricted on the basis of the command tag."

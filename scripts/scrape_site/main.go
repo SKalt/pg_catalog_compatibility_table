@@ -187,6 +187,7 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 				col.Type = strings.ToUpper(text)
 			case "Description", "description":
 				col.Description = sectionRef.ReplaceAllString(dedentRe.ReplaceAllString(text, " "), "")
+				col.Description = sanitizeString(col.Description)
 			default:
 				log.Fatalf("unknown header: '%s' @ %s", headers[j], html.Request.URL)
 			}
@@ -221,7 +222,7 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 		notes := normalizeString(row.NextAll().Filter("p").Text())
 		notes = dedentRe.ReplaceAllString(notes, " ")
 		notes = sectionRef.ReplaceAllString(notes, "")
-		col.Description = notes
+		col.Description = sanitizeString(notes)
 		tsv.WriteString(col.TsvRow())
 	})
 }

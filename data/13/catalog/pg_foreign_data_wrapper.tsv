@@ -5,4 +5,4 @@ Index	Name	Type	Nullable	References	Description
 3	fdwhandler	OID			"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provided"
 4	fdwvalidator	OID			"references a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provided"
 5	fdwacl	ACLITEM[]			"access privileges; see section 5.7 for details"
-6	fdwoptions	TEXT[]			"foreign-data wrapper specific options, as “keyword=value” strings"
+6	fdwoptions	TEXT[]			"foreign-data wrapper specific options, as ""keyword=value"" strings"
