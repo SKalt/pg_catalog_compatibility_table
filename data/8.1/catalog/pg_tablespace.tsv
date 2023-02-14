@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	spcname	name			"tablespace name"
-1	spcowner	oid		pg_authid.oid	"owner of the tablespace, usually the user who created it"
-2	spclocation	text			"location (directory path) of the tablespace"
-3	spcacl	aclitem[]			"access privileges; see grant and revoke for details."
+1	spcname	name			"tablespace name"
+2	spcowner	oid		pg_authid.oid	"owner of the tablespace, usually the user who created it"
+3	spclocation	text			"location (directory path) of the tablespace"
+4	spcacl	aclitem[]			"access privileges; see grant and revoke for details."

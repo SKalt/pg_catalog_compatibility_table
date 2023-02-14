@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	oid			"row identifier"
-1	castsource	oid		pg_type.oid	"oid of the source data type"
-2	casttarget	oid		pg_type.oid	"oid of the target data type"
-3	castfunc	oid		pg_proc.oid	"the oid of the function to use to perform this cast. zero is stored if the cast method doesn't require a function."
-4	castcontext	char			"indicates what contexts the cast can be invoked in. e means only as an explicit cast (using cast or :: syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases."
-5	castmethod	char			"indicates how the cast is performed. f means that the function specified in the castfunc field is used. i means that the input/output functions are used. b means that the types are binary-coercible, thus no conversion is required."
+1	oid	oid			"row identifier"
+2	castsource	oid		pg_type.oid	"oid of the source data type"
+3	casttarget	oid		pg_type.oid	"oid of the target data type"
+4	castfunc	oid		pg_proc.oid	"the oid of the function to use to perform this cast. zero is stored if the cast method doesn't require a function."
+5	castcontext	char			"indicates what contexts the cast can be invoked in. e means only as an explicit cast (using cast or :: syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases."
+6	castmethod	char			"indicates how the cast is performed. f means that the function specified in the castfunc field is used. i means that the input/output functions are used. b means that the types are binary-coercible, thus no conversion is required."

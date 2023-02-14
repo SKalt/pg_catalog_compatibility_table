@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	dbid	oid		pg_database.oid	"the oid of the database the dependent object is in, or zero for a shared object"
-1	classid	oid		pg_class.oid	"the oid of the system catalog the dependent object is in"
-2	objid	oid		"any oid column"	"the oid of the specific dependent object"
-3	refclassid	oid		pg_class.oid	"the oid of the system catalog the referenced object is in (must be a shared catalog)"
-4	refobjid	oid		"any oid column"	"the oid of the specific referenced object"
-5	deptype	char			"a code defining the specific semantics of this dependency relationship; see text."
+1	dbid	oid		pg_database.oid	"the oid of the database the dependent object is in, or zero for a shared object"
+2	classid	oid		pg_class.oid	"the oid of the system catalog the dependent object is in"
+3	objid	oid		"any oid column"	"the oid of the specific dependent object"
+4	refclassid	oid		pg_class.oid	"the oid of the system catalog the referenced object is in (must be a shared catalog)"
+5	refobjid	oid		"any oid column"	"the oid of the specific referenced object"
+6	deptype	char			"a code defining the specific semantics of this dependency relationship; see text."

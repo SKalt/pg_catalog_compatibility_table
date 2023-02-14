@@ -14,6 +14,7 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/SKalt/pg_catalog_compatibility_table/pkg/common"
 	pb "github.com/cheggaaa/pb/v3"
 
 	"github.com/PuerkitoBio/goquery"
@@ -77,62 +78,6 @@ func getVersions(baseCollector *colly.Collector, siteDir string) (versions []str
 	return
 }
 
-type ColData struct {
-	Index                             int
-	Name, Type                        string // must be present
-	References, Nullable, Description string // may be absent
-}
-
-const tsvHeader = "Index	Name	Type	Nullable	References	Description\n"
-
-func (c ColData) TsvRow() string {
-	return fmt.Sprintf(
-		"%d\t%s\t%s\t%s\t%s\t%s\n",
-		c.Index,
-		escapeTsvField(c.Name),
-		escapeTsvField(c.Type),
-		escapeTsvField(c.Nullable),
-		escapeTsvField(c.References),
-		escapeTsvField(c.Description),
-	)
-}
-
-func escapeTsvField(s string) string {
-	// s must have already been trimmed
-	fixed := make([]rune, 0, len(s))
-	needsQuote := false
-	for _, c := range s {
-		switch c {
-		case '"':
-			needsQuote = true
-			fixed = append(fixed, '"', '"')
-			break
-		case '\n':
-			needsQuote = true
-			fixed = append(fixed, '\\', 'n')
-			break
-		case '\t':
-			needsQuote = true
-			fixed = append(fixed, '\\', 't')
-			break
-		case '\r':
-			needsQuote = true // ignore it
-		case ' ':
-			needsQuote = true
-			fixed = append(fixed, c)
-			break
-		default:
-			fixed = append(fixed, c)
-			break
-		}
-	}
-	result := string(fixed)
-	if needsQuote {
-		result = `"` + result + `"`
-	}
-	return result
-}
-
 // create or truncate a target file for writing a tsv
 func ensureTargetFile(dir, version, kind, relation string) *os.File {
 	targetDir := path.Join(dir, version, kind)
@@ -169,9 +114,9 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(tsvHeader)
+	tsv.WriteString(common.TsvHeader)
 	trs.Each(func(i int, tr *goquery.Selection) {
-		col := ColData{Index: i}
+		col := common.ColData{Index: i + 1} // 1-indexed
 		tr.Find("td").Each(func(j int, td *goquery.Selection) {
 			text := normalizeString(td.Text())
 			if j >= len(headers) {
@@ -211,9 +156,9 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(tsvHeader)
+	tsv.WriteString(common.TsvHeader)
 	rows.Each(func(i int, tr *goquery.Selection) {
-		col := ColData{Index: i}
+		col := common.ColData{Index: i}
 		row := tr.Find(".column_definition").First()
 		colNames := row.Find(".structfield")
 		col.Name = normalizeString(colNames.First().Text())

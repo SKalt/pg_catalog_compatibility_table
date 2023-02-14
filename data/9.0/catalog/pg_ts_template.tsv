@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	tmplname	name			"text search template name"
-1	tmplnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this template"
-2	tmplinit	regproc		pg_proc.oid	"oid of the template's initialization function"
-3	tmpllexize	regproc		pg_proc.oid	"oid of the template's lexize function"
+1	tmplname	name			"text search template name"
+2	tmplnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this template"
+3	tmplinit	regproc		pg_proc.oid	"oid of the template's initialization function"
+4	tmpllexize	regproc		pg_proc.oid	"oid of the template's lexize function"

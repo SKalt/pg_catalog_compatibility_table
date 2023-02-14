@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	adrelid	oid		pg_class.oid	"the table this column belongs to"
-1	adnum	int2		pg_attribute.attnum	"the number of the column"
-2	adbin	text			"an internal representation of the column default value"
-3	adsrc	text			"a human-readable representation of the default value"
+1	adrelid	oid		pg_class.oid	"the table this column belongs to"
+2	adnum	int2		pg_attribute.attnum	"the number of the column"
+3	adbin	text			"an internal representation of the column default value"
+4	adsrc	text			"a human-readable representation of the default value"

@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	lanname	name			"name of the language (to be specified when creating a function)"
-1	lanispl	bool			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime."
-2	lanpltrusted	bool			"this is a trusted language. see under create language what this means. if this is an internal language (lanispl is false) then this field is meaningless."
-3	lanplcallfoid	oid		pg_proc.oid	"for non-internal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language."
-4	lanvalidator	oid		pg_proc.oid	"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. see under create language for further information about validators."
-5	lanacl	aclitem[]			"access permissions"
+1	lanname	name			"name of the language (to be specified when creating a function)"
+2	lanispl	bool			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime."
+3	lanpltrusted	bool			"this is a trusted language. see under create language what this means. if this is an internal language (lanispl is false) then this field is meaningless."
+4	lanplcallfoid	oid		pg_proc.oid	"for non-internal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language."
+5	lanvalidator	oid		pg_proc.oid	"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. see under create language for further information about validators."
+6	lanacl	aclitem[]			"access permissions"

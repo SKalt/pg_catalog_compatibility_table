@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
-1	opfmethod	oid		pg_am.oid	"index access method operator family is for"
-2	opfname	name			"name of this operator family"
-3	opfnamespace	oid		pg_namespace.oid	"namespace of this operator family"
-4	opfowner	oid		pg_authid.oid	"owner of the operator family"
+1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+2	opfmethod	oid		pg_am.oid	"index access method operator family is for"
+3	opfname	name			"name of this operator family"
+4	opfnamespace	oid		pg_namespace.oid	"namespace of this operator family"
+5	opfowner	oid		pg_authid.oid	"owner of the operator family"

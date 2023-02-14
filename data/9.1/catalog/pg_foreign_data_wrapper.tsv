@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	fdwname	name			"name of the foreign-data wrapper"
-1	fdwowner	oid		pg_authid.oid	"owner of the foreign-data wrapper"
-2	fdwhandler	oid		pg_proc.oid	"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provided"
-3	fdwvalidator	oid		pg_proc.oid	"references a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provided"
-4	fdwacl	aclitem[]			"access privileges; see grant and revoke for details"
-5	fdwoptions	text[]			"foreign-data wrapper specific options, as ""keyword=value"" strings"
+1	fdwname	name			"name of the foreign-data wrapper"
+2	fdwowner	oid		pg_authid.oid	"owner of the foreign-data wrapper"
+3	fdwhandler	oid		pg_proc.oid	"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provided"
+4	fdwvalidator	oid		pg_proc.oid	"references a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provided"
+5	fdwacl	aclitem[]			"access privileges; see grant and revoke for details"
+6	fdwoptions	text[]			"foreign-data wrapper specific options, as ""keyword=value"" strings"

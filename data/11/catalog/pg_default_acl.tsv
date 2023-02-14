@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
-1	defaclrole	oid		pg_authid.oid	"the oid of the role associated with this entry"
-2	defaclnamespace	oid		pg_namespace.oid	"the oid of the namespace associated with this entry, or 0 if none"
-3	defaclobjtype	char			"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schema"
-4	defaclacl	aclitem[]			"access privileges that this type of object should have on creation"
+1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+2	defaclrole	oid		pg_authid.oid	"the oid of the role associated with this entry"
+3	defaclnamespace	oid		pg_namespace.oid	"the oid of the namespace associated with this entry, or 0 if none"
+4	defaclobjtype	char			"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schema"
+5	defaclacl	aclitem[]			"access privileges that this type of object should have on creation"

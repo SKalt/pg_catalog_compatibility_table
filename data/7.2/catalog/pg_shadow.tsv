@@ -1,9 +1,9 @@
 Index	Name	Type	Nullable	References	Description
-0	usename	name			"user name"
-1	usesysid	int4			"user id (arbitrary number used to reference this user)"
-2	usecreatedb	bool			"user may create databases"
-3	usetrace	bool			"not used"
-4	usesuper	bool			"user is a superuser"
-5	usecatupd	bool			"user may update system catalogs. (even a superuser may not do this unless this attribute is true.)"
-6	passwd	text			password
-7	valuntil	abstime			"account expiry time (only used for password authentication)"
+1	usename	name			"user name"
+2	usesysid	int4			"user id (arbitrary number used to reference this user)"
+3	usecreatedb	bool			"user may create databases"
+4	usetrace	bool			"not used"
+5	usesuper	bool			"user is a superuser"
+6	usecatupd	bool			"user may update system catalogs. (even a superuser may not do this unless this attribute is true.)"
+7	passwd	text			password
+8	valuntil	abstime			"account expiry time (only used for password authentication)"

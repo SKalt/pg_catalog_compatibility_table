@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	aggfnoid	regproc		pg_proc.oid	"pg_proc oid of the aggregate function"
-1	aggtransfn	regproc		pg_proc.oid	"transition function"
-2	aggfinalfn	regproc		pg_proc.oid	"final function (zero if none)"
-3	aggsortop	oid		pg_operator.oid	"associated sort operator (zero if none)"
-4	aggtranstype	oid		pg_type.oid	"data type of the aggregate function's internal transition (state) data"
-5	agginitval	text			"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if this field is null, the transition state value starts out null."
+1	aggfnoid	regproc		pg_proc.oid	"pg_proc oid of the aggregate function"
+2	aggtransfn	regproc		pg_proc.oid	"transition function"
+3	aggfinalfn	regproc		pg_proc.oid	"final function (zero if none)"
+4	aggsortop	oid		pg_operator.oid	"associated sort operator (zero if none)"
+5	aggtranstype	oid		pg_type.oid	"data type of the aggregate function's internal transition (state) data"
+6	agginitval	text			"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if this field is null, the transition state value starts out null."
