@@ -115,8 +115,9 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 		}
 	}()
 	tsv.WriteString(common.TsvHeader)
+	index := 0
 	trs.Each(func(i int, tr *goquery.Selection) {
-		col := common.ColData{Index: i + 1} // 1-indexed
+		col := common.ColData{}
 		tr.Find("td").Each(func(j int, td *goquery.Selection) {
 			text := normalizeString(td.Text())
 			if j >= len(headers) {
@@ -137,6 +138,12 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 				log.Fatalf("unknown header: '%s' @ %s", headers[j], html.Request.URL)
 			}
 		})
+		if strings.Contains(col.Description, "explicitly selected") {
+			col.Index = -1
+		} else {
+			index += 1
+			col.Index = index
+		}
 		tsv.WriteString(col.TsvRow())
 	})
 }

@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
-2	cfgname	name			"text search configuration name"
-3	cfgnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this configuration"
-4	cfgowner	oid		pg_authid.oid	"owner of the configuration"
-5	cfgparser	oid		pg_ts_parser.oid	"the oid of the text search parser for this configuration"
+-1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+1	cfgname	name			"text search configuration name"
+2	cfgnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this configuration"
+3	cfgowner	oid		pg_authid.oid	"owner of the configuration"
+4	cfgparser	oid		pg_ts_parser.oid	"the oid of the text search parser for this configuration"

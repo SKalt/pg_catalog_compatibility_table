@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
-2	spcname	name			"tablespace name"
-3	spcowner	oid		pg_authid.oid	"owner of the tablespace, usually the user who created it"
-4	spcacl	aclitem[]			"access privileges; see grant and revoke for details"
-5	spcoptions	text[]			"tablespace-level options, as ""keyword=value"" strings"
+-1	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+1	spcname	name			"tablespace name"
+2	spcowner	oid		pg_authid.oid	"owner of the tablespace, usually the user who created it"
+3	spcacl	aclitem[]			"access privileges; see grant and revoke for details"
+4	spcoptions	text[]			"tablespace-level options, as ""keyword=value"" strings"
