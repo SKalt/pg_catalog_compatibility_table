@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	prpubid	OID			"reference to publication"
-2	prrelid	OID			"reference to relation"
+0	oid	oid			"row identifier"
+1	prpubid	oid			"reference to publication"
+2	prrelid	oid			"reference to relation"

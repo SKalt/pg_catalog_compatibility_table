@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	srsubid	OID			"reference to subscription"
-1	srrelid	OID			"reference to relation"
-2	srsubstate	CHAR			"state code: i = initialize, d = data is being copied, f = finished table copy, s = synchronized, r = ready (normal replication)"
-3	srsublsn	PG_LSN			"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"
+0	srsubid	oid			"reference to subscription"
+1	srrelid	oid			"reference to relation"
+2	srsubstate	char			"state code: i = initialize, d = data is being copied, f = finished table copy, s = synchronized, r = ready (normal replication)"
+3	srsublsn	pg_lsn			"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"

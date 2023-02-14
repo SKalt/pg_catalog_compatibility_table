@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	stxrelid	OID		pg_class.oid	"table containing the columns described by this object"
-1	stxname	NAME			"name of the statistics object"
-2	stxnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this statistics object"
-3	stxowner	OID		pg_authid.oid	"owner of the statistics object"
-4	stxkeys	INT2VECTOR		pg_attribute.attnum	"an array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covered"
-5	stxkind	CHAR[]			"an array containing codes for the enabled statistics kinds; valid values are: d for n-distinct statistics, f for functional dependency statistics, and m for most common values (mcv) list statistics"
+0	stxrelid	oid		pg_class.oid	"table containing the columns described by this object"
+1	stxname	name			"name of the statistics object"
+2	stxnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this statistics object"
+3	stxowner	oid		pg_authid.oid	"owner of the statistics object"
+4	stxkeys	int2vector		pg_attribute.attnum	"an array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covered"
+5	stxkind	char[]			"an array containing codes for the enabled statistics kinds; valid values are: d for n-distinct statistics, f for functional dependency statistics, and m for most common values (mcv) list statistics"

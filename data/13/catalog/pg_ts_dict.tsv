@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	dictname	NAME			"text search dictionary name"
-2	dictnamespace	OID			"the oid of the namespace that contains this dictionary"
-3	dictowner	OID			"owner of the dictionary"
-4	dicttemplate	OID			"the oid of the text search template for this dictionary"
-5	dictinitoption	TEXT			"initialization option string for the template"
+0	oid	oid			"row identifier"
+1	dictname	name			"text search dictionary name"
+2	dictnamespace	oid			"the oid of the namespace that contains this dictionary"
+3	dictowner	oid			"owner of the dictionary"
+4	dicttemplate	oid			"the oid of the text search template for this dictionary"
+5	dictinitoption	text			"initialization option string for the template"

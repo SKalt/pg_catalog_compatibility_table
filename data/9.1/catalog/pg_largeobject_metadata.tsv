@@ -1,3 +1,3 @@
 Index	Name	Type	Nullable	References	Description
-0	lomowner	OID		pg_authid.oid	"owner of the large object"
-1	lomacl	ACLITEM[]			"access privileges; see grant and revoke for details"
+0	lomowner	oid		pg_authid.oid	"owner of the large object"
+1	lomacl	aclitem[]			"access privileges; see grant and revoke for details"

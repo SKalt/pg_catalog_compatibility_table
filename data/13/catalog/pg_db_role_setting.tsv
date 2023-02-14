@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	setdatabase	OID			"the oid of the database the setting is applicable to, or zero if not database-specific"
-1	setrole	OID			"the oid of the role the setting is applicable to, or zero if not role-specific"
-2	setconfig	TEXT[]			"defaults for run-time configuration variables"
+0	setdatabase	oid			"the oid of the database the setting is applicable to, or zero if not database-specific"
+1	setrole	oid			"the oid of the role the setting is applicable to, or zero if not role-specific"
+2	setconfig	text[]			"defaults for run-time configuration variables"

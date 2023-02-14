@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
-1	amprocfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
-2	amproclefttype	OID		pg_type.oid	"left-hand input data type of associated operator"
-3	amprocrighttype	OID		pg_type.oid	"right-hand input data type of associated operator"
-4	amprocnum	INT2			"support procedure number"
-5	amproc	REGPROC		pg_proc.oid	"oid of the procedure"
+0	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+1	amprocfamily	oid		pg_opfamily.oid	"the operator family this entry is for"
+2	amproclefttype	oid		pg_type.oid	"left-hand input data type of associated operator"
+3	amprocrighttype	oid		pg_type.oid	"right-hand input data type of associated operator"
+4	amprocnum	int2			"support procedure number"
+5	amproc	regproc		pg_proc.oid	"oid of the procedure"

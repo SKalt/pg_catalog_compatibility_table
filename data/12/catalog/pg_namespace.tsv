@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	nspname	NAME			"name of the namespace"
-2	nspowner	OID		pg_authid.oid	"owner of the namespace"
-3	nspacl	ACLITEM[]			"access privileges; see section 5.7 for details"
+0	oid	oid			"row identifier"
+1	nspname	name			"name of the namespace"
+2	nspowner	oid		pg_authid.oid	"owner of the namespace"
+3	nspacl	aclitem[]			"access privileges; see section 5.7 for details"

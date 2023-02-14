@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	umuser	OID			"oid of the local role being mapped, 0 if the user mapping is public"
-2	umserver	OID			"the oid of the foreign server that contains this mapping"
-3	umoptions	TEXT[]			"user mapping specific options, as ""keyword=value"" strings"
+0	oid	oid			"row identifier"
+1	umuser	oid			"oid of the local role being mapped, 0 if the user mapping is public"
+2	umserver	oid			"the oid of the foreign server that contains this mapping"
+3	umoptions	text[]			"user mapping specific options, as ""keyword=value"" strings"

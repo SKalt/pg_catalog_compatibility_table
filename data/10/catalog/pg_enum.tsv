@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier (hidden attribute; must be explicitly selected)"
-1	enumtypid	OID		pg_type.oid	"the oid of the pg_type entry owning this enum value"
-2	enumsortorder	FLOAT4			"the sort position of this enum value within its enum type"
-3	enumlabel	NAME			"the textual label for this enum value"
+0	oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+1	enumtypid	oid		pg_type.oid	"the oid of the pg_type entry owning this enum value"
+2	enumsortorder	float4			"the sort position of this enum value within its enum type"
+3	enumlabel	name			"the textual label for this enum value"

@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	cfgname	NAME			"text search configuration name"
-2	cfgnamespace	OID			"the oid of the namespace that contains this configuration"
-3	cfgowner	OID			"owner of the configuration"
-4	cfgparser	OID			"the oid of the text search parser for this configuration"
+0	oid	oid			"row identifier"
+1	cfgname	name			"text search configuration name"
+2	cfgnamespace	oid			"the oid of the namespace that contains this configuration"
+3	cfgowner	oid			"owner of the configuration"
+4	cfgparser	oid			"the oid of the text search parser for this configuration"

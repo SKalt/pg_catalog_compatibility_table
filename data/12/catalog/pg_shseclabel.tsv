@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	objoid	OID		"any oid column"	"the oid of the object this security label pertains to"
-1	classoid	OID		pg_class.oid	"the oid of the system catalog this object appears in"
-2	provider	TEXT			"the label provider associated with this label."
-3	label	TEXT			"the security label applied to this object."
+0	objoid	oid		"any oid column"	"the oid of the object this security label pertains to"
+1	classoid	oid		pg_class.oid	"the oid of the system catalog this object appears in"
+2	provider	text			"the label provider associated with this label."
+3	label	text			"the security label applied to this object."

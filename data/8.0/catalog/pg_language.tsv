@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	lanname	NAME			"name of the language"
-1	lanispl	BOOL			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime."
-2	lanpltrusted	BOOL			"this is a trusted language. if this is an internal language (lanispl is false) then this column is meaningless."
-3	lanplcallfoid	OID		pg_proc.oid	"for noninternal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language."
-4	lanvalidator	OID		pg_proc.oid	"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. zero if no validator is provided."
-5	lanacl	ACLITEM[]			"access privileges; see grant and revoke for details."
+0	lanname	name			"name of the language"
+1	lanispl	bool			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime."
+2	lanpltrusted	bool			"this is a trusted language. if this is an internal language (lanispl is false) then this column is meaningless."
+3	lanplcallfoid	oid		pg_proc.oid	"for noninternal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language."
+4	lanvalidator	oid		pg_proc.oid	"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. zero if no validator is provided."
+5	lanacl	aclitem[]			"access privileges; see grant and revoke for details."

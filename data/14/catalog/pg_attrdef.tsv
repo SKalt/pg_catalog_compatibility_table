@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	OID			"row identifier"
-1	adrelid	OID			"the table this column belongs to"
-2	adnum	INT2			"the number of the column"
-3	adbin	PG_NODE_TREE			"the column default value, in nodetostring() representation. use pg_get_expr(adbin, adrelid) to convert it to an sql expression."
+0	oid	oid			"row identifier"
+1	adrelid	oid			"the table this column belongs to"
+2	adnum	int2			"the number of the column"
+3	adbin	pg_node_tree			"the column default value, in nodetostring() representation. use pg_get_expr(adbin, adrelid) to convert it to an sql expression."

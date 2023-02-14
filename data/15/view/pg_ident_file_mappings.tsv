@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	line_number	INT4			"line number of this map in pg_ident.conf"
-1	map_name	TEXT			"name of the map"
-2	sys_name	TEXT			"detected user name of the client"
-3	pg_username	TEXT			"requested postgresql user name"
-4	error	TEXT			"if not null, an error message indicating why this line could not be processed"
+0	line_number	int4			"line number of this map in pg_ident.conf"
+1	map_name	text			"name of the map"
+2	sys_name	text			"detected user name of the client"
+3	pg_username	text			"requested postgresql user name"
+4	error	text			"if not null, an error message indicating why this line could not be processed"

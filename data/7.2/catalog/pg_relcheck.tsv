@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	rcrelid	OID		pg_class.oid	"the table this check constraint is on"
-1	rcname	NAME			"constraint name"
-2	rcbin	TEXT			"an internal representation of the constraint expression"
-3	rcsrc	TEXT			"a human-readable representation of the constraint expression"
+0	rcrelid	oid		pg_class.oid	"the table this check constraint is on"
+1	rcname	name			"constraint name"
+2	rcbin	text			"an internal representation of the constraint expression"
+3	rcsrc	text			"a human-readable representation of the constraint expression"

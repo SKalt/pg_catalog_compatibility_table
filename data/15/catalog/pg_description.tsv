@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	objoid	OID			"the oid of the object this description pertains to"
-1	classoid	OID			"the oid of the system catalog this object appears in"
-2	objsubid	INT4			"for a comment on a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero."
-3	description	TEXT			"arbitrary text that serves as the description of this object"
+0	objoid	oid			"the oid of the object this description pertains to"
+1	classoid	oid			"the oid of the system catalog this object appears in"
+2	objsubid	int4			"for a comment on a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero."
+3	description	text			"arbitrary text that serves as the description of this object"

@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	groname	NAME		pg_authid.rolname	"name of the group"
-1	grosysid	OID		pg_authid.oid	"id of this group"
-2	grolist	OID[]		pg_authid.oid	"an array containing the ids of the roles in this group"
+0	groname	name		pg_authid.rolname	"name of the group"
+1	grosysid	oid		pg_authid.oid	"id of this group"
+2	grolist	oid[]		pg_authid.oid	"an array containing the ids of the roles in this group"

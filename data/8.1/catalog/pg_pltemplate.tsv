@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	tmplname	NAME			"name of the language this template is for"
-1	tmpltrusted	BOOLEAN			"true if language is considered trusted"
-2	tmplhandler	TEXT			"name of call handler function"
-3	tmplvalidator	TEXT			"name of validator function, or null if none"
-4	tmpllibrary	TEXT			"path of shared library that implements language"
-5	tmplacl	ACLITEM[]			"access privileges for template (not yet used)"
+0	tmplname	name			"name of the language this template is for"
+1	tmpltrusted	boolean			"true if language is considered trusted"
+2	tmplhandler	text			"name of call handler function"
+3	tmplvalidator	text			"name of validator function, or null if none"
+4	tmpllibrary	text			"path of shared library that implements language"
+5	tmplacl	aclitem[]			"access privileges for template (not yet used)"

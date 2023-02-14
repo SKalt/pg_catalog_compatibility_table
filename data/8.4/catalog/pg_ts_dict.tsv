@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	dictname	NAME			"text search dictionary name"
-1	dictnamespace	OID		pg_namespace.oid	"the oid of the namespace that contains this dictionary"
-2	dictowner	OID		pg_authid.oid	"owner of the dictionary"
-3	dicttemplate	OID		pg_ts_template.oid	"the oid of the text search template for this dictionary"
-4	dictinitoption	TEXT			"initialization option string for the template"
+0	dictname	name			"text search dictionary name"
+1	dictnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this dictionary"
+2	dictowner	oid		pg_authid.oid	"owner of the dictionary"
+3	dicttemplate	oid		pg_ts_template.oid	"the oid of the text search template for this dictionary"
+4	dictinitoption	text			"initialization option string for the template"

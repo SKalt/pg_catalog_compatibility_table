@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	mapcfg	OID			"the oid of the pg_ts_config entry owning this map entry"
-1	maptokentype	INT4			"a token type emitted by the configuration's parser"
-2	mapseqno	INT4			"order in which to consult this entry (lower mapseqnos first)"
-3	mapdict	OID			"the oid of the text search dictionary to consult"
+0	mapcfg	oid			"the oid of the pg_ts_config entry owning this map entry"
+1	maptokentype	int4			"a token type emitted by the configuration's parser"
+2	mapseqno	int4			"order in which to consult this entry (lower mapseqnos first)"
+3	mapdict	oid			"the oid of the text search dictionary to consult"

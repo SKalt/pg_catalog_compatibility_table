@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	relname	NAME			"notify condition name. (the name need not match any actual relation in the database; the name relname is historical.)"
-1	listenerpid	INT4			"pid of the server process that created this entry"
-2	notification	INT4			"zero if no event is pending for this listener. if an event is pending, the pid of the server process that sent the notification"
+0	relname	name			"notify condition name. (the name need not match any actual relation in the database; the name relname is historical.)"
+1	listenerpid	int4			"pid of the server process that created this entry"
+2	notification	int4			"zero if no event is pending for this listener. if an event is pending, the pid of the server process that sent the notification"

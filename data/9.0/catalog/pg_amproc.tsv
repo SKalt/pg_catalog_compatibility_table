@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	amprocfamily	OID		pg_opfamily.oid	"the operator family this entry is for"
-1	amproclefttype	OID		pg_type.oid	"left-hand input data type of associated operator"
-2	amprocrighttype	OID		pg_type.oid	"right-hand input data type of associated operator"
-3	amprocnum	INT2			"support procedure number"
-4	amproc	REGPROC		pg_proc.oid	"oid of the procedure"
+0	amprocfamily	oid		pg_opfamily.oid	"the operator family this entry is for"
+1	amproclefttype	oid		pg_type.oid	"left-hand input data type of associated operator"
+2	amprocrighttype	oid		pg_type.oid	"right-hand input data type of associated operator"
+3	amprocnum	int2			"support procedure number"
+4	amproc	regproc		pg_proc.oid	"oid of the procedure"
