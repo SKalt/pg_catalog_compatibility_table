@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-1	oid	oid			"row identifier"
-2	amprocfamily	oid			"the operator family this entry is for"
-3	amproclefttype	oid			"left-hand input data type of associated operator"
-4	amprocrighttype	oid			"right-hand input data type of associated operator"
-5	amprocnum	int2			"support function number"
-6	amproc	regproc			"oid of the function"
+1	oid	oid	false		"row identifier"
+2	amprocfamily	oid	false		"the operator family this entry is for"
+3	amproclefttype	oid	false		"left-hand input data type of associated operator"
+4	amprocrighttype	oid	false		"right-hand input data type of associated operator"
+5	amprocnum	int2	false		"support function number"
+6	amproc	regproc	false		"oid of the function"

@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-1	oid	oid			"row identifier"
-2	tmplname	name			"text search template name"
-3	tmplnamespace	oid			"the oid of the namespace that contains this template"
-4	tmplinit	regproc			"oid of the template's initialization function"
-5	tmpllexize	regproc			"oid of the template's lexize function"
+1	oid	oid	false		"row identifier"
+2	tmplname	name	false		"text search template name"
+3	tmplnamespace	oid	false		"the oid of the namespace that contains this template"
+4	tmplinit	regproc	false		"oid of the template's initialization function"
+5	tmpllexize	regproc	false		"oid of the template's lexize function"

@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-1	objoid	oid		"any oid column"	"the oid of the object this description pertains to"
-2	classoid	oid		pg_class.oid	"the oid of the system catalog this object appears in"
-3	description	text			"arbitrary text that serves as the description of this object"
+1	objoid	oid	false		"the oid of the object this description pertains to"
+2	classoid	oid	false		"the oid of the system catalog this object appears in"
+3	description	text	false		"arbitrary text that serves as the description of this object"

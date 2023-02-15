@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-1	ftrelid	oid			"oid of the pg_class entry for this foreign table"
-2	ftserver	oid			"oid of the foreign server for this foreign table"
-3	ftoptions	text[]			"foreign table options, as ""keyword=value"" strings"
+1	ftrelid	oid	false		"oid of the pg_class entry for this foreign table"
+2	ftserver	oid	false		"oid of the foreign server for this foreign table"
+3	ftoptions	text[]	true		"foreign table options, as ""keyword=value"" strings"

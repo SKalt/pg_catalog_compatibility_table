@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-1	oid	oid			"row identifier"
-2	amname	name			"name of the access method"
-3	amhandler	regproc		pg_proc.oid	"oid of a handler function that is responsible for supplying information about the access method"
-4	amtype	char			"t = table (including materialized views), i = index."
+1	oid	oid	false		"row identifier"
+2	amname	name	false		"name of the access method"
+3	amhandler	regproc	false		"oid of a handler function that is responsible for supplying information about the access method"
+4	amtype	char	false		"t = table (including materialized views), i = index."

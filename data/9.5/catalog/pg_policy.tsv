@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-1	polname	name			"the name of the policy"
-2	polrelid	oid		pg_class.oid	"the table to which the policy applies"
-3	polcmd	char			"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"
-4	polroles	oid[]		pg_authid.oid	"the roles to which the policy is applied"
-5	polqual	pg_node_tree			"the expression tree to be added to the security barrier qualifications for queries that use the table"
-6	polwithcheck	pg_node_tree			"the expression tree to be added to the with check qualifications for queries that attempt to add rows to the table"
+1	polname	name	false		"the name of the policy"
+2	polrelid	oid	false		"the table to which the policy applies"
+3	polcmd	char	false		"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"
+4	polroles	oid[]	true		"the roles to which the policy is applied"
+5	polqual	pg_node_tree	true		"the expression tree to be added to the security barrier qualifications for queries that use the table"
+6	polwithcheck	pg_node_tree	true		"the expression tree to be added to the with check qualifications for queries that attempt to add rows to the table"
