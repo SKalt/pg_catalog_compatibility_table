@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	oid			"row identifier"
-1	parname	text			"the name of a configuration parameter for which privileges are granted"
-2	paracl	aclitem[]			"access privileges; see section 5.7 for details"
+1	oid	oid			"row identifier"
+2	parname	text			"the name of a configuration parameter for which privileges are granted"
+3	paracl	aclitem[]			"access privileges; see section 5.7 for details"

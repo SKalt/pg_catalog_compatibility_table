@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	schemaname	name			"name of schema containing table"
-1	tablename	name			"name of table the rule is for"
-2	rulename	name			"name of rule"
-3	definition	text			"rule definition (a reconstructed creation command)"
+1	schemaname	name			"name of schema containing table"
+2	tablename	name			"name of table the rule is for"
+3	rulename	name			"name of rule"
+4	definition	text			"rule definition (a reconstructed creation command)"

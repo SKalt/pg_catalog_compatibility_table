@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	pubname	name			"name of publication"
-1	schemaname	name			"name of schema containing table"
-2	tablename	name			"name of table"
-3	attnames	name[]			"names of table columns included in the publication. this contains all the columns of the table when the user didn't specify the column list for the table."
-4	rowfilter	text			"expression for the table's publication qualifying condition"
+1	pubname	name			"name of publication"
+2	schemaname	name			"name of schema containing table"
+3	tablename	name			"name of table"
+4	attnames	name[]			"names of table columns included in the publication. this contains all the columns of the table when the user didn't specify the column list for the table."
+5	rowfilter	text			"expression for the table's publication qualifying condition"

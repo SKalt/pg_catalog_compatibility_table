@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	objoid	oid			"the oid of the object this description pertains to"
-1	classoid	oid			"the oid of the system catalog this object appears in"
-2	description	text			"arbitrary text that serves as the description of this object"
+1	objoid	oid			"the oid of the object this description pertains to"
+2	classoid	oid			"the oid of the system catalog this object appears in"
+3	description	text			"arbitrary text that serves as the description of this object"

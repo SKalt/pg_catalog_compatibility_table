@@ -1,7 +1,7 @@
 Index	Name	Type	Nullable	References	Description
-0	stxoid	oid			"extended statistics object containing the definition for this data"
-1	stxdinherit	bool			"if true, the stats include values from child tables, not just the values in the specified relation"
-2	stxdndistinct	pg_ndistinct			"n-distinct counts, serialized as pg_ndistinct type"
-3	stxddependencies	pg_dependencies			"functional dependency statistics, serialized as pg_dependencies type"
-4	stxdmcv	pg_mcv_list			"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
-5	stxdexpr	pg_statistic[]			"per-expression statistics, serialized as an array of pg_statistic type"
+1	stxoid	oid			"extended statistics object containing the definition for this data"
+2	stxdinherit	bool			"if true, the stats include values from child tables, not just the values in the specified relation"
+3	stxdndistinct	pg_ndistinct			"n-distinct counts, serialized as pg_ndistinct type"
+4	stxddependencies	pg_dependencies			"functional dependency statistics, serialized as pg_dependencies type"
+5	stxdmcv	pg_mcv_list			"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
+6	stxdexpr	pg_statistic[]			"per-expression statistics, serialized as an array of pg_statistic type"

@@ -1,5 +1,5 @@
 Index	Name	Type	Nullable	References	Description
-0	name	text			"the name of the shared memory allocation. null for unused memory and <anonymous> for anonymous allocations."
-1	off	int8			"the offset at which the allocation starts. null for anonymous allocations, since details related to them are not known."
-2	size	int8			"size of the allocation"
-3	allocated_size	int8			"size of the allocation including padding. for anonymous allocations, no information about padding is available, so the size and allocated_size columns will always be equal. padding is not meaningful for free memory, so the columns will be equal in that case also."
+1	name	text			"the name of the shared memory allocation. null for unused memory and <anonymous> for anonymous allocations."
+2	off	int8			"the offset at which the allocation starts. null for anonymous allocations, since details related to them are not known."
+3	size	int8			"size of the allocation"
+4	allocated_size	int8			"size of the allocation including padding. for anonymous allocations, no information about padding is available, so the size and allocated_size columns will always be equal. padding is not meaningful for free memory, so the columns will be equal in that case also."

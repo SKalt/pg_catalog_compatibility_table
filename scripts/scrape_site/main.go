@@ -165,7 +165,7 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 	}()
 	tsv.WriteString(common.TsvHeader)
 	rows.Each(func(i int, tr *goquery.Selection) {
-		col := common.ColData{Index: i}
+		col := common.ColData{Index: i + 1}
 		row := tr.Find(".column_definition").First()
 		colNames := row.Find(".structfield")
 		col.Name = normalizeString(colNames.First().Text())

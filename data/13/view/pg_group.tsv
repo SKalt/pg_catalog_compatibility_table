@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-0	groname	name			"name of the group"
-1	grosysid	oid			"id of this group"
-2	grolist	oid[]			"an array containing the ids of the roles in this group"
+1	groname	name			"name of the group"
+2	grosysid	oid			"id of this group"
+3	grolist	oid[]			"an array containing the ids of the roles in this group"

@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	stxoid	oid			"extended statistics object containing the definition for this data"
-1	stxdndistinct	pg_ndistinct			"n-distinct counts, serialized as pg_ndistinct type"
-2	stxddependencies	pg_dependencies			"functional dependency statistics, serialized as pg_dependencies type"
-3	stxdmcv	pg_mcv_list			"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
-4	stxdexpr	pg_statistic[]			"per-expression statistics, serialized as an array of pg_statistic type"
+1	stxoid	oid			"extended statistics object containing the definition for this data"
+2	stxdndistinct	pg_ndistinct			"n-distinct counts, serialized as pg_ndistinct type"
+3	stxddependencies	pg_dependencies			"functional dependency statistics, serialized as pg_dependencies type"
+4	stxdmcv	pg_mcv_list			"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
+5	stxdexpr	pg_statistic[]			"per-expression statistics, serialized as an array of pg_statistic type"

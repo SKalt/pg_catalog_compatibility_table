@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-0	oid	oid			"row identifier"
-1	trftype	oid			"oid of the data type this transform is for"
-2	trflang	oid			"oid of the language this transform is for"
-3	trffromsql	regproc			"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if this operation is not supported."
-4	trftosql	regproc			"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if this operation is not supported."
+1	oid	oid			"row identifier"
+2	trftype	oid			"oid of the data type this transform is for"
+3	trflang	oid			"oid of the language this transform is for"
+4	trffromsql	regproc			"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if this operation is not supported."
+5	trftosql	regproc			"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if this operation is not supported."
