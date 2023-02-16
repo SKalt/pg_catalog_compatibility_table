@@ -112,13 +112,13 @@ func WaitFor(driverName, dsn string, retries int) (db *sql.DB, finalErr error) {
 	return nil, finalErr
 }
 
-func patchCatalog(catalogPath string, observations []common.ColData, waiter *sync.WaitGroup) {
+func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *sync.WaitGroup) {
 	defer waiter.Done()
-	data, err := os.ReadFile(catalogPath)
+	data, err := os.ReadFile(tsvPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-	file, err := os.Create(catalogPath) // truncate the TSV
+	file, err := os.Create(tsvPath) // truncate the TSV
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -176,7 +176,7 @@ func patchCatalog(catalogPath string, observations []common.ColData, waiter *syn
 				row.Type = "float4"
 			}
 			if row.Type != doc.Type {
-				log.Infof("%s:%d:%s type '%s' -> '%s'", catalogPath, row.Index, row.Name, doc.Type, row.Type)
+				log.Infof("%s:%d:%s type '%s' -> '%s'", tsvPath, row.Index, row.Name, doc.Type, row.Type)
 			}
 			row.Description = doc.Description
 			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
@@ -185,10 +185,10 @@ func patchCatalog(catalogPath string, observations []common.ColData, waiter *syn
 		}
 	}
 }
-func observeCatalog(catalogsDir string, catalog string, stmt *sql.Stmt, waiter *sync.WaitGroup) {
-	log.Debugf("observing catalog %s/%s", catalogsDir, catalog)
+func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waiter *sync.WaitGroup) {
+	log.Debugf("observing relation %s/%s", relationsDir, relation)
 	defer waiter.Done()
-	rows, err := stmt.Query(catalog)
+	rows, err := stmt.Query(relation)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -218,23 +218,23 @@ func observeCatalog(catalogsDir string, catalog string, stmt *sql.Stmt, waiter *
 		}
 		results = append(results, result)
 	}
-	catalogTsv := filepath.Join(catalogsDir, catalog+".tsv")
+	catalogTsv := filepath.Join(relationsDir, relation+".tsv")
 	waiter.Add(1)
-	go patchCatalog(catalogTsv, results, waiter)
+	go patchRelationTsv(catalogTsv, results, waiter)
 }
 
-func observeCatalogs(dataDir string, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, waiter *sync.WaitGroup) {
 	log.Debugf("observing catalogs for version %s", version)
 	defer waiter.Done()
-	catalogDir := filepath.Join(dataDir, version, "catalog")
-	catalogTsvs, err := os.ReadDir(catalogDir)
+	relationDir := filepath.Join(dataDir, version, relationKind)
+	tsvs, err := os.ReadDir(relationDir)
 	if err != nil {
 		log.Fatal(err)
 	}
-	catalogs := make([]string, len(catalogTsvs))
-	for i, tsv := range catalogTsvs {
+	relations := make([]string, 0, len(tsvs))
+	for _, tsv := range tsvs {
 		name := tsv.Name()
-		catalogs[i] = name[0 : len(name)-4]
+		relations = append(relations, name[0:len(name)-4])
 	}
 	txn, err := conn.Begin()
 	if err != nil {
@@ -245,9 +245,9 @@ func observeCatalogs(dataDir string, version string, conn *sql.DB, waiter *sync.
 	if err != nil {
 		log.Fatal(err)
 	}
-	for _, catalog := range catalogs {
+	for _, relation := range relations {
 		waiter.Add(1)
-		observeCatalog(catalogDir, catalog, stmt, waiter)
+		observeRelation(relationDir, relation, stmt, waiter)
 	}
 }
 
@@ -261,8 +261,12 @@ func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 		log.Fatal(err)
 	}
 	defer conn.Close()
-	waiter.Add(1)
-	observeCatalogs(dataDir, version, conn, waiter)
+	inner := sync.WaitGroup{} // defines the lifetime of the database connection
+	inner.Add(1)
+	observeRelationKind(dataDir, version, "catalog", conn, &inner)
+	inner.Add(1)
+	observeRelationKind(dataDir, version, "view", conn, &inner)
+	inner.Wait()
 	// TODO: fetch+record functions
 	// TODO: fetch+patch views?
 }

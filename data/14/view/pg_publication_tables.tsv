@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
-1	pubname	name			"name of publication"
-2	schemaname	name			"name of schema containing table"
-3	tablename	name			"name of table"
+1	pubname	name	true		"name of publication"
+2	schemaname	name	true		"name of schema containing table"
+3	tablename	name	true		"name of table"

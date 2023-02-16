@@ -1,4 +1,1 @@
 Index	Name	Type	Nullable	References	Description
-1	pubname	name		pg_publication.pubname	"name of publication"
-2	schemaname	name		pg_namespace.nspname	"name of schema containing table"
-3	tablename	name		pg_class.relname	"name of table"

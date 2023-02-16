@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-1	transaction	xid			"numeric transaction identifier of the prepared transaction"
-2	gid	text			"global transaction identifier that was assigned to the transaction"
-3	prepared	timestamptz			"time at which the transaction was prepared for commit"
-4	owner	name			"name of the user that executed the transaction"
-5	database	name			"name of the database in which the transaction was executed"
+1	transaction	xid	true		"numeric transaction identifier of the prepared transaction"
+2	gid	text	true		"global transaction identifier that was assigned to the transaction"
+3	prepared	timestamptz	true		"time at which the transaction was prepared for commit"
+4	owner	name	true		"name of the user that executed the transaction"
+5	database	name	true		"name of the database in which the transaction was executed"

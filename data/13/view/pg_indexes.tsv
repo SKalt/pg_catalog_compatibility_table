@@ -1,6 +1,6 @@
 Index	Name	Type	Nullable	References	Description
-1	schemaname	name			"name of schema containing table and index"
-2	tablename	name			"name of table the index is for"
-3	indexname	name			"name of index"
-4	tablespace	name			"name of tablespace containing index (null if default for database)"
-5	indexdef	text			"index definition (a reconstructed create index command)"
+1	schemaname	name	true		"name of schema containing table and index"
+2	tablename	name	true		"name of table the index is for"
+3	indexname	name	true		"name of index"
+4	tablespace	name	true		"name of tablespace containing index (null if default for database)"
+5	indexdef	text	true		"index definition (a reconstructed create index command)"

@@ -1,10 +1,1 @@
 Index	Name	Type	Nullable	References	Description
-1	line_number	integer			"line number of this rule in pg_hba.conf"
-2	type	text			"type of connection"
-3	database	text[]			"list of database name(s) to which this rule applies"
-4	user_name	text[]			"list of user and group name(s) to which this rule applies"
-5	address	text			"host name or ip address, or one of all, samehost, or samenet, or null for local connections"
-6	netmask	text			"ip address mask, or null if not applicable"
-7	auth_method	text			"authentication method"
-8	options	text[]			"options specified for authentication method, if any"
-9	error	text			"if not null, an error message indicating why this line could not be processed"
