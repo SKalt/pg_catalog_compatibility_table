@@ -10,5 +10,5 @@ Index	Name	Type	Nullable	References	Description
 9	objsubid	smallint			"for a table column, this is the column number (the classid and objid refer to the table itself). for all other object types, this column is zero. null if the object is not a general database object"
 10	transaction	xid			"id of the transaction that is holding or awaiting this lock."
 11	pid	integer			"process id of the server process holding or awaiting this lock. null if the lock is held by a prepared transaction."
-12	mode	text			"name of the lock mode held or desired by this process (see section 12.3.1)"
+12	mode	text			"name of the lock mode held or desired by this process"
 13	granted	boolean			"true if lock is held, false if lock is awaited"

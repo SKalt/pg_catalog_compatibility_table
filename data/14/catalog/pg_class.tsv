@@ -29,6 +29,6 @@ Index	Name	Type	Nullable	References	Description
 28	relrewrite	oid	false		"for new relations being written during a ddl operation that requires a table rewrite, this contains the oid of the original relation; otherwise zero. that state is only visible internally; this field should never contain anything other than zero for a user-visible relation."
 29	relfrozenxid	xid	false		"all transaction ids before this one have been replaced with a permanent (""frozen"") transaction id in this table. this is used to track whether the table needs to be vacuumed in order to prevent transaction id wraparound or to allow pg_xact to be shrunk. zero (invalidtransactionid) if the relation is not a table."
 30	relminmxid	xid	false		"all multixact ids before this one have been replaced by a transaction id in this table. this is used to track whether the table needs to be vacuumed in order to prevent multixact id wraparound or to allow pg_multixact to be shrunk. zero (invalidmultixactid) if the relation is not a table."
-31	relacl	aclitem[]	true		"access privileges; see section 5.7 for details"
+31	relacl	aclitem[]	true		"access privileges"
 32	reloptions	text[]	true		"access-method-specific options, as ""keyword=value"" strings"
 33	relpartbound	pg_node_tree	true		"if table is a partition (see relispartition), internal representation of the partition bound"

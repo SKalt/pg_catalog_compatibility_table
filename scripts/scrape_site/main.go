@@ -40,7 +40,6 @@ func sanitizeString(s string) string {
 	s = strings.ReplaceAll(s, "“", "\"")
 	s = strings.ReplaceAll(s, "”", "\"")
 	s = strings.ReplaceAll(s, "’", "'")
-	// s = strings.ReplaceAll(s, "", "")
 	return s
 }
 
@@ -132,8 +131,8 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 			case "Data Type", "data type", "type":
 				col.Type = text
 			case "Description", "description":
-				col.Description = sectionRef.ReplaceAllString(dedentRe.ReplaceAllString(text, " "), "")
-				col.Description = sanitizeString(col.Description)
+				col.Description = sanitizeString(dedentRe.ReplaceAllString(text, " "))
+				col.Description = purgeSectionRefs(col.Description)
 			default:
 				log.Fatalf("unknown header: '%s' @ %s", headers[j], html.Request.URL)
 			}
@@ -172,13 +171,30 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 		col.Type = normalizeString(tr.Find(".type").First().Text())
 		notes := normalizeString(row.NextAll().Filter("p").Text())
 		notes = dedentRe.ReplaceAllString(notes, " ")
-		notes = sectionRef.ReplaceAllString(notes, "")
+		notes = purgeSectionRefs(notes)
 		col.Description = sanitizeString(notes)
 		tsv.WriteString(col.TsvRow())
 	})
 }
 
-var sectionRef = regexp.MustCompile(`\s*See Section [0-9.]+ for more information\s*[.]?`)
+func hasSectionRef(doc string) bool {
+	doc = strings.ToLower(doc)
+	return strings.Contains(doc, "see section")
+}
+
+var forDetailsSee = regexp.MustCompile(`;?\s*for\s+details\s+see\s+section [0-9.]+\s*`)
+var sectionRef = regexp.MustCompile(`\s*[sS]ee [sS]ection [0-9.]+(\s+for\s+(more information|details)\s*[.]?|)?`)
+var sectionRef2 = regexp.MustCompile(`\s*\(?[sS]ee\s+[sS]ection\s+[^)]+\)`)
+
+func purgeSectionRefs(s string) string {
+	if hasSectionRef(s) {
+		s = forDetailsSee.ReplaceAllString(s, "")
+		s = sectionRef2.ReplaceAllString(s, "")
+		s = sectionRef.ReplaceAllString(s, "")
+		s = strings.TrimRight(s, whitespaceChars+",;")
+	}
+	return s
+}
 
 func collectAllUrlsToScrape(baseCollector *colly.Collector, siteDir string, versions []string) (urls []string) {
 	collector := baseCollector.Clone()

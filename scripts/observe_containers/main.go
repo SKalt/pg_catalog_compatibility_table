@@ -75,11 +75,7 @@ func getPgVersions(dataDir string) []string {
 		b, _ := strconv.ParseFloat(versions[j], 64)
 		return a < b
 	})
-	fmt.Println(versions)
 	return versions
-}
-func formatServiceName(version string) string {
-	return "pg-" + version
 }
 
 func getServiceVersions(versions []string) []string {
@@ -117,7 +113,6 @@ func WaitFor(driverName, dsn string, retries int) (db *sql.DB, finalErr error) {
 }
 
 func patchCatalog(catalogPath string, observations []common.ColData, waiter *sync.WaitGroup) {
-	waiter.Add(1)
 	defer waiter.Done()
 	data, err := os.ReadFile(catalogPath)
 	if err != nil {
@@ -191,6 +186,8 @@ func patchCatalog(catalogPath string, observations []common.ColData, waiter *syn
 	}
 }
 func observeCatalog(catalogsDir string, catalog string, stmt *sql.Stmt, waiter *sync.WaitGroup) {
+	log.Debugf("observing catalog %s/%s", catalogsDir, catalog)
+	defer waiter.Done()
 	rows, err := stmt.Query(catalog)
 	if err != nil {
 		log.Fatal(err)
@@ -222,11 +219,12 @@ func observeCatalog(catalogsDir string, catalog string, stmt *sql.Stmt, waiter *
 		results = append(results, result)
 	}
 	catalogTsv := filepath.Join(catalogsDir, catalog+".tsv")
+	waiter.Add(1)
 	go patchCatalog(catalogTsv, results, waiter)
 }
 
 func observeCatalogs(dataDir string, version string, conn *sql.DB, waiter *sync.WaitGroup) {
-	waiter.Add(1)
+	log.Debugf("observing catalogs for version %s", version)
 	defer waiter.Done()
 	catalogDir := filepath.Join(dataDir, version, "catalog")
 	catalogTsvs, err := os.ReadDir(catalogDir)
@@ -248,36 +246,46 @@ func observeCatalogs(dataDir string, version string, conn *sql.DB, waiter *sync.
 		log.Fatal(err)
 	}
 	for _, catalog := range catalogs {
+		waiter.Add(1)
 		observeCatalog(catalogDir, catalog, stmt, waiter)
 	}
 }
 
 // use a single connection per-container to audit all the relevant tables, views, functions, domains.
 func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
-	waiter.Add(1)
 	defer waiter.Done()
+	log.Debugf("auditing container %s\n", version)
 	port := getPort(version)
 	conn, err := sql.Open("postgres", "host=localhost port="+port+" user=postgres dbname=postgres sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer conn.Close()
+	waiter.Add(1)
 	observeCatalogs(dataDir, version, conn, waiter)
 	// TODO: fetch+record functions
 	// TODO: fetch+patch views?
 }
 
 func main() {
-	log.SetLevel(log.InfoLevel)
+	switch os.Getenv("LOG_LEVEL") {
+	case "", "ERROR":
+		log.SetLevel(log.ErrorLevel)
+	case "INFO":
+		log.SetLevel(log.InfoLevel)
+	case "DEBUG":
+		log.SetLevel(log.DebugLevel)
+	}
 	dataDir, err := filepath.Abs("./data")
 	if err != nil {
 		log.Fatal(err)
 	}
 	versions := getServiceVersions(getPgVersions(dataDir))
+	log.Infof("versions: %v\n", versions)
 	waiter := sync.WaitGroup{}
-	waiter.Add(1)
 	for _, version := range versions {
+		waiter.Add(1)
 		go auditContainer(dataDir, version, &waiter)
 	}
-	waiter.Done()
 	waiter.Wait()
 }

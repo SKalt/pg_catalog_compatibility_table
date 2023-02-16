@@ -1,4 +1,4 @@
 Index	Name	Type	Nullable	References	Description
 1	oid	oid	false		"row identifier"
 2	lomowner	oid	false		"owner of the large object"
-3	lomacl	aclitem[]	true		"access privileges; see section 5.7 for details"
+3	lomacl	aclitem[]	true		"access privileges"

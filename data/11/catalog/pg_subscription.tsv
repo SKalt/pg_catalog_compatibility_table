@@ -7,4 +7,4 @@ Index	Name	Type	Nullable	References	Description
 5	subconninfo	text	false		"connection string to the upstream database"
 6	subslotname	name	false		"name of the replication slot in the upstream database (also used for the local replication origin name); null represents none"
 7	subsynccommit	text	false		"contains the value of the synchronous_commit setting for the subscription workers."
-8	subpublications	text[]	false		"array of subscribed publication names. these reference the publications on the publisher server. for more on publications see section 31.1."
+8	subpublications	text[]	false		"array of subscribed publication names. these reference the publications on the publisher server. for more on publications"

@@ -4,7 +4,7 @@ Index	Name	Type	Nullable	References	Description
 3	usecreatedb	bool			"user can create databases"
 4	usesuper	bool			"user is a superuser"
 5	userepl	bool			"user can initiate streaming replication and put the system in and out of backup mode."
-6	usebypassrls	bool			"user bypasses every row level security policy, see section 5.8 for more information."
+6	usebypassrls	bool			"user bypasses every row level security policy"
 7	passwd	text			"password (possibly encrypted); null if none. see pg_authid for details of how encrypted passwords are stored."
 8	valuntil	timestamptz			"password expiry time (only used for password authentication)"
 9	useconfig	text[]			"session defaults for run-time configuration variables"

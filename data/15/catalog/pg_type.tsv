@@ -30,4 +30,4 @@ Index	Name	Type	Nullable	References	Description
 29	typcollation	oid	false		"typcollation specifies the collation of the type. if the type does not support collations, this will be zero. a base type that supports collations will have a nonzero value here, typically default_collation_oid. a domain over a collatable type can have a collation oid different from its base type's, if one was specified for the domain."
 30	typdefaultbin	pg_node_tree	true		"if typdefaultbin is not null, it is the nodetostring() representation of a default expression for the type. this is only used for domains."
 31	typdefault	text	true		"typdefault is null if the type has no associated default value. if typdefaultbin is not null, typdefault must contain a human-readable version of the default expression represented by typdefaultbin. if typdefaultbin is null and typdefault is not, then typdefault is the external representation of the type's default value, which can be fed to the type's input converter to produce a constant."
-32	typacl	aclitem[]	true		"access privileges; see section 5.7 for details"
+32	typacl	aclitem[]	true		"access privileges"

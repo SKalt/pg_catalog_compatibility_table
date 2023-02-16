@@ -2,4 +2,4 @@ Index	Name	Type	Nullable	References	Description
 1	oid	oid	false		"row identifier"
 2	nspname	name	false		"name of the namespace"
 3	nspowner	oid	false		"owner of the namespace"
-4	nspacl	aclitem[]	true		"access privileges; see section 5.7 for details"
+4	nspacl	aclitem[]	true		"access privileges"
