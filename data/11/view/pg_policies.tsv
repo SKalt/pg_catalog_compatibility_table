@@ -6,3 +6,4 @@ Index	Name	Type	Nullable	References	Description
 6	cmd	text	true		"the command type to which the policy is applied"
 7	qual	text	true		"the expression added to the security barrier qualifications for queries that this policy applies to"
 8	with_check	text	true		"the expression added to the with check qualifications for queries that attempt to add rows to this table"
+4	polpermissive	text			"is the policy permissive or restrictive?"

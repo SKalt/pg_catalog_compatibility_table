@@ -27,3 +27,5 @@ Index	Name	Type	Nullable	References	Description
 25	probin	text	true		"additional information about how to invoke the function. again, the interpretation is language-specific."
 26	proconfig	text[]	true		"function's local settings for run-time configuration variables"
 27	proacl	aclitem[]	true		"access privileges; see grant and revoke for details"
+16	proparallel	char			"proparallel tells whether the function can be safely run in parallel mode. it is s for functions which are safe to run in parallel mode without restriction. it is r for functions which can be run in parallel mode, but their execution is restricted to the parallel group leader; parallel worker processes cannot invoke these functions. it is u for functions which are unsafe in parallel mode; the presence of such a function forces a serial execution plan."
+25	protrftypes	oid[]			"data type oids for which to apply transforms."

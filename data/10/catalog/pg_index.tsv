@@ -16,3 +16,5 @@ Index	Name	Type	Nullable	References	Description
 15	indoption	int2vector	false		"this is an array of indnatts values that store per-column flag bits. the meaning of the bits is defined by the index's access method."
 16	indexprs	pg_node_tree	true		"expression trees (in nodetostring() representation) for index attributes that are not simple column references. this is a list with one element for each zero entry in indkey. null if all index attributes are simple references."
 17	indpred	pg_node_tree	true		"expression tree (in nodetostring() representation) for partial index predicate. null if not a partial index."
+12	indislive	bool			"if false, the index is in process of being dropped, and should be ignored for all purposes (including hot-safety decisions)"
+13	indisreplident	bool			"if true this index has been chosen as ""replica identity"" using alter table ... replica identity using index ..."

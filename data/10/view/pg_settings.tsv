@@ -15,3 +15,4 @@ Index	Name	Type	Nullable	References	Description
 14	reset_val	text	true		"value that reset would reset the parameter to in the current session"
 15	sourcefile	text	true		"configuration file the current value was set in (null for values set from sources other than configuration files, or when examined by a user who is neither a superuser or a member of pg_read_all_settings); helpful when using include directives in configuration files"
 16	sourceline	int4	true		"line number within the configuration file the current value was set at (null for values set from sources other than configuration files, or when examined by a user who is neither a superuser or a member of pg_read_all_settings)."
+17	pending_restart	boolean			"true if the value has been changed in the configuration file but needs a restart; or false otherwise."

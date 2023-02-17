@@ -1,1 +1,3 @@
 Index	Name	Type	Nullable	References	Description
+1	prpubid	oid			"reference to publication"
+2	prrelid	oid			"reference to relation"

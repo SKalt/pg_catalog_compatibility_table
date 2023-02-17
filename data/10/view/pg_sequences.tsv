@@ -1,1 +1,12 @@
 Index	Name	Type	Nullable	References	Description
+1	schemaname	name			"name of schema containing sequence"
+2	sequencename	name			"name of sequence"
+3	sequenceowner	name			"name of sequence's owner"
+4	data_type	regtype			"data type of the sequence"
+5	start_value	bigint			"start value of the sequence"
+6	min_value	bigint			"minimum value of the sequence"
+7	max_value	bigint			"maximum value of the sequence"
+8	increment_by	bigint			"increment value of the sequence"
+9	cycle	boolean			"whether the sequence cycles"
+10	cache_size	bigint			"cache size of the sequence"
+11	last_value	bigint			"the last sequence value written to disk. if caching is used, this value can be greater than the last value handed out from the sequence. null if the sequence has not been read from yet. also, if the current user does not have usage or select privilege on the sequence, the value is null."

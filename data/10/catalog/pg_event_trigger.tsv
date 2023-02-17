@@ -1,1 +1,7 @@
 Index	Name	Type	Nullable	References	Description
+1	evtname	name			"trigger name (must be unique)"
+2	evtevent	name			"identifies the event for which this trigger fires"
+3	evtowner	oid			"owner of the event trigger"
+4	evtfoid	oid			"the function to be called"
+5	evtenabled	char			"controls in which session_replication_role modes the event trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
+6	evttags	text[]			"command tags for which this trigger will fire. if null, the firing of this trigger is not restricted on the basis of the command tag."

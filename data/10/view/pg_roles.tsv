@@ -11,3 +11,4 @@ Index	Name	Type	Nullable	References	Description
 11	rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiration"
 12	rolconfig	text[]	true		"role-specific defaults for run-time configuration variables"
 13	oid	oid	true		"id of role"
+11	rolbypassrls	bool			"role bypasses every row level security policy"

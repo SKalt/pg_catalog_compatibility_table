@@ -1,1 +1,3 @@
 Index	Name	Type	Nullable	References	Description
+1	name	text			"the parameter name"
+2	setting	text			"the parameter value"

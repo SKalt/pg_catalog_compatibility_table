@@ -7,3 +7,4 @@ Index	Name	Type	Nullable	References	Description
 7	passwd	text	true		"password (possibly encrypted); null if none. see pg_authid for details of how encrypted passwords are stored."
 8	valuntil	abstime	true		"password expiry time (only used for password authentication)"
 9	useconfig	text[]	true		"session defaults for run-time configuration variables"
+6	usebypassrls	bool			"user bypasses every row level security policy"

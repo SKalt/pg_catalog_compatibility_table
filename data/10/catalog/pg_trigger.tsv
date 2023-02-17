@@ -15,3 +15,5 @@ Index	Name	Type	Nullable	References	Description
 13	tgattr	int2vector	false		"column numbers, if trigger is column-specific; otherwise an empty array"
 14	tgargs	bytea	true		"argument strings to pass to trigger, each null-terminated"
 15	tgqual	pg_node_tree	true		"expression tree (in nodetostring() representation) for the trigger's when condition, or null if none"
+16	tgoldtable	name			"referencing clause name for old table, or null if none"
+17	tgnewtable	name			"referencing clause name for new table, or null if none"

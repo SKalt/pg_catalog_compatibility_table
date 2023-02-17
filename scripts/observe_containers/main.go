@@ -25,6 +25,9 @@ var colQuery string
 //go:embed get_functions.sql
 var fnQuery string
 
+//go:embed get_view_def.sql
+var viewDefQuery string
+
 // min version of postgres with an *-alpine tag I can find on docker hub as of
 // 2023-02-12. See
 // https://hub.docker.com/_/postgres/tags?page=1&ordering=last_updated&name=9.2-alpine
@@ -155,6 +158,7 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 	}
 	for _, row := range observations {
 		if doc, ok := prev[row.Name]; ok {
+			delete(prev, row.Name)
 			switch row.Type {
 			case "boolean":
 				row.Type = "bool"
@@ -180,6 +184,20 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 			}
 			row.Description = doc.Description
 			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
+				log.Fatal(err)
+			}
+		}
+	}
+	if len(prev) > 0 {
+		remaining := make([]common.ColData, 0, len(prev))
+		for _, row := range prev {
+			remaining = append(remaining, row)
+		}
+		sort.SliceStable(remaining, func(i, j int) bool {
+			return remaining[i].Index < remaining[j].Index
+		})
+		for _, row := range remaining {
+			if _, err := tsv.WriteString(row.TsvRow()); err != nil {
 				log.Fatal(err)
 			}
 		}
@@ -234,7 +252,7 @@ func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, wa
 	relations := make([]string, 0, len(tsvs))
 	for _, tsv := range tsvs {
 		name := tsv.Name()
-		relations = append(relations, name[0:len(name)-4])
+		relations = append(relations, stripTsvSuffix(name))
 	}
 	txn, err := conn.Begin()
 	if err != nil {
@@ -251,9 +269,56 @@ func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, wa
 	}
 }
 
-//	func observeViewDefs(dataDir, version, view string, conn *sql.DB, waiter *sync.WaitGroup) {
-//		stmt, err :=
-//	}
+func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+	txn, err := conn.Begin()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func() {
+		txn.Rollback()
+	}()
+	stmt, err := txn.Prepare(viewDefQuery)
+	if err != nil {
+		log.Fatal(err)
+	}
+	viewsDir := filepath.Join(dataDir, version, "view")
+	viewFiles, err := os.ReadDir(viewsDir)
+	if err != nil {
+		log.Fatal(err)
+	}
+	nViews := 0
+	for _, v := range viewFiles {
+		if strings.HasSuffix(v.Name(), ".tsv") {
+			nViews += 1
+		}
+	}
+	views := make([]string, 0, nViews)
+	for _, v := range viewFiles {
+		if strings.HasSuffix(v.Name(), ".tsv") {
+			views = append(views, stripTsvSuffix(v.Name()))
+		}
+	}
+	var defn string
+	for _, v := range views {
+		if err = stmt.QueryRow(v).Scan(&defn); err != nil {
+			if err == sql.ErrNoRows {
+				// sometimes you can't see views
+				continue
+				//log.Fatalf("%s view %s: no rows", version, v)
+			}
+			log.Fatal(err)
+		}
+		file, err := os.Create(filepath.Join(viewsDir, v+".sql"))
+		if err != nil {
+			log.Fatal(err)
+		}
+		_, err = file.WriteString(defn)
+		file.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+}
 func observeFns(dataDir string, version string, conn *sql.DB) {
 	row, err := conn.Query(fnQuery)
 	if err != nil {
@@ -301,6 +366,7 @@ func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	inner.Add(1)
 	observeRelationKind(dataDir, version, "view", conn, &inner)
 	observeFns(dataDir, version, conn)
+	observeViewDefs(dataDir, version, conn, &inner)
 	inner.Wait()
 	// TODO: fetch+record functions
 }
@@ -326,4 +392,8 @@ func main() {
 		go auditContainer(dataDir, version, &waiter)
 	}
 	waiter.Wait()
+}
+
+func stripTsvSuffix(s string) string {
+	return s[0 : len(s)-4]
 }

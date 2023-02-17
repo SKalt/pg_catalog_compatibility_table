@@ -6,3 +6,4 @@ Index	Name	Type	Nullable	References	Description
 5	hasindexes	bool	true		"true if table has (or recently had) any indexes"
 6	hasrules	bool	true		"true if table has (or once had) rules"
 7	hastriggers	bool	true		"true if table has (or once had) triggers"
+8	rowsecurity	boolean			"true if row security is enabled on the table"
