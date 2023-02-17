@@ -1,0 +1,2518 @@
+Name	Args	"Return Type"
+RI_FKey_cascade_del		trigger
+RI_FKey_cascade_upd		trigger
+RI_FKey_check_ins		trigger
+RI_FKey_check_upd		trigger
+RI_FKey_noaction_del		trigger
+RI_FKey_noaction_upd		trigger
+RI_FKey_restrict_del		trigger
+RI_FKey_restrict_upd		trigger
+RI_FKey_setdefault_del		trigger
+RI_FKey_setdefault_upd		trigger
+RI_FKey_setnull_del		trigger
+RI_FKey_setnull_upd		trigger
+abbrev	cidr	text
+abbrev	inet	text
+abs	bigint	bigint
+abs	"double precision"	"double precision"
+abs	integer	integer
+abs	numeric	numeric
+abs	real	real
+abs	smallint	smallint
+abstime	"timestamp with time zone"	abstime
+abstime	"timestamp without time zone"	abstime
+abstimeeq	"abstime, abstime"	boolean
+abstimege	"abstime, abstime"	boolean
+abstimegt	"abstime, abstime"	boolean
+abstimein	cstring	abstime
+abstimele	"abstime, abstime"	boolean
+abstimelt	"abstime, abstime"	boolean
+abstimene	"abstime, abstime"	boolean
+abstimeout	abstime	cstring
+abstimerecv	internal	abstime
+abstimesend	abstime	bytea
+aclcontains	"aclitem[], aclitem"	boolean
+acldefault	"""char"", oid"	aclitem[]
+aclexplode	"acl aclitem[], OUT grantor oid, OUT grantee oid, OUT privilege_type text, OUT is_grantable boolean"	"SETOF record"
+aclinsert	"aclitem[], aclitem"	aclitem[]
+aclitemeq	"aclitem, aclitem"	boolean
+aclitemin	cstring	aclitem
+aclitemout	aclitem	cstring
+aclremove	"aclitem[], aclitem"	aclitem[]
+acos	"double precision"	"double precision"
+age	"timestamp with time zone"	interval
+age	"timestamp with time zone, timestamp with time zone"	interval
+age	"timestamp without time zone"	interval
+age	"timestamp without time zone, timestamp without time zone"	interval
+age	xid	integer
+any_in	cstring	"""any"""
+any_out	"""any"""	cstring
+anyarray_in	cstring	anyarray
+anyarray_out	anyarray	cstring
+anyarray_recv	internal	anyarray
+anyarray_send	anyarray	bytea
+anyelement_in	cstring	anyelement
+anyelement_out	anyelement	cstring
+anyenum_in	cstring	anyenum
+anyenum_out	anyenum	cstring
+anynonarray_in	cstring	anynonarray
+anynonarray_out	anynonarray	cstring
+anyrange_in	"cstring, oid, integer"	anyrange
+anyrange_out	anyrange	cstring
+anytextcat	"anynonarray, text"	text
+area	box	"double precision"
+area	circle	"double precision"
+area	path	"double precision"
+areajoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+areasel	"internal, oid, internal, integer"	"double precision"
+array_agg	anyelement	anyarray
+array_agg_finalfn	internal	anyarray
+array_agg_transfn	"internal, anyelement"	internal
+array_append	"anyarray, anyelement"	anyarray
+array_cat	"anyarray, anyarray"	anyarray
+array_dims	anyarray	text
+array_eq	"anyarray, anyarray"	boolean
+array_fill	"anyelement, integer[]"	anyarray
+array_fill	"anyelement, integer[], integer[]"	anyarray
+array_ge	"anyarray, anyarray"	boolean
+array_gt	"anyarray, anyarray"	boolean
+array_in	"cstring, oid, integer"	anyarray
+array_larger	"anyarray, anyarray"	anyarray
+array_le	"anyarray, anyarray"	boolean
+array_length	"anyarray, integer"	integer
+array_lower	"anyarray, integer"	integer
+array_lt	"anyarray, anyarray"	boolean
+array_ndims	anyarray	integer
+array_ne	"anyarray, anyarray"	boolean
+array_out	anyarray	cstring
+array_prepend	"anyelement, anyarray"	anyarray
+array_recv	"internal, oid, integer"	anyarray
+array_remove	"anyarray, anyelement"	anyarray
+array_replace	"anyarray, anyelement, anyelement"	anyarray
+array_send	anyarray	bytea
+array_smaller	"anyarray, anyarray"	anyarray
+array_to_json	anyarray	json
+array_to_json	"anyarray, boolean"	json
+array_to_string	"anyarray, text"	text
+array_to_string	"anyarray, text, text"	text
+array_typanalyze	internal	boolean
+array_upper	"anyarray, integer"	integer
+arraycontained	"anyarray, anyarray"	boolean
+arraycontains	"anyarray, anyarray"	boolean
+arraycontjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+arraycontsel	"internal, oid, internal, integer"	"double precision"
+arrayoverlap	"anyarray, anyarray"	boolean
+ascii	text	integer
+ascii_to_mic	"integer, integer, cstring, internal, integer"	void
+ascii_to_utf8	"integer, integer, cstring, internal, integer"	void
+asin	"double precision"	"double precision"
+atan	"double precision"	"double precision"
+atan2	"double precision, double precision"	"double precision"
+avg	bigint	numeric
+avg	"double precision"	"double precision"
+avg	integer	numeric
+avg	interval	interval
+avg	numeric	numeric
+avg	real	"double precision"
+avg	smallint	numeric
+big5_to_euc_tw	"integer, integer, cstring, internal, integer"	void
+big5_to_mic	"integer, integer, cstring, internal, integer"	void
+big5_to_utf8	"integer, integer, cstring, internal, integer"	void
+bit	"bigint, integer"	bit
+bit	"bit, integer, boolean"	bit
+bit	"integer, integer"	bit
+bit_and	bigint	bigint
+bit_and	bit	bit
+bit_and	integer	integer
+bit_and	smallint	smallint
+bit_in	"cstring, oid, integer"	bit
+bit_length	bit	integer
+bit_length	bytea	integer
+bit_length	text	integer
+bit_or	bigint	bigint
+bit_or	bit	bit
+bit_or	integer	integer
+bit_or	smallint	smallint
+bit_out	bit	cstring
+bit_recv	"internal, oid, integer"	bit
+bit_send	bit	bytea
+bitand	"bit, bit"	bit
+bitcat	"bit varying, bit varying"	"bit varying"
+bitcmp	"bit, bit"	integer
+biteq	"bit, bit"	boolean
+bitge	"bit, bit"	boolean
+bitgt	"bit, bit"	boolean
+bitle	"bit, bit"	boolean
+bitlt	"bit, bit"	boolean
+bitne	"bit, bit"	boolean
+bitnot	bit	bit
+bitor	"bit, bit"	bit
+bitshiftleft	"bit, integer"	bit
+bitshiftright	"bit, integer"	bit
+bittypmodin	cstring[]	integer
+bittypmodout	integer	cstring
+bitxor	"bit, bit"	bit
+bool	integer	boolean
+bool_and	boolean	boolean
+bool_or	boolean	boolean
+booland_statefunc	"boolean, boolean"	boolean
+booleq	"boolean, boolean"	boolean
+boolge	"boolean, boolean"	boolean
+boolgt	"boolean, boolean"	boolean
+boolin	cstring	boolean
+boolle	"boolean, boolean"	boolean
+boollt	"boolean, boolean"	boolean
+boolne	"boolean, boolean"	boolean
+boolor_statefunc	"boolean, boolean"	boolean
+boolout	boolean	cstring
+boolrecv	internal	boolean
+boolsend	boolean	bytea
+box	circle	box
+box	"point, point"	box
+box	polygon	box
+box_above	"box, box"	boolean
+box_above_eq	"box, box"	boolean
+box_add	"box, point"	box
+box_below	"box, box"	boolean
+box_below_eq	"box, box"	boolean
+box_center	box	point
+box_contain	"box, box"	boolean
+box_contain_pt	"box, point"	boolean
+box_contained	"box, box"	boolean
+box_distance	"box, box"	"double precision"
+box_div	"box, point"	box
+box_eq	"box, box"	boolean
+box_ge	"box, box"	boolean
+box_gt	"box, box"	boolean
+box_in	cstring	box
+box_intersect	"box, box"	box
+box_le	"box, box"	boolean
+box_left	"box, box"	boolean
+box_lt	"box, box"	boolean
+box_mul	"box, point"	box
+box_out	box	cstring
+box_overabove	"box, box"	boolean
+box_overbelow	"box, box"	boolean
+box_overlap	"box, box"	boolean
+box_overleft	"box, box"	boolean
+box_overright	"box, box"	boolean
+box_recv	internal	box
+box_right	"box, box"	boolean
+box_same	"box, box"	boolean
+box_send	box	bytea
+box_sub	"box, point"	box
+bpchar	"""char"""	character
+bpchar	"character, integer, boolean"	character
+bpchar	name	character
+bpchar_larger	"character, character"	character
+bpchar_pattern_ge	"character, character"	boolean
+bpchar_pattern_gt	"character, character"	boolean
+bpchar_pattern_le	"character, character"	boolean
+bpchar_pattern_lt	"character, character"	boolean
+bpchar_smaller	"character, character"	character
+bpcharcmp	"character, character"	integer
+bpchareq	"character, character"	boolean
+bpcharge	"character, character"	boolean
+bpchargt	"character, character"	boolean
+bpchariclike	"character, text"	boolean
+bpcharicnlike	"character, text"	boolean
+bpcharicregexeq	"character, text"	boolean
+bpcharicregexne	"character, text"	boolean
+bpcharin	"cstring, oid, integer"	character
+bpcharle	"character, character"	boolean
+bpcharlike	"character, text"	boolean
+bpcharlt	"character, character"	boolean
+bpcharne	"character, character"	boolean
+bpcharnlike	"character, text"	boolean
+bpcharout	character	cstring
+bpcharrecv	"internal, oid, integer"	character
+bpcharregexeq	"character, text"	boolean
+bpcharregexne	"character, text"	boolean
+bpcharsend	character	bytea
+bpchartypmodin	cstring[]	integer
+bpchartypmodout	integer	cstring
+broadcast	inet	inet
+btabstimecmp	"abstime, abstime"	integer
+btarraycmp	"anyarray, anyarray"	integer
+btbeginscan	"internal, internal, internal"	internal
+btboolcmp	"boolean, boolean"	integer
+btbpchar_pattern_cmp	"character, character"	integer
+btbuild	"internal, internal, internal"	internal
+btbuildempty	internal	void
+btbulkdelete	"internal, internal, internal, internal"	internal
+btcanreturn	internal	boolean
+btcharcmp	"""char"", ""char"""	integer
+btcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
+btendscan	internal	void
+btfloat48cmp	"real, double precision"	integer
+btfloat4cmp	"real, real"	integer
+btfloat4sortsupport	internal	void
+btfloat84cmp	"double precision, real"	integer
+btfloat8cmp	"double precision, double precision"	integer
+btfloat8sortsupport	internal	void
+btgetbitmap	"internal, internal"	bigint
+btgettuple	"internal, internal"	boolean
+btinsert	"internal, internal, internal, internal, internal, internal"	boolean
+btint24cmp	"smallint, integer"	integer
+btint28cmp	"smallint, bigint"	integer
+btint2cmp	"smallint, smallint"	integer
+btint2sortsupport	internal	void
+btint42cmp	"integer, smallint"	integer
+btint48cmp	"integer, bigint"	integer
+btint4cmp	"integer, integer"	integer
+btint4sortsupport	internal	void
+btint82cmp	"bigint, smallint"	integer
+btint84cmp	"bigint, integer"	integer
+btint8cmp	"bigint, bigint"	integer
+btint8sortsupport	internal	void
+btmarkpos	internal	void
+btnamecmp	"name, name"	integer
+btnamesortsupport	internal	void
+btoidcmp	"oid, oid"	integer
+btoidsortsupport	internal	void
+btoidvectorcmp	"oidvector, oidvector"	integer
+btoptions	"text[], boolean"	bytea
+btrecordcmp	"record, record"	integer
+btreltimecmp	"reltime, reltime"	integer
+btrescan	"internal, internal, internal, internal, internal"	void
+btrestrpos	internal	void
+btrim	"bytea, bytea"	bytea
+btrim	text	text
+btrim	"text, text"	text
+bttext_pattern_cmp	"text, text"	integer
+bttextcmp	"text, text"	integer
+bttidcmp	"tid, tid"	integer
+bttintervalcmp	"tinterval, tinterval"	integer
+btvacuumcleanup	"internal, internal"	internal
+bytea_string_agg_finalfn	internal	bytea
+bytea_string_agg_transfn	"internal, bytea, bytea"	internal
+byteacat	"bytea, bytea"	bytea
+byteacmp	"bytea, bytea"	integer
+byteaeq	"bytea, bytea"	boolean
+byteage	"bytea, bytea"	boolean
+byteagt	"bytea, bytea"	boolean
+byteain	cstring	bytea
+byteale	"bytea, bytea"	boolean
+bytealike	"bytea, bytea"	boolean
+bytealt	"bytea, bytea"	boolean
+byteane	"bytea, bytea"	boolean
+byteanlike	"bytea, bytea"	boolean
+byteaout	bytea	cstring
+bytearecv	internal	bytea
+byteasend	bytea	bytea
+cash_cmp	"money, money"	integer
+cash_div_cash	"money, money"	"double precision"
+cash_div_flt4	"money, real"	money
+cash_div_flt8	"money, double precision"	money
+cash_div_int2	"money, smallint"	money
+cash_div_int4	"money, integer"	money
+cash_eq	"money, money"	boolean
+cash_ge	"money, money"	boolean
+cash_gt	"money, money"	boolean
+cash_in	cstring	money
+cash_le	"money, money"	boolean
+cash_lt	"money, money"	boolean
+cash_mi	"money, money"	money
+cash_mul_flt4	"money, real"	money
+cash_mul_flt8	"money, double precision"	money
+cash_mul_int2	"money, smallint"	money
+cash_mul_int4	"money, integer"	money
+cash_ne	"money, money"	boolean
+cash_out	money	cstring
+cash_pl	"money, money"	money
+cash_recv	internal	money
+cash_send	money	bytea
+cash_words	money	text
+cashlarger	"money, money"	money
+cashsmaller	"money, money"	money
+cbrt	"double precision"	"double precision"
+ceil	"double precision"	"double precision"
+ceil	numeric	numeric
+ceiling	"double precision"	"double precision"
+ceiling	numeric	numeric
+center	box	point
+center	circle	point
+char	integer	"""char"""
+char	text	"""char"""
+char_length	character	integer
+char_length	text	integer
+character_length	character	integer
+character_length	text	integer
+chareq	"""char"", ""char"""	boolean
+charge	"""char"", ""char"""	boolean
+chargt	"""char"", ""char"""	boolean
+charin	cstring	"""char"""
+charle	"""char"", ""char"""	boolean
+charlt	"""char"", ""char"""	boolean
+charne	"""char"", ""char"""	boolean
+charout	"""char"""	cstring
+charrecv	internal	"""char"""
+charsend	"""char"""	bytea
+chr	integer	text
+cideq	"cid, cid"	boolean
+cidin	cstring	cid
+cidout	cid	cstring
+cidr	inet	cidr
+cidr_in	cstring	cidr
+cidr_out	cidr	cstring
+cidr_recv	internal	cidr
+cidr_send	cidr	bytea
+cidrecv	internal	cid
+cidsend	cid	bytea
+circle	box	circle
+circle	"point, double precision"	circle
+circle	polygon	circle
+circle_above	"circle, circle"	boolean
+circle_add_pt	"circle, point"	circle
+circle_below	"circle, circle"	boolean
+circle_center	circle	point
+circle_contain	"circle, circle"	boolean
+circle_contain_pt	"circle, point"	boolean
+circle_contained	"circle, circle"	boolean
+circle_distance	"circle, circle"	"double precision"
+circle_div_pt	"circle, point"	circle
+circle_eq	"circle, circle"	boolean
+circle_ge	"circle, circle"	boolean
+circle_gt	"circle, circle"	boolean
+circle_in	cstring	circle
+circle_le	"circle, circle"	boolean
+circle_left	"circle, circle"	boolean
+circle_lt	"circle, circle"	boolean
+circle_mul_pt	"circle, point"	circle
+circle_ne	"circle, circle"	boolean
+circle_out	circle	cstring
+circle_overabove	"circle, circle"	boolean
+circle_overbelow	"circle, circle"	boolean
+circle_overlap	"circle, circle"	boolean
+circle_overleft	"circle, circle"	boolean
+circle_overright	"circle, circle"	boolean
+circle_recv	internal	circle
+circle_right	"circle, circle"	boolean
+circle_same	"circle, circle"	boolean
+circle_send	circle	bytea
+circle_sub_pt	"circle, point"	circle
+clock_timestamp		"timestamp with time zone"
+close_lb	"line, box"	point
+close_ls	"line, lseg"	point
+close_lseg	"lseg, lseg"	point
+close_pb	"point, box"	point
+close_pl	"point, line"	point
+close_ps	"point, lseg"	point
+close_sb	"lseg, box"	point
+close_sl	"lseg, line"	point
+col_description	"oid, integer"	text
+concat	"VARIADIC ""any"""	text
+concat_ws	"text, VARIADIC ""any"""	text
+contjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+contsel	"internal, oid, internal, integer"	"double precision"
+convert	"bytea, name, name"	bytea
+convert_from	"bytea, name"	text
+convert_to	"text, name"	bytea
+corr	"double precision, double precision"	"double precision"
+cos	"double precision"	"double precision"
+cot	"double precision"	"double precision"
+count		bigint
+count	"""any"""	bigint
+covar_pop	"double precision, double precision"	"double precision"
+covar_samp	"double precision, double precision"	"double precision"
+cstring_in	cstring	cstring
+cstring_out	cstring	cstring
+cstring_recv	internal	cstring
+cstring_send	cstring	bytea
+cume_dist		"double precision"
+current_database		name
+current_query		text
+current_schema		name
+current_schemas	boolean	name[]
+current_setting	text	text
+current_user		name
+currtid	"oid, tid"	tid
+currtid2	"text, tid"	tid
+currval	regclass	bigint
+cursor_to_xml	"cursor refcursor, count integer, nulls boolean, tableforest boolean, targetns text"	xml
+cursor_to_xmlschema	"cursor refcursor, nulls boolean, tableforest boolean, targetns text"	xml
+database_to_xml	"nulls boolean, tableforest boolean, targetns text"	xml
+database_to_xml_and_xmlschema	"nulls boolean, tableforest boolean, targetns text"	xml
+database_to_xmlschema	"nulls boolean, tableforest boolean, targetns text"	xml
+date	abstime	date
+date	"timestamp with time zone"	date
+date	"timestamp without time zone"	date
+date_cmp	"date, date"	integer
+date_cmp_timestamp	"date, timestamp without time zone"	integer
+date_cmp_timestamptz	"date, timestamp with time zone"	integer
+date_eq	"date, date"	boolean
+date_eq_timestamp	"date, timestamp without time zone"	boolean
+date_eq_timestamptz	"date, timestamp with time zone"	boolean
+date_ge	"date, date"	boolean
+date_ge_timestamp	"date, timestamp without time zone"	boolean
+date_ge_timestamptz	"date, timestamp with time zone"	boolean
+date_gt	"date, date"	boolean
+date_gt_timestamp	"date, timestamp without time zone"	boolean
+date_gt_timestamptz	"date, timestamp with time zone"	boolean
+date_in	cstring	date
+date_larger	"date, date"	date
+date_le	"date, date"	boolean
+date_le_timestamp	"date, timestamp without time zone"	boolean
+date_le_timestamptz	"date, timestamp with time zone"	boolean
+date_lt	"date, date"	boolean
+date_lt_timestamp	"date, timestamp without time zone"	boolean
+date_lt_timestamptz	"date, timestamp with time zone"	boolean
+date_mi	"date, date"	integer
+date_mi_interval	"date, interval"	"timestamp without time zone"
+date_mii	"date, integer"	date
+date_ne	"date, date"	boolean
+date_ne_timestamp	"date, timestamp without time zone"	boolean
+date_ne_timestamptz	"date, timestamp with time zone"	boolean
+date_out	date	cstring
+date_part	"text, abstime"	"double precision"
+date_part	"text, date"	"double precision"
+date_part	"text, interval"	"double precision"
+date_part	"text, reltime"	"double precision"
+date_part	"text, time with time zone"	"double precision"
+date_part	"text, time without time zone"	"double precision"
+date_part	"text, timestamp with time zone"	"double precision"
+date_part	"text, timestamp without time zone"	"double precision"
+date_pl_interval	"date, interval"	"timestamp without time zone"
+date_pli	"date, integer"	date
+date_recv	internal	date
+date_send	date	bytea
+date_smaller	"date, date"	date
+date_sortsupport	internal	void
+date_trunc	"text, interval"	interval
+date_trunc	"text, timestamp with time zone"	"timestamp with time zone"
+date_trunc	"text, timestamp without time zone"	"timestamp without time zone"
+daterange	"date, date"	daterange
+daterange	"date, date, text"	daterange
+daterange_canonical	daterange	daterange
+daterange_subdiff	"date, date"	"double precision"
+datetime_pl	"date, time without time zone"	"timestamp without time zone"
+datetimetz_pl	"date, time with time zone"	"timestamp with time zone"
+dcbrt	"double precision"	"double precision"
+decode	"text, text"	bytea
+degrees	"double precision"	"double precision"
+dense_rank		bigint
+dexp	"double precision"	"double precision"
+diagonal	box	lseg
+diameter	circle	"double precision"
+dispell_init	internal	internal
+dispell_lexize	"internal, internal, internal, internal"	internal
+dist_cpoly	"circle, polygon"	"double precision"
+dist_lb	"line, box"	"double precision"
+dist_pb	"point, box"	"double precision"
+dist_pc	"point, circle"	"double precision"
+dist_pl	"point, line"	"double precision"
+dist_ppath	"point, path"	"double precision"
+dist_ps	"point, lseg"	"double precision"
+dist_sb	"lseg, box"	"double precision"
+dist_sl	"lseg, line"	"double precision"
+div	"numeric, numeric"	numeric
+dlog1	"double precision"	"double precision"
+dlog10	"double precision"	"double precision"
+domain_in	"cstring, oid, integer"	"""any"""
+domain_recv	"internal, oid, integer"	"""any"""
+dpow	"double precision, double precision"	"double precision"
+dround	"double precision"	"double precision"
+dsimple_init	internal	internal
+dsimple_lexize	"internal, internal, internal, internal"	internal
+dsnowball_init	internal	internal
+dsnowball_lexize	"internal, internal, internal, internal"	internal
+dsqrt	"double precision"	"double precision"
+dsynonym_init	internal	internal
+dsynonym_lexize	"internal, internal, internal, internal"	internal
+dtrunc	"double precision"	"double precision"
+elem_contained_by_range	"anyelement, anyrange"	boolean
+encode	"bytea, text"	text
+enum_cmp	"anyenum, anyenum"	integer
+enum_eq	"anyenum, anyenum"	boolean
+enum_first	anyenum	anyenum
+enum_ge	"anyenum, anyenum"	boolean
+enum_gt	"anyenum, anyenum"	boolean
+enum_in	"cstring, oid"	anyenum
+enum_larger	"anyenum, anyenum"	anyenum
+enum_last	anyenum	anyenum
+enum_le	"anyenum, anyenum"	boolean
+enum_lt	"anyenum, anyenum"	boolean
+enum_ne	"anyenum, anyenum"	boolean
+enum_out	anyenum	cstring
+enum_range	anyenum	anyarray
+enum_range	"anyenum, anyenum"	anyarray
+enum_recv	"internal, oid"	anyenum
+enum_send	anyenum	bytea
+enum_smaller	"anyenum, anyenum"	anyenum
+eqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+eqsel	"internal, oid, internal, integer"	"double precision"
+euc_cn_to_mic	"integer, integer, cstring, internal, integer"	void
+euc_cn_to_utf8	"integer, integer, cstring, internal, integer"	void
+euc_jis_2004_to_shift_jis_2004	"integer, integer, cstring, internal, integer"	void
+euc_jis_2004_to_utf8	"integer, integer, cstring, internal, integer"	void
+euc_jp_to_mic	"integer, integer, cstring, internal, integer"	void
+euc_jp_to_sjis	"integer, integer, cstring, internal, integer"	void
+euc_jp_to_utf8	"integer, integer, cstring, internal, integer"	void
+euc_kr_to_mic	"integer, integer, cstring, internal, integer"	void
+euc_kr_to_utf8	"integer, integer, cstring, internal, integer"	void
+euc_tw_to_big5	"integer, integer, cstring, internal, integer"	void
+euc_tw_to_mic	"integer, integer, cstring, internal, integer"	void
+euc_tw_to_utf8	"integer, integer, cstring, internal, integer"	void
+event_trigger_in	cstring	event_trigger
+event_trigger_out	event_trigger	cstring
+every	boolean	boolean
+exp	"double precision"	"double precision"
+exp	numeric	numeric
+factorial	bigint	numeric
+family	inet	integer
+fdw_handler_in	cstring	fdw_handler
+fdw_handler_out	fdw_handler	cstring
+first_value	anyelement	anyelement
+float4	bigint	real
+float4	"double precision"	real
+float4	integer	real
+float4	numeric	real
+float4	smallint	real
+float48div	"real, double precision"	"double precision"
+float48eq	"real, double precision"	boolean
+float48ge	"real, double precision"	boolean
+float48gt	"real, double precision"	boolean
+float48le	"real, double precision"	boolean
+float48lt	"real, double precision"	boolean
+float48mi	"real, double precision"	"double precision"
+float48mul	"real, double precision"	"double precision"
+float48ne	"real, double precision"	boolean
+float48pl	"real, double precision"	"double precision"
+float4_accum	"double precision[], real"	"double precision[]"
+float4abs	real	real
+float4div	"real, real"	real
+float4eq	"real, real"	boolean
+float4ge	"real, real"	boolean
+float4gt	"real, real"	boolean
+float4in	cstring	real
+float4larger	"real, real"	real
+float4le	"real, real"	boolean
+float4lt	"real, real"	boolean
+float4mi	"real, real"	real
+float4mul	"real, real"	real
+float4ne	"real, real"	boolean
+float4out	real	cstring
+float4pl	"real, real"	real
+float4recv	internal	real
+float4send	real	bytea
+float4smaller	"real, real"	real
+float4um	real	real
+float4up	real	real
+float8	bigint	"double precision"
+float8	integer	"double precision"
+float8	numeric	"double precision"
+float8	real	"double precision"
+float8	smallint	"double precision"
+float84div	"double precision, real"	"double precision"
+float84eq	"double precision, real"	boolean
+float84ge	"double precision, real"	boolean
+float84gt	"double precision, real"	boolean
+float84le	"double precision, real"	boolean
+float84lt	"double precision, real"	boolean
+float84mi	"double precision, real"	"double precision"
+float84mul	"double precision, real"	"double precision"
+float84ne	"double precision, real"	boolean
+float84pl	"double precision, real"	"double precision"
+float8_accum	"double precision[], double precision"	"double precision[]"
+float8_avg	"double precision[]"	"double precision"
+float8_corr	"double precision[]"	"double precision"
+float8_covar_pop	"double precision[]"	"double precision"
+float8_covar_samp	"double precision[]"	"double precision"
+float8_regr_accum	"double precision[], double precision, double precision"	"double precision[]"
+float8_regr_avgx	"double precision[]"	"double precision"
+float8_regr_avgy	"double precision[]"	"double precision"
+float8_regr_intercept	"double precision[]"	"double precision"
+float8_regr_r2	"double precision[]"	"double precision"
+float8_regr_slope	"double precision[]"	"double precision"
+float8_regr_sxx	"double precision[]"	"double precision"
+float8_regr_sxy	"double precision[]"	"double precision"
+float8_regr_syy	"double precision[]"	"double precision"
+float8_stddev_pop	"double precision[]"	"double precision"
+float8_stddev_samp	"double precision[]"	"double precision"
+float8_var_pop	"double precision[]"	"double precision"
+float8_var_samp	"double precision[]"	"double precision"
+float8abs	"double precision"	"double precision"
+float8div	"double precision, double precision"	"double precision"
+float8eq	"double precision, double precision"	boolean
+float8ge	"double precision, double precision"	boolean
+float8gt	"double precision, double precision"	boolean
+float8in	cstring	"double precision"
+float8larger	"double precision, double precision"	"double precision"
+float8le	"double precision, double precision"	boolean
+float8lt	"double precision, double precision"	boolean
+float8mi	"double precision, double precision"	"double precision"
+float8mul	"double precision, double precision"	"double precision"
+float8ne	"double precision, double precision"	boolean
+float8out	"double precision"	cstring
+float8pl	"double precision, double precision"	"double precision"
+float8recv	internal	"double precision"
+float8send	"double precision"	bytea
+float8smaller	"double precision, double precision"	"double precision"
+float8um	"double precision"	"double precision"
+float8up	"double precision"	"double precision"
+floor	"double precision"	"double precision"
+floor	numeric	numeric
+flt4_mul_cash	"real, money"	money
+flt8_mul_cash	"double precision, money"	money
+fmgr_c_validator	oid	void
+fmgr_internal_validator	oid	void
+fmgr_sql_validator	oid	void
+format	text	text
+format	"text, VARIADIC ""any"""	text
+format_type	"oid, integer"	text
+gb18030_to_utf8	"integer, integer, cstring, internal, integer"	void
+gbk_to_utf8	"integer, integer, cstring, internal, integer"	void
+generate_series	"bigint, bigint"	"SETOF bigint"
+generate_series	"bigint, bigint, bigint"	"SETOF bigint"
+generate_series	"integer, integer"	"SETOF integer"
+generate_series	"integer, integer, integer"	"SETOF integer"
+generate_series	"timestamp with time zone, timestamp with time zone, interval"	"SETOF timestamp with time zone"
+generate_series	"timestamp without time zone, timestamp without time zone, interval"	"SETOF timestamp without time zone"
+generate_subscripts	"anyarray, integer"	"SETOF integer"
+generate_subscripts	"anyarray, integer, boolean"	"SETOF integer"
+get_bit	"bit, integer"	integer
+get_bit	"bytea, integer"	integer
+get_byte	"bytea, integer"	integer
+get_current_ts_config		regconfig
+getdatabaseencoding		name
+getpgusername		name
+gin_cmp_prefix	"text, text, smallint, internal"	integer
+gin_cmp_tslexeme	"text, text"	integer
+gin_extract_tsquery	"tsquery, internal, smallint, internal, internal"	internal
+gin_extract_tsquery	"tsquery, internal, smallint, internal, internal, internal, internal"	internal
+gin_extract_tsvector	"tsvector, internal"	internal
+gin_extract_tsvector	"tsvector, internal, internal"	internal
+gin_tsquery_consistent	"internal, smallint, tsquery, integer, internal, internal"	boolean
+gin_tsquery_consistent	"internal, smallint, tsquery, integer, internal, internal, internal, internal"	boolean
+ginarrayconsistent	"internal, smallint, anyarray, integer, internal, internal, internal, internal"	boolean
+ginarrayextract	"anyarray, internal"	internal
+ginarrayextract	"anyarray, internal, internal"	internal
+ginbeginscan	"internal, internal, internal"	internal
+ginbuild	"internal, internal, internal"	internal
+ginbuildempty	internal	void
+ginbulkdelete	"internal, internal, internal, internal"	internal
+gincostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
+ginendscan	internal	void
+gingetbitmap	"internal, internal"	bigint
+gininsert	"internal, internal, internal, internal, internal, internal"	boolean
+ginmarkpos	internal	void
+ginoptions	"text[], boolean"	bytea
+ginqueryarrayextract	"anyarray, internal, smallint, internal, internal, internal, internal"	internal
+ginrescan	"internal, internal, internal, internal, internal"	void
+ginrestrpos	internal	void
+ginvacuumcleanup	"internal, internal"	internal
+gist_box_compress	internal	internal
+gist_box_consistent	"internal, box, integer, oid, internal"	boolean
+gist_box_decompress	internal	internal
+gist_box_penalty	"internal, internal, internal"	internal
+gist_box_picksplit	"internal, internal"	internal
+gist_box_same	"box, box, internal"	internal
+gist_box_union	"internal, internal"	box
+gist_circle_compress	internal	internal
+gist_circle_consistent	"internal, circle, integer, oid, internal"	boolean
+gist_point_compress	internal	internal
+gist_point_consistent	"internal, point, integer, oid, internal"	boolean
+gist_point_distance	"internal, point, integer, oid"	"double precision"
+gist_poly_compress	internal	internal
+gist_poly_consistent	"internal, polygon, integer, oid, internal"	boolean
+gistbeginscan	"internal, internal, internal"	internal
+gistbuild	"internal, internal, internal"	internal
+gistbuildempty	internal	void
+gistbulkdelete	"internal, internal, internal, internal"	internal
+gistcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
+gistendscan	internal	void
+gistgetbitmap	"internal, internal"	bigint
+gistgettuple	"internal, internal"	boolean
+gistinsert	"internal, internal, internal, internal, internal, internal"	boolean
+gistmarkpos	internal	void
+gistoptions	"text[], boolean"	bytea
+gistrescan	"internal, internal, internal, internal, internal"	void
+gistrestrpos	internal	void
+gistvacuumcleanup	"internal, internal"	internal
+gtsquery_compress	internal	internal
+gtsquery_consistent	"internal, internal, integer, oid, internal"	boolean
+gtsquery_decompress	internal	internal
+gtsquery_penalty	"internal, internal, internal"	internal
+gtsquery_picksplit	"internal, internal"	internal
+gtsquery_same	"bigint, bigint, internal"	internal
+gtsquery_union	"internal, internal"	internal
+gtsvector_compress	internal	internal
+gtsvector_consistent	"internal, gtsvector, integer, oid, internal"	boolean
+gtsvector_decompress	internal	internal
+gtsvector_penalty	"internal, internal, internal"	internal
+gtsvector_picksplit	"internal, internal"	internal
+gtsvector_same	"gtsvector, gtsvector, internal"	internal
+gtsvector_union	"internal, internal"	internal
+gtsvectorin	cstring	gtsvector
+gtsvectorout	gtsvector	cstring
+has_any_column_privilege	"name, oid, text"	boolean
+has_any_column_privilege	"name, text, text"	boolean
+has_any_column_privilege	"oid, oid, text"	boolean
+has_any_column_privilege	"oid, text"	boolean
+has_any_column_privilege	"oid, text, text"	boolean
+has_any_column_privilege	"text, text"	boolean
+has_column_privilege	"name, oid, smallint, text"	boolean
+has_column_privilege	"name, oid, text, text"	boolean
+has_column_privilege	"name, text, smallint, text"	boolean
+has_column_privilege	"name, text, text, text"	boolean
+has_column_privilege	"oid, oid, smallint, text"	boolean
+has_column_privilege	"oid, oid, text, text"	boolean
+has_column_privilege	"oid, smallint, text"	boolean
+has_column_privilege	"oid, text, smallint, text"	boolean
+has_column_privilege	"oid, text, text"	boolean
+has_column_privilege	"oid, text, text, text"	boolean
+has_column_privilege	"text, smallint, text"	boolean
+has_column_privilege	"text, text, text"	boolean
+has_database_privilege	"name, oid, text"	boolean
+has_database_privilege	"name, text, text"	boolean
+has_database_privilege	"oid, oid, text"	boolean
+has_database_privilege	"oid, text"	boolean
+has_database_privilege	"oid, text, text"	boolean
+has_database_privilege	"text, text"	boolean
+has_foreign_data_wrapper_privilege	"name, oid, text"	boolean
+has_foreign_data_wrapper_privilege	"name, text, text"	boolean
+has_foreign_data_wrapper_privilege	"oid, oid, text"	boolean
+has_foreign_data_wrapper_privilege	"oid, text"	boolean
+has_foreign_data_wrapper_privilege	"oid, text, text"	boolean
+has_foreign_data_wrapper_privilege	"text, text"	boolean
+has_function_privilege	"name, oid, text"	boolean
+has_function_privilege	"name, text, text"	boolean
+has_function_privilege	"oid, oid, text"	boolean
+has_function_privilege	"oid, text"	boolean
+has_function_privilege	"oid, text, text"	boolean
+has_function_privilege	"text, text"	boolean
+has_language_privilege	"name, oid, text"	boolean
+has_language_privilege	"name, text, text"	boolean
+has_language_privilege	"oid, oid, text"	boolean
+has_language_privilege	"oid, text"	boolean
+has_language_privilege	"oid, text, text"	boolean
+has_language_privilege	"text, text"	boolean
+has_schema_privilege	"name, oid, text"	boolean
+has_schema_privilege	"name, text, text"	boolean
+has_schema_privilege	"oid, oid, text"	boolean
+has_schema_privilege	"oid, text"	boolean
+has_schema_privilege	"oid, text, text"	boolean
+has_schema_privilege	"text, text"	boolean
+has_sequence_privilege	"name, oid, text"	boolean
+has_sequence_privilege	"name, text, text"	boolean
+has_sequence_privilege	"oid, oid, text"	boolean
+has_sequence_privilege	"oid, text"	boolean
+has_sequence_privilege	"oid, text, text"	boolean
+has_sequence_privilege	"text, text"	boolean
+has_server_privilege	"name, oid, text"	boolean
+has_server_privilege	"name, text, text"	boolean
+has_server_privilege	"oid, oid, text"	boolean
+has_server_privilege	"oid, text"	boolean
+has_server_privilege	"oid, text, text"	boolean
+has_server_privilege	"text, text"	boolean
+has_table_privilege	"name, oid, text"	boolean
+has_table_privilege	"name, text, text"	boolean
+has_table_privilege	"oid, oid, text"	boolean
+has_table_privilege	"oid, text"	boolean
+has_table_privilege	"oid, text, text"	boolean
+has_table_privilege	"text, text"	boolean
+has_tablespace_privilege	"name, oid, text"	boolean
+has_tablespace_privilege	"name, text, text"	boolean
+has_tablespace_privilege	"oid, oid, text"	boolean
+has_tablespace_privilege	"oid, text"	boolean
+has_tablespace_privilege	"oid, text, text"	boolean
+has_tablespace_privilege	"text, text"	boolean
+has_type_privilege	"name, oid, text"	boolean
+has_type_privilege	"name, text, text"	boolean
+has_type_privilege	"oid, oid, text"	boolean
+has_type_privilege	"oid, text"	boolean
+has_type_privilege	"oid, text, text"	boolean
+has_type_privilege	"text, text"	boolean
+hash_aclitem	aclitem	integer
+hash_array	anyarray	integer
+hash_numeric	numeric	integer
+hash_range	anyrange	integer
+hashbeginscan	"internal, internal, internal"	internal
+hashbpchar	character	integer
+hashbuild	"internal, internal, internal"	internal
+hashbuildempty	internal	void
+hashbulkdelete	"internal, internal, internal, internal"	internal
+hashchar	"""char"""	integer
+hashcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
+hashendscan	internal	void
+hashenum	anyenum	integer
+hashfloat4	real	integer
+hashfloat8	"double precision"	integer
+hashgetbitmap	"internal, internal"	bigint
+hashgettuple	"internal, internal"	boolean
+hashinet	inet	integer
+hashinsert	"internal, internal, internal, internal, internal, internal"	boolean
+hashint2	smallint	integer
+hashint2vector	int2vector	integer
+hashint4	integer	integer
+hashint8	bigint	integer
+hashmacaddr	macaddr	integer
+hashmarkpos	internal	void
+hashname	name	integer
+hashoid	oid	integer
+hashoidvector	oidvector	integer
+hashoptions	"text[], boolean"	bytea
+hashrescan	"internal, internal, internal, internal, internal"	void
+hashrestrpos	internal	void
+hashtext	text	integer
+hashvacuumcleanup	"internal, internal"	internal
+hashvarlena	internal	integer
+height	box	"double precision"
+host	inet	text
+hostmask	inet	inet
+iclikejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+iclikesel	"internal, oid, internal, integer"	"double precision"
+icnlikejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+icnlikesel	"internal, oid, internal, integer"	"double precision"
+icregexeqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+icregexeqsel	"internal, oid, internal, integer"	"double precision"
+icregexnejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+icregexnesel	"internal, oid, internal, integer"	"double precision"
+inet_client_addr		inet
+inet_client_port		integer
+inet_in	cstring	inet
+inet_out	inet	cstring
+inet_recv	internal	inet
+inet_send	inet	bytea
+inet_server_addr		inet
+inet_server_port		integer
+inetand	"inet, inet"	inet
+inetmi	"inet, inet"	bigint
+inetmi_int8	"inet, bigint"	inet
+inetnot	inet	inet
+inetor	"inet, inet"	inet
+inetpl	"inet, bigint"	inet
+initcap	text	text
+int2	bigint	smallint
+int2	"double precision"	smallint
+int2	integer	smallint
+int2	numeric	smallint
+int2	real	smallint
+int24div	"smallint, integer"	integer
+int24eq	"smallint, integer"	boolean
+int24ge	"smallint, integer"	boolean
+int24gt	"smallint, integer"	boolean
+int24le	"smallint, integer"	boolean
+int24lt	"smallint, integer"	boolean
+int24mi	"smallint, integer"	integer
+int24mul	"smallint, integer"	integer
+int24ne	"smallint, integer"	boolean
+int24pl	"smallint, integer"	integer
+int28div	"smallint, bigint"	bigint
+int28eq	"smallint, bigint"	boolean
+int28ge	"smallint, bigint"	boolean
+int28gt	"smallint, bigint"	boolean
+int28le	"smallint, bigint"	boolean
+int28lt	"smallint, bigint"	boolean
+int28mi	"smallint, bigint"	bigint
+int28mul	"smallint, bigint"	bigint
+int28ne	"smallint, bigint"	boolean
+int28pl	"smallint, bigint"	bigint
+int2_accum	"numeric[], smallint"	numeric[]
+int2_avg_accum	"bigint[], smallint"	bigint[]
+int2_mul_cash	"smallint, money"	money
+int2_sum	"bigint, smallint"	bigint
+int2abs	smallint	smallint
+int2and	"smallint, smallint"	smallint
+int2div	"smallint, smallint"	smallint
+int2eq	"smallint, smallint"	boolean
+int2ge	"smallint, smallint"	boolean
+int2gt	"smallint, smallint"	boolean
+int2in	cstring	smallint
+int2larger	"smallint, smallint"	smallint
+int2le	"smallint, smallint"	boolean
+int2lt	"smallint, smallint"	boolean
+int2mi	"smallint, smallint"	smallint
+int2mod	"smallint, smallint"	smallint
+int2mul	"smallint, smallint"	smallint
+int2ne	"smallint, smallint"	boolean
+int2not	smallint	smallint
+int2or	"smallint, smallint"	smallint
+int2out	smallint	cstring
+int2pl	"smallint, smallint"	smallint
+int2recv	internal	smallint
+int2send	smallint	bytea
+int2shl	"smallint, integer"	smallint
+int2shr	"smallint, integer"	smallint
+int2smaller	"smallint, smallint"	smallint
+int2um	smallint	smallint
+int2up	smallint	smallint
+int2vectoreq	"int2vector, int2vector"	boolean
+int2vectorin	cstring	int2vector
+int2vectorout	int2vector	cstring
+int2vectorrecv	internal	int2vector
+int2vectorsend	int2vector	bytea
+int2xor	"smallint, smallint"	smallint
+int4	"""char"""	integer
+int4	bigint	integer
+int4	bit	integer
+int4	boolean	integer
+int4	"double precision"	integer
+int4	numeric	integer
+int4	real	integer
+int4	smallint	integer
+int42div	"integer, smallint"	integer
+int42eq	"integer, smallint"	boolean
+int42ge	"integer, smallint"	boolean
+int42gt	"integer, smallint"	boolean
+int42le	"integer, smallint"	boolean
+int42lt	"integer, smallint"	boolean
+int42mi	"integer, smallint"	integer
+int42mul	"integer, smallint"	integer
+int42ne	"integer, smallint"	boolean
+int42pl	"integer, smallint"	integer
+int48div	"integer, bigint"	bigint
+int48eq	"integer, bigint"	boolean
+int48ge	"integer, bigint"	boolean
+int48gt	"integer, bigint"	boolean
+int48le	"integer, bigint"	boolean
+int48lt	"integer, bigint"	boolean
+int48mi	"integer, bigint"	bigint
+int48mul	"integer, bigint"	bigint
+int48ne	"integer, bigint"	boolean
+int48pl	"integer, bigint"	bigint
+int4_accum	"numeric[], integer"	numeric[]
+int4_avg_accum	"bigint[], integer"	bigint[]
+int4_mul_cash	"integer, money"	money
+int4_sum	"bigint, integer"	bigint
+int4abs	integer	integer
+int4and	"integer, integer"	integer
+int4div	"integer, integer"	integer
+int4eq	"integer, integer"	boolean
+int4ge	"integer, integer"	boolean
+int4gt	"integer, integer"	boolean
+int4in	cstring	integer
+int4inc	integer	integer
+int4larger	"integer, integer"	integer
+int4le	"integer, integer"	boolean
+int4lt	"integer, integer"	boolean
+int4mi	"integer, integer"	integer
+int4mod	"integer, integer"	integer
+int4mul	"integer, integer"	integer
+int4ne	"integer, integer"	boolean
+int4not	integer	integer
+int4or	"integer, integer"	integer
+int4out	integer	cstring
+int4pl	"integer, integer"	integer
+int4range	"integer, integer"	int4range
+int4range	"integer, integer, text"	int4range
+int4range_canonical	int4range	int4range
+int4range_subdiff	"integer, integer"	"double precision"
+int4recv	internal	integer
+int4send	integer	bytea
+int4shl	"integer, integer"	integer
+int4shr	"integer, integer"	integer
+int4smaller	"integer, integer"	integer
+int4um	integer	integer
+int4up	integer	integer
+int4xor	"integer, integer"	integer
+int8	bit	bigint
+int8	"double precision"	bigint
+int8	integer	bigint
+int8	numeric	bigint
+int8	oid	bigint
+int8	real	bigint
+int8	smallint	bigint
+int82div	"bigint, smallint"	bigint
+int82eq	"bigint, smallint"	boolean
+int82ge	"bigint, smallint"	boolean
+int82gt	"bigint, smallint"	boolean
+int82le	"bigint, smallint"	boolean
+int82lt	"bigint, smallint"	boolean
+int82mi	"bigint, smallint"	bigint
+int82mul	"bigint, smallint"	bigint
+int82ne	"bigint, smallint"	boolean
+int82pl	"bigint, smallint"	bigint
+int84div	"bigint, integer"	bigint
+int84eq	"bigint, integer"	boolean
+int84ge	"bigint, integer"	boolean
+int84gt	"bigint, integer"	boolean
+int84le	"bigint, integer"	boolean
+int84lt	"bigint, integer"	boolean
+int84mi	"bigint, integer"	bigint
+int84mul	"bigint, integer"	bigint
+int84ne	"bigint, integer"	boolean
+int84pl	"bigint, integer"	bigint
+int8_accum	"numeric[], bigint"	numeric[]
+int8_avg	bigint[]	numeric
+int8_avg_accum	"numeric[], bigint"	numeric[]
+int8_sum	"numeric, bigint"	numeric
+int8abs	bigint	bigint
+int8and	"bigint, bigint"	bigint
+int8div	"bigint, bigint"	bigint
+int8eq	"bigint, bigint"	boolean
+int8ge	"bigint, bigint"	boolean
+int8gt	"bigint, bigint"	boolean
+int8in	cstring	bigint
+int8inc	bigint	bigint
+int8inc_any	"bigint, ""any"""	bigint
+int8inc_float8_float8	"bigint, double precision, double precision"	bigint
+int8larger	"bigint, bigint"	bigint
+int8le	"bigint, bigint"	boolean
+int8lt	"bigint, bigint"	boolean
+int8mi	"bigint, bigint"	bigint
+int8mod	"bigint, bigint"	bigint
+int8mul	"bigint, bigint"	bigint
+int8ne	"bigint, bigint"	boolean
+int8not	bigint	bigint
+int8or	"bigint, bigint"	bigint
+int8out	bigint	cstring
+int8pl	"bigint, bigint"	bigint
+int8pl_inet	"bigint, inet"	inet
+int8range	"bigint, bigint"	int8range
+int8range	"bigint, bigint, text"	int8range
+int8range_canonical	int8range	int8range
+int8range_subdiff	"bigint, bigint"	"double precision"
+int8recv	internal	bigint
+int8send	bigint	bytea
+int8shl	"bigint, integer"	bigint
+int8shr	"bigint, integer"	bigint
+int8smaller	"bigint, bigint"	bigint
+int8um	bigint	bigint
+int8up	bigint	bigint
+int8xor	"bigint, bigint"	bigint
+integer_pl_date	"integer, date"	date
+inter_lb	"line, box"	boolean
+inter_sb	"lseg, box"	boolean
+inter_sl	"lseg, line"	boolean
+internal_in	cstring	internal
+internal_out	internal	cstring
+interval	"interval, integer"	interval
+interval	reltime	interval
+interval	"time without time zone"	interval
+interval_accum	"interval[], interval"	interval[]
+interval_avg	interval[]	interval
+interval_cmp	"interval, interval"	integer
+interval_div	"interval, double precision"	interval
+interval_eq	"interval, interval"	boolean
+interval_ge	"interval, interval"	boolean
+interval_gt	"interval, interval"	boolean
+interval_hash	interval	integer
+interval_in	"cstring, oid, integer"	interval
+interval_larger	"interval, interval"	interval
+interval_le	"interval, interval"	boolean
+interval_lt	"interval, interval"	boolean
+interval_mi	"interval, interval"	interval
+interval_mul	"interval, double precision"	interval
+interval_ne	"interval, interval"	boolean
+interval_out	interval	cstring
+interval_pl	"interval, interval"	interval
+interval_pl_date	"interval, date"	"timestamp without time zone"
+interval_pl_time	"interval, time without time zone"	"time without time zone"
+interval_pl_timestamp	"interval, timestamp without time zone"	"timestamp without time zone"
+interval_pl_timestamptz	"interval, timestamp with time zone"	"timestamp with time zone"
+interval_pl_timetz	"interval, time with time zone"	"time with time zone"
+interval_recv	"internal, oid, integer"	interval
+interval_send	interval	bytea
+interval_smaller	"interval, interval"	interval
+interval_transform	internal	internal
+interval_um	interval	interval
+intervaltypmodin	cstring[]	integer
+intervaltypmodout	integer	cstring
+intinterval	"abstime, tinterval"	boolean
+isclosed	path	boolean
+isempty	anyrange	boolean
+isfinite	abstime	boolean
+isfinite	date	boolean
+isfinite	interval	boolean
+isfinite	"timestamp with time zone"	boolean
+isfinite	"timestamp without time zone"	boolean
+ishorizontal	line	boolean
+ishorizontal	lseg	boolean
+ishorizontal	"point, point"	boolean
+iso8859_1_to_utf8	"integer, integer, cstring, internal, integer"	void
+iso8859_to_utf8	"integer, integer, cstring, internal, integer"	void
+iso_to_koi8r	"integer, integer, cstring, internal, integer"	void
+iso_to_mic	"integer, integer, cstring, internal, integer"	void
+iso_to_win1251	"integer, integer, cstring, internal, integer"	void
+iso_to_win866	"integer, integer, cstring, internal, integer"	void
+isopen	path	boolean
+isparallel	"line, line"	boolean
+isparallel	"lseg, lseg"	boolean
+isperp	"line, line"	boolean
+isperp	"lseg, lseg"	boolean
+isvertical	line	boolean
+isvertical	lseg	boolean
+isvertical	"point, point"	boolean
+johab_to_utf8	"integer, integer, cstring, internal, integer"	void
+json_agg	anyelement	json
+json_agg_finalfn	internal	json
+json_agg_transfn	"internal, anyelement"	internal
+json_array_element	"from_json json, element_index integer"	json
+json_array_element_text	"from_json json, element_index integer"	text
+json_array_elements	"from_json json, OUT value json"	"SETOF json"
+json_array_length	json	integer
+json_each	"from_json json, OUT key text, OUT value json"	"SETOF record"
+json_each_text	"from_json json, OUT key text, OUT value text"	"SETOF record"
+json_extract_path	"from_json json, VARIADIC path_elems text[]"	json
+json_extract_path_op	"from_json json, path_elems text[]"	json
+json_extract_path_text	"from_json json, VARIADIC path_elems text[]"	text
+json_extract_path_text_op	"from_json json, path_elems text[]"	text
+json_in	cstring	json
+json_object_field	"from_json json, field_name text"	json
+json_object_field_text	"from_json json, field_name text"	text
+json_object_keys	json	"SETOF text"
+json_out	json	cstring
+json_populate_record	"base anyelement, from_json json, use_json_as_text boolean"	anyelement
+json_populate_recordset	"base anyelement, from_json json, use_json_as_text boolean"	"SETOF anyelement"
+json_recv	internal	json
+json_send	json	bytea
+justify_days	interval	interval
+justify_hours	interval	interval
+justify_interval	interval	interval
+koi8r_to_iso	"integer, integer, cstring, internal, integer"	void
+koi8r_to_mic	"integer, integer, cstring, internal, integer"	void
+koi8r_to_utf8	"integer, integer, cstring, internal, integer"	void
+koi8r_to_win1251	"integer, integer, cstring, internal, integer"	void
+koi8r_to_win866	"integer, integer, cstring, internal, integer"	void
+koi8u_to_utf8	"integer, integer, cstring, internal, integer"	void
+lag	anyelement	anyelement
+lag	"anyelement, integer"	anyelement
+lag	"anyelement, integer, anyelement"	anyelement
+language_handler_in	cstring	language_handler
+language_handler_out	language_handler	cstring
+last_value	anyelement	anyelement
+lastval		bigint
+latin1_to_mic	"integer, integer, cstring, internal, integer"	void
+latin2_to_mic	"integer, integer, cstring, internal, integer"	void
+latin2_to_win1250	"integer, integer, cstring, internal, integer"	void
+latin3_to_mic	"integer, integer, cstring, internal, integer"	void
+latin4_to_mic	"integer, integer, cstring, internal, integer"	void
+lead	anyelement	anyelement
+lead	"anyelement, integer"	anyelement
+lead	"anyelement, integer, anyelement"	anyelement
+left	"text, integer"	text
+length	bit	integer
+length	bytea	integer
+length	"bytea, name"	integer
+length	character	integer
+length	lseg	"double precision"
+length	path	"double precision"
+length	text	integer
+length	tsvector	integer
+like	"bytea, bytea"	boolean
+like	"name, text"	boolean
+like	"text, text"	boolean
+like_escape	"bytea, bytea"	bytea
+like_escape	"text, text"	text
+likejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+likesel	"internal, oid, internal, integer"	"double precision"
+line	"point, point"	line
+line_distance	"line, line"	"double precision"
+line_eq	"line, line"	boolean
+line_horizontal	line	boolean
+line_in	cstring	line
+line_interpt	"line, line"	point
+line_intersect	"line, line"	boolean
+line_out	line	cstring
+line_parallel	"line, line"	boolean
+line_perp	"line, line"	boolean
+line_recv	internal	line
+line_send	line	bytea
+line_vertical	line	boolean
+ln	"double precision"	"double precision"
+ln	numeric	numeric
+lo_close	integer	integer
+lo_creat	integer	oid
+lo_create	oid	oid
+lo_export	"oid, text"	integer
+lo_import	text	oid
+lo_import	"text, oid"	oid
+lo_lseek	"integer, integer, integer"	integer
+lo_lseek64	"integer, bigint, integer"	bigint
+lo_open	"oid, integer"	integer
+lo_tell	integer	integer
+lo_tell64	integer	bigint
+lo_truncate	"integer, integer"	integer
+lo_truncate64	"integer, bigint"	integer
+lo_unlink	oid	integer
+log	"double precision"	"double precision"
+log	numeric	numeric
+log	"numeric, numeric"	numeric
+loread	"integer, integer"	bytea
+lower	anyrange	anyelement
+lower	text	text
+lower_inc	anyrange	boolean
+lower_inf	anyrange	boolean
+lowrite	"integer, bytea"	integer
+lpad	"text, integer"	text
+lpad	"text, integer, text"	text
+lseg	box	lseg
+lseg	"point, point"	lseg
+lseg_center	lseg	point
+lseg_distance	"lseg, lseg"	"double precision"
+lseg_eq	"lseg, lseg"	boolean
+lseg_ge	"lseg, lseg"	boolean
+lseg_gt	"lseg, lseg"	boolean
+lseg_horizontal	lseg	boolean
+lseg_in	cstring	lseg
+lseg_interpt	"lseg, lseg"	point
+lseg_intersect	"lseg, lseg"	boolean
+lseg_le	"lseg, lseg"	boolean
+lseg_length	lseg	"double precision"
+lseg_lt	"lseg, lseg"	boolean
+lseg_ne	"lseg, lseg"	boolean
+lseg_out	lseg	cstring
+lseg_parallel	"lseg, lseg"	boolean
+lseg_perp	"lseg, lseg"	boolean
+lseg_recv	internal	lseg
+lseg_send	lseg	bytea
+lseg_vertical	lseg	boolean
+ltrim	text	text
+ltrim	"text, text"	text
+macaddr_and	"macaddr, macaddr"	macaddr
+macaddr_cmp	"macaddr, macaddr"	integer
+macaddr_eq	"macaddr, macaddr"	boolean
+macaddr_ge	"macaddr, macaddr"	boolean
+macaddr_gt	"macaddr, macaddr"	boolean
+macaddr_in	cstring	macaddr
+macaddr_le	"macaddr, macaddr"	boolean
+macaddr_lt	"macaddr, macaddr"	boolean
+macaddr_ne	"macaddr, macaddr"	boolean
+macaddr_not	macaddr	macaddr
+macaddr_or	"macaddr, macaddr"	macaddr
+macaddr_out	macaddr	cstring
+macaddr_recv	internal	macaddr
+macaddr_send	macaddr	bytea
+makeaclitem	"oid, oid, text, boolean"	aclitem
+masklen	inet	integer
+max	abstime	abstime
+max	anyarray	anyarray
+max	anyenum	anyenum
+max	bigint	bigint
+max	character	character
+max	date	date
+max	"double precision"	"double precision"
+max	integer	integer
+max	interval	interval
+max	money	money
+max	numeric	numeric
+max	oid	oid
+max	real	real
+max	smallint	smallint
+max	text	text
+max	tid	tid
+max	"time with time zone"	"time with time zone"
+max	"time without time zone"	"time without time zone"
+max	"timestamp with time zone"	"timestamp with time zone"
+max	"timestamp without time zone"	"timestamp without time zone"
+md5	bytea	text
+md5	text	text
+mic_to_ascii	"integer, integer, cstring, internal, integer"	void
+mic_to_big5	"integer, integer, cstring, internal, integer"	void
+mic_to_euc_cn	"integer, integer, cstring, internal, integer"	void
+mic_to_euc_jp	"integer, integer, cstring, internal, integer"	void
+mic_to_euc_kr	"integer, integer, cstring, internal, integer"	void
+mic_to_euc_tw	"integer, integer, cstring, internal, integer"	void
+mic_to_iso	"integer, integer, cstring, internal, integer"	void
+mic_to_koi8r	"integer, integer, cstring, internal, integer"	void
+mic_to_latin1	"integer, integer, cstring, internal, integer"	void
+mic_to_latin2	"integer, integer, cstring, internal, integer"	void
+mic_to_latin3	"integer, integer, cstring, internal, integer"	void
+mic_to_latin4	"integer, integer, cstring, internal, integer"	void
+mic_to_sjis	"integer, integer, cstring, internal, integer"	void
+mic_to_win1250	"integer, integer, cstring, internal, integer"	void
+mic_to_win1251	"integer, integer, cstring, internal, integer"	void
+mic_to_win866	"integer, integer, cstring, internal, integer"	void
+min	abstime	abstime
+min	anyarray	anyarray
+min	anyenum	anyenum
+min	bigint	bigint
+min	character	character
+min	date	date
+min	"double precision"	"double precision"
+min	integer	integer
+min	interval	interval
+min	money	money
+min	numeric	numeric
+min	oid	oid
+min	real	real
+min	smallint	smallint
+min	text	text
+min	tid	tid
+min	"time with time zone"	"time with time zone"
+min	"time without time zone"	"time without time zone"
+min	"timestamp with time zone"	"timestamp with time zone"
+min	"timestamp without time zone"	"timestamp without time zone"
+mktinterval	"abstime, abstime"	tinterval
+mod	"bigint, bigint"	bigint
+mod	"integer, integer"	integer
+mod	"numeric, numeric"	numeric
+mod	"smallint, smallint"	smallint
+money	bigint	money
+money	integer	money
+money	numeric	money
+mul_d_interval	"double precision, interval"	interval
+name	character	name
+name	"character varying"	name
+name	text	name
+nameeq	"name, name"	boolean
+namege	"name, name"	boolean
+namegt	"name, name"	boolean
+nameiclike	"name, text"	boolean
+nameicnlike	"name, text"	boolean
+nameicregexeq	"name, text"	boolean
+nameicregexne	"name, text"	boolean
+namein	cstring	name
+namele	"name, name"	boolean
+namelike	"name, text"	boolean
+namelt	"name, name"	boolean
+namene	"name, name"	boolean
+namenlike	"name, text"	boolean
+nameout	name	cstring
+namerecv	internal	name
+nameregexeq	"name, text"	boolean
+nameregexne	"name, text"	boolean
+namesend	name	bytea
+neqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+neqsel	"internal, oid, internal, integer"	"double precision"
+netmask	inet	inet
+network	inet	cidr
+network_cmp	"inet, inet"	integer
+network_eq	"inet, inet"	boolean
+network_ge	"inet, inet"	boolean
+network_gt	"inet, inet"	boolean
+network_le	"inet, inet"	boolean
+network_lt	"inet, inet"	boolean
+network_ne	"inet, inet"	boolean
+network_sub	"inet, inet"	boolean
+network_subeq	"inet, inet"	boolean
+network_sup	"inet, inet"	boolean
+network_supeq	"inet, inet"	boolean
+nextval	regclass	bigint
+nlikejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+nlikesel	"internal, oid, internal, integer"	"double precision"
+notlike	"bytea, bytea"	boolean
+notlike	"name, text"	boolean
+notlike	"text, text"	boolean
+now		"timestamp with time zone"
+npoints	path	integer
+npoints	polygon	integer
+nth_value	"anyelement, integer"	anyelement
+ntile	integer	integer
+numeric	bigint	numeric
+numeric	"double precision"	numeric
+numeric	integer	numeric
+numeric	money	numeric
+numeric	"numeric, integer"	numeric
+numeric	real	numeric
+numeric	smallint	numeric
+numeric_abs	numeric	numeric
+numeric_accum	"numeric[], numeric"	numeric[]
+numeric_add	"numeric, numeric"	numeric
+numeric_avg	numeric[]	numeric
+numeric_avg_accum	"numeric[], numeric"	numeric[]
+numeric_cmp	"numeric, numeric"	integer
+numeric_div	"numeric, numeric"	numeric
+numeric_div_trunc	"numeric, numeric"	numeric
+numeric_eq	"numeric, numeric"	boolean
+numeric_exp	numeric	numeric
+numeric_fac	bigint	numeric
+numeric_ge	"numeric, numeric"	boolean
+numeric_gt	"numeric, numeric"	boolean
+numeric_in	"cstring, oid, integer"	numeric
+numeric_inc	numeric	numeric
+numeric_larger	"numeric, numeric"	numeric
+numeric_le	"numeric, numeric"	boolean
+numeric_ln	numeric	numeric
+numeric_log	"numeric, numeric"	numeric
+numeric_lt	"numeric, numeric"	boolean
+numeric_mod	"numeric, numeric"	numeric
+numeric_mul	"numeric, numeric"	numeric
+numeric_ne	"numeric, numeric"	boolean
+numeric_out	numeric	cstring
+numeric_power	"numeric, numeric"	numeric
+numeric_recv	"internal, oid, integer"	numeric
+numeric_send	numeric	bytea
+numeric_smaller	"numeric, numeric"	numeric
+numeric_sqrt	numeric	numeric
+numeric_stddev_pop	numeric[]	numeric
+numeric_stddev_samp	numeric[]	numeric
+numeric_sub	"numeric, numeric"	numeric
+numeric_transform	internal	internal
+numeric_uminus	numeric	numeric
+numeric_uplus	numeric	numeric
+numeric_var_pop	numeric[]	numeric
+numeric_var_samp	numeric[]	numeric
+numerictypmodin	cstring[]	integer
+numerictypmodout	integer	cstring
+numnode	tsquery	integer
+numrange	"numeric, numeric"	numrange
+numrange	"numeric, numeric, text"	numrange
+numrange_subdiff	"numeric, numeric"	"double precision"
+obj_description	oid	text
+obj_description	"oid, name"	text
+octet_length	bit	integer
+octet_length	bytea	integer
+octet_length	character	integer
+octet_length	text	integer
+oid	bigint	oid
+oideq	"oid, oid"	boolean
+oidge	"oid, oid"	boolean
+oidgt	"oid, oid"	boolean
+oidin	cstring	oid
+oidlarger	"oid, oid"	oid
+oidle	"oid, oid"	boolean
+oidlt	"oid, oid"	boolean
+oidne	"oid, oid"	boolean
+oidout	oid	cstring
+oidrecv	internal	oid
+oidsend	oid	bytea
+oidsmaller	"oid, oid"	oid
+oidvectoreq	"oidvector, oidvector"	boolean
+oidvectorge	"oidvector, oidvector"	boolean
+oidvectorgt	"oidvector, oidvector"	boolean
+oidvectorin	cstring	oidvector
+oidvectorle	"oidvector, oidvector"	boolean
+oidvectorlt	"oidvector, oidvector"	boolean
+oidvectorne	"oidvector, oidvector"	boolean
+oidvectorout	oidvector	cstring
+oidvectorrecv	internal	oidvector
+oidvectorsend	oidvector	bytea
+oidvectortypes	oidvector	text
+on_pb	"point, box"	boolean
+on_pl	"point, line"	boolean
+on_ppath	"point, path"	boolean
+on_ps	"point, lseg"	boolean
+on_sb	"lseg, box"	boolean
+on_sl	"lseg, line"	boolean
+opaque_in	cstring	opaque
+opaque_out	opaque	cstring
+overlaps	"time with time zone, time with time zone, time with time zone, time with time zone"	boolean
+overlaps	"time without time zone, interval, time without time zone, interval"	boolean
+overlaps	"time without time zone, interval, time without time zone, time without time zone"	boolean
+overlaps	"time without time zone, time without time zone, time without time zone, interval"	boolean
+overlaps	"time without time zone, time without time zone, time without time zone, time without time zone"	boolean
+overlaps	"timestamp with time zone, interval, timestamp with time zone, interval"	boolean
+overlaps	"timestamp with time zone, interval, timestamp with time zone, timestamp with time zone"	boolean
+overlaps	"timestamp with time zone, timestamp with time zone, timestamp with time zone, interval"	boolean
+overlaps	"timestamp with time zone, timestamp with time zone, timestamp with time zone, timestamp with time zone"	boolean
+overlaps	"timestamp without time zone, interval, timestamp without time zone, interval"	boolean
+overlaps	"timestamp without time zone, interval, timestamp without time zone, timestamp without time zone"	boolean
+overlaps	"timestamp without time zone, timestamp without time zone, timestamp without time zone, interval"	boolean
+overlaps	"timestamp without time zone, timestamp without time zone, timestamp without time zone, timestamp without time zone"	boolean
+overlay	"bit, bit, integer"	bit
+overlay	"bit, bit, integer, integer"	bit
+overlay	"bytea, bytea, integer"	bytea
+overlay	"bytea, bytea, integer, integer"	bytea
+overlay	"text, text, integer"	text
+overlay	"text, text, integer, integer"	text
+path	polygon	path
+path_add	"path, path"	path
+path_add_pt	"path, point"	path
+path_center	path	point
+path_contain_pt	"path, point"	boolean
+path_distance	"path, path"	"double precision"
+path_div_pt	"path, point"	path
+path_in	cstring	path
+path_inter	"path, path"	boolean
+path_length	path	"double precision"
+path_mul_pt	"path, point"	path
+path_n_eq	"path, path"	boolean
+path_n_ge	"path, path"	boolean
+path_n_gt	"path, path"	boolean
+path_n_le	"path, path"	boolean
+path_n_lt	"path, path"	boolean
+path_npoints	path	integer
+path_out	path	cstring
+path_recv	internal	path
+path_send	path	bytea
+path_sub_pt	"path, point"	path
+pclose	path	path
+percent_rank		"double precision"
+pg_advisory_lock	bigint	void
+pg_advisory_lock	"integer, integer"	void
+pg_advisory_lock_shared	bigint	void
+pg_advisory_lock_shared	"integer, integer"	void
+pg_advisory_unlock	bigint	boolean
+pg_advisory_unlock	"integer, integer"	boolean
+pg_advisory_unlock_all		void
+pg_advisory_unlock_shared	bigint	boolean
+pg_advisory_unlock_shared	"integer, integer"	boolean
+pg_advisory_xact_lock	bigint	void
+pg_advisory_xact_lock	"integer, integer"	void
+pg_advisory_xact_lock_shared	bigint	void
+pg_advisory_xact_lock_shared	"integer, integer"	void
+pg_available_extension_versions	"OUT name name, OUT version text, OUT superuser boolean, OUT relocatable boolean, OUT schema name, OUT requires name[], OUT comment text"	"SETOF record"
+pg_available_extensions	"OUT name name, OUT default_version text, OUT comment text"	"SETOF record"
+pg_backend_pid		integer
+pg_backup_start_time		"timestamp with time zone"
+pg_cancel_backend	integer	boolean
+pg_char_to_encoding	name	integer
+pg_client_encoding		name
+pg_collation_for	"""any"""	text
+pg_collation_is_visible	oid	boolean
+pg_column_is_updatable	"regclass, smallint, boolean"	boolean
+pg_column_size	"""any"""	integer
+pg_conf_load_time		"timestamp with time zone"
+pg_conversion_is_visible	oid	boolean
+pg_create_restore_point	text	text
+pg_current_xlog_insert_location		text
+pg_current_xlog_location		text
+pg_cursor	"OUT name text, OUT statement text, OUT is_holdable boolean, OUT is_binary boolean, OUT is_scrollable boolean, OUT creation_time timestamp with time zone"	"SETOF record"
+pg_database_size	name	bigint
+pg_database_size	oid	bigint
+pg_describe_object	"oid, oid, integer"	text
+pg_encoding_max_length	integer	integer
+pg_encoding_to_char	integer	name
+pg_event_trigger_dropped_objects	"OUT classid oid, OUT objid oid, OUT objsubid integer, OUT object_type text, OUT schema_name text, OUT object_name text, OUT object_identity text"	"SETOF record"
+pg_export_snapshot		text
+pg_extension_config_dump	"regclass, text"	void
+pg_extension_update_paths	"name name, OUT source text, OUT target text, OUT path text"	"SETOF record"
+pg_function_is_visible	oid	boolean
+pg_get_constraintdef	oid	text
+pg_get_constraintdef	"oid, boolean"	text
+pg_get_expr	"pg_node_tree, oid"	text
+pg_get_expr	"pg_node_tree, oid, boolean"	text
+pg_get_function_arguments	oid	text
+pg_get_function_identity_arguments	oid	text
+pg_get_function_result	oid	text
+pg_get_functiondef	oid	text
+pg_get_indexdef	oid	text
+pg_get_indexdef	"oid, integer, boolean"	text
+pg_get_keywords	"OUT word text, OUT catcode ""char"", OUT catdesc text"	"SETOF record"
+pg_get_multixact_members	"multixid xid, OUT xid xid, OUT mode text"	"SETOF record"
+pg_get_ruledef	oid	text
+pg_get_ruledef	"oid, boolean"	text
+pg_get_serial_sequence	"text, text"	text
+pg_get_triggerdef	oid	text
+pg_get_triggerdef	"oid, boolean"	text
+pg_get_userbyid	oid	name
+pg_get_viewdef	oid	text
+pg_get_viewdef	"oid, boolean"	text
+pg_get_viewdef	"oid, integer"	text
+pg_get_viewdef	text	text
+pg_get_viewdef	"text, boolean"	text
+pg_has_role	"name, name, text"	boolean
+pg_has_role	"name, oid, text"	boolean
+pg_has_role	"name, text"	boolean
+pg_has_role	"oid, name, text"	boolean
+pg_has_role	"oid, oid, text"	boolean
+pg_has_role	"oid, text"	boolean
+pg_identify_object	"classid oid, objid oid, subobjid integer, OUT type text, OUT schema text, OUT name text, OUT identity text"	record
+pg_indexes_size	regclass	bigint
+pg_is_in_backup		boolean
+pg_is_in_recovery		boolean
+pg_is_other_temp_schema	oid	boolean
+pg_is_xlog_replay_paused		boolean
+pg_last_xact_replay_timestamp		"timestamp with time zone"
+pg_last_xlog_receive_location		text
+pg_last_xlog_replay_location		text
+pg_listening_channels		"SETOF text"
+pg_lock_status	"OUT locktype text, OUT database oid, OUT relation oid, OUT page integer, OUT tuple smallint, OUT virtualxid text, OUT transactionid xid, OUT classid oid, OUT objid oid, OUT objsubid smallint, OUT virtualtransaction text, OUT pid integer, OUT mode text, OUT granted boolean, OUT fastpath boolean"	"SETOF record"
+pg_ls_dir	text	"SETOF text"
+pg_my_temp_schema		oid
+pg_node_tree_in	cstring	pg_node_tree
+pg_node_tree_out	pg_node_tree	cstring
+pg_node_tree_recv	internal	pg_node_tree
+pg_node_tree_send	pg_node_tree	bytea
+pg_notify	"text, text"	void
+pg_opclass_is_visible	oid	boolean
+pg_operator_is_visible	oid	boolean
+pg_opfamily_is_visible	oid	boolean
+pg_options_to_table	"options_array text[], OUT option_name text, OUT option_value text"	"SETOF record"
+pg_postmaster_start_time		"timestamp with time zone"
+pg_prepared_statement	"OUT name text, OUT statement text, OUT prepare_time timestamp with time zone, OUT parameter_types regtype[], OUT from_sql boolean"	"SETOF record"
+pg_prepared_xact	"OUT transaction xid, OUT gid text, OUT prepared timestamp with time zone, OUT ownerid oid, OUT dbid oid"	"SETOF record"
+pg_read_binary_file	text	bytea
+pg_read_binary_file	"text, bigint, bigint"	bytea
+pg_read_file	text	text
+pg_read_file	"text, bigint, bigint"	text
+pg_relation_filenode	regclass	oid
+pg_relation_filepath	regclass	text
+pg_relation_is_updatable	"regclass, boolean"	integer
+pg_relation_size	regclass	bigint
+pg_relation_size	"regclass, text"	bigint
+pg_reload_conf		boolean
+pg_rotate_logfile		boolean
+pg_sequence_parameters	"sequence_oid oid, OUT start_value bigint, OUT minimum_value bigint, OUT maximum_value bigint, OUT increment bigint, OUT cycle_option boolean"	record
+pg_show_all_settings	"OUT name text, OUT setting text, OUT unit text, OUT category text, OUT short_desc text, OUT extra_desc text, OUT context text, OUT vartype text, OUT source text, OUT min_val text, OUT max_val text, OUT enumvals text[], OUT boot_val text, OUT reset_val text, OUT sourcefile text, OUT sourceline integer"	"SETOF record"
+pg_size_pretty	bigint	text
+pg_size_pretty	numeric	text
+pg_sleep	"double precision"	void
+pg_start_backup	"label text, fast boolean"	text
+pg_stat_clear_snapshot		void
+pg_stat_file	"filename text, OUT size bigint, OUT access timestamp with time zone, OUT modification timestamp with time zone, OUT change timestamp with time zone, OUT creation timestamp with time zone, OUT isdir boolean"	record
+pg_stat_get_activity	"pid integer, OUT datid oid, OUT pid integer, OUT usesysid oid, OUT application_name text, OUT state text, OUT query text, OUT waiting boolean, OUT xact_start timestamp with time zone, OUT query_start timestamp with time zone, OUT backend_start timestamp with time zone, OUT state_change timestamp with time zone, OUT client_addr inet, OUT client_hostname text, OUT client_port integer"	"SETOF record"
+pg_stat_get_analyze_count	oid	bigint
+pg_stat_get_autoanalyze_count	oid	bigint
+pg_stat_get_autovacuum_count	oid	bigint
+pg_stat_get_backend_activity	integer	text
+pg_stat_get_backend_activity_start	integer	"timestamp with time zone"
+pg_stat_get_backend_client_addr	integer	inet
+pg_stat_get_backend_client_port	integer	integer
+pg_stat_get_backend_dbid	integer	oid
+pg_stat_get_backend_idset		"SETOF integer"
+pg_stat_get_backend_pid	integer	integer
+pg_stat_get_backend_start	integer	"timestamp with time zone"
+pg_stat_get_backend_userid	integer	oid
+pg_stat_get_backend_waiting	integer	boolean
+pg_stat_get_backend_xact_start	integer	"timestamp with time zone"
+pg_stat_get_bgwriter_buf_written_checkpoints		bigint
+pg_stat_get_bgwriter_buf_written_clean		bigint
+pg_stat_get_bgwriter_maxwritten_clean		bigint
+pg_stat_get_bgwriter_requested_checkpoints		bigint
+pg_stat_get_bgwriter_stat_reset_time		"timestamp with time zone"
+pg_stat_get_bgwriter_timed_checkpoints		bigint
+pg_stat_get_blocks_fetched	oid	bigint
+pg_stat_get_blocks_hit	oid	bigint
+pg_stat_get_buf_alloc		bigint
+pg_stat_get_buf_fsync_backend		bigint
+pg_stat_get_buf_written_backend		bigint
+pg_stat_get_checkpoint_sync_time		"double precision"
+pg_stat_get_checkpoint_write_time		"double precision"
+pg_stat_get_db_blk_read_time	oid	"double precision"
+pg_stat_get_db_blk_write_time	oid	"double precision"
+pg_stat_get_db_blocks_fetched	oid	bigint
+pg_stat_get_db_blocks_hit	oid	bigint
+pg_stat_get_db_conflict_all	oid	bigint
+pg_stat_get_db_conflict_bufferpin	oid	bigint
+pg_stat_get_db_conflict_lock	oid	bigint
+pg_stat_get_db_conflict_snapshot	oid	bigint
+pg_stat_get_db_conflict_startup_deadlock	oid	bigint
+pg_stat_get_db_conflict_tablespace	oid	bigint
+pg_stat_get_db_deadlocks	oid	bigint
+pg_stat_get_db_numbackends	oid	integer
+pg_stat_get_db_stat_reset_time	oid	"timestamp with time zone"
+pg_stat_get_db_temp_bytes	oid	bigint
+pg_stat_get_db_temp_files	oid	bigint
+pg_stat_get_db_tuples_deleted	oid	bigint
+pg_stat_get_db_tuples_fetched	oid	bigint
+pg_stat_get_db_tuples_inserted	oid	bigint
+pg_stat_get_db_tuples_returned	oid	bigint
+pg_stat_get_db_tuples_updated	oid	bigint
+pg_stat_get_db_xact_commit	oid	bigint
+pg_stat_get_db_xact_rollback	oid	bigint
+pg_stat_get_dead_tuples	oid	bigint
+pg_stat_get_function_calls	oid	bigint
+pg_stat_get_function_self_time	oid	"double precision"
+pg_stat_get_function_total_time	oid	"double precision"
+pg_stat_get_last_analyze_time	oid	"timestamp with time zone"
+pg_stat_get_last_autoanalyze_time	oid	"timestamp with time zone"
+pg_stat_get_last_autovacuum_time	oid	"timestamp with time zone"
+pg_stat_get_last_vacuum_time	oid	"timestamp with time zone"
+pg_stat_get_live_tuples	oid	bigint
+pg_stat_get_numscans	oid	bigint
+pg_stat_get_tuples_deleted	oid	bigint
+pg_stat_get_tuples_fetched	oid	bigint
+pg_stat_get_tuples_hot_updated	oid	bigint
+pg_stat_get_tuples_inserted	oid	bigint
+pg_stat_get_tuples_returned	oid	bigint
+pg_stat_get_tuples_updated	oid	bigint
+pg_stat_get_vacuum_count	oid	bigint
+pg_stat_get_wal_senders	"OUT pid integer, OUT state text, OUT sent_location text, OUT write_location text, OUT flush_location text, OUT replay_location text, OUT sync_priority integer, OUT sync_state text"	"SETOF record"
+pg_stat_get_xact_blocks_fetched	oid	bigint
+pg_stat_get_xact_blocks_hit	oid	bigint
+pg_stat_get_xact_function_calls	oid	bigint
+pg_stat_get_xact_function_self_time	oid	"double precision"
+pg_stat_get_xact_function_total_time	oid	"double precision"
+pg_stat_get_xact_numscans	oid	bigint
+pg_stat_get_xact_tuples_deleted	oid	bigint
+pg_stat_get_xact_tuples_fetched	oid	bigint
+pg_stat_get_xact_tuples_hot_updated	oid	bigint
+pg_stat_get_xact_tuples_inserted	oid	bigint
+pg_stat_get_xact_tuples_returned	oid	bigint
+pg_stat_get_xact_tuples_updated	oid	bigint
+pg_stat_reset		void
+pg_stat_reset_shared	text	void
+pg_stat_reset_single_function_counters	oid	void
+pg_stat_reset_single_table_counters	oid	void
+pg_stop_backup		text
+pg_switch_xlog		text
+pg_table_is_visible	oid	boolean
+pg_table_size	regclass	bigint
+pg_tablespace_databases	oid	"SETOF oid"
+pg_tablespace_location	oid	text
+pg_tablespace_size	name	bigint
+pg_tablespace_size	oid	bigint
+pg_terminate_backend	integer	boolean
+pg_timezone_abbrevs	"OUT abbrev text, OUT utc_offset interval, OUT is_dst boolean"	"SETOF record"
+pg_timezone_names	"OUT name text, OUT abbrev text, OUT utc_offset interval, OUT is_dst boolean"	"SETOF record"
+pg_total_relation_size	regclass	bigint
+pg_trigger_depth		integer
+pg_try_advisory_lock	bigint	boolean
+pg_try_advisory_lock	"integer, integer"	boolean
+pg_try_advisory_lock_shared	bigint	boolean
+pg_try_advisory_lock_shared	"integer, integer"	boolean
+pg_try_advisory_xact_lock	bigint	boolean
+pg_try_advisory_xact_lock	"integer, integer"	boolean
+pg_try_advisory_xact_lock_shared	bigint	boolean
+pg_try_advisory_xact_lock_shared	"integer, integer"	boolean
+pg_ts_config_is_visible	oid	boolean
+pg_ts_dict_is_visible	oid	boolean
+pg_ts_parser_is_visible	oid	boolean
+pg_ts_template_is_visible	oid	boolean
+pg_type_is_visible	oid	boolean
+pg_typeof	"""any"""	regtype
+pg_xlog_location_diff	"text, text"	numeric
+pg_xlog_replay_pause		void
+pg_xlog_replay_resume		void
+pg_xlogfile_name	text	text
+pg_xlogfile_name_offset	"wal_location text, OUT file_name text, OUT file_offset integer"	record
+pi		"double precision"
+plainto_tsquery	"regconfig, text"	tsquery
+plainto_tsquery	text	tsquery
+plpgsql_call_handler		language_handler
+plpgsql_inline_handler	internal	void
+plpgsql_validator	oid	void
+point	box	point
+point	circle	point
+point	"double precision, double precision"	point
+point	lseg	point
+point	path	point
+point	polygon	point
+point_above	"point, point"	boolean
+point_add	"point, point"	point
+point_below	"point, point"	boolean
+point_distance	"point, point"	"double precision"
+point_div	"point, point"	point
+point_eq	"point, point"	boolean
+point_horiz	"point, point"	boolean
+point_in	cstring	point
+point_left	"point, point"	boolean
+point_mul	"point, point"	point
+point_ne	"point, point"	boolean
+point_out	point	cstring
+point_recv	internal	point
+point_right	"point, point"	boolean
+point_send	point	bytea
+point_sub	"point, point"	point
+point_vert	"point, point"	boolean
+poly_above	"polygon, polygon"	boolean
+poly_below	"polygon, polygon"	boolean
+poly_center	polygon	point
+poly_contain	"polygon, polygon"	boolean
+poly_contain_pt	"polygon, point"	boolean
+poly_contained	"polygon, polygon"	boolean
+poly_distance	"polygon, polygon"	"double precision"
+poly_in	cstring	polygon
+poly_left	"polygon, polygon"	boolean
+poly_npoints	polygon	integer
+poly_out	polygon	cstring
+poly_overabove	"polygon, polygon"	boolean
+poly_overbelow	"polygon, polygon"	boolean
+poly_overlap	"polygon, polygon"	boolean
+poly_overleft	"polygon, polygon"	boolean
+poly_overright	"polygon, polygon"	boolean
+poly_recv	internal	polygon
+poly_right	"polygon, polygon"	boolean
+poly_same	"polygon, polygon"	boolean
+poly_send	polygon	bytea
+polygon	box	polygon
+polygon	circle	polygon
+polygon	"integer, circle"	polygon
+polygon	path	polygon
+popen	path	path
+position	"bit, bit"	integer
+position	"bytea, bytea"	integer
+position	"text, text"	integer
+positionjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+positionsel	"internal, oid, internal, integer"	"double precision"
+postgresql_fdw_validator	"text[], oid"	boolean
+pow	"double precision, double precision"	"double precision"
+pow	"numeric, numeric"	numeric
+power	"double precision, double precision"	"double precision"
+power	"numeric, numeric"	numeric
+prsd_end	internal	void
+prsd_headline	"internal, internal, tsquery"	internal
+prsd_lextype	internal	internal
+prsd_nexttoken	"internal, internal, internal"	internal
+prsd_start	"internal, integer"	internal
+pt_contained_circle	"point, circle"	boolean
+pt_contained_poly	"point, polygon"	boolean
+query_to_xml	"query text, nulls boolean, tableforest boolean, targetns text"	xml
+query_to_xml_and_xmlschema	"query text, nulls boolean, tableforest boolean, targetns text"	xml
+query_to_xmlschema	"query text, nulls boolean, tableforest boolean, targetns text"	xml
+querytree	tsquery	text
+quote_ident	text	text
+quote_literal	anyelement	text
+quote_literal	text	text
+quote_nullable	anyelement	text
+quote_nullable	text	text
+radians	"double precision"	"double precision"
+radius	circle	"double precision"
+random		"double precision"
+range_adjacent	"anyrange, anyrange"	boolean
+range_after	"anyrange, anyrange"	boolean
+range_before	"anyrange, anyrange"	boolean
+range_cmp	"anyrange, anyrange"	integer
+range_contained_by	"anyrange, anyrange"	boolean
+range_contains	"anyrange, anyrange"	boolean
+range_contains_elem	"anyrange, anyelement"	boolean
+range_eq	"anyrange, anyrange"	boolean
+range_ge	"anyrange, anyrange"	boolean
+range_gist_compress	internal	internal
+range_gist_consistent	"internal, anyrange, integer, oid, internal"	boolean
+range_gist_decompress	internal	internal
+range_gist_penalty	"internal, internal, internal"	internal
+range_gist_picksplit	"internal, internal"	internal
+range_gist_same	"anyrange, anyrange, internal"	internal
+range_gist_union	"internal, internal"	internal
+range_gt	"anyrange, anyrange"	boolean
+range_in	"cstring, oid, integer"	anyrange
+range_intersect	"anyrange, anyrange"	anyrange
+range_le	"anyrange, anyrange"	boolean
+range_lt	"anyrange, anyrange"	boolean
+range_minus	"anyrange, anyrange"	anyrange
+range_ne	"anyrange, anyrange"	boolean
+range_out	anyrange	cstring
+range_overlaps	"anyrange, anyrange"	boolean
+range_overleft	"anyrange, anyrange"	boolean
+range_overright	"anyrange, anyrange"	boolean
+range_recv	"internal, oid, integer"	anyrange
+range_send	anyrange	bytea
+range_typanalyze	internal	boolean
+range_union	"anyrange, anyrange"	anyrange
+rangesel	"internal, oid, internal, integer"	"double precision"
+rank		bigint
+record_eq	"record, record"	boolean
+record_ge	"record, record"	boolean
+record_gt	"record, record"	boolean
+record_in	"cstring, oid, integer"	record
+record_le	"record, record"	boolean
+record_lt	"record, record"	boolean
+record_ne	"record, record"	boolean
+record_out	record	cstring
+record_recv	"internal, oid, integer"	record
+record_send	record	bytea
+regclass	text	regclass
+regclassin	cstring	regclass
+regclassout	regclass	cstring
+regclassrecv	internal	regclass
+regclasssend	regclass	bytea
+regconfigin	cstring	regconfig
+regconfigout	regconfig	cstring
+regconfigrecv	internal	regconfig
+regconfigsend	regconfig	bytea
+regdictionaryin	cstring	regdictionary
+regdictionaryout	regdictionary	cstring
+regdictionaryrecv	internal	regdictionary
+regdictionarysend	regdictionary	bytea
+regexeqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+regexeqsel	"internal, oid, internal, integer"	"double precision"
+regexnejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+regexnesel	"internal, oid, internal, integer"	"double precision"
+regexp_matches	"text, text"	"SETOF text[]"
+regexp_matches	"text, text, text"	"SETOF text[]"
+regexp_replace	"text, text, text"	text
+regexp_replace	"text, text, text, text"	text
+regexp_split_to_array	"text, text"	text[]
+regexp_split_to_array	"text, text, text"	text[]
+regexp_split_to_table	"text, text"	"SETOF text"
+regexp_split_to_table	"text, text, text"	"SETOF text"
+regoperatorin	cstring	regoperator
+regoperatorout	regoperator	cstring
+regoperatorrecv	internal	regoperator
+regoperatorsend	regoperator	bytea
+regoperin	cstring	regoper
+regoperout	regoper	cstring
+regoperrecv	internal	regoper
+regopersend	regoper	bytea
+regprocedurein	cstring	regprocedure
+regprocedureout	regprocedure	cstring
+regprocedurerecv	internal	regprocedure
+regproceduresend	regprocedure	bytea
+regprocin	cstring	regproc
+regprocout	regproc	cstring
+regprocrecv	internal	regproc
+regprocsend	regproc	bytea
+regr_avgx	"double precision, double precision"	"double precision"
+regr_avgy	"double precision, double precision"	"double precision"
+regr_count	"double precision, double precision"	bigint
+regr_intercept	"double precision, double precision"	"double precision"
+regr_r2	"double precision, double precision"	"double precision"
+regr_slope	"double precision, double precision"	"double precision"
+regr_sxx	"double precision, double precision"	"double precision"
+regr_sxy	"double precision, double precision"	"double precision"
+regr_syy	"double precision, double precision"	"double precision"
+regtypein	cstring	regtype
+regtypeout	regtype	cstring
+regtyperecv	internal	regtype
+regtypesend	regtype	bytea
+reltime	interval	reltime
+reltimeeq	"reltime, reltime"	boolean
+reltimege	"reltime, reltime"	boolean
+reltimegt	"reltime, reltime"	boolean
+reltimein	cstring	reltime
+reltimele	"reltime, reltime"	boolean
+reltimelt	"reltime, reltime"	boolean
+reltimene	"reltime, reltime"	boolean
+reltimeout	reltime	cstring
+reltimerecv	internal	reltime
+reltimesend	reltime	bytea
+repeat	"text, integer"	text
+replace	"text, text, text"	text
+reverse	text	text
+right	"text, integer"	text
+round	"double precision"	"double precision"
+round	numeric	numeric
+round	"numeric, integer"	numeric
+row_number		bigint
+row_to_json	record	json
+row_to_json	"record, boolean"	json
+rpad	"text, integer"	text
+rpad	"text, integer, text"	text
+rtrim	text	text
+rtrim	"text, text"	text
+scalargtjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+scalargtsel	"internal, oid, internal, integer"	"double precision"
+scalarltjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+scalarltsel	"internal, oid, internal, integer"	"double precision"
+schema_to_xml	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
+schema_to_xml_and_xmlschema	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
+schema_to_xmlschema	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
+session_user		name
+set_bit	"bit, integer, integer"	bit
+set_bit	"bytea, integer, integer"	bytea
+set_byte	"bytea, integer, integer"	bytea
+set_config	"text, text, boolean"	text
+set_masklen	"cidr, integer"	cidr
+set_masklen	"inet, integer"	inet
+setseed	"double precision"	void
+setval	"regclass, bigint"	bigint
+setval	"regclass, bigint, boolean"	bigint
+setweight	"tsvector, ""char"""	tsvector
+shell_in	cstring	opaque
+shell_out	opaque	cstring
+shift_jis_2004_to_euc_jis_2004	"integer, integer, cstring, internal, integer"	void
+shift_jis_2004_to_utf8	"integer, integer, cstring, internal, integer"	void
+shobj_description	"oid, name"	text
+sign	"double precision"	"double precision"
+sign	numeric	numeric
+similar_escape	"text, text"	text
+sin	"double precision"	"double precision"
+sjis_to_euc_jp	"integer, integer, cstring, internal, integer"	void
+sjis_to_mic	"integer, integer, cstring, internal, integer"	void
+sjis_to_utf8	"integer, integer, cstring, internal, integer"	void
+slope	"point, point"	"double precision"
+smgreq	"smgr, smgr"	boolean
+smgrin	cstring	smgr
+smgrne	"smgr, smgr"	boolean
+smgrout	smgr	cstring
+spg_kd_choose	"internal, internal"	void
+spg_kd_config	"internal, internal"	void
+spg_kd_inner_consistent	"internal, internal"	void
+spg_kd_picksplit	"internal, internal"	void
+spg_quad_choose	"internal, internal"	void
+spg_quad_config	"internal, internal"	void
+spg_quad_inner_consistent	"internal, internal"	void
+spg_quad_leaf_consistent	"internal, internal"	boolean
+spg_quad_picksplit	"internal, internal"	void
+spg_range_quad_choose	"internal, internal"	void
+spg_range_quad_config	"internal, internal"	void
+spg_range_quad_inner_consistent	"internal, internal"	void
+spg_range_quad_leaf_consistent	"internal, internal"	boolean
+spg_range_quad_picksplit	"internal, internal"	void
+spg_text_choose	"internal, internal"	void
+spg_text_config	"internal, internal"	void
+spg_text_inner_consistent	"internal, internal"	void
+spg_text_leaf_consistent	"internal, internal"	boolean
+spg_text_picksplit	"internal, internal"	void
+spgbeginscan	"internal, internal, internal"	internal
+spgbuild	"internal, internal, internal"	internal
+spgbuildempty	internal	void
+spgbulkdelete	"internal, internal, internal, internal"	internal
+spgcanreturn	internal	boolean
+spgcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
+spgendscan	internal	void
+spggetbitmap	"internal, internal"	bigint
+spggettuple	"internal, internal"	boolean
+spginsert	"internal, internal, internal, internal, internal, internal"	boolean
+spgmarkpos	internal	void
+spgoptions	"text[], boolean"	bytea
+spgrescan	"internal, internal, internal, internal, internal"	void
+spgrestrpos	internal	void
+spgvacuumcleanup	"internal, internal"	internal
+split_part	"text, text, integer"	text
+sqrt	"double precision"	"double precision"
+sqrt	numeric	numeric
+statement_timestamp		"timestamp with time zone"
+stddev	bigint	numeric
+stddev	"double precision"	"double precision"
+stddev	integer	numeric
+stddev	numeric	numeric
+stddev	real	"double precision"
+stddev	smallint	numeric
+stddev_pop	bigint	numeric
+stddev_pop	"double precision"	"double precision"
+stddev_pop	integer	numeric
+stddev_pop	numeric	numeric
+stddev_pop	real	"double precision"
+stddev_pop	smallint	numeric
+stddev_samp	bigint	numeric
+stddev_samp	"double precision"	"double precision"
+stddev_samp	integer	numeric
+stddev_samp	numeric	numeric
+stddev_samp	real	"double precision"
+stddev_samp	smallint	numeric
+string_agg	"bytea, bytea"	bytea
+string_agg	"text, text"	text
+string_agg_finalfn	internal	text
+string_agg_transfn	"internal, text, text"	internal
+string_to_array	"text, text"	text[]
+string_to_array	"text, text, text"	text[]
+strip	tsvector	tsvector
+strpos	"text, text"	integer
+substr	"bytea, integer"	bytea
+substr	"bytea, integer, integer"	bytea
+substr	"text, integer"	text
+substr	"text, integer, integer"	text
+substring	"bit, integer"	bit
+substring	"bit, integer, integer"	bit
+substring	"bytea, integer"	bytea
+substring	"bytea, integer, integer"	bytea
+substring	"text, integer"	text
+substring	"text, integer, integer"	text
+substring	"text, text"	text
+substring	"text, text, text"	text
+sum	bigint	numeric
+sum	"double precision"	"double precision"
+sum	integer	bigint
+sum	interval	interval
+sum	money	money
+sum	numeric	numeric
+sum	real	real
+sum	smallint	bigint
+suppress_redundant_updates_trigger		trigger
+table_to_xml	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
+table_to_xml_and_xmlschema	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
+table_to_xmlschema	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
+tan	"double precision"	"double precision"
+text	"""char"""	text
+text	boolean	text
+text	character	text
+text	inet	text
+text	name	text
+text	xml	text
+text_ge	"text, text"	boolean
+text_gt	"text, text"	boolean
+text_larger	"text, text"	text
+text_le	"text, text"	boolean
+text_lt	"text, text"	boolean
+text_pattern_ge	"text, text"	boolean
+text_pattern_gt	"text, text"	boolean
+text_pattern_le	"text, text"	boolean
+text_pattern_lt	"text, text"	boolean
+text_smaller	"text, text"	text
+textanycat	"text, anynonarray"	text
+textcat	"text, text"	text
+texteq	"text, text"	boolean
+texticlike	"text, text"	boolean
+texticnlike	"text, text"	boolean
+texticregexeq	"text, text"	boolean
+texticregexne	"text, text"	boolean
+textin	cstring	text
+textlen	text	integer
+textlike	"text, text"	boolean
+textne	"text, text"	boolean
+textnlike	"text, text"	boolean
+textout	text	cstring
+textrecv	internal	text
+textregexeq	"text, text"	boolean
+textregexne	"text, text"	boolean
+textsend	text	bytea
+thesaurus_init	internal	internal
+thesaurus_lexize	"internal, internal, internal, internal"	internal
+tideq	"tid, tid"	boolean
+tidge	"tid, tid"	boolean
+tidgt	"tid, tid"	boolean
+tidin	cstring	tid
+tidlarger	"tid, tid"	tid
+tidle	"tid, tid"	boolean
+tidlt	"tid, tid"	boolean
+tidne	"tid, tid"	boolean
+tidout	tid	cstring
+tidrecv	internal	tid
+tidsend	tid	bytea
+tidsmaller	"tid, tid"	tid
+time	abstime	"time without time zone"
+time	interval	"time without time zone"
+time	"time with time zone"	"time without time zone"
+time	"time without time zone, integer"	"time without time zone"
+time	"timestamp with time zone"	"time without time zone"
+time	"timestamp without time zone"	"time without time zone"
+time_cmp	"time without time zone, time without time zone"	integer
+time_eq	"time without time zone, time without time zone"	boolean
+time_ge	"time without time zone, time without time zone"	boolean
+time_gt	"time without time zone, time without time zone"	boolean
+time_hash	"time without time zone"	integer
+time_in	"cstring, oid, integer"	"time without time zone"
+time_larger	"time without time zone, time without time zone"	"time without time zone"
+time_le	"time without time zone, time without time zone"	boolean
+time_lt	"time without time zone, time without time zone"	boolean
+time_mi_interval	"time without time zone, interval"	"time without time zone"
+time_mi_time	"time without time zone, time without time zone"	interval
+time_ne	"time without time zone, time without time zone"	boolean
+time_out	"time without time zone"	cstring
+time_pl_interval	"time without time zone, interval"	"time without time zone"
+time_recv	"internal, oid, integer"	"time without time zone"
+time_send	"time without time zone"	bytea
+time_smaller	"time without time zone, time without time zone"	"time without time zone"
+time_transform	internal	internal
+timedate_pl	"time without time zone, date"	"timestamp without time zone"
+timemi	"abstime, reltime"	abstime
+timenow		abstime
+timeofday		text
+timepl	"abstime, reltime"	abstime
+timestamp	abstime	"timestamp without time zone"
+timestamp	date	"timestamp without time zone"
+timestamp	"date, time without time zone"	"timestamp without time zone"
+timestamp	"timestamp with time zone"	"timestamp without time zone"
+timestamp	"timestamp without time zone, integer"	"timestamp without time zone"
+timestamp_cmp	"timestamp without time zone, timestamp without time zone"	integer
+timestamp_cmp_date	"timestamp without time zone, date"	integer
+timestamp_cmp_timestamptz	"timestamp without time zone, timestamp with time zone"	integer
+timestamp_eq	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_eq_date	"timestamp without time zone, date"	boolean
+timestamp_eq_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_ge	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_ge_date	"timestamp without time zone, date"	boolean
+timestamp_ge_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_gt	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_gt_date	"timestamp without time zone, date"	boolean
+timestamp_gt_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_hash	"timestamp without time zone"	integer
+timestamp_in	"cstring, oid, integer"	"timestamp without time zone"
+timestamp_larger	"timestamp without time zone, timestamp without time zone"	"timestamp without time zone"
+timestamp_le	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_le_date	"timestamp without time zone, date"	boolean
+timestamp_le_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_lt	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_lt_date	"timestamp without time zone, date"	boolean
+timestamp_lt_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_mi	"timestamp without time zone, timestamp without time zone"	interval
+timestamp_mi_interval	"timestamp without time zone, interval"	"timestamp without time zone"
+timestamp_ne	"timestamp without time zone, timestamp without time zone"	boolean
+timestamp_ne_date	"timestamp without time zone, date"	boolean
+timestamp_ne_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
+timestamp_out	"timestamp without time zone"	cstring
+timestamp_pl_interval	"timestamp without time zone, interval"	"timestamp without time zone"
+timestamp_recv	"internal, oid, integer"	"timestamp without time zone"
+timestamp_send	"timestamp without time zone"	bytea
+timestamp_smaller	"timestamp without time zone, timestamp without time zone"	"timestamp without time zone"
+timestamp_sortsupport	internal	void
+timestamp_transform	internal	internal
+timestamptypmodin	cstring[]	integer
+timestamptypmodout	integer	cstring
+timestamptz	abstime	"timestamp with time zone"
+timestamptz	date	"timestamp with time zone"
+timestamptz	"date, time with time zone"	"timestamp with time zone"
+timestamptz	"date, time without time zone"	"timestamp with time zone"
+timestamptz	"timestamp with time zone, integer"	"timestamp with time zone"
+timestamptz	"timestamp without time zone"	"timestamp with time zone"
+timestamptz_cmp	"timestamp with time zone, timestamp with time zone"	integer
+timestamptz_cmp_date	"timestamp with time zone, date"	integer
+timestamptz_cmp_timestamp	"timestamp with time zone, timestamp without time zone"	integer
+timestamptz_eq	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_eq_date	"timestamp with time zone, date"	boolean
+timestamptz_eq_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_ge	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_ge_date	"timestamp with time zone, date"	boolean
+timestamptz_ge_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_gt	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_gt_date	"timestamp with time zone, date"	boolean
+timestamptz_gt_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_in	"cstring, oid, integer"	"timestamp with time zone"
+timestamptz_larger	"timestamp with time zone, timestamp with time zone"	"timestamp with time zone"
+timestamptz_le	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_le_date	"timestamp with time zone, date"	boolean
+timestamptz_le_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_lt	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_lt_date	"timestamp with time zone, date"	boolean
+timestamptz_lt_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_mi	"timestamp with time zone, timestamp with time zone"	interval
+timestamptz_mi_interval	"timestamp with time zone, interval"	"timestamp with time zone"
+timestamptz_ne	"timestamp with time zone, timestamp with time zone"	boolean
+timestamptz_ne_date	"timestamp with time zone, date"	boolean
+timestamptz_ne_timestamp	"timestamp with time zone, timestamp without time zone"	boolean
+timestamptz_out	"timestamp with time zone"	cstring
+timestamptz_pl_interval	"timestamp with time zone, interval"	"timestamp with time zone"
+timestamptz_recv	"internal, oid, integer"	"timestamp with time zone"
+timestamptz_send	"timestamp with time zone"	bytea
+timestamptz_smaller	"timestamp with time zone, timestamp with time zone"	"timestamp with time zone"
+timestamptztypmodin	cstring[]	integer
+timestamptztypmodout	integer	cstring
+timetypmodin	cstring[]	integer
+timetypmodout	integer	cstring
+timetz	"time with time zone, integer"	"time with time zone"
+timetz	"time without time zone"	"time with time zone"
+timetz	"timestamp with time zone"	"time with time zone"
+timetz_cmp	"time with time zone, time with time zone"	integer
+timetz_eq	"time with time zone, time with time zone"	boolean
+timetz_ge	"time with time zone, time with time zone"	boolean
+timetz_gt	"time with time zone, time with time zone"	boolean
+timetz_hash	"time with time zone"	integer
+timetz_in	"cstring, oid, integer"	"time with time zone"
+timetz_larger	"time with time zone, time with time zone"	"time with time zone"
+timetz_le	"time with time zone, time with time zone"	boolean
+timetz_lt	"time with time zone, time with time zone"	boolean
+timetz_mi_interval	"time with time zone, interval"	"time with time zone"
+timetz_ne	"time with time zone, time with time zone"	boolean
+timetz_out	"time with time zone"	cstring
+timetz_pl_interval	"time with time zone, interval"	"time with time zone"
+timetz_recv	"internal, oid, integer"	"time with time zone"
+timetz_send	"time with time zone"	bytea
+timetz_smaller	"time with time zone, time with time zone"	"time with time zone"
+timetzdate_pl	"time with time zone, date"	"timestamp with time zone"
+timetztypmodin	cstring[]	integer
+timetztypmodout	integer	cstring
+timezone	"interval, time with time zone"	"time with time zone"
+timezone	"interval, timestamp with time zone"	"timestamp without time zone"
+timezone	"interval, timestamp without time zone"	"timestamp with time zone"
+timezone	"text, time with time zone"	"time with time zone"
+timezone	"text, timestamp with time zone"	"timestamp without time zone"
+timezone	"text, timestamp without time zone"	"timestamp with time zone"
+tinterval	"abstime, abstime"	tinterval
+tintervalct	"tinterval, tinterval"	boolean
+tintervalend	tinterval	abstime
+tintervaleq	"tinterval, tinterval"	boolean
+tintervalge	"tinterval, tinterval"	boolean
+tintervalgt	"tinterval, tinterval"	boolean
+tintervalin	cstring	tinterval
+tintervalle	"tinterval, tinterval"	boolean
+tintervalleneq	"tinterval, reltime"	boolean
+tintervallenge	"tinterval, reltime"	boolean
+tintervallengt	"tinterval, reltime"	boolean
+tintervallenle	"tinterval, reltime"	boolean
+tintervallenlt	"tinterval, reltime"	boolean
+tintervallenne	"tinterval, reltime"	boolean
+tintervallt	"tinterval, tinterval"	boolean
+tintervalne	"tinterval, tinterval"	boolean
+tintervalout	tinterval	cstring
+tintervalov	"tinterval, tinterval"	boolean
+tintervalrecv	internal	tinterval
+tintervalrel	tinterval	reltime
+tintervalsame	"tinterval, tinterval"	boolean
+tintervalsend	tinterval	bytea
+tintervalstart	tinterval	abstime
+to_ascii	text	text
+to_ascii	"text, integer"	text
+to_ascii	"text, name"	text
+to_char	"bigint, text"	text
+to_char	"double precision, text"	text
+to_char	"integer, text"	text
+to_char	"interval, text"	text
+to_char	"numeric, text"	text
+to_char	"real, text"	text
+to_char	"timestamp with time zone, text"	text
+to_char	"timestamp without time zone, text"	text
+to_date	"text, text"	date
+to_hex	bigint	text
+to_hex	integer	text
+to_json	anyelement	json
+to_number	"text, text"	numeric
+to_timestamp	"double precision"	"timestamp with time zone"
+to_timestamp	"text, text"	"timestamp with time zone"
+to_tsquery	"regconfig, text"	tsquery
+to_tsquery	text	tsquery
+to_tsvector	"regconfig, text"	tsvector
+to_tsvector	text	tsvector
+transaction_timestamp		"timestamp with time zone"
+translate	"text, text, text"	text
+trigger_in	cstring	trigger
+trigger_out	trigger	cstring
+trunc	"double precision"	"double precision"
+trunc	macaddr	macaddr
+trunc	numeric	numeric
+trunc	"numeric, integer"	numeric
+ts_debug	"config regconfig, document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary[], OUT dictionary regdictionary, OUT lexemes text[]"	"SETOF record"
+ts_debug	"document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary[], OUT dictionary regdictionary, OUT lexemes text[]"	"SETOF record"
+ts_headline	"regconfig, text, tsquery"	text
+ts_headline	"regconfig, text, tsquery, text"	text
+ts_headline	"text, tsquery"	text
+ts_headline	"text, tsquery, text"	text
+ts_lexize	"regdictionary, text"	text[]
+ts_match_qv	"tsquery, tsvector"	boolean
+ts_match_tq	"text, tsquery"	boolean
+ts_match_tt	"text, text"	boolean
+ts_match_vq	"tsvector, tsquery"	boolean
+ts_parse	"parser_name text, txt text, OUT tokid integer, OUT token text"	"SETOF record"
+ts_parse	"parser_oid oid, txt text, OUT tokid integer, OUT token text"	"SETOF record"
+ts_rank	"real[], tsvector, tsquery"	real
+ts_rank	"real[], tsvector, tsquery, integer"	real
+ts_rank	"tsvector, tsquery"	real
+ts_rank	"tsvector, tsquery, integer"	real
+ts_rank_cd	"real[], tsvector, tsquery"	real
+ts_rank_cd	"real[], tsvector, tsquery, integer"	real
+ts_rank_cd	"tsvector, tsquery"	real
+ts_rank_cd	"tsvector, tsquery, integer"	real
+ts_rewrite	"tsquery, text"	tsquery
+ts_rewrite	"tsquery, tsquery, tsquery"	tsquery
+ts_stat	"query text, OUT word text, OUT ndoc integer, OUT nentry integer"	"SETOF record"
+ts_stat	"query text, weights text, OUT word text, OUT ndoc integer, OUT nentry integer"	"SETOF record"
+ts_token_type	"parser_name text, OUT tokid integer, OUT alias text, OUT description text"	"SETOF record"
+ts_token_type	"parser_oid oid, OUT tokid integer, OUT alias text, OUT description text"	"SETOF record"
+ts_typanalyze	internal	boolean
+tsmatchjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+tsmatchsel	"internal, oid, internal, integer"	"double precision"
+tsq_mcontained	"tsquery, tsquery"	boolean
+tsq_mcontains	"tsquery, tsquery"	boolean
+tsquery_and	"tsquery, tsquery"	tsquery
+tsquery_cmp	"tsquery, tsquery"	integer
+tsquery_eq	"tsquery, tsquery"	boolean
+tsquery_ge	"tsquery, tsquery"	boolean
+tsquery_gt	"tsquery, tsquery"	boolean
+tsquery_le	"tsquery, tsquery"	boolean
+tsquery_lt	"tsquery, tsquery"	boolean
+tsquery_ne	"tsquery, tsquery"	boolean
+tsquery_not	tsquery	tsquery
+tsquery_or	"tsquery, tsquery"	tsquery
+tsqueryin	cstring	tsquery
+tsqueryout	tsquery	cstring
+tsqueryrecv	internal	tsquery
+tsquerysend	tsquery	bytea
+tsrange	"timestamp without time zone, timestamp without time zone"	tsrange
+tsrange	"timestamp without time zone, timestamp without time zone, text"	tsrange
+tsrange_subdiff	"timestamp without time zone, timestamp without time zone"	"double precision"
+tstzrange	"timestamp with time zone, timestamp with time zone"	tstzrange
+tstzrange	"timestamp with time zone, timestamp with time zone, text"	tstzrange
+tstzrange_subdiff	"timestamp with time zone, timestamp with time zone"	"double precision"
+tsvector_cmp	"tsvector, tsvector"	integer
+tsvector_concat	"tsvector, tsvector"	tsvector
+tsvector_eq	"tsvector, tsvector"	boolean
+tsvector_ge	"tsvector, tsvector"	boolean
+tsvector_gt	"tsvector, tsvector"	boolean
+tsvector_le	"tsvector, tsvector"	boolean
+tsvector_lt	"tsvector, tsvector"	boolean
+tsvector_ne	"tsvector, tsvector"	boolean
+tsvector_update_trigger		trigger
+tsvector_update_trigger_column		trigger
+tsvectorin	cstring	tsvector
+tsvectorout	tsvector	cstring
+tsvectorrecv	internal	tsvector
+tsvectorsend	tsvector	bytea
+txid_current		bigint
+txid_current_snapshot		txid_snapshot
+txid_snapshot_in	cstring	txid_snapshot
+txid_snapshot_out	txid_snapshot	cstring
+txid_snapshot_recv	internal	txid_snapshot
+txid_snapshot_send	txid_snapshot	bytea
+txid_snapshot_xip	txid_snapshot	"SETOF bigint"
+txid_snapshot_xmax	txid_snapshot	bigint
+txid_snapshot_xmin	txid_snapshot	bigint
+txid_visible_in_snapshot	"bigint, txid_snapshot"	boolean
+uhc_to_utf8	"integer, integer, cstring, internal, integer"	void
+unique_key_recheck		trigger
+unknownin	cstring	unknown
+unknownout	unknown	cstring
+unknownrecv	internal	unknown
+unknownsend	unknown	bytea
+unnest	anyarray	"SETOF anyelement"
+upper	anyrange	anyelement
+upper	text	text
+upper_inc	anyrange	boolean
+upper_inf	anyrange	boolean
+utf8_to_ascii	"integer, integer, cstring, internal, integer"	void
+utf8_to_big5	"integer, integer, cstring, internal, integer"	void
+utf8_to_euc_cn	"integer, integer, cstring, internal, integer"	void
+utf8_to_euc_jis_2004	"integer, integer, cstring, internal, integer"	void
+utf8_to_euc_jp	"integer, integer, cstring, internal, integer"	void
+utf8_to_euc_kr	"integer, integer, cstring, internal, integer"	void
+utf8_to_euc_tw	"integer, integer, cstring, internal, integer"	void
+utf8_to_gb18030	"integer, integer, cstring, internal, integer"	void
+utf8_to_gbk	"integer, integer, cstring, internal, integer"	void
+utf8_to_iso8859	"integer, integer, cstring, internal, integer"	void
+utf8_to_iso8859_1	"integer, integer, cstring, internal, integer"	void
+utf8_to_johab	"integer, integer, cstring, internal, integer"	void
+utf8_to_koi8r	"integer, integer, cstring, internal, integer"	void
+utf8_to_koi8u	"integer, integer, cstring, internal, integer"	void
+utf8_to_shift_jis_2004	"integer, integer, cstring, internal, integer"	void
+utf8_to_sjis	"integer, integer, cstring, internal, integer"	void
+utf8_to_uhc	"integer, integer, cstring, internal, integer"	void
+utf8_to_win	"integer, integer, cstring, internal, integer"	void
+uuid_cmp	"uuid, uuid"	integer
+uuid_eq	"uuid, uuid"	boolean
+uuid_ge	"uuid, uuid"	boolean
+uuid_gt	"uuid, uuid"	boolean
+uuid_hash	uuid	integer
+uuid_in	cstring	uuid
+uuid_le	"uuid, uuid"	boolean
+uuid_lt	"uuid, uuid"	boolean
+uuid_ne	"uuid, uuid"	boolean
+uuid_out	uuid	cstring
+uuid_recv	internal	uuid
+uuid_send	uuid	bytea
+var_pop	bigint	numeric
+var_pop	"double precision"	"double precision"
+var_pop	integer	numeric
+var_pop	numeric	numeric
+var_pop	real	"double precision"
+var_pop	smallint	numeric
+var_samp	bigint	numeric
+var_samp	"double precision"	"double precision"
+var_samp	integer	numeric
+var_samp	numeric	numeric
+var_samp	real	"double precision"
+var_samp	smallint	numeric
+varbit	"bit varying, integer, boolean"	"bit varying"
+varbit_in	"cstring, oid, integer"	"bit varying"
+varbit_out	"bit varying"	cstring
+varbit_recv	"internal, oid, integer"	"bit varying"
+varbit_send	"bit varying"	bytea
+varbit_transform	internal	internal
+varbitcmp	"bit varying, bit varying"	integer
+varbiteq	"bit varying, bit varying"	boolean
+varbitge	"bit varying, bit varying"	boolean
+varbitgt	"bit varying, bit varying"	boolean
+varbitle	"bit varying, bit varying"	boolean
+varbitlt	"bit varying, bit varying"	boolean
+varbitne	"bit varying, bit varying"	boolean
+varbittypmodin	cstring[]	integer
+varbittypmodout	integer	cstring
+varchar	"character varying, integer, boolean"	"character varying"
+varchar	name	"character varying"
+varchar_transform	internal	internal
+varcharin	"cstring, oid, integer"	"character varying"
+varcharout	"character varying"	cstring
+varcharrecv	"internal, oid, integer"	"character varying"
+varcharsend	"character varying"	bytea
+varchartypmodin	cstring[]	integer
+varchartypmodout	integer	cstring
+variance	bigint	numeric
+variance	"double precision"	"double precision"
+variance	integer	numeric
+variance	numeric	numeric
+variance	real	"double precision"
+variance	smallint	numeric
+version		text
+void_in	cstring	void
+void_out	void	cstring
+void_recv	internal	void
+void_send	void	bytea
+width	box	"double precision"
+width_bucket	"double precision, double precision, double precision, integer"	integer
+width_bucket	"numeric, numeric, numeric, integer"	integer
+win1250_to_latin2	"integer, integer, cstring, internal, integer"	void
+win1250_to_mic	"integer, integer, cstring, internal, integer"	void
+win1251_to_iso	"integer, integer, cstring, internal, integer"	void
+win1251_to_koi8r	"integer, integer, cstring, internal, integer"	void
+win1251_to_mic	"integer, integer, cstring, internal, integer"	void
+win1251_to_win866	"integer, integer, cstring, internal, integer"	void
+win866_to_iso	"integer, integer, cstring, internal, integer"	void
+win866_to_koi8r	"integer, integer, cstring, internal, integer"	void
+win866_to_mic	"integer, integer, cstring, internal, integer"	void
+win866_to_win1251	"integer, integer, cstring, internal, integer"	void
+win_to_utf8	"integer, integer, cstring, internal, integer"	void
+xideq	"xid, xid"	boolean
+xideqint4	"xid, integer"	boolean
+xidin	cstring	xid
+xidout	xid	cstring
+xidrecv	internal	xid
+xidsend	xid	bytea
+xml	text	xml
+xml_in	cstring	xml
+xml_is_well_formed	text	boolean
+xml_is_well_formed_content	text	boolean
+xml_is_well_formed_document	text	boolean
+xml_out	xml	cstring
+xml_recv	internal	xml
+xml_send	xml	bytea
+xmlagg	xml	xml
+xmlcomment	text	xml
+xmlconcat2	"xml, xml"	xml
+xmlexists	"text, xml"	boolean
+xmlvalidate	"xml, text"	boolean
+xpath	"text, xml"	xml[]
+xpath	"text, xml, text[]"	xml[]
+xpath_exists	"text, xml"	boolean
+xpath_exists	"text, xml, text[]"	boolean

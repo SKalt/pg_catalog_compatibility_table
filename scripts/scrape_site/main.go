@@ -113,7 +113,7 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(common.TsvHeader)
+	tsv.WriteString(common.ColTsvHeader)
 	index := 0
 	trs.Each(func(i int, tr *goquery.Selection) {
 		col := common.ColData{}
@@ -162,7 +162,7 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(common.TsvHeader)
+	tsv.WriteString(common.ColTsvHeader)
 	rows.Each(func(i int, tr *goquery.Selection) {
 		col := common.ColData{Index: i + 1}
 		row := tr.Find(".column_definition").First()

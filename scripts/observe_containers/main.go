@@ -131,7 +131,7 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 			log.Fatal(err)
 		}
 	}()
-	_, err = tsv.WriteString(common.TsvHeader)
+	_, err = tsv.WriteString(common.ColTsvHeader)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -251,6 +251,40 @@ func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, wa
 	}
 }
 
+//	func observeViewDefs(dataDir, version, view string, conn *sql.DB, waiter *sync.WaitGroup) {
+//		stmt, err :=
+//	}
+func observeFns(dataDir string, version string, conn *sql.DB) {
+	row, err := conn.Query(fnQuery)
+	if err != nil {
+		log.Fatal(err)
+	}
+	tsvFile, err := os.Create(filepath.Join(dataDir, version, "functions.tsv"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	tsv := bufio.NewWriter(tsvFile)
+	defer func() {
+		tsv.Flush() // ignore error?
+		if err := tsvFile.Close(); err != nil {
+			log.Fatal(err)
+		}
+	}()
+	_, err = tsvFile.WriteString(common.FnTsvHeader)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for row.Next() {
+		fn := common.FnData{}
+		if err = row.Scan(&fn.Name, &fn.IdentityArgs, &fn.ReturnType); err != nil {
+			log.Fatal(err)
+		}
+		if _, err = tsv.WriteString(fn.TsvRow()); err != nil {
+			log.Fatal(err)
+		}
+	}
+}
+
 // use a single connection per-container to audit all the relevant tables, views, functions, domains.
 func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	defer waiter.Done()
@@ -266,9 +300,9 @@ func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	observeRelationKind(dataDir, version, "catalog", conn, &inner)
 	inner.Add(1)
 	observeRelationKind(dataDir, version, "view", conn, &inner)
+	observeFns(dataDir, version, conn)
 	inner.Wait()
 	// TODO: fetch+record functions
-	// TODO: fetch+patch views?
 }
 
 func main() {
