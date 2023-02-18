@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	stxoid	oid	false		"extended statistic object containing the definition for this data"
-2	stxdndistinct	pg_ndistinct	true		"n-distinct counts, serialized as pg_ndistinct type"
-3	stxddependencies	pg_dependencies	true		"functional dependency statistics, serialized as pg_dependencies type"
-4	stxdmcv	pg_mcv_list	true		"mcv (most-common values) list statistics, serialized as pg_mcv_list type"

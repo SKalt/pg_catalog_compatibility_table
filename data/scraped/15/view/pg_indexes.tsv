@@ -1,0 +1,6 @@
+Name	Type	References	Description
+schemaname	name		"name of schema containing table and index"
+tablename	name		"name of table the index is for"
+indexname	name		"name of index"
+tablespace	name		"name of tablespace containing index (null if default for database)"
+indexdef	text		"index definition (a reconstructed create index command)"

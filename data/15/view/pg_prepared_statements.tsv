@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	name	text	true		"the identifier of the prepared statement"
-2	statement	text	true		"the query string submitted by the client to create this prepared statement. for prepared statements created via sql, this is the prepare statement submitted by the client. for prepared statements created via the frontend/backend protocol, this is the text of the prepared statement itself."
-3	prepare_time	timestamptz	true		"the time at which the prepared statement was created"
-4	parameter_types	regtype[]	true		"the expected parameter types for the prepared statement in the form of an array of regtype. the oid corresponding to an element of this array can be obtained by casting the regtype value to oid."
-5	from_sql	bool	true		"true if the prepared statement was created via the prepare sql command; false if the statement was prepared via the frontend/backend protocol"
-6	generic_plans	int8	true		"number of times generic plan was chosen"
-7	custom_plans	int8	true		"number of times custom plan was chosen"
-5	result_types	regtype[]			"the types of the columns returned by the prepared statement in the form of an array of regtype. the oid corresponding to an element of this array can be obtained by casting the regtype value to oid. if the prepared statement does not provide a result (e.g., a dml statement), then this field will be null."

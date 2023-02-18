@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	sourcefile	text	true		"full path name of the configuration file"
-2	sourceline	int4	true		"line number within the configuration file where the entry appears"
-3	seqno	int4	true		"order in which the entries are processed (1..n)"
-4	name	text	true		"configuration parameter name"
-5	setting	text	true		"value to be assigned to the parameter"
-6	applied	bool	true		"true if the value can be applied successfully"
-7	error	text	true		"if not null, an error message indicating why this entry could not be applied"

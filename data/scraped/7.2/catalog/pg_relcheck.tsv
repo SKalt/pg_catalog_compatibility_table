@@ -1,0 +1,5 @@
+Name	Type	References	Description
+rcrelid	oid	pg_class.oid	"the table this check constraint is on"
+rcname	name		"constraint name"
+rcbin	text		"an internal representation of the constraint expression"
+rcsrc	text		"a human-readable representation of the constraint expression"

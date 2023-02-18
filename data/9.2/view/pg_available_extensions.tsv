@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	name	name	true		"extension name"
-2	default_version	text	true		"name of default version, or null if none is specified"
-3	installed_version	text	true		"currently installed version of the extension, or null if not installed"
-4	comment	text	true		"comment string from the extension's control file"

@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	dbid	oid	false		"the oid of the database the dependent object is in, or zero for a shared object"
-2	classid	oid	false		"the oid of the system catalog the dependent object is in"
-3	objid	oid	false		"the oid of the specific dependent object"
-4	objsubid	int4	false		"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero."
-5	refclassid	oid	false		"the oid of the system catalog the referenced object is in (must be a shared catalog)"
-6	refobjid	oid	false		"the oid of the specific referenced object"
-7	deptype	char	false		"a code defining the specific semantics of this dependency relationship; see text"

@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	nspname	name			"name of the namespace"
-2	nspowner	int4		pg_shadow.usesysid	"owner (creator) of the namespace"
-3	nspacl	aclitem[]			"access permissions"

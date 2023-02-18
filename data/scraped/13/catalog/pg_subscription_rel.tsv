@@ -1,0 +1,5 @@
+Name	Type	References	Description
+srsubid	oid		"reference to subscription"
+srrelid	oid		"reference to relation"
+srsubstate	char		"state code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)"
+srsublsn	pg_lsn		"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"

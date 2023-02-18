@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	adrelid	oid	false		"the table this column belongs to"
-2	adnum	int2	false		"the number of the column"
-3	adbin	pg_node_tree	true		"the internal representation of the column default value"
-4	adsrc	text	true		"a human-readable representation of the default value"

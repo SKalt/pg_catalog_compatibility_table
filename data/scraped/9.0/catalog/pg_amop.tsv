@@ -1,0 +1,7 @@
+Name	Type	References	Description
+amopfamily	oid	pg_opfamily.oid	"the operator family this entry is for"
+amoplefttype	oid	pg_type.oid	"left-hand input data type of operator"
+amoprighttype	oid	pg_type.oid	"right-hand input data type of operator"
+amopstrategy	int2		"operator strategy number"
+amopopr	oid	pg_operator.oid	"oid of the operator"
+amopmethod	oid	pg_am.oid	"index access method operator family is for"

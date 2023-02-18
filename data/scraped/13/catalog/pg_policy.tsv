@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+polname	name		"the name of the policy"
+polrelid	oid		"the table to which the policy applies"
+polcmd	char		"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"
+polpermissive	bool		"is the policy permissive or restrictive?"
+polroles	oid[]		"the roles to which the policy is applied"
+polqual	pg_node_tree		"the expression tree to be added to the security barrier qualifications for queries that use the table"
+polwithcheck	pg_node_tree		"the expression tree to be added to the with check qualifications for queries that attempt to add rows to the table"

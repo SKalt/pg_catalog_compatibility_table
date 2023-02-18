@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		"row identifier (hidden attribute; must be explicitly selected)"
+umuser	oid	pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is public"
+umserver	oid	pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"
+umoptions	text[]		"user mapping specific options, as ""keyword=value"" strings"

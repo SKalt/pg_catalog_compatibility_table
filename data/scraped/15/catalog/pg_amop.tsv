@@ -1,0 +1,10 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+amopfamily	oid		"the operator family this entry is for"
+amoplefttype	oid		"left-hand input data type of operator"
+amoprighttype	oid		"right-hand input data type of operator"
+amopstrategy	int2		"operator strategy number"
+amoppurpose	char		"operator purpose, either s for search or o for ordering"
+amopopr	oid		"oid of the operator"
+amopmethod	oid		"index access method operator family is for"
+amopsortfamily	oid		"the b-tree operator family this entry sorts according to, if an ordering operator; zero if a search operator"

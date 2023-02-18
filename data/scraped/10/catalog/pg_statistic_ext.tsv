@@ -1,0 +1,9 @@
+Name	Type	References	Description
+stxrelid	oid	pg_class.oid	"table containing the columns described by this object"
+stxname	name		"name of the statistics object"
+stxnamespace	oid	pg_namespace.oid	"the oid of the namespace that contains this statistics object"
+stxowner	oid	pg_authid.oid	"owner of the statistics object"
+stxkeys	int2vector	pg_attribute.attnum	"an array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covered"
+stxkind	char[]		"an array containing codes for the enabled statistics kinds; valid values are: d for n-distinct statistics, f for functional dependency statistics"
+stxndistinct	pg_ndistinct		"n-distinct counts, serialized as pg_ndistinct type"
+stxdependencies	pg_dependencies		"functional dependency statistics, serialized as pg_dependencies type"

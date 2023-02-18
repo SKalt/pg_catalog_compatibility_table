@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	defaclrole	oid		pg_authid.oid	"the oid of the role associated with this entry"
-2	defaclnamespace	oid		pg_namespace.oid	"the oid of the namespace associated with this entry, or 0 if none"
-3	defaclobjtype	char			"type of object this entry is for: r = relation (table, view), s = sequence, f = function"
-4	defaclacl	aclitem[]			"access privileges that this type of object should have on creation"

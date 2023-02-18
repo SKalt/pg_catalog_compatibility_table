@@ -1,0 +1,10 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+subdbid	oid	pg_database.oid	"oid of the database which the subscription resides in"
+subname	name		"name of the subscription"
+subowner	oid	pg_authid.oid	"owner of the subscription"
+subenabled	bool		"if true, the subscription is enabled and should be replicating."
+subsynccommit	text		"contains the value of the synchronous_commit setting for the subscription workers."
+subconninfo	text		"connection string to the upstream database"
+subslotname	name		"name of the replication slot in the upstream database (also used for the local replication origin name); null represents none"
+subpublications	text[]		"array of subscribed publication names. these reference the publications on the publisher server. for more on publications"

@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	roleid	oid	false		"id of a role that has a member"
-2	member	oid	false		"id of a role that is a member of roleid"
-3	grantor	oid	false		"id of the role that granted this membership"
-4	admin_option	bool	false		"true if member can grant membership in roleid to others"

@@ -1,6 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	oid	oid	false		"row identifier"
-2	spcname	name	false		"tablespace name"
-3	spcowner	oid	false		"owner of the tablespace, usually the user who created it"
-4	spcacl	aclitem[]	true		"access privileges"
-5	spcoptions	text[]	true		"tablespace-level options, as ""keyword=value"" strings"

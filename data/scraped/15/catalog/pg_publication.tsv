@@ -1,0 +1,10 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+pubname	name		"name of the publication"
+pubowner	oid		"owner of the publication"
+puballtables	bool		"if true, this publication automatically includes all tables in the database, including any that will be created in the future."
+pubinsert	bool		"if true, insert operations are replicated for tables in the publication."
+pubupdate	bool		"if true, update operations are replicated for tables in the publication."
+pubdelete	bool		"if true, delete operations are replicated for tables in the publication."
+pubtruncate	bool		"if true, truncate operations are replicated for tables in the publication."
+pubviaroot	bool		"if true, operations on a leaf partition are replicated using the identity and schema of its topmost partitioned ancestor mentioned in the publication instead of its own."

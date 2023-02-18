@@ -1,0 +1,6 @@
+Name	Type	References	Description
+line_number	int4		"line number of this map in pg_ident.conf"
+map_name	text		"name of the map"
+sys_name	text		"detected user name of the client"
+pg_username	text		"requested postgresql user name"
+error	text		"if not null, an error message indicating why this line could not be processed"

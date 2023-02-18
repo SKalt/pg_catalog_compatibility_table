@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+adrelid	oid		"the table this column belongs to"
+adnum	int2		"the number of the column"
+adbin	pg_node_tree		"the column default value, in nodetostring() representation. use pg_get_expr(adbin, adrelid) to convert it to an sql expression."

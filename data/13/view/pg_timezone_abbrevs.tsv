@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	abbrev	text	true		"time zone abbreviation"
-2	utc_offset	interval	true		"offset from utc (positive means east of greenwich)"
-3	is_dst	bool	true		"true if this is a daylight-savings abbreviation"

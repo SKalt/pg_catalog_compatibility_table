@@ -1,0 +1,11 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+collname	name		"collation name (unique per namespace and encoding)"
+collnamespace	oid	pg_namespace.oid	"the oid of the namespace that contains this collation"
+collowner	oid	pg_authid.oid	"owner of the collation"
+collprovider	char		"provider of the collation: d = database default, c = libc, i = icu"
+collisdeterministic	bool		"is the collation deterministic?"
+collencoding	int4		"encoding in which the collation is applicable, or -1 if it works for any encoding"
+collcollate	name		"lc_collate for this collation object"
+collctype	name		"lc_ctype for this collation object"
+collversion	text		"provider-specific version of the collation. this is recorded when the collation is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption."

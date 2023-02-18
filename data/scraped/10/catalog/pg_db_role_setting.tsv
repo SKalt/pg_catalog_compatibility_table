@@ -1,0 +1,4 @@
+Name	Type	References	Description
+setdatabase	oid	pg_database.oid	"the oid of the database the setting is applicable to, or zero if not database-specific"
+setrole	oid	pg_authid.oid	"the oid of the role the setting is applicable to, or zero if not role-specific"
+setconfig	text[]		"defaults for run-time configuration variables"

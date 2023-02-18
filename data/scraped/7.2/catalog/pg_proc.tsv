@@ -1,0 +1,18 @@
+Name	Type	References	Description
+proname	name		"name of the function"
+proowner	int4	pg_shadow.usesysid	"owner (creator) of the function"
+prolang	oid	pg_language.oid	"implementation language or call interface of this function"
+proisinh	bool		unused
+proistrusted	bool		"not functional"
+proiscachable	bool		"function returns same result for same input values"
+proisstrict	bool		"function returns null if any call argument is null. in that case the function won't actually be called at all. functions that are not ""strict"" must be prepared to handle null inputs."
+pronargs	int2		"number of arguments"
+proretset	bool		"function returns a set (ie, multiple values of the specified datatype)"
+prorettype	oid	pg_type.oid	"data type of the return value (0 if the function does not return a value)"
+proargtypes	oidvector	pg_type.oid	"a vector with the data types of the function arguments"
+probyte_pct	int4		"dead code"
+properbyte_cpu	int4		"dead code"
+propercall_cpu	int4		"dead code"
+prooutin_ratio	int4		"dead code"
+prosrc	text		"this tells the function handler how to invoke the function. it might be the actual source code of the function for interpreted languages, a link symbol, a file name, or just about anything else, depending on the implementation language/call convention."
+probin	bytea		"additional information about how to invoke the function. again, the interpretation is language-specific."

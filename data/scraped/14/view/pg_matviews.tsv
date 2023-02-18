@@ -1,0 +1,8 @@
+Name	Type	References	Description
+schemaname	name		"name of schema containing materialized view"
+matviewname	name		"name of materialized view"
+matviewowner	name		"name of materialized view's owner"
+tablespace	name		"name of tablespace containing materialized view (null if default for database)"
+hasindexes	bool		"true if materialized view has (or recently had) any indexes"
+ispopulated	bool		"true if materialized view is currently populated"
+definition	text		"materialized view definition (a reconstructed select query)"

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+amname	name		"name of the access method"
+amhandler	regproc		"oid of a handler function that is responsible for supplying information about the access method"
+amtype	char		"t = table (including materialized views), i = index."

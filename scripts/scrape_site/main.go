@@ -78,8 +78,8 @@ func getVersions(baseCollector *colly.Collector, siteDir string) (versions []str
 }
 
 // create or truncate a target file for writing a tsv
-func ensureTargetFile(dir, version, kind, relation string) *os.File {
-	targetDir := path.Join(dir, version, kind)
+func ensureTargetFile(dataDir, version, kind, relation string) *os.File {
+	targetDir := path.Join(dataDir, "scraped", version, kind)
 	if err := os.MkdirAll(targetDir, os.ModeDir|0o776); err != nil {
 		log.Fatal(err)
 	}
@@ -113,10 +113,9 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(common.ColTsvHeader)
-	index := 0
+	tsv.WriteString(common.ScrapedColTsvHeader)
 	trs.Each(func(i int, tr *goquery.Selection) {
-		col := common.ColData{}
+		col := common.ScrapedColData{}
 		tr.Find("td").Each(func(j int, td *goquery.Selection) {
 			text := normalizeString(td.Text())
 			if j >= len(headers) {
@@ -137,12 +136,6 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 				log.Fatalf("unknown header: '%s' @ %s", headers[j], html.Request.URL)
 			}
 		})
-		if strings.Contains(col.Description, "explicitly selected") {
-			col.Index = -1
-		} else {
-			index += 1
-			col.Index = index
-		}
 		tsv.WriteString(col.TsvRow())
 	})
 }
@@ -162,9 +155,9 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 			log.Fatal(err)
 		}
 	}()
-	tsv.WriteString(common.ColTsvHeader)
+	tsv.WriteString(common.ScrapedColTsvHeader)
 	rows.Each(func(i int, tr *goquery.Selection) {
-		col := common.ColData{Index: i + 1}
+		col := common.ScrapedColData{}
 		row := tr.Find(".column_definition").First()
 		colNames := row.Find(".structfield")
 		col.Name = normalizeString(colNames.First().Text())
@@ -266,7 +259,7 @@ func scrapeEverything(dataDir string, dbg bool) {
 	collector := baseCollector.Clone() // just in case
 
 	collector.OnHTML("html", func(html *colly.HTMLElement) {
-		defer progress.Increment()
+		progress.Increment()
 		parts := strings.Split(strings.Split(html.Request.URL.Path, "/docs/")[1], "/")
 		if len(parts) != 2 {
 			log.Fatalf("unexpected url parts: %v", parts)

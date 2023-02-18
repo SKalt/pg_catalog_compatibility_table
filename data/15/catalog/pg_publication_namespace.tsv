@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	oid	oid	false		"row identifier"
-2	pnpubid	oid	false		"reference to publication"
-3	pnnspid	oid	false		"reference to schema"

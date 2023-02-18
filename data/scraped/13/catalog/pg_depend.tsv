@@ -1,0 +1,8 @@
+Name	Type	References	Description
+classid	oid		"the oid of the system catalog the dependent object is in"
+objid	oid		"the oid of the specific dependent object"
+objsubid	int4		"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero."
+refclassid	oid		"the oid of the system catalog the referenced object is in"
+refobjid	oid		"the oid of the specific referenced object"
+refobjsubid	int4		"for a table column, this is the column number (the refobjid and refclassid refer to the table itself). for all other object types, this column is zero."
+deptype	char		"a code defining the specific semantics of this dependency relationship; see text"

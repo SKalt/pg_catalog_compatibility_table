@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	lanname	name	false		"name of the language"
-2	lanowner	oid	false		"owner of the language"
-3	lanispl	bool	false		"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this might be replaced by a different mechanism in the future."
-4	lanpltrusted	bool	false		"true if this is a trusted language, which means that it is believed not to grant access to anything outside the normal sql execution environment. only superusers can create functions in untrusted languages."
-5	lanplcallfoid	oid	false		"for noninternal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language"
-6	laninline	oid	false		"this references a function that is responsible for executing ""inline"" anonymous code blocks (do blocks). zero if inline blocks are not supported."
-7	lanvalidator	oid	false		"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. zero if no validator is provided."
-8	lanacl	aclitem[]	true		"access privileges; see grant and revoke for details"

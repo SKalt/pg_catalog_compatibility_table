@@ -1,0 +1,5 @@
+Name	Type	References	Description
+cfgname	name		"text search configuration name"
+cfgnamespace	oid	pg_namespace.oid	"the oid of the namespace that contains this configuration"
+cfgowner	oid	pg_authid.oid	"owner of the configuration"
+cfgparser	oid	pg_ts_parser.oid	"the oid of the text search parser for this configuration"

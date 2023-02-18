@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	umuser	oid		pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is public"
-2	umserver	oid		pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"
-3	umoptions	text[]			"user mapping specific options, as ""keyword=value"" strings"

@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
--2	oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
-1	lomowner	oid	false		"owner of the large object"
-2	lomacl	aclitem[]	true		"access privileges; see grant and revoke for details"

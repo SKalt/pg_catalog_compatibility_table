@@ -1,7 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	relation	oid		pg_class.oid	"oid of the locked relation, or null if the lockable object is a transaction id"
-2	database	oid		pg_database.oid	"oid of the database in which the locked relation exists, or zero if the locked relation is a globally-shared table, or null if the lockable object is a transaction id"
-3	transaction	xid			"id of a transaction, or null if the lockable object is a relation"
-4	pid	integer			"process id of a server process holding or awaiting this lock"
-5	mode	text			"name of the lock mode held or desired by this process"
-6	granted	boolean			"true if lock is held, false if lock is awaited"

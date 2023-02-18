@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	schemaname	name	true		"name of schema containing table policy is on"
-2	tablename	name	true		"name of table policy is on"
-3	policyname	name	true		"name of policy"
-4	roles	name[]	true		"the roles to which this policy applies"
-5	cmd	text	true		"the command type to which the policy is applied"
-6	qual	text	true		"the expression added to the security barrier qualifications for queries that this policy applies to"
-7	with_check	text	true		"the expression added to the with check qualifications for queries that attempt to add rows to this table"

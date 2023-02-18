@@ -1,0 +1,13 @@
+Name	Type	References	Description
+slot_name	name		"a unique, cluster-wide identifier for the replication slot"
+plugin	name		"the base name of the shared object containing the output plugin this logical slot is using, or null for physical slots."
+slot_type	text		"the slot type - physical or logical"
+datoid	oid	pg_database.oid	"the oid of the database this slot is associated with, or null. only logical slots have an associated database."
+database	text	pg_database.datname	"the name of the database this slot is associated with, or null. only logical slots have an associated database."
+temporary	boolean		"true if this is a temporary replication slot. temporary slots are not saved to disk and are automatically dropped on error or when the session has finished."
+active	boolean		"true if this slot is currently actively being used"
+active_pid	integer		"the process id of the session using this slot if the slot is currently actively being used. null if inactive."
+xmin	xid		"the oldest transaction that this slot needs the database to retain. vacuum cannot remove tuples deleted by any later transaction."
+catalog_xmin	xid		"the oldest transaction affecting the system catalogs that this slot needs the database to retain. vacuum cannot remove catalog tuples deleted by any later transaction."
+restart_lsn	pg_lsn		"the address (lsn) of oldest wal which still might be required by the consumer of this slot and thus won't be automatically removed during checkpoints. null if the lsn of this slot has never been reserved."
+confirmed_flush_lsn	pg_lsn		"the address (lsn) up to which the logical slot's consumer has confirmed receiving data. data older than this is not available anymore. null for physical slots."

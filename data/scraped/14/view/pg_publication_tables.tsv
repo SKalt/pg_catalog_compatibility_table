@@ -1,0 +1,4 @@
+Name	Type	References	Description
+pubname	name		"name of publication"
+schemaname	name		"name of schema containing table"
+tablename	name		"name of table"

@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	schemaname	name	true		"name of schema containing view"
-2	viewname	name	true		"name of view"
-3	viewowner	name	true		"name of view's owner"
-4	definition	text	true		"view definition (a reconstructed select query)"

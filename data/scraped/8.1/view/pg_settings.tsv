@@ -1,0 +1,11 @@
+Name	Type	References	Description
+name	text		"run-time configuration parameter name"
+setting	text		"current value of the parameter"
+category	text		"logical group of the parameter"
+short_desc	text		"a brief description of the parameter"
+extra_desc	text		"additional, more detailed, information about the parameter"
+context	text		"context required to set the parameter's value"
+vartype	text		"parameter type (bool, integer, real, or string)"
+source	text		"source of the current parameter value"
+min_val	text		"minimum allowed value of the parameter (null for nonnumeric values)"
+max_val	text		"maximum allowed value of the parameter (null for nonnumeric values)"

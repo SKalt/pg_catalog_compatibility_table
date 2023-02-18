@@ -1,0 +1,4 @@
+Name	Type	References	Description
+groname	name		"name of the group"
+grosysid	oid		"id of this group"
+grolist	oid[]		"an array containing the ids of the roles in this group"

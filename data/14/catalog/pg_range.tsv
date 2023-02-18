@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	rngtypid	oid	false		"oid of the range type"
-2	rngsubtype	oid	false		"oid of the element type (subtype) of this range type"
-3	rngmultitypid	oid	false		"oid of the multirange type for this range type"
-4	rngcollation	oid	false		"oid of the collation used for range comparisons, or zero if none"
-5	rngsubopc	oid	false		"oid of the subtype's operator class used for range comparisons"
-6	rngcanonical	regproc	false		"oid of the function to convert a range value into canonical form, or zero if none"
-7	rngsubdiff	regproc	false		"oid of the function to return the difference between two element values as double precision, or zero if none"

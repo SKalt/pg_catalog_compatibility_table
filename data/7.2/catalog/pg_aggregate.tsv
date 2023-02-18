@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	aggname	name			"name of the aggregate function"
-2	aggowner	int4		pg_shadow.usesysid	"owner (creator) of the aggregate function"
-3	aggtransfn	"regproc (function)"		pg_proc.oid	"transition function"
-4	aggfinalfn	"regproc (function)"		pg_proc.oid	"final function"
-5	aggbasetype	oid		pg_type.oid	"the input datatype for this aggregate function"
-6	aggtranstype	oid		pg_type.oid	"the type of the aggregate function's internal transition (state) data"
-7	aggfinaltype	oid		pg_type.oid	"the type of the result"
-8	agginitval	text			"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if the field is null, the transition state value starts out null."

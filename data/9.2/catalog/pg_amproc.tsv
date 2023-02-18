@@ -1,6 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	amprocfamily	oid	false		"the operator family this entry is for"
-2	amproclefttype	oid	false		"left-hand input data type of associated operator"
-3	amprocrighttype	oid	false		"right-hand input data type of associated operator"
-4	amprocnum	int2	false		"support procedure number"
-5	amproc	regproc	false		"oid of the procedure"

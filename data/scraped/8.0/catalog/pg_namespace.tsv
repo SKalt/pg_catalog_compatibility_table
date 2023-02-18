@@ -1,0 +1,4 @@
+Name	Type	References	Description
+nspname	name		"name of the namespace"
+nspowner	int4	pg_shadow.usesysid	"owner of the namespace"
+nspacl	aclitem[]		"access privileges; see grant and revoke for details."

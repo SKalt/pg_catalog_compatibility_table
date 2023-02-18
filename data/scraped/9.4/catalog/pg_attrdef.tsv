@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier (hidden attribute; must be explicitly selected)"
+adrelid	oid	pg_class.oid	"the table this column belongs to"
+adnum	int2	pg_attribute.attnum	"the number of the column"
+adbin	pg_node_tree		"the internal representation of the column default value"
+adsrc	text		"a human-readable representation of the default value"

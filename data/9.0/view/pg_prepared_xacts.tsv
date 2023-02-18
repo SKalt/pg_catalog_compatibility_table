@@ -1,6 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	transaction	xid			"numeric transaction identifier of the prepared transaction"
-2	gid	text			"global transaction identifier that was assigned to the transaction"
-3	prepared	"timestamp with time zone"			"time at which the transaction was prepared for commit"
-4	owner	name		pg_authid.rolname	"name of the user that executed the transaction"
-5	database	name		pg_database.datname	"name of the database in which the transaction was executed"

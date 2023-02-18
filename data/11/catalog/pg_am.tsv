@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
--2	oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
-1	amname	name	false		"name of the access method"
-2	amhandler	regproc	false		"oid of a handler function that is responsible for supplying information about the access method"
-3	amtype	char	false		"currently always i to indicate an index access method; other values may be allowed in future"

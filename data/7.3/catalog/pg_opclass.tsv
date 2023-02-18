@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	opcamid	oid		pg_am.oid	"index access method opclass is for"
-2	opcname	name			"name of this opclass"
-3	opcnamespace	oid		pg_namespace.oid	"namespace of this opclass"
-4	opcowner	int4		pg_shadow.usesysid	"opclass owner"
-5	opcintype	oid		pg_type.oid	"type of input data for opclass"
-6	opcdefault	bool			"true if opclass is default for opcintype"
-7	opckeytype	oid		pg_type.oid	"type of index data, or zero if same as opcintype"

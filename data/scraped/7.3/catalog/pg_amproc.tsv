@@ -1,0 +1,4 @@
+Name	Type	References	Description
+amopclaid	oid	pg_opclass.oid	"the index opclass this entry is for"
+amprocnum	int2		"support procedure index"
+amproc	regproc	pg_proc.oid	"oid of the proc"

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+amopclaid	oid	pg_opclass.oid	"the index operator class this entry is for"
+amprocsubtype	oid	pg_type.oid	"subtype, if cross-type routine, else zero"
+amprocnum	int2		"support procedure number"
+amproc	regproc	pg_proc.oid	"oid of the procedure"

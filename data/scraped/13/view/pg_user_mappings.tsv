@@ -1,0 +1,7 @@
+Name	Type	References	Description
+umid	oid		"oid of the user mapping"
+srvid	oid		"the oid of the foreign server that contains this mapping"
+srvname	name		"name of the foreign server"
+umuser	oid		"oid of the local role being mapped, 0 if the user mapping is public"
+usename	name		"name of the local user to be mapped"
+umoptions	text[]		"user mapping specific options, as ""keyword=value"" strings"

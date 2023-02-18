@@ -1,0 +1,6 @@
+Name	Type	References	Description
+amprocfamily	oid	pg_opfamily.oid	"the operator family this entry is for"
+amproclefttype	oid	pg_type.oid	"left-hand input data type of associated operator"
+amprocrighttype	oid	pg_type.oid	"right-hand input data type of associated operator"
+amprocnum	int2		"support procedure number"
+amproc	regproc	pg_proc.oid	"oid of the procedure"

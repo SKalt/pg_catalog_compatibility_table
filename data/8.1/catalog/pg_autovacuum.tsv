@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	vacrelid	oid		pg_class.oid	"the table this entry is for"
-2	enabled	bool			"if false, this table is never autovacuumed"
-3	vac_base_thresh	integer			"minimum number of modified tuples before vacuum"
-4	vac_scale_factor	float4			"multiplier for reltuples to add to vac_base_thresh"
-5	anl_base_thresh	integer			"minimum number of modified tuples before analyze"
-6	anl_scale_factor	float4			"multiplier for reltuples to add to anl_base_thresh"
-7	vac_cost_delay	integer			"custom vacuum_cost_delay parameter"
-8	vac_cost_limit	integer			"custom vacuum_cost_limit parameter"

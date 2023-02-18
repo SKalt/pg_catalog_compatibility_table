@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	partrelid	oid			"the oid of the pg_class entry for this partitioned table"
-2	partstrat	char			"partitioning strategy; l = list partitioned table, r = range partitioned table"
-3	partnatts	int2			"the number of columns in partition key"
-4	partattrs	int2vector			"this is an array of partnatts values that indicate which table columns are part of the partition key. for example, a value of 1 3 would mean that the first and the third table columns make up the partition key. a zero in this array indicates that the corresponding partition key column is an expression, rather than a simple column reference."
-5	partclass	oidvector			"for each column in the partition key, this contains the oid of the operator class to use. see pg_opclass for details."
-6	partcollation	oidvector			"for each column in the partition key, this contains the oid of the collation to use for partitioning, or zero if the column is not of a collatable data type."
-7	partexprs	pg_node_tree			"expression trees (in nodetostring() representation) for partition key columns that are not simple column references. this is a list with one element for each zero entry in partattrs. null if all partition key columns are simple references."

@@ -1,0 +1,9 @@
+Name	Type	References	Description
+aggname	name		"name of the aggregate function"
+aggowner	int4	pg_shadow.usesysid	"owner (creator) of the aggregate function"
+aggtransfn	"regproc (function)"	pg_proc.oid	"transition function"
+aggfinalfn	"regproc (function)"	pg_proc.oid	"final function"
+aggbasetype	oid	pg_type.oid	"the input datatype for this aggregate function"
+aggtranstype	oid	pg_type.oid	"the type of the aggregate function's internal transition (state) data"
+aggfinaltype	oid	pg_type.oid	"the type of the result"
+agginitval	text		"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if the field is null, the transition state value starts out null."

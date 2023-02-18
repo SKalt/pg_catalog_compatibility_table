@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+cfgname	name		"text search configuration name"
+cfgnamespace	oid		"the oid of the namespace that contains this configuration"
+cfgowner	oid		"owner of the configuration"
+cfgparser	oid		"the oid of the text search parser for this configuration"

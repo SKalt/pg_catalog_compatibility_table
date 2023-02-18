@@ -1,0 +1,4 @@
+Name	Type	References	Description
+enumtypid	oid	pg_type.oid	"the oid of the pg_type entry owning this enum value"
+enumsortorder	float4		"the sort position of this enum value within its enum type"
+enumlabel	name		"the textual label for this enum value"

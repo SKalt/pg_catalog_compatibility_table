@@ -1,0 +1,6 @@
+Name	Type	References	Description
+name	text		"the identifier of the prepared statement"
+statement	text		"the query string submitted by the client to create this prepared statement. for prepared statements created via sql, this is the prepare statement submitted by the client. for prepared statements created via the frontend/backend protocol, this is the text of the prepared statement itself"
+prepare_time	timestamptz		"the time at which the prepared statement was created"
+parameter_types	regtype[]		"the expected parameter types for the prepared statement in the form of an array of regtype. the oid corresponding to an element of this array can be obtained by casting the regtype value to oid"
+from_sql	boolean		"true if the prepared statement was created via the prepare sql statement; false if the statement was prepared via the frontend/backend protocol"

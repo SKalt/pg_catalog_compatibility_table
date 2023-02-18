@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	amopclaid	oid		pg_opclass.oid	"the index operator class this entry is for"
-2	amprocnum	int2			"support procedure number"
-3	amproc	regproc		pg_proc.oid	"oid of the procedure"

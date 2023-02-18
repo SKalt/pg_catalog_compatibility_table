@@ -1,0 +1,9 @@
+Name	Type	References	Description
+vacrelid	oid	pg_class.oid	"the table this entry is for"
+enabled	bool		"if false, this table is never autovacuumed"
+vac_base_thresh	integer		"minimum number of modified tuples before vacuum"
+vac_scale_factor	float4		"multiplier for reltuples to add to vac_base_thresh"
+anl_base_thresh	integer		"minimum number of modified tuples before analyze"
+anl_scale_factor	float4		"multiplier for reltuples to add to anl_base_thresh"
+vac_cost_delay	integer		"custom vacuum_cost_delay parameter"
+vac_cost_limit	integer		"custom vacuum_cost_limit parameter"

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+local_id	oid	pg_replication_origin.roident	"internal node identifier"
+external_id	text	pg_replication_origin.roname	"external node identifier"
+remote_lsn	pg_lsn		"the origin node's lsn up to which data has been replicated."
+local_lsn	pg_lsn		"this node's lsn at which remote_lsn has been replicated. used to flush commit records before persisting data to disk when using asynchronous commits."

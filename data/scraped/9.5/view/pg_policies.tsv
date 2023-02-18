@@ -1,0 +1,8 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	"name of schema containing table policy is on"
+tablename	name	pg_class.relname	"name of table policy is on"
+policyname	name	pg_policy.polname	"name of policy"
+roles	name[]		"the roles to which this policy applies"
+cmd	text		"the command type to which the policy is applied"
+qual	text		"the expression added to the security barrier qualifications for queries that this policy applies to"
+with_check	text		"the expression added to the with check qualifications for queries that attempt to add rows to this table"

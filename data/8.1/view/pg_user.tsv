@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	usename	name			"user name"
-2	usesysid	int4			"user id (arbitrary number used to reference this user)"
-3	usecreatedb	bool			"user may create databases"
-4	usesuper	bool			"user is a superuser"
-5	usecatupd	bool			"user may update system catalogs. (even a superuser may not do this unless this column is true.)"
-6	passwd	text			"not the password (always reads as ********)"
-7	valuntil	abstime			"password expiry time (only used for password authentication)"
-8	useconfig	text[]			"session defaults for run-time configuration variables"

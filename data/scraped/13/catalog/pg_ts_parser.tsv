@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+prsname	name		"text search parser name"
+prsnamespace	oid		"the oid of the namespace that contains this parser"
+prsstart	regproc		"oid of the parser's startup function"
+prstoken	regproc		"oid of the parser's next-token function"
+prsend	regproc		"oid of the parser's shutdown function"
+prsheadline	regproc		"oid of the parser's headline function"
+prslextype	regproc		"oid of the parser's lextype function"

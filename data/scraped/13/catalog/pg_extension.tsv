@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+extname	name		"name of the extension"
+extowner	oid		"owner of the extension"
+extnamespace	oid		"schema containing the extension's exported objects"
+extrelocatable	bool		"true if extension can be relocated to another schema"
+extversion	text		"version name for the extension"
+extconfig	oid[]		"array of regclass oids for the extension's configuration table(s), or null if none"
+extcondition	text[]		"array of where-clause filter conditions for the extension's configuration table(s), or null if none"

@@ -1,6 +1,0 @@
-Index	Name	Type	Nullable	References	Description
--2	oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
-1	opfmethod	oid	false		"index access method operator family is for"
-2	opfname	name	false		"name of this operator family"
-3	opfnamespace	oid	false		"namespace of this operator family"
-4	opfowner	oid	false		"owner of the operator family"

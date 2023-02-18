@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	name	name			"extension name"
-2	version	text			"version name"
-3	installed	bool			"true if this version of this extension is currently installed"
-4	superuser	bool			"true if only superusers are allowed to install this extension"
-5	relocatable	bool			"true if extension can be relocated to another schema"
-6	schema	name			"name of the schema that the extension must be installed into, or null if partially or fully relocatable"
-7	requires	name[]			"names of prerequisite extensions, or null if none"
-8	comment	text			"comment string from the extension's control file"

@@ -1,0 +1,4 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+prpubid	oid		"reference to publication"
+prrelid	oid		"reference to relation"

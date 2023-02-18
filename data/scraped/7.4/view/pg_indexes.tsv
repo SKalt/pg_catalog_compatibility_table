@@ -1,0 +1,5 @@
+Name	Type	References	Description
+schemaname	name	pg_namespace.nspname	"name of schema containing table and index"
+tablename	name	pg_class.relname	"name of table the index is for"
+indexname	name	pg_class.relname	"name of index"
+indexdef	text		"index definition (a reconstructed creation command)"

@@ -1,0 +1,9 @@
+Name	Type	References	Description
+seqrelid	oid	pg_class.oid	"the oid of the pg_class entry for this sequence"
+seqtypid	oid	pg_type.oid	"data type of the sequence"
+seqstart	int8		"start value of the sequence"
+seqincrement	int8		"increment value of the sequence"
+seqmax	int8		"maximum value of the sequence"
+seqmin	int8		"minimum value of the sequence"
+seqcache	int8		"cache size of the sequence"
+seqcycle	bool		"whether the sequence cycles"

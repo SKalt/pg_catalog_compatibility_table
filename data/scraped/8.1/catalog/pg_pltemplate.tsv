@@ -1,0 +1,7 @@
+Name	Type	References	Description
+tmplname	name		"name of the language this template is for"
+tmpltrusted	boolean		"true if language is considered trusted"
+tmplhandler	text		"name of call handler function"
+tmplvalidator	text		"name of validator function, or null if none"
+tmpllibrary	text		"path of shared library that implements language"
+tmplacl	aclitem[]		"access privileges for template (not yet used)"

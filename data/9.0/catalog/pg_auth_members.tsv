@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	roleid	oid		pg_authid.oid	"id of a role that has a member"
-2	member	oid		pg_authid.oid	"id of a role that is a member of roleid"
-3	grantor	oid		pg_authid.oid	"id of the role that granted this membership"
-4	admin_option	bool			"true if member can grant membership in roleid to others"

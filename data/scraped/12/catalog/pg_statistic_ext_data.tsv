@@ -1,0 +1,5 @@
+Name	Type	References	Description
+stxoid	oid	pg_statistic_ext.oid	"extended statistic object containing the definition for this data"
+stxdndistinct	pg_ndistinct		"n-distinct counts, serialized as pg_ndistinct type"
+stxddependencies	pg_dependencies		"functional dependency statistics, serialized as pg_dependencies type"
+stxdmcv	pg_mcv_list		"mcv (most-common values) list statistics, serialized as pg_mcv_list type"

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+schemaname	name		"name of schema containing view"
+viewname	name		"name of view"
+viewowner	name		"name of view's owner"
+definition	text		"view definition (a reconstructed select query)"

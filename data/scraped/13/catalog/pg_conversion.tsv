@@ -1,0 +1,9 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+conname	name		"conversion name (unique within a namespace)"
+connamespace	oid		"the oid of the namespace that contains this conversion"
+conowner	oid		"owner of the conversion"
+conforencoding	int4		"source encoding id"
+contoencoding	int4		"destination encoding id"
+conproc	regproc		"conversion function"
+condefault	bool		"true if this is the default conversion"

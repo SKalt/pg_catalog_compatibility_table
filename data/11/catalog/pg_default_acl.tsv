@@ -1,6 +1,0 @@
-Index	Name	Type	Nullable	References	Description
--2	oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
-1	defaclrole	oid	false		"the oid of the role associated with this entry"
-2	defaclnamespace	oid	false		"the oid of the namespace associated with this entry, or 0 if none"
-3	defaclobjtype	char	false		"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schema"
-4	defaclacl	aclitem[]	true		"access privileges that this type of object should have on creation"

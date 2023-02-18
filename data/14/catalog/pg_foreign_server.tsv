@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	oid	oid	false		"row identifier"
-2	srvname	name	false		"name of the foreign server"
-3	srvowner	oid	false		"owner of the foreign server"
-4	srvfdw	oid	false		"oid of the foreign-data wrapper of this foreign server"
-5	srvtype	text	true		"type of the server (optional)"
-6	srvversion	text	true		"version of the server (optional)"
-7	srvacl	aclitem[]	true		"access privileges"
-8	srvoptions	text[]	true		"foreign server specific options, as ""keyword=value"" strings"

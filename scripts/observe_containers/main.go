@@ -18,6 +18,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+const dirMode = os.ModeDir | 0o776
+
 //go:embed get_columns.sql
 var colQuery string
 
@@ -57,13 +59,9 @@ func getPort(version string) string {
 	return fmt.Sprintf("50%02d%d", major, minor)
 }
 
-func unescapeTsvCell(cell string) string {
-	return strings.ReplaceAll(strings.Trim(cell, `"`), `""`, `"`)
-}
-
 // find the postgres version numbers in the data-dir in ascending order
-func getPgVersions(dataDir string) []string {
-	entries, err := os.ReadDir(dataDir)
+func getPgVersions(scrapedDataDir string) []string {
+	entries, err := os.ReadDir(scrapedDataDir)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -98,13 +96,13 @@ func getServiceVersions(versions []string) []string {
 	return versions[i:]
 }
 
-func observeFnDefs(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
+func observeFnDefs(observationDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
 	defer waiter.Done()
 	stmt, err := db.Prepare(fnDefQuery)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fnTsvPath := filepath.Join(dataDir, version, "functions.tsv")
+	fnTsvPath := filepath.Join(observationDir, version, "functions.tsv")
 	fns := map[string]uint8{}
 	{ // lifetime for original tsv data
 		data, err := os.ReadFile(fnTsvPath)
@@ -124,7 +122,7 @@ func observeFnDefs(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) 
 			// }
 		}
 	}
-	fnsDir := filepath.Join(dataDir, version, "functions")
+	fnsDir := filepath.Join(observationDir, version, "functions")
 	for fn := range fns {
 		row, err := stmt.Query(fn)
 		if err != nil {
@@ -152,110 +150,30 @@ func observeFnDefs(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) 
 	}
 }
 
-func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *sync.WaitGroup) {
-	defer waiter.Done()
-	data, err := os.ReadFile(tsvPath)
+func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waiter *sync.WaitGroup) {
+	log.Debugf("observing relation %s/%s", relationsDir, relation)
+	rows, err := stmt.Query(relation)
 	if err != nil {
 		log.Fatal(err)
 	}
-	file, err := os.Create(tsvPath) // truncate the TSV
+	catalogTsvPath := filepath.Join(relationsDir, relation+".tsv")
+	file, err := os.Create(catalogTsvPath)
 	if err != nil {
 		log.Fatal(err)
 	}
 	tsv := bufio.NewWriter(file)
 	defer func() {
-		if err := tsv.Flush(); err != nil {
+		if err = tsv.Flush(); err != nil {
 			log.Fatal(err)
 		}
 		if err = file.Close(); err != nil {
 			log.Fatal(err)
 		}
+		waiter.Done()
 	}()
-	_, err = tsv.WriteString(common.ColTsvHeader)
-	if err != nil {
+	if _, err = tsv.WriteString(common.ObservedColTsvHeader); err != nil {
 		log.Fatal(err)
 	}
-	lines := strings.Split(string(data), "\n")
-	prev := make(map[string]common.ColData, len(lines)-1)
-	for i, line := range lines {
-		if i == 0 || line == "" {
-			continue // skip the header and footer
-		}
-		cols := strings.Split(line, "\t")
-		_index, err := strconv.ParseInt(cols[common.TsvColIndex], 10, 32)
-		if err != nil {
-			log.Fatal(err)
-		}
-		result := common.ColData{Index: int(_index)}
-		result.Name = cols[common.TsvColName] // trust that col names are snake_case
-		result.Type = unescapeTsvCell(cols[common.TsvColType])
-		result.Description = unescapeTsvCell(cols[common.TsvColDescription])
-		result.References = unescapeTsvCell(cols[common.TsvColReferences])
-		prev[result.Name] = result
-	}
-	for _, row := range observations {
-		if doc, ok := prev[row.Name]; ok {
-			delete(prev, row.Name)
-			switch row.Type {
-			case "boolean":
-				row.Type = "bool"
-			case "smallint":
-				row.Type = "int2"
-			case "integer":
-				row.Type = "int4"
-			case "bigint":
-				row.Type = "int8"
-			case "smallint[]":
-				row.Type = "int2[]"
-			case "integer[]":
-				row.Type = "int4[]"
-			case "bigint[]":
-				row.Type = "int8[]"
-			case "timestamp with time zone":
-				row.Type = "timestamptz"
-			case "real":
-				row.Type = "float4"
-			case "real[]":
-				row.Type = "float4[]"
-			}
-			if row.Type != doc.Type {
-				log.Debugf("%s:%d:%s type '%s' -> '%s'", tsvPath, row.Index, row.Name, doc.Type, row.Type)
-			}
-			row.Description = doc.Description
-			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
-				log.Fatal(err)
-			}
-		} else if row.Index > 0 {
-			row.Description = "<undocumented>"
-			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
-				log.Fatal(err)
-			}
-		}
-	}
-	if len(prev) > 0 {
-		remaining := make([]common.ColData, 0, len(prev))
-		for _, row := range prev {
-			remaining = append(remaining, row)
-		}
-		sort.SliceStable(remaining, func(i, j int) bool {
-			return remaining[i].Index < remaining[j].Index
-		})
-		for _, row := range remaining {
-			log.Warnf("unobserved column %s @ %s", row.Name, tsvPath)
-			if _, err := tsv.WriteString(row.TsvRow()); err != nil {
-				log.Fatal(err)
-			}
-		}
-	}
-}
-func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waiter *sync.WaitGroup) {
-	log.Debugf("observing relation %s/%s", relationsDir, relation)
-	defer waiter.Done()
-	rows, err := stmt.Query(relation)
-	if err != nil {
-		log.Fatal(err)
-	}
-	results := []common.ColData{}
 	for rows.Next() {
 		var n int
 		var name, kind string
@@ -267,7 +185,7 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 		if strings.HasPrefix(kind, `"char`) {
 			kind = strings.ReplaceAll(kind, `"`, "")
 		}
-		result := common.ColData{Index: n, Name: name, Type: kind}
+		result := common.ObservedColData{Name: name, Type: kind, Nullable: ""}
 		if notNullable != nil {
 			if *notNullable {
 				result.Nullable = "false"
@@ -279,17 +197,18 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 			log.Fatalf("%s.%s has default '%s'", "pg_proc", result.Name, *defaultExpr)
 			// result.defaultExpr = *defaultExpr
 		}
-		results = append(results, result)
+		if _, err = tsv.WriteString(result.TsvRow()); err != nil {
+			log.Fatal(err)
+		}
 	}
-	catalogTsv := filepath.Join(relationsDir, relation+".tsv")
-	waiter.Add(1)
-	go patchRelationTsv(catalogTsv, results, waiter)
 }
 
-func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, waiter *sync.WaitGroup) {
-	log.Debugf("observing catalogs for version %s", version)
-	defer waiter.Done()
-	relationDir := filepath.Join(dataDir, version, relationKind)
+func observeRelationKind(observationDir, version, relationKind string, conn *sql.DB, waiter *sync.WaitGroup) {
+	log.Debugf("observing relations of kind %s for version %s", relationKind, version)
+	relationDir := filepath.Join(observationDir, version, relationKind)
+	if err := os.MkdirAll(relationDir, dirMode); err != nil {
+		log.Fatal(err)
+	}
 	tsvs, err := os.ReadDir(relationDir)
 	if err != nil {
 		log.Fatal(err)
@@ -303,7 +222,10 @@ func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, wa
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer txn.Rollback()
+	defer func() {
+		txn.Rollback()
+		waiter.Done()
+	}()
 	stmt, err := txn.Prepare(colQuery)
 	if err != nil {
 		log.Fatal(err)
@@ -314,7 +236,7 @@ func observeRelationKind(dataDir, version, relationKind string, conn *sql.DB, wa
 	}
 }
 
-func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+func observeViewDefs(observationDir, version string, conn *sql.DB, waiter *sync.WaitGroup) {
 	txn, err := conn.Begin()
 	if err != nil {
 		log.Fatal(err)
@@ -327,13 +249,14 @@ func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGro
 	if err != nil {
 		log.Fatal(err)
 	}
-	viewsDir := filepath.Join(dataDir, version, "view")
+	viewsDir := filepath.Join(observationDir, version, "view")
 	viewFiles, err := os.ReadDir(viewsDir)
 	if err != nil {
 		log.Fatal(err)
 	}
 	nViews := 0
 	for _, v := range viewFiles {
+		// FIXME: query the database, don't inspect the filesystem
 		if strings.HasSuffix(v.Name(), ".tsv") {
 			nViews += 1
 		}
@@ -365,13 +288,13 @@ func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGro
 		}
 	}
 }
-func observeFns(dataDir string, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+func observeFns(observationDir string, version string, conn *sql.DB, waiter *sync.WaitGroup) {
 	defer waiter.Done()
 	row, err := conn.Query(fnQuery)
 	if err != nil {
 		log.Fatal(err)
 	}
-	tsvFile, err := os.Create(filepath.Join(dataDir, version, "functions.tsv"))
+	tsvFile, err := os.Create(filepath.Join(observationDir, version, "functions.tsv"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -397,13 +320,13 @@ func observeFns(dataDir string, version string, conn *sql.DB, waiter *sync.WaitG
 	}
 }
 
-func observeIndices(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
+func observeIndices(observationDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
 	defer waiter.Done()
 	row, err := db.Query(idxQuery)
 	if err != nil {
 		log.Fatal(err)
 	}
-	idxTsvPath := filepath.Join(dataDir, version, "indices.tsv")
+	idxTsvPath := filepath.Join(observationDir, version, "indices.tsv")
 	file, err := os.Create(idxTsvPath)
 	if err != nil {
 		log.Fatal(err)
@@ -423,30 +346,33 @@ func observeIndices(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup)
 }
 
 // use a single connection per-container to audit all the relevant tables, views, functions, domains.
-func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
-	defer waiter.Done()
+func auditContainer(observationDir string, version string, waiter *sync.WaitGroup) {
 	log.Debugf("auditing container %s\n", version)
 	port := getPort(version)
 	conn, err := sql.Open("postgres", "host=localhost port="+port+" user=postgres dbname=postgres sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer conn.Close()
+	defer func() {
+		if err = conn.Close(); err != nil {
+			log.Fatal(err)
+		}
+		waiter.Done()
+	}()
 	inner := sync.WaitGroup{} // defines the lifetime of the database connection
 	inner.Add(1)
-	observeRelationKind(dataDir, version, "catalog", conn, &inner)
+	observeRelationKind(observationDir, version, "catalog", conn, &inner)
 	inner.Add(1)
-	observeRelationKind(dataDir, version, "view", conn, &inner)
+	observeRelationKind(observationDir, version, "view", conn, &inner)
 	inner.Add(1)
-	observeFns(dataDir, version, conn, &inner)
+	observeFns(observationDir, version, conn, &inner)
 	inner.Add(1)
-	observeViewDefs(dataDir, version, conn, &inner)
+	observeViewDefs(observationDir, version, conn, &inner)
 	inner.Add(1)
-	observeFnDefs(dataDir, version, conn, &inner)
+	observeFnDefs(observationDir, version, conn, &inner)
 	inner.Add(1)
-	observeIndices(dataDir, version, conn, &inner)
+	observeIndices(observationDir, version, conn, &inner)
 	inner.Wait()
-	// TODO: fetch+record functions
 }
 
 func main() {
@@ -462,12 +388,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	versions := getServiceVersions(getPgVersions(dataDir))
+	observationDir := filepath.Join(dataDir, "observations")
+	if err = os.MkdirAll(observationDir, dirMode); err != nil {
+		log.Fatal(err)
+	}
+	versions := getServiceVersions(getPgVersions(filepath.Join(dataDir, "scraped")))
 	log.Infof("versions: %v\n", versions)
 	waiter := sync.WaitGroup{}
 	for _, version := range versions {
 		waiter.Add(1)
-		go auditContainer(dataDir, version, &waiter)
+		go auditContainer(observationDir, version, &waiter)
 	}
 	waiter.Wait()
 }

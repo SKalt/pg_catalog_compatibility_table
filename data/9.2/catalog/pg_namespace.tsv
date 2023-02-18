@@ -1,4 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	nspname	name	false		"name of the namespace"
-2	nspowner	oid	false		"owner of the namespace"
-3	nspacl	aclitem[]	true		"access privileges; see grant and revoke for details"

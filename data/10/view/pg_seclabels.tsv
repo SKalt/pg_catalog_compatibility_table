@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	objoid	oid	true		"the oid of the object this security label pertains to"
-2	classoid	oid	true		"the oid of the system catalog this object appears in"
-3	objsubid	int4	true		"for a security label on a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero."
-4	objtype	text	true		"the type of object to which this label applies, as text."
-5	objnamespace	oid	true		"the oid of the namespace for this object, if applicable; otherwise null."
-6	objname	text	true		"the name of the object to which this label applies, as text."
-7	provider	text	true		"the label provider associated with this label."
-8	label	text	true		"the security label applied to this object."

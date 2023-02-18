@@ -1,5 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	schemaname	name		pg_namespace.nspname	"name of schema containing table"
-2	tablename	name		pg_class.relname	"name of table the rule is for"
-3	rulename	name		pg_rewrite.rulename	"name of rule"
-4	definition	text			"rule definition (a reconstructed creation command)"

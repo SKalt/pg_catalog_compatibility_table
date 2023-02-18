@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	conname	name			"conversion name (unique within a namespace)"
-2	connamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this conversion"
-3	conowner	int4		pg_shadow.usesysid	"owner of the conversion"
-4	conforencoding	int4			"source encoding id"
-5	contoencoding	int4			"destination encoding id"
-6	conproc	regproc		pg_proc.oid	"conversion procedure"
-7	condefault	bool			"true if this is the default conversion"

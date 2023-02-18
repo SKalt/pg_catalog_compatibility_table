@@ -1,8 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	schemaname	name		pg_namespace.nspname	"name of schema containing table"
-2	tablename	name		pg_class.relname	"name of table"
-3	tableowner	name		pg_shadow.usename	"name of table's owner"
-4	tablespace	name		pg_tablespace.spcname	"name of tablespace containing table (null if default for database)"
-5	hasindexes	boolean		pg_class.relhasindex	"true if table has (or recently had) any indexes"
-6	hasrules	boolean		pg_class.relhasrules	"true if table has rules"
-7	hastriggers	boolean		pg_class.reltriggers	"true if table has triggers"

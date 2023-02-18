@@ -1,0 +1,5 @@
+Name	Type	References	Description
+amopclaid	oid	pg_opclass.oid	"the index operator class this entry is for"
+amopstrategy	int2		"operator strategy number"
+amopreqcheck	bool		"index hit must be rechecked"
+amopopr	oid	pg_operator.oid	"oid of the operator"

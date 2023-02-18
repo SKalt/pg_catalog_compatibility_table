@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+tmplname	name		"text search template name"
+tmplnamespace	oid		"the oid of the namespace that contains this template"
+tmplinit	regproc		"oid of the template's initialization function"
+tmpllexize	regproc		"oid of the template's lexize function"

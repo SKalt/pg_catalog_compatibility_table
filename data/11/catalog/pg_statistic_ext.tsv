@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	stxrelid	oid	false		"table containing the columns described by this object"
-2	stxname	name	false		"name of the statistics object"
-3	stxnamespace	oid	false		"the oid of the namespace that contains this statistics object"
-4	stxowner	oid	false		"owner of the statistics object"
-5	stxkeys	int2vector	false		"an array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covered"
-6	stxkind	char[]	false		"an array containing codes for the enabled statistics kinds; valid values are: d for n-distinct statistics, f for functional dependency statistics"
-7	stxndistinct	pg_ndistinct	true		"n-distinct counts, serialized as pg_ndistinct type"
-8	stxdependencies	pg_dependencies	true		"functional dependency statistics, serialized as pg_dependencies type"

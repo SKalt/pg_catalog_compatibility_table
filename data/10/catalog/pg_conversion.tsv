@@ -1,9 +1,0 @@
-Index	Name	Type	Nullable	References	Description
--2	oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
-1	conname	name	false		"conversion name (unique within a namespace)"
-2	connamespace	oid	false		"the oid of the namespace that contains this conversion"
-3	conowner	oid	false		"owner of the conversion"
-4	conforencoding	int4	false		"source encoding id"
-5	contoencoding	int4	false		"destination encoding id"
-6	conproc	regproc	false		"conversion procedure"
-7	condefault	bool	false		"true if this is the default conversion"

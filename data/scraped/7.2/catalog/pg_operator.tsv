@@ -1,0 +1,17 @@
+Name	Type	References	Description
+oprname	name		"name of the operator"
+oprowner	int4	pg_shadow.usesysid	"owner (creator) of the operator"
+oprprec	int2		unused
+oprkind	char		"'b' = infix (""both""), 'l' = prefix (""left""), 'r' = postfix (""right"")"
+oprisleft	bool		unused
+oprcanhash	bool		"this operator supports hash joins."
+oprleft	oid	pg_type.oid	"type of the left operand"
+oprright	oid	pg_type.oid	"type of the right operand"
+oprresult	oid	pg_type.oid	"type of the result"
+oprcom	oid	pg_operator.oid	"commutator of this operator, if any"
+oprnegate	oid	pg_operator.oid	"negator of this operator, if any"
+oprlsortop	oid	pg_operator.oid	"if this operator supports merge joins, the operator that sorts the type of the left-hand operand"
+oprrsortop	oid	pg_operator.oid	"if this operator supports merge joins, the operator that sorts the type of the right-hand operand"
+oprcode	regproc		"function that implements this operator"
+oprrest	regproc		"restriction selectivity estimation function for this operator"
+oprjoin	regproc		"join selectivity estimation function for this operator"

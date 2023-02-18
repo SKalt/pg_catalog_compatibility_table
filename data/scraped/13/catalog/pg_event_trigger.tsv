@@ -1,0 +1,8 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+evtname	name		"trigger name (must be unique)"
+evtevent	name		"identifies the event for which this trigger fires"
+evtowner	oid		"owner of the event trigger"
+evtfoid	oid		"the function to be called"
+evtenabled	char		"controls in which session_replication_role modes the event trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
+evttags	text[]		"command tags for which this trigger will fire. if null, the firing of this trigger is not restricted on the basis of the command tag."

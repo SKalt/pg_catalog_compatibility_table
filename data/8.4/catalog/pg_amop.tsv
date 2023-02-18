@@ -1,7 +1,0 @@
-Index	Name	Type	Nullable	References	Description
-1	amopfamily	oid		pg_opfamily.oid	"the operator family this entry is for"
-2	amoplefttype	oid		pg_type.oid	"left-hand input data type of operator"
-3	amoprighttype	oid		pg_type.oid	"right-hand input data type of operator"
-4	amopstrategy	int2			"operator strategy number"
-5	amopopr	oid		pg_operator.oid	"oid of the operator"
-6	amopmethod	oid		pg_am.oid	"index access method operator family is for"

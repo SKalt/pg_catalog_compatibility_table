@@ -1,0 +1,5 @@
+Name	Type	References	Description
+name	name		"extension name"
+default_version	text		"name of default version, or null if none is specified"
+installed_version	text		"currently installed version of the extension, or null if not installed"
+comment	text		"comment string from the extension's control file"
