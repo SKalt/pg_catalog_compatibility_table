@@ -1,0 +1,8 @@
+Name	Type	Nullable	Default
+datid	oid	true
+datname	name	true
+confl_tablespace	bigint	true
+confl_lock	bigint	true
+confl_snapshot	bigint	true
+confl_bufferpin	bigint	true
+confl_deadlock	bigint	true

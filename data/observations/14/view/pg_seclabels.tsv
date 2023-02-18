@@ -1,0 +1,9 @@
+Name	Type	Nullable	Default
+objoid	oid	true
+classoid	oid	true
+objsubid	integer	true
+objtype	text	true
+objnamespace	oid	true
+objname	text	true
+provider	text	true
+label	text	true

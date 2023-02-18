@@ -1,0 +1,27 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+aggfnoid	regproc	false
+aggkind	"""char"""	false
+aggnumdirectargs	smallint	false
+aggtransfn	regproc	false
+aggfinalfn	regproc	false
+aggcombinefn	regproc	false
+aggserialfn	regproc	false
+aggdeserialfn	regproc	false
+aggmtransfn	regproc	false
+aggminvtransfn	regproc	false
+aggmfinalfn	regproc	false
+aggfinalextra	boolean	false
+aggmfinalextra	boolean	false
+aggsortop	oid	false
+aggtranstype	oid	false
+aggtransspace	integer	false
+aggmtranstype	oid	false
+aggmtransspace	integer	false
+agginitval	text	true
+aggminitval	text	true

@@ -1,0 +1,10 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+inhrelid	oid	false
+inhparent	oid	false
+inhseqno	integer	false

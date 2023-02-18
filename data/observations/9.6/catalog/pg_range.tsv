@@ -1,0 +1,13 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+rngtypid	oid	false
+rngsubtype	oid	false
+rngcollation	oid	false
+rngsubopc	oid	false
+rngcanonical	regproc	false
+rngsubdiff	regproc	false

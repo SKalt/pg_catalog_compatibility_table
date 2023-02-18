@@ -1,0 +1,15 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+oid	oid	false
+ctid	tid	false
+prsname	name	false
+prsnamespace	oid	false
+prsstart	regproc	false
+prstoken	regproc	false
+prsend	regproc	false
+prsheadline	regproc	false
+prslextype	regproc	false

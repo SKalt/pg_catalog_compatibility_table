@@ -1,0 +1,18 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+subdbid	oid	false
+subname	name	false
+subowner	oid	false
+subenabled	boolean	false
+subbinary	boolean	false
+substream	boolean	false
+subconninfo	text	false
+subslotname	name	true
+subsynccommit	text	false
+subpublications	text[]	false

@@ -1,0 +1,14 @@
+Name	Type	Nullable	Default
+rolname	name	true
+rolsuper	boolean	true
+rolinherit	boolean	true
+rolcreaterole	boolean	true
+rolcreatedb	boolean	true
+rolcatupdate	boolean	true
+rolcanlogin	boolean	true
+rolreplication	boolean	true
+rolconnlimit	integer	true
+rolpassword	text	true
+rolvaliduntil	"timestamp with time zone"	true
+rolconfig	text[]	true
+oid	oid	true

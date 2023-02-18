@@ -1,0 +1,12 @@
+Name	Type	Nullable	Default
+pid	integer	true
+datid	oid	true
+datname	name	true
+relid	oid	true
+phase	text	true
+heap_blks_total	bigint	true
+heap_blks_scanned	bigint	true
+heap_blks_vacuumed	bigint	true
+index_vacuum_count	bigint	true
+max_dead_tuples	bigint	true
+num_dead_tuples	bigint	true

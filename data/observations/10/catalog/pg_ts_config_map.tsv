@@ -1,0 +1,11 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+mapcfg	oid	false
+maptokentype	integer	false
+mapseqno	integer	false
+mapdict	oid	false

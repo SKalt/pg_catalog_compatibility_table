@@ -1,0 +1,12 @@
+Name	Type	Nullable	Default
+slot_name	name	true
+plugin	name	true
+slot_type	text	true
+datoid	oid	true
+database	name	true
+active	boolean	true
+active_pid	integer	true
+xmin	xid	true
+catalog_xmin	xid	true
+restart_lsn	pg_lsn	true
+confirmed_flush_lsn	pg_lsn	true

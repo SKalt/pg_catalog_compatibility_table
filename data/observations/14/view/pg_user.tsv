@@ -1,0 +1,10 @@
+Name	Type	Nullable	Default
+usename	name	true
+usesysid	oid	true
+usecreatedb	boolean	true
+usesuper	boolean	true
+userepl	boolean	true
+usebypassrls	boolean	true
+passwd	text	true
+valuntil	"timestamp with time zone"	true
+useconfig	text[]	true

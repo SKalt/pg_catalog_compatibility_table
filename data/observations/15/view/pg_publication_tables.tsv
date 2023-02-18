@@ -1,0 +1,6 @@
+Name	Type	Nullable	Default
+pubname	name	true
+schemaname	name	true
+tablename	name	true
+attnames	name[]	true
+rowfilter	text	true

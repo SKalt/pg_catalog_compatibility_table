@@ -1,0 +1,12 @@
+Name	Type	Nullable	Default
+checkpoints_timed	bigint	true
+checkpoints_req	bigint	true
+checkpoint_write_time	"double precision"	true
+checkpoint_sync_time	"double precision"	true
+buffers_checkpoint	bigint	true
+buffers_clean	bigint	true
+maxwritten_clean	bigint	true
+buffers_backend	bigint	true
+buffers_backend_fsync	bigint	true
+buffers_alloc	bigint	true
+stats_reset	"timestamp with time zone"	true

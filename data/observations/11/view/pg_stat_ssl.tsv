@@ -1,0 +1,8 @@
+Name	Type	Nullable	Default
+pid	integer	true
+ssl	boolean	true
+version	text	true
+cipher	text	true
+bits	integer	true
+compression	boolean	true
+clientdn	text	true

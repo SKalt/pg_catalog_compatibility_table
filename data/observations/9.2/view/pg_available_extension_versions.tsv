@@ -1,0 +1,9 @@
+Name	Type	Nullable	Default
+name	name	true
+version	text	true
+installed	boolean	true
+superuser	boolean	true
+relocatable	boolean	true
+schema	name	true
+requires	name[]	true
+comment	text	true

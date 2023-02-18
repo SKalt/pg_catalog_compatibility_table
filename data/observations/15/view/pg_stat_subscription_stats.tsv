@@ -1,0 +1,6 @@
+Name	Type	Nullable	Default
+subid	oid	true
+subname	name	true
+apply_error_count	bigint	true
+sync_error_count	bigint	true
+stats_reset	"timestamp with time zone"	true

@@ -1,0 +1,7 @@
+Name	Type	Nullable	Default
+pid	integer	true
+phase	text	true
+backup_total	bigint	true
+backup_streamed	bigint	true
+tablespaces_total	bigint	true
+tablespaces_streamed	bigint	true

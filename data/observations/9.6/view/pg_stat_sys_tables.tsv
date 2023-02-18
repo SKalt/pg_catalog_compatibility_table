@@ -1,0 +1,23 @@
+Name	Type	Nullable	Default
+relid	oid	true
+schemaname	name	true
+relname	name	true
+seq_scan	bigint	true
+seq_tup_read	bigint	true
+idx_scan	bigint	true
+idx_tup_fetch	bigint	true
+n_tup_ins	bigint	true
+n_tup_upd	bigint	true
+n_tup_del	bigint	true
+n_tup_hot_upd	bigint	true
+n_live_tup	bigint	true
+n_dead_tup	bigint	true
+n_mod_since_analyze	bigint	true
+last_vacuum	"timestamp with time zone"	true
+last_autovacuum	"timestamp with time zone"	true
+last_analyze	"timestamp with time zone"	true
+last_autoanalyze	"timestamp with time zone"	true
+vacuum_count	bigint	true
+autovacuum_count	bigint	true
+analyze_count	bigint	true
+autoanalyze_count	bigint	true

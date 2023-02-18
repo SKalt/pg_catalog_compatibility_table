@@ -1,0 +1,9 @@
+Name	Type	Nullable	Default
+schemaname	name	true
+tablename	name	true
+tableowner	name	true
+tablespace	name	true
+hasindexes	boolean	true
+hasrules	boolean	true
+hastriggers	boolean	true
+rowsecurity	boolean	true

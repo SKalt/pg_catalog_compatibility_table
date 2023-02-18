@@ -1,0 +1,8 @@
+Name	Type	Nullable	Default
+schemaname	name	true
+tablename	name	true
+policyname	name	true
+roles	name[]	true
+cmd	text	true
+qual	text	true
+with_check	text	true

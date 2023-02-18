@@ -20,6 +20,9 @@ import (
 
 const dirMode = os.ModeDir | 0o776
 
+//go:embed get_all_relations.sql
+var allRelationsQuery string
+
 //go:embed get_columns.sql
 var colQuery string
 
@@ -182,9 +185,6 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 		if err := rows.Scan(&n, &name, &kind, &notNullable, &defaultExpr); err != nil {
 			log.Fatal(err)
 		}
-		if strings.HasPrefix(kind, `"char`) {
-			kind = strings.ReplaceAll(kind, `"`, "")
-		}
 		result := common.ObservedColData{Name: name, Type: kind, Nullable: ""}
 		if notNullable != nil {
 			if *notNullable {
@@ -203,21 +203,35 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 	}
 }
 
+func getAllRelationNames(conn *sql.DB, relKinds string) (result []string) {
+	row, err := conn.Query(strings.ReplaceAll(allRelationsQuery, "$1", relKinds))
+	if err != nil {
+		log.Fatal(err)
+	}
+	for row.Next() {
+		var rel string
+		if err = row.Scan(&rel); err != nil {
+			log.Fatal(err)
+		}
+		result = append(result, rel)
+	}
+	return result
+}
+
 func observeRelationKind(observationDir, version, relationKind string, conn *sql.DB, waiter *sync.WaitGroup) {
 	log.Debugf("observing relations of kind %s for version %s", relationKind, version)
 	relationDir := filepath.Join(observationDir, version, relationKind)
 	if err := os.MkdirAll(relationDir, dirMode); err != nil {
 		log.Fatal(err)
 	}
-	tsvs, err := os.ReadDir(relationDir)
-	if err != nil {
-		log.Fatal(err)
+	relations := []string{}
+	switch relationKind {
+	case "catalog":
+		relations = getAllRelationNames(conn, "('r', 'p')")
+	case "view":
+		relations = getAllRelationNames(conn, "('v', 'm')")
 	}
-	relations := make([]string, 0, len(tsvs))
-	for _, tsv := range tsvs {
-		name := tsv.Name()
-		relations = append(relations, stripTsvSuffix(name))
-	}
+
 	txn, err := conn.Begin()
 	if err != nil {
 		log.Fatal(err)
@@ -237,6 +251,7 @@ func observeRelationKind(observationDir, version, relationKind string, conn *sql
 }
 
 func observeViewDefs(observationDir, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+	views := getAllRelationNames(conn, "('v', 'm')")
 	txn, err := conn.Begin()
 	if err != nil {
 		log.Fatal(err)
@@ -250,23 +265,6 @@ func observeViewDefs(observationDir, version string, conn *sql.DB, waiter *sync.
 		log.Fatal(err)
 	}
 	viewsDir := filepath.Join(observationDir, version, "view")
-	viewFiles, err := os.ReadDir(viewsDir)
-	if err != nil {
-		log.Fatal(err)
-	}
-	nViews := 0
-	for _, v := range viewFiles {
-		// FIXME: query the database, don't inspect the filesystem
-		if strings.HasSuffix(v.Name(), ".tsv") {
-			nViews += 1
-		}
-	}
-	views := make([]string, 0, nViews)
-	for _, v := range viewFiles {
-		if strings.HasSuffix(v.Name(), ".tsv") {
-			views = append(views, stripTsvSuffix(v.Name()))
-		}
-	}
 	var defn string
 	for _, v := range views {
 		if err = stmt.QueryRow(v).Scan(&defn); err != nil {
@@ -313,7 +311,7 @@ func observeFns(observationDir string, version string, conn *sql.DB, waiter *syn
 		fn := common.FnData{}
 		if err = row.Scan(&fn.Name, &fn.IdentityArgs, &fn.ReturnType); err != nil {
 			log.Fatal(err)
-		}
+		} //!!!
 		if _, err = tsv.WriteString(fn.TsvRow()); err != nil {
 			log.Fatal(err)
 		}
@@ -400,8 +398,4 @@ func main() {
 		go auditContainer(observationDir, version, &waiter)
 	}
 	waiter.Wait()
-}
-
-func stripTsvSuffix(s string) string {
-	return s[0 : len(s)-4]
 }

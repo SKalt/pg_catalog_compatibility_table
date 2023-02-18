@@ -1,0 +1,10 @@
+Name	Type	Nullable	Default
+line_number	integer	true
+type	text	true
+database	text[]	true
+user_name	text[]	true
+address	text	true
+netmask	text	true
+auth_method	text	true
+options	text[]	true
+error	text	true

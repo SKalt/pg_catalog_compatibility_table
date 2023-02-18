@@ -1,0 +1,15 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+tmplname	name	false
+tmpltrusted	boolean	false
+tmpldbacreate	boolean	false
+tmplhandler	text	true
+tmplinline	text	true
+tmplvalidator	text	true
+tmpllibrary	text	true
+tmplacl	aclitem[]	true

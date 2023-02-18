@@ -1,0 +1,15 @@
+Name	Type	Nullable	Default
+pid	integer	true
+status	text	true
+receive_start_lsn	pg_lsn	true
+receive_start_tli	integer	true
+received_lsn	pg_lsn	true
+received_tli	integer	true
+last_msg_send_time	"timestamp with time zone"	true
+last_msg_receipt_time	"timestamp with time zone"	true
+latest_end_lsn	pg_lsn	true
+latest_end_time	"timestamp with time zone"	true
+slot_name	text	true
+sender_host	text	true
+sender_port	integer	true
+conninfo	text	true

@@ -1,0 +1,13 @@
+Name	Type	Nullable	Default
+pid	integer	true
+datid	oid	true
+datname	name	true
+relid	oid	true
+command	text	true
+phase	text	true
+cluster_index_relid	oid	true
+heap_tuples_scanned	bigint	true
+heap_tuples_written	bigint	true
+heap_blks_total	bigint	true
+heap_blks_scanned	bigint	true
+index_rebuild_count	bigint	true

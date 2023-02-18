@@ -1,0 +1,26 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+indexrelid	oid	false
+indrelid	oid	false
+indnatts	smallint	false
+indisunique	boolean	false
+indisprimary	boolean	false
+indisexclusion	boolean	false
+indimmediate	boolean	false
+indisclustered	boolean	false
+indisvalid	boolean	false
+indcheckxmin	boolean	false
+indisready	boolean	false
+indislive	boolean	false
+indisreplident	boolean	false
+indkey	int2vector	false
+indcollation	oidvector	false
+indclass	oidvector	false
+indoption	int2vector	false
+indexprs	pg_node_tree	true
+indpred	pg_node_tree	true

@@ -1,0 +1,7 @@
+Name	Type	Nullable	Default
+umid	oid	true
+srvid	oid	true
+srvname	name	true
+umuser	oid	true
+usename	name	true
+umoptions	text[]	true

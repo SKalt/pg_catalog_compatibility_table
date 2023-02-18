@@ -1,0 +1,6 @@
+Name	Type	Nullable	Default
+transaction	xid	true
+gid	text	true
+prepared	"timestamp with time zone"	true
+owner	name	true
+database	name	true

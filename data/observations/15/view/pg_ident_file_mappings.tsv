@@ -1,0 +1,6 @@
+Name	Type	Nullable	Default
+line_number	integer	true
+map_name	text	true
+sys_name	text	true
+pg_username	text	true
+error	text	true

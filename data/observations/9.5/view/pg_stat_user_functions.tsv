@@ -1,0 +1,7 @@
+Name	Type	Nullable	Default
+funcid	oid	true
+schemaname	name	true
+funcname	name	true
+calls	bigint	true
+total_time	"double precision"	true
+self_time	"double precision"	true

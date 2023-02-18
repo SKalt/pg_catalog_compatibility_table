@@ -1,0 +1,11 @@
+Name	Type	Nullable	Default
+slot_name	text	true
+spill_txns	bigint	true
+spill_count	bigint	true
+spill_bytes	bigint	true
+stream_txns	bigint	true
+stream_count	bigint	true
+stream_bytes	bigint	true
+total_txns	bigint	true
+total_bytes	bigint	true
+stats_reset	"timestamp with time zone"	true

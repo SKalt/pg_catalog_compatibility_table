@@ -36,7 +36,6 @@ func CorrectTypeName(type_ string) string {
 
 type ObservedColData struct {
 	Name, Type, Nullable string // must be present
-	Default              string // may be absent
 }
 
 const ObservedColTsvHeader = "Name\tType\tNullable\tDefault\n"
@@ -44,17 +43,15 @@ const (
 	ObservedTsvColName = iota
 	ObservedTsvColType
 	ObservedTsvColNullable
-	ObservedTsvDefault
 	ObservedTsvNFields
 )
 
 func (c ObservedColData) TsvRow() string {
 	return fmt.Sprintf(
-		"%s\t%s\t%s\t%s\n",
+		"%s\t%s\t%s\n",
 		tsvUtils.EscapeTsvField(c.Name),
 		tsvUtils.EscapeTsvField(c.Type),
 		tsvUtils.EscapeTsvField(c.Nullable),
-		tsvUtils.EscapeTsvField(c.Default),
 	)
 }
 
@@ -74,7 +71,6 @@ func ParseObservedTsv(data string) (result []ObservedColData, err error) {
 			Name:     parts[ObservedTsvColName],
 			Type:     parts[ObservedTsvColType],
 			Nullable: parts[ObservedTsvColNullable],
-			Default:  parts[ObservedTsvDefault],
 		})
 	}
 	return

@@ -1,0 +1,16 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+pubname	name	false
+pubowner	oid	false
+puballtables	boolean	false
+pubinsert	boolean	false
+pubupdate	boolean	false
+pubdelete	boolean	false
+pubtruncate	boolean	false
+pubviaroot	boolean	false

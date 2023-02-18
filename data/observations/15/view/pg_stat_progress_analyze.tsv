@@ -1,0 +1,13 @@
+Name	Type	Nullable	Default
+pid	integer	true
+datid	oid	true
+datname	name	true
+relid	oid	true
+phase	text	true
+sample_blks_total	bigint	true
+sample_blks_scanned	bigint	true
+ext_stats_total	bigint	true
+ext_stats_computed	bigint	true
+child_tables_total	bigint	true
+child_tables_done	bigint	true
+current_child_table_relid	oid	true

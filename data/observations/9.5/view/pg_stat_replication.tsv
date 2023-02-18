@@ -1,0 +1,17 @@
+Name	Type	Nullable	Default
+pid	integer	true
+usesysid	oid	true
+usename	name	true
+application_name	text	true
+client_addr	inet	true
+client_hostname	text	true
+client_port	integer	true
+backend_start	"timestamp with time zone"	true
+backend_xmin	xid	true
+state	text	true
+sent_location	pg_lsn	true
+write_location	pg_lsn	true
+flush_location	pg_lsn	true
+replay_location	pg_lsn	true
+sync_priority	integer	true
+sync_state	text	true

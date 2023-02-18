@@ -1,0 +1,9 @@
+Name	Type	Nullable	Default
+pid	integer	true
+ssl	boolean	true
+version	text	true
+cipher	text	true
+bits	integer	true
+client_dn	text	true
+client_serial	numeric	true
+issuer_dn	text	true

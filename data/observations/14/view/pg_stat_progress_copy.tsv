@@ -1,0 +1,11 @@
+Name	Type	Nullable	Default
+pid	integer	true
+datid	oid	true
+datname	name	true
+relid	oid	true
+command	text	true
+type	text	true
+bytes_processed	bigint	true
+bytes_total	bigint	true
+tuples_processed	bigint	true
+tuples_excluded	bigint	true

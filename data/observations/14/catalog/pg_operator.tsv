@@ -1,0 +1,22 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+oprname	name	false
+oprnamespace	oid	false
+oprowner	oid	false
+oprkind	"""char"""	false
+oprcanmerge	boolean	false
+oprcanhash	boolean	false
+oprleft	oid	false
+oprright	oid	false
+oprresult	oid	false
+oprcom	oid	false
+oprnegate	oid	false
+oprcode	regproc	false
+oprrest	regproc	false
+oprjoin	regproc	false

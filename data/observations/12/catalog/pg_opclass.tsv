@@ -1,0 +1,16 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+opcmethod	oid	false
+opcname	name	false
+opcnamespace	oid	false
+opcowner	oid	false
+opcfamily	oid	false
+opcintype	oid	false
+opcdefault	boolean	false
+opckeytype	oid	false

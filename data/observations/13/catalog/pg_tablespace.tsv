@@ -1,0 +1,12 @@
+Name	Type	Nullable	Default
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+spcname	name	false
+spcowner	oid	false
+spcacl	aclitem[]	true
+spcoptions	text[]	true

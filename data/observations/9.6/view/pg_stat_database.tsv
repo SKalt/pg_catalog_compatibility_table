@@ -1,0 +1,20 @@
+Name	Type	Nullable	Default
+datid	oid	true
+datname	name	true
+numbackends	integer	true
+xact_commit	bigint	true
+xact_rollback	bigint	true
+blks_read	bigint	true
+blks_hit	bigint	true
+tup_returned	bigint	true
+tup_fetched	bigint	true
+tup_inserted	bigint	true
+tup_updated	bigint	true
+tup_deleted	bigint	true
+conflicts	bigint	true
+temp_files	bigint	true
+temp_bytes	bigint	true
+deadlocks	bigint	true
+blk_read_time	"double precision"	true
+blk_write_time	"double precision"	true
+stats_reset	"timestamp with time zone"	true

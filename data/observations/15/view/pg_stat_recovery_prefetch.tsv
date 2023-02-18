@@ -1,0 +1,11 @@
+Name	Type	Nullable	Default
+stats_reset	"timestamp with time zone"	true
+prefetch	bigint	true
+hit	bigint	true
+skip_init	bigint	true
+skip_new	bigint	true
+skip_fpw	bigint	true
+skip_rep	bigint	true
+wal_distance	integer	true
+block_distance	integer	true
+io_depth	integer	true
