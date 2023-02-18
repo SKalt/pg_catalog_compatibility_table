@@ -12,6 +12,7 @@ Index	Name	Type	Nullable	References	Description
 10	reltuples	float4	false		"number of rows in the table. this is only an estimate used by the planner. it is updated by vacuum, analyze, and a few ddl commands such as create index."
 11	relallvisible	int4	false		"number of pages that are marked all-visible in the table's visibility map. this is only an estimate used by the planner. it is updated by vacuum, analyze, and a few ddl commands such as create index."
 12	reltoastrelid	oid	false		"oid of the toast table associated with this table, 0 if none. the toast table stores large attributes ""out of line"" in a secondary table."
+13	reltoastidxid	oid	false		<undocumented>
 14	relhasindex	bool	false		"true if this is a table and it has (or recently had) any indexes"
 15	relisshared	bool	false		"true if this table is shared across all databases in the cluster. only certain system catalogs (such as pg_database) are shared."
 16	relpersistence	char	false		"p = permanent table, u = unlogged table, t = temporary table"

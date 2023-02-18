@@ -1,4 +1,5 @@
 Index	Name	Type	Nullable	References	Description
+1	oid	oid	false		<undocumented>
 2	polname	name	false		"the name of the policy"
 3	polrelid	oid	false		"the table to which the policy applies"
 4	polcmd	char	false		"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"

@@ -3,6 +3,7 @@ Index	Name	Type	Nullable	References	Description
 2	usesysid	oid	true		"id of this user"
 3	usecreatedb	bool	true		"user can create databases"
 4	usesuper	bool	true		"user is a superuser"
+5	usecatupd	bool	true		<undocumented>
 6	userepl	bool	true		"user can initiate streaming replication and put the system in and out of backup mode."
 7	passwd	text	true		"password (possibly encrypted); null if none. see pg_authid for details of how encrypted passwords are stored."
 8	valuntil	abstime	true		"password expiry time (only used for password authentication)"

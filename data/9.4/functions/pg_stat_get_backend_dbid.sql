@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION pg_catalog.pg_stat_get_backend_dbid(integer)
+ RETURNS oid
+ LANGUAGE internal
+ STABLE STRICT
+AS $function$pg_stat_get_backend_dbid$function$
+;

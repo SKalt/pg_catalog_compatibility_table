@@ -1,4 +1,5 @@
 Index	Name	Type	Nullable	References	Description
+1	oid	oid	false		<undocumented>
 2	evtname	name	false		"trigger name (must be unique)"
 3	evtevent	name	false		"identifies the event for which this trigger fires"
 4	evtowner	oid	false		"owner of the event trigger"

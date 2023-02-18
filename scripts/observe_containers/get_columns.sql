@@ -17,9 +17,6 @@ INNER JOIN pg_catalog.pg_class AS rel -- https://www.postgresql.org/docs/current
 INNER JOIN pg_catalog.pg_namespace AS rel_schema -- https://www.postgresql.org/docs/current/catalog-pg-namespace.html
   ON rel.relnamespace = rel_schema.oid
   AND rel_schema.nspname = 'pg_catalog'
-INNER JOIN pg_catalog.pg_type AS type_ -- https://www.postgresql.org/docs/current/catalog-pg-type.html
-  ON col.atttypid = type_.oid
-INNER JOIN pg_catalog.pg_namespace AS type_ns ON type_.typnamespace = type_ns.oid
 LEFT JOIN pg_catalog.pg_attrdef AS col_def -- https://www.postgresql.org/docs/current/catalog-pg-attrdef.html
   ON col.atthasdef
   AND col.attrelid = col_def.adrelid

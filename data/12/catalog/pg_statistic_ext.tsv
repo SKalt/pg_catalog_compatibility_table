@@ -1,4 +1,5 @@
 Index	Name	Type	Nullable	References	Description
+1	oid	oid	false		<undocumented>
 2	stxrelid	oid	false		"table containing the columns described by this object"
 3	stxname	name	false		"name of the statistics object"
 4	stxnamespace	oid	false		"the oid of the namespace that contains this statistics object"

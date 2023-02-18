@@ -12,7 +12,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/SKalt/pg_catalog_compatibility_table/pkg/common"
 	_ "github.com/lib/pq"
@@ -27,6 +26,9 @@ var fnQuery string
 
 //go:embed get_view_def.sql
 var viewDefQuery string
+
+//go:embed get_fn_def.sql
+var fnDefQuery string
 
 // min version of postgres with an *-alpine tag I can find on docker hub as of
 // 2023-02-12. See
@@ -93,26 +95,58 @@ func getServiceVersions(versions []string) []string {
 	return versions[i:]
 }
 
-func WaitFor(driverName, dsn string, retries int) (db *sql.DB, finalErr error) {
-	ticker := time.NewTicker(time.Second)
-	for i := 0; i <= retries; i++ {
-		<-ticker.C // wait for a tick
-
-		if db, err := sql.Open(driverName, dsn); err == nil {
-			if err := db.Ping(); err == nil {
-				log.Infof("connected to %s", dsn)
-				return db, nil
-			} else {
-				finalErr = err
-				fmt.Printf(".")
+func observeFnDefs(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
+	defer waiter.Done()
+	stmt, err := db.Prepare(fnDefQuery)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fnTsvPath := filepath.Join(dataDir, version, "functions.tsv")
+	fns := map[string]uint8{}
+	{ // lifetime for original tsv data
+		data, err := os.ReadFile(fnTsvPath)
+		if err != nil {
+			log.Fatal(err)
+		}
+		lines := strings.Split(string(data), "\n")
+		for i, line := range lines {
+			if i == 0 || line == "" {
+				continue
 			}
-		} else {
-			finalErr = err
-			log.Debugf("%+v", err)
-			fmt.Printf("_")
+			parts := strings.SplitN(line, "\t", 2)
+			name := parts[0]
+			fns[name] += 1
+			// if _, ok := fns[name]; !ok {
+			// 	fns[name] = 0
+			// }
 		}
 	}
-	return nil, finalErr
+	fnsDir := filepath.Join(dataDir, version, "functions")
+	for fn := range fns {
+		row, err := stmt.Query(fn)
+		if err != nil {
+			// always an aggregate/window fn
+			log.Debug(err)
+			continue
+		}
+		if err := os.MkdirAll(fnsDir, os.ModeDir|0o776); err != nil {
+			log.Fatal(err)
+		}
+		file, err := os.Create(filepath.Join(fnsDir, fn+".sql"))
+		if err != nil {
+			log.Fatal(err)
+		}
+		sql := bufio.NewWriter(file)
+		var fnDef string
+		for row.Next() {
+			if err = row.Scan(&fnDef); err != nil {
+				log.Fatal(err)
+			}
+			sql.WriteString(fnDef + ";\n")
+		}
+		sql.Flush()
+		file.Close()
+	}
 }
 
 func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *sync.WaitGroup) {
@@ -178,11 +212,18 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 				row.Type = "timestamptz"
 			case "real":
 				row.Type = "float4"
+			case "real[]":
+				row.Type = "float4[]"
 			}
 			if row.Type != doc.Type {
 				log.Infof("%s:%d:%s type '%s' -> '%s'", tsvPath, row.Index, row.Name, doc.Type, row.Type)
 			}
 			row.Description = doc.Description
+			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
+				log.Fatal(err)
+			}
+		} else if row.Index > 0 {
+			row.Description = "<undocumented>"
 			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
 				log.Fatal(err)
 			}
@@ -197,6 +238,7 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 			return remaining[i].Index < remaining[j].Index
 		})
 		for _, row := range remaining {
+			log.Warnf("unobserved column %s @ %s", row.Name, tsvPath)
 			if _, err := tsv.WriteString(row.TsvRow()); err != nil {
 				log.Fatal(err)
 			}
@@ -367,6 +409,8 @@ func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	observeRelationKind(dataDir, version, "view", conn, &inner)
 	observeFns(dataDir, version, conn)
 	observeViewDefs(dataDir, version, conn, &inner)
+	inner.Add(1)
+	observeFnDefs(dataDir, version, conn, &inner)
 	inner.Wait()
 	// TODO: fetch+record functions
 }

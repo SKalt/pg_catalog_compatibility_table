@@ -1,1 +1,5 @@
 Index	Name	Type	Nullable	References	Description
+1	local_id	oid	true		"internal node identifier"
+2	external_id	text	true		"external node identifier"
+3	remote_lsn	pg_lsn	true		"the origin node's lsn up to which data has been replicated."
+4	local_lsn	pg_lsn	true		"this node's lsn at which remote_lsn has been replicated. used to flush commit records before persisting data to disk when using asynchronous commits."
