@@ -1,11 +1,18 @@
 Index	Name	Type	Nullable	References	Description
-1	rolname	name	true		"role name"
-2	rolsuper	bool	true		"role has superuser privileges"
-3	rolinherit	bool	true		"role automatically inherits privileges of roles it is a member of"
-4	rolcreaterole	bool	true		"role can create more roles"
-5	rolcreatedb	bool	true		"role can create databases"
-6	rolcanlogin	bool	true		"role can log in. that is, this role can be given as the initial session authorization identifier"
-7	rolreplication	bool	true		"role is a replication role. that is, this role can initiate streaming replication and set/unset the system backup mode using pg_start_backup and pg_stop_backup"
+1	rolname	name	true		<undocumented>
+2	rolsuper	boolean	true		<undocumented>
+3	rolinherit	boolean	true		<undocumented>
+4	rolcreaterole	boolean	true		<undocumented>
+5	rolcreatedb	boolean	true		<undocumented>
+6	rolcanlogin	boolean	true		<undocumented>
+7	rolreplication	boolean	true		<undocumented>
+8	rolconnlimit	integer	true		<undocumented>
+9	rolpassword	text	true		<undocumented>
+10	rolvaliduntil	"timestamp with time zone"	true		<undocumented>
+11	rolbypassrls	boolean	true		<undocumented>
+12	rolconfig	text[]	true		<undocumented>
+13	oid	oid	true		<undocumented>
+ing pg_start_backup and pg_stop_backup"
 8	rolconnlimit	int4	true		"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit."
 9	rolpassword	text	true		"not the password (always reads as ********)"
 10	rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiration"

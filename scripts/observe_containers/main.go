@@ -30,6 +30,9 @@ var viewDefQuery string
 //go:embed get_fn_def.sql
 var fnDefQuery string
 
+//go:embed get_indices.sql
+var idxQuery string
+
 // min version of postgres with an *-alpine tag I can find on docker hub as of
 // 2023-02-12. See
 // https://hub.docker.com/_/postgres/tags?page=1&ordering=last_updated&name=9.2-alpine
@@ -216,7 +219,7 @@ func patchRelationTsv(tsvPath string, observations []common.ColData, waiter *syn
 				row.Type = "float4[]"
 			}
 			if row.Type != doc.Type {
-				log.Infof("%s:%d:%s type '%s' -> '%s'", tsvPath, row.Index, row.Name, doc.Type, row.Type)
+				log.Debugf("%s:%d:%s type '%s' -> '%s'", tsvPath, row.Index, row.Name, doc.Type, row.Type)
 			}
 			row.Description = doc.Description
 			if _, err = tsv.WriteString(row.TsvRow()); err != nil {
@@ -317,6 +320,7 @@ func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGro
 		log.Fatal(err)
 	}
 	defer func() {
+		waiter.Done()
 		txn.Rollback()
 	}()
 	stmt, err := txn.Prepare(viewDefQuery)
@@ -361,7 +365,8 @@ func observeViewDefs(dataDir, version string, conn *sql.DB, waiter *sync.WaitGro
 		}
 	}
 }
-func observeFns(dataDir string, version string, conn *sql.DB) {
+func observeFns(dataDir string, version string, conn *sql.DB, waiter *sync.WaitGroup) {
+	defer waiter.Done()
 	row, err := conn.Query(fnQuery)
 	if err != nil {
 		log.Fatal(err)
@@ -392,6 +397,31 @@ func observeFns(dataDir string, version string, conn *sql.DB) {
 	}
 }
 
+func observeIndices(dataDir, version string, db *sql.DB, waiter *sync.WaitGroup) {
+	defer waiter.Done()
+	row, err := db.Query(idxQuery)
+	if err != nil {
+		log.Fatal(err)
+	}
+	idxTsvPath := filepath.Join(dataDir, version, "indices.tsv")
+	file, err := os.Create(idxTsvPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	tsv := bufio.NewWriter(file)
+	var indexName string
+	var indexDef string
+	for row.Next() {
+		var relationName string
+		if err = row.Scan(&indexName, &relationName, &indexDef); err != nil {
+			log.Fatal(err)
+		}
+		tsv.WriteString(fmt.Sprintf("%s\t%s\t%s\n", indexName, relationName, indexDef))
+	}
+	tsv.Flush()
+	file.Close()
+}
+
 // use a single connection per-container to audit all the relevant tables, views, functions, domains.
 func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	defer waiter.Done()
@@ -407,10 +437,14 @@ func auditContainer(dataDir string, version string, waiter *sync.WaitGroup) {
 	observeRelationKind(dataDir, version, "catalog", conn, &inner)
 	inner.Add(1)
 	observeRelationKind(dataDir, version, "view", conn, &inner)
-	observeFns(dataDir, version, conn)
+	inner.Add(1)
+	observeFns(dataDir, version, conn, &inner)
+	inner.Add(1)
 	observeViewDefs(dataDir, version, conn, &inner)
 	inner.Add(1)
 	observeFnDefs(dataDir, version, conn, &inner)
+	inner.Add(1)
+	observeIndices(dataDir, version, conn, &inner)
 	inner.Wait()
 	// TODO: fetch+record functions
 }

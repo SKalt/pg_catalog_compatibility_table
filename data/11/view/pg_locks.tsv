@@ -1,9 +1,20 @@
 Index	Name	Type	Nullable	References	Description
-1	locktype	text	true		"type of the lockable object: relation, extend, frozenid, page, tuple, transactionid, virtualxid, object, userlock, or advisory"
-2	database	oid	true		"oid of the database in which the lock target exists, or zero if the target is a shared object, or null if the target is a transaction id"
-3	relation	oid	true		"oid of the relation targeted by the lock, or null if the target is not a relation or part of a relation"
-4	page	int4	true		"page number targeted by the lock within the relation, or null if the target is not a relation page or tuple"
-5	tuple	int2	true		"tuple number targeted by the lock within the page, or null if the target is not a tuple"
+1	locktype	text	true		<undocumented>
+2	database	oid	true		<undocumented>
+3	relation	oid	true		<undocumented>
+4	page	integer	true		<undocumented>
+5	tuple	smallint	true		<undocumented>
+6	virtualxid	text	true		<undocumented>
+7	transactionid	xid	true		<undocumented>
+8	classid	oid	true		<undocumented>
+9	objid	oid	true		<undocumented>
+10	objsubid	smallint	true		<undocumented>
+11	virtualtransaction	text	true		<undocumented>
+12	pid	integer	true		<undocumented>
+13	mode	text	true		<undocumented>
+14	granted	boolean	true		<undocumented>
+15	fastpath	boolean	true		<undocumented>
+e	int2	true		"tuple number targeted by the lock within the page, or null if the target is not a tuple"
 6	virtualxid	text	true		"virtual id of the transaction targeted by the lock, or null if the target is not a virtual transaction id"
 7	transactionid	xid	true		"id of the transaction targeted by the lock, or null if the target is not a transaction id"
 8	classid	oid	true		"oid of the system catalog containing the lock target, or null if the target is not a general database object"

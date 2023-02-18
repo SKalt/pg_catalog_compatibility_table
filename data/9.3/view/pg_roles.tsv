@@ -1,12 +1,18 @@
 Index	Name	Type	Nullable	References	Description
-1	rolname	name	true		"role name"
-2	rolsuper	bool	true		"role has superuser privileges"
-3	rolinherit	bool	true		"role automatically inherits privileges of roles it is a member of"
-4	rolcreaterole	bool	true		"role can create more roles"
-5	rolcreatedb	bool	true		"role can create databases"
-6	rolcatupdate	bool	true		"role can update system catalogs directly. (even a superuser cannot do this unless this column is true)"
-7	rolcanlogin	bool	true		"role can log in. that is, this role can be given as the initial session authorization identifier"
-8	rolreplication	bool	true		"role is a replication role. that is, this role can initiate streaming replication and set/unset the system backup mode using pg_start_backup and pg_stop_backup"
+1	rolname	name	true		<undocumented>
+2	rolsuper	boolean	true		<undocumented>
+3	rolinherit	boolean	true		<undocumented>
+4	rolcreaterole	boolean	true		<undocumented>
+5	rolcreatedb	boolean	true		<undocumented>
+6	rolcatupdate	boolean	true		<undocumented>
+7	rolcanlogin	boolean	true		<undocumented>
+8	rolreplication	boolean	true		<undocumented>
+9	rolconnlimit	integer	true		<undocumented>
+10	rolpassword	text	true		<undocumented>
+11	rolvaliduntil	"timestamp with time zone"	true		<undocumented>
+12	rolconfig	text[]	true		<undocumented>
+13	oid	oid	true		<undocumented>
+ol	true		"role is a replication role. that is, this role can initiate streaming replication and set/unset the system backup mode using pg_start_backup and pg_stop_backup"
 9	rolconnlimit	int4	true		"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit."
 10	rolpassword	text	true		"not the password (always reads as ********)"
 11	rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiration"

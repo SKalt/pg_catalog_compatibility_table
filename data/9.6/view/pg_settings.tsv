@@ -1,14 +1,22 @@
 Index	Name	Type	Nullable	References	Description
-1	name	text	true		"run-time configuration parameter name"
-2	setting	text	true		"current value of the parameter"
-3	unit	text	true		"implicit unit of the parameter"
-4	category	text	true		"logical group of the parameter"
-5	short_desc	text	true		"a brief description of the parameter"
-6	extra_desc	text	true		"additional, more detailed, description of the parameter"
-7	context	text	true		"context required to set the parameter's value (see below)"
-8	vartype	text	true		"parameter type (bool, enum, integer, real, or string)"
-9	source	text	true		"source of the current parameter value"
-10	min_val	text	true		"minimum allowed value of the parameter (null for non-numeric values)"
+1	name	text	true		<undocumented>
+2	setting	text	true		<undocumented>
+3	unit	text	true		<undocumented>
+4	category	text	true		<undocumented>
+5	short_desc	text	true		<undocumented>
+6	extra_desc	text	true		<undocumented>
+7	context	text	true		<undocumented>
+8	vartype	text	true		<undocumented>
+9	source	text	true		<undocumented>
+10	min_val	text	true		<undocumented>
+11	max_val	text	true		<undocumented>
+12	enumvals	text[]	true		<undocumented>
+13	boot_val	text	true		<undocumented>
+14	reset_val	text	true		<undocumented>
+15	sourcefile	text	true		<undocumented>
+16	sourceline	integer	true		<undocumented>
+17	pending_restart	boolean	true		<undocumented>
+ll for non-numeric values)"
 11	max_val	text	true		"maximum allowed value of the parameter (null for non-numeric values)"
 12	enumvals	text[]	true		"allowed values of an enum parameter (null for non-enum values)"
 13	boot_val	text	true		"parameter value assumed at server startup if the parameter is not otherwise set"
