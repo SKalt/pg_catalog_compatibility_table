@@ -44,33 +44,11 @@ func ParseScrapedTsv(data string) (result []ScrapedColData, err error) {
 			return
 		}
 		result = append(result, ScrapedColData{
-			Name:        parts[ScrapedTsvColName],
-			Type:        parts[ScrapedTsvColType],
-			References:  parts[ScrapedTsvColReferences],
-			Description: parts[ScrapedTsvColDescription],
+			Name:        tsvUtils.UnescapeTsvCell(parts[ScrapedTsvColName]),
+			Type:        tsvUtils.UnescapeTsvCell(parts[ScrapedTsvColType]),
+			References:  tsvUtils.UnescapeTsvCell(parts[ScrapedTsvColReferences]),
+			Description: tsvUtils.UnescapeTsvCell(parts[ScrapedTsvColDescription]),
 		})
 	}
 	return
-}
-
-// const (
-//
-//	TsvFnName = iota
-//	TsvFnIdentityArgs
-//	TsvFnResult
-// )
-
-const FnTsvHeader = "Name	Args	\"Return Type\"\n"
-
-type FnData struct {
-	Name, IdentityArgs, ReturnType string
-}
-
-func (fn FnData) TsvRow() string {
-	return fmt.Sprintf(
-		"%s\t%s\t%s\n",
-		tsvUtils.EscapeTsvField(fn.Name),
-		tsvUtils.EscapeTsvField(fn.IdentityArgs),
-		tsvUtils.EscapeTsvField(fn.ReturnType),
-	)
 }

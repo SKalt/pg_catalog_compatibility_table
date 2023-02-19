@@ -1,4 +1,18 @@
+.PHONY: all
+all:
+	rm -rf data/scrape*
+	LOG_LEVEL=INFO go run scripts/scrape_site/main.go
+
+	rm -rf data/observe*
+	docker compose up -d
+
+	LOG_LEVEL=INFO go run scripts/observe_containers/main.go
+	rm -rf ./data/combine*
+
+	LOG_LEVEL=DEBUG go run scripts/combine/main.go
+
 .PHONY: lint scrape
+
 
 scrape: ./data/columns.tsv
 ./data/columns.tsv: ./index.ts ./package.json ./pnpm-lock.yaml

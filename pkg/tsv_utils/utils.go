@@ -35,7 +35,7 @@ func EscapeTsvField(s string) string {
 
 func UnescapeTsvCell(cell string) string {
 	if strings.HasPrefix(cell, `"`) {
-		return strings.ReplaceAll(strings.Trim(cell, `"`), `""`, `"`)
+		return strings.ReplaceAll(cell[1:len(cell)-2], `""`, `"`)
 	} else {
 		return cell // doesn't need un-escaping!
 	}

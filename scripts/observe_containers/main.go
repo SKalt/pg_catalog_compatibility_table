@@ -185,7 +185,7 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 		if err := rows.Scan(&n, &name, &kind, &notNullable, &defaultExpr); err != nil {
 			log.Fatal(err)
 		}
-		result := common.ObservedColData{Name: name, Type: kind, Nullable: ""}
+		result := common.ObservedColData{Name: name, Type: common.CorrectTypeName(kind), Nullable: ""}
 		if notNullable != nil {
 			if *notNullable {
 				result.Nullable = "false"
@@ -386,7 +386,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	observationDir := filepath.Join(dataDir, "observations")
+	observationDir := filepath.Join(dataDir, "observed")
 	if err = os.MkdirAll(observationDir, dirMode); err != nil {
 		log.Fatal(err)
 	}

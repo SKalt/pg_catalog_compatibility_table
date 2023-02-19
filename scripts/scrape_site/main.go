@@ -128,7 +128,7 @@ func scrape12Minus(html *colly.HTMLElement, dataDir, version, kind, relation str
 			case "References", "references":
 				col.References = text
 			case "Data Type", "data type", "type":
-				col.Type = text
+				col.Type = common.CorrectTypeName(text)
 			case "Description", "description":
 				col.Description = sanitizeString(dedentRe.ReplaceAllString(text, " "))
 				col.Description = purgeSectionRefs(col.Description)
@@ -161,7 +161,7 @@ func scrape13Plus(page *colly.HTMLElement, dataDir, version, kind, relation stri
 		row := tr.Find(".column_definition").First()
 		colNames := row.Find(".structfield")
 		col.Name = normalizeString(colNames.First().Text())
-		col.Type = normalizeString(tr.Find(".type").First().Text())
+		col.Type = common.CorrectTypeName(normalizeString(tr.Find(".type").First().Text()))
 		notes := normalizeString(row.NextAll().Filter("p").Text())
 		notes = dedentRe.ReplaceAllString(notes, " ")
 		notes = purgeSectionRefs(notes)

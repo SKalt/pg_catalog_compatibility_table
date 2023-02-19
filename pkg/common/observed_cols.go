@@ -9,8 +9,14 @@ import (
 
 func CorrectTypeName(type_ string) string {
 	switch type_ {
+	case `"char"`:
+		return "char"
+	case `"char"[]`:
+		return "char[]"
 	case "boolean":
 		return "bool"
+	case "boolean[]":
+		return "bool[]"
 	case "smallint":
 		return "int2"
 	case "integer":
@@ -29,6 +35,8 @@ func CorrectTypeName(type_ string) string {
 		return "float4"
 	case "real[]":
 		return "float4[]"
+	case "double precision[]":
+		return "float8[]"
 	default:
 		return type_
 	}
@@ -38,7 +46,7 @@ type ObservedColData struct {
 	Name, Type, Nullable string // must be present
 }
 
-const ObservedColTsvHeader = "Name\tType\tNullable\tDefault\n"
+const ObservedColTsvHeader = "Name\tType\tNullable\n"
 const (
 	ObservedTsvColName = iota
 	ObservedTsvColType
@@ -68,9 +76,9 @@ func ParseObservedTsv(data string) (result []ObservedColData, err error) {
 			return
 		}
 		result = append(result, ObservedColData{
-			Name:     parts[ObservedTsvColName],
-			Type:     parts[ObservedTsvColType],
-			Nullable: parts[ObservedTsvColNullable],
+			Name:     tsvUtils.UnescapeTsvCell(parts[ObservedTsvColName]),
+			Type:     tsvUtils.UnescapeTsvCell(parts[ObservedTsvColType]),
+			Nullable: tsvUtils.UnescapeTsvCell(parts[ObservedTsvColNullable]),
 		})
 	}
 	return
