@@ -1,0 +1,15 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+rulename	name	false		"rule nam"
+ev_class	oid	false	pg_class.oid	"the table this rule is fo"
+ev_attr	int2	false		"the column this rule is for (currently, always -1 to indicate the whole table"
+ev_type	char	false		"event type that the rule is for: 1 = select, 2 = update, 3 = insert, 4 = delet"
+ev_enabled	char	false		"controls in which session_replication_role modes the rule fires. o = rule fires in ""origin"" and ""local"" modes, d = rule is disabled, r = rule fires in ""replica"" mode, a = rule fires always"
+is_instead	bool	false		"true if the rule is an instead rul"
+ev_qual	pg_node_tree	true		"expression tree (in the form of a nodetostring() representation) for the rule's qualifying conditio"
+ev_action	pg_node_tree	true		"query tree (in the form of a nodetostring() representation) for the rule's actio"

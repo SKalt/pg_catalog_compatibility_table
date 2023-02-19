@@ -1,0 +1,37 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+amname	name	false		"name of the access metho"
+amstrategies	int2	false		
+amsupport	int2	false		
+amcanorder	bool	false		
+amcanorderbyop	bool	false		
+amcanbackward	bool	false		
+amcanunique	bool	false		
+amcanmulticol	bool	false		
+amoptionalkey	bool	false		
+amsearcharray	bool	false		
+amsearchnulls	bool	false		
+amstorage	bool	false		
+amclusterable	bool	false		
+ampredlocks	bool	false		
+amkeytype	oid	false		
+aminsert	regproc	false		
+ambeginscan	regproc	false		
+amgettuple	regproc	false		
+amgetbitmap	regproc	false		
+amrescan	regproc	false		
+amendscan	regproc	false		
+ammarkpos	regproc	false		
+amrestrpos	regproc	false		
+ambuild	regproc	false		
+ambuildempty	regproc	false		
+ambulkdelete	regproc	false		
+amvacuumcleanup	regproc	false		
+amcanreturn	regproc	false		
+amcostestimate	regproc	false		
+amoptions	regproc	false		

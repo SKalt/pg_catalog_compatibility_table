@@ -1,0 +1,19 @@
+datid	oid	true		
+datname	name	true		
+numbackends	int4	true		
+xact_commit	int8	true		
+xact_rollback	int8	true		
+blks_read	int8	true		
+blks_hit	int8	true		
+tup_returned	int8	true		
+tup_fetched	int8	true		
+tup_inserted	int8	true		
+tup_updated	int8	true		
+tup_deleted	int8	true		
+conflicts	int8	true		
+temp_files	int8	true		
+temp_bytes	int8	true		
+deadlocks	int8	true		
+blk_read_time	"double precisio"	true		
+blk_write_time	"double precisio"	true		
+stats_reset	timestamptz	true		

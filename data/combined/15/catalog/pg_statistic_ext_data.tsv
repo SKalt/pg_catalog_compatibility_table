@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+stxoid	oid	false		"extended statistics object containing the definition for this dat"
+stxdinherit	bool	false		"if true, the stats include values from child tables, not just the values in the specified relatio"
+stxdndistinct	pg_ndistinct	true		"n-distinct counts, serialized as pg_ndistinct typ"
+stxddependencies	pg_dependencies	true		"functional dependency statistics, serialized as pg_dependencies typ"
+stxdmcv	pg_mcv_list	true		"mcv (most-common values) list statistics, serialized as pg_mcv_list typ"
+stxdexpr	pg_statistic[]	true		"per-expression statistics, serialized as an array of pg_statistic typ"

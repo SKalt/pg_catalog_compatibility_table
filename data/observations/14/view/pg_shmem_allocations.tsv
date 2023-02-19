@@ -1,5 +1,5 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
-off	bigint	true
-size	bigint	true
-allocated_size	bigint	true
+off	int8	true
+size	int8	true
+allocated_size	int8	true

@@ -1,0 +1,3 @@
+groname	name	true		"name of the grou"
+grosysid	oid	true		"id of this grou"
+grolist	oid[]	true		"an array containing the ids of the roles in this grou"

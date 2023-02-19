@@ -1,8 +1,8 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 sourcefile	text	true
-sourceline	integer	true
-seqno	integer	true
+sourceline	int4	true
+seqno	int4	true
 name	text	true
 setting	text	true
-applied	boolean	true
+applied	bool	true
 error	text	true

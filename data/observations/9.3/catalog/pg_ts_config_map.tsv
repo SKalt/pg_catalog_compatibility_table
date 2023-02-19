@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -6,6 +6,6 @@ cmin	cid	false
 xmin	xid	false
 ctid	tid	false
 mapcfg	oid	false
-maptokentype	integer	false
-mapseqno	integer	false
+maptokentype	int4	false
+mapseqno	int4	false
 mapdict	oid	false

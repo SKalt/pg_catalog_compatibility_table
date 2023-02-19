@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,12 +9,12 @@ ctid	tid	false
 typname	name	false
 typnamespace	oid	false
 typowner	oid	false
-typlen	smallint	false
-typbyval	boolean	false
+typlen	int2	false
+typbyval	bool	false
 typtype	"""char"""	false
 typcategory	"""char"""	false
-typispreferred	boolean	false
-typisdefined	boolean	false
+typispreferred	bool	false
+typisdefined	bool	false
 typdelim	"""char"""	false
 typrelid	oid	false
 typelem	oid	false
@@ -28,10 +28,10 @@ typmodout	regproc	false
 typanalyze	regproc	false
 typalign	"""char"""	false
 typstorage	"""char"""	false
-typnotnull	boolean	false
+typnotnull	bool	false
 typbasetype	oid	false
-typtypmod	integer	false
-typndims	integer	false
+typtypmod	int4	false
+typndims	int4	false
 typcollation	oid	false
 typdefaultbin	pg_node_tree	true
 typdefault	text	true

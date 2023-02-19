@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,7 +9,7 @@ oid	oid	false
 conname	name	false
 connamespace	oid	false
 conowner	oid	false
-conforencoding	integer	false
-contoencoding	integer	false
+conforencoding	int4	false
+contoencoding	int4	false
 conproc	regproc	false
-condefault	boolean	false
+condefault	bool	false

@@ -1,0 +1,7 @@
+datid	oid	true		
+datname	name	true		
+confl_tablespace	int8	true		
+confl_lock	int8	true		
+confl_snapshot	int8	true		
+confl_bufferpin	int8	true		
+confl_deadlock	int8	true		

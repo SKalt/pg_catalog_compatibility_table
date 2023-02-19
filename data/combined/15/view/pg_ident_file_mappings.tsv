@@ -1,0 +1,5 @@
+line_number	int4	true		"line number of this map in pg_ident.con"
+map_name	text	true		"name of the ma"
+sys_name	text	true		"detected user name of the clien"
+pg_username	text	true		"requested postgresql user nam"
+error	text	true		"if not null, an error message indicating why this line could not be processe"

@@ -1,9 +1,9 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	name	true
 version	text	true
-installed	boolean	true
-superuser	boolean	true
-relocatable	boolean	true
+installed	bool	true
+superuser	bool	true
+relocatable	bool	true
 schema	name	true
 requires	name[]	true
 comment	text	true

@@ -1,0 +1,14 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+seqrelid	oid	false	pg_class.oid	"the oid of the pg_class entry for this sequenc"
+seqtypid	oid	false	pg_type.oid	"data type of the sequenc"
+seqstart	int8	false		"start value of the sequenc"
+seqincrement	int8	false		"increment value of the sequenc"
+seqmax	int8	false		"maximum value of the sequenc"
+seqmin	int8	false		"minimum value of the sequenc"
+seqcache	int8	false		"cache size of the sequenc"
+seqcycle	bool	false		"whether the sequence cycle"

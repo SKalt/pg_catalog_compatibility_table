@@ -1,0 +1,9 @@
+pid	int4	true		
+ssl	bool	true		
+version	text	true		
+cipher	text	true		
+bits	int4	true		
+compression	bool	true		
+client_dn	text	true		
+client_serial	numeric	true		
+issuer_dn	text	true		

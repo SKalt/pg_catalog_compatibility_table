@@ -1,6 +1,6 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 transaction	xid	true
 gid	text	true
-prepared	"timestamp with time zone"	true
+prepared	timestamptz	true
 owner	name	true
 database	name	true

@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -10,8 +10,8 @@ oprname	name	false
 oprnamespace	oid	false
 oprowner	oid	false
 oprkind	"""char"""	false
-oprcanmerge	boolean	false
-oprcanhash	boolean	false
+oprcanmerge	bool	false
+oprcanhash	bool	false
 oprleft	oid	false
 oprright	oid	false
 oprresult	oid	false

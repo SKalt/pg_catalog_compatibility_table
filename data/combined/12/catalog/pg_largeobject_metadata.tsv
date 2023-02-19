@@ -1,0 +1,9 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+lomowner	oid	false	pg_authid.oid	"owner of the large objec"
+lomacl	aclitem[]	true		"access privilege"

@@ -1,18 +1,18 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 datid	oid	true
 datname	name	true
-pid	integer	true
+pid	int4	true
 usesysid	oid	true
 usename	name	true
 application_name	text	true
 client_addr	inet	true
 client_hostname	text	true
-client_port	integer	true
-backend_start	"timestamp with time zone"	true
-xact_start	"timestamp with time zone"	true
-query_start	"timestamp with time zone"	true
-state_change	"timestamp with time zone"	true
-waiting	boolean	true
+client_port	int4	true
+backend_start	timestamptz	true
+xact_start	timestamptz	true
+query_start	timestamptz	true
+state_change	timestamptz	true
+waiting	bool	true
 state	text	true
 backend_xid	xid	true
 backend_xmin	xid	true

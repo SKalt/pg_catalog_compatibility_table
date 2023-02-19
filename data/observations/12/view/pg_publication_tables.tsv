@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 pubname	name	true
 schemaname	name	true
 tablename	name	true

@@ -1,6 +1,6 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 relid	oid	true
 schemaname	name	true
 relname	name	true
-blks_read	bigint	true
-blks_hit	bigint	true
+blks_read	int8	true
+blks_hit	int8	true

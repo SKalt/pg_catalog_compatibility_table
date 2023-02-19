@@ -1,0 +1,4 @@
+schemaname	name	true		"name of schema containing vie"
+viewname	name	true		"name of vie"
+viewowner	name	true		"name of view's owne"
+definition	text	true		"view definition (a reconstructed select query"

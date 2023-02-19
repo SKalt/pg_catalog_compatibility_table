@@ -1,0 +1,21 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+oprname	name	false		"name of the operato"
+oprnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this operato"
+oprowner	oid	false	pg_authid.oid	"owner of the operato"
+oprkind	char	false		"b = infix (""both""), l = prefix (""left""), r = postfix (""right"""
+oprcanmerge	bool	false		"this operator supports merge join"
+oprcanhash	bool	false		"this operator supports hash join"
+oprleft	oid	false	pg_type.oid	"type of the left operan"
+oprright	oid	false	pg_type.oid	"type of the right operan"
+oprresult	oid	false	pg_type.oid	"type of the resul"
+oprcom	oid	false	pg_operator.oid	"commutator of this operator, if an"
+oprnegate	oid	false	pg_operator.oid	"negator of this operator, if an"
+oprcode	regproc	false	pg_proc.oid	"function that implements this operato"
+oprrest	regproc	false	pg_proc.oid	"restriction selectivity estimation function for this operato"
+oprjoin	regproc	false	pg_proc.oid	"join selectivity estimation function for this operato"

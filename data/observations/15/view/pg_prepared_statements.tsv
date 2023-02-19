@@ -1,8 +1,8 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
 statement	text	true
-prepare_time	"timestamp with time zone"	true
+prepare_time	timestamptz	true
 parameter_types	regtype[]	true
-from_sql	boolean	true
-generic_plans	bigint	true
-custom_plans	bigint	true
+from_sql	bool	true
+generic_plans	int8	true
+custom_plans	int8	true

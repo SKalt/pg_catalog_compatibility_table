@@ -1,0 +1,11 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+adrelid	oid	false	pg_class.oid	"the table this column belongs t"
+adnum	int2	false	pg_attribute.attnum	"the number of the colum"
+adbin	pg_node_tree	true		"the internal representation of the column default valu"
+adsrc	text	true		"a human-readable representation of the default valu"

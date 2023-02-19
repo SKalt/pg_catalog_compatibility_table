@@ -1,0 +1,15 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+polname	name	false
+polrelid	oid	false
+polcmd	char	false
+polpermissive	bool	false
+polroles	oid[]	false
+polqual	pg_node_tree	true
+polwithcheck	pg_node_tree	true

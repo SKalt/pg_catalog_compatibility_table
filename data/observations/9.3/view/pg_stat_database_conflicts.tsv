@@ -1,8 +1,8 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 datid	oid	true
 datname	name	true
-confl_tablespace	bigint	true
-confl_lock	bigint	true
-confl_snapshot	bigint	true
-confl_bufferpin	bigint	true
-confl_deadlock	bigint	true
+confl_tablespace	int8	true
+confl_lock	int8	true
+confl_snapshot	int8	true
+confl_bufferpin	int8	true
+confl_deadlock	int8	true

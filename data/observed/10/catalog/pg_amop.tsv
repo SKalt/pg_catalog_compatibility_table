@@ -1,0 +1,16 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+oid	oid	false
+ctid	tid	false
+amopfamily	oid	false
+amoplefttype	oid	false
+amoprighttype	oid	false
+amopstrategy	int2	false
+amoppurpose	char	false
+amopopr	oid	false
+amopmethod	oid	false
+amopsortfamily	oid	false

@@ -1,0 +1,14 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+classid	oid	false
+objid	oid	false
+objsubid	int4	false
+refclassid	oid	false
+refobjid	oid	false
+refobjsubid	int4	false
+deptype	char	false

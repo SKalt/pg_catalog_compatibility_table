@@ -1,0 +1,10 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+adrelid	oid	false	pg_class.oid	"the table this column belongs t"
+adnum	int2	false	pg_attribute.attnum	"the number of the colum"
+adbin	pg_node_tree	false		"the column default value, in nodetostring() representation. use pg_get_expr(adbin, adrelid) to convert it to an sql expression"

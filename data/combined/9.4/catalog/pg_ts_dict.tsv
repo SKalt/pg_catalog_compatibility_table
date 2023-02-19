@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+dictname	name	false		"text search dictionary nam"
+dictnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this dictionar"
+dictowner	oid	false	pg_authid.oid	"owner of the dictionar"
+dicttemplate	oid	false	pg_ts_template.oid	"the oid of the text search template for this dictionar"
+dictinitoption	text	true		"initialization option string for the templat"

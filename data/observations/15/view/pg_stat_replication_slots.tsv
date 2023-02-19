@@ -1,11 +1,11 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 slot_name	text	true
-spill_txns	bigint	true
-spill_count	bigint	true
-spill_bytes	bigint	true
-stream_txns	bigint	true
-stream_count	bigint	true
-stream_bytes	bigint	true
-total_txns	bigint	true
-total_bytes	bigint	true
-stats_reset	"timestamp with time zone"	true
+spill_txns	int8	true
+spill_count	int8	true
+spill_bytes	int8	true
+stream_txns	int8	true
+stream_count	int8	true
+stream_bytes	int8	true
+total_txns	int8	true
+total_bytes	int8	true
+stats_reset	timestamptz	true

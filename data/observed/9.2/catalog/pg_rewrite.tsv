@@ -1,0 +1,16 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+oid	oid	false
+ctid	tid	false
+rulename	name	false
+ev_class	oid	false
+ev_attr	int2	false
+ev_type	char	false
+ev_enabled	char	false
+is_instead	bool	false
+ev_qual	pg_node_tree	true
+ev_action	pg_node_tree	true

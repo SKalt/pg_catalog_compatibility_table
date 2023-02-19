@@ -1,17 +1,17 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 locktype	text	true
 database	oid	true
 relation	oid	true
-page	integer	true
-tuple	smallint	true
+page	int4	true
+tuple	int2	true
 virtualxid	text	true
 transactionid	xid	true
 classid	oid	true
 objid	oid	true
-objsubid	smallint	true
+objsubid	int2	true
 virtualtransaction	text	true
-pid	integer	true
+pid	int4	true
 mode	text	true
-granted	boolean	true
-fastpath	boolean	true
-waitstart	"timestamp with time zone"	true
+granted	bool	true
+fastpath	bool	true
+waitstart	timestamptz	true

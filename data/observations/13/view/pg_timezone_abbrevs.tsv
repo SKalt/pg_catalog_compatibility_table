@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 abbrev	text	true
 utc_offset	interval	true
-is_dst	boolean	true
+is_dst	bool	true

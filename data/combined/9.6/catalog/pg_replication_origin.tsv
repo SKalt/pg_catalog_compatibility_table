@@ -1,0 +1,8 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+roident	oid	false		"a unique, cluster-wide identifier for the replication origin. should never leave the system"
+roname	text	false		"the external, user defined, name of a replication origin"

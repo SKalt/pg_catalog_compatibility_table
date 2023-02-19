@@ -1,9 +1,9 @@
-Name	Type	Nullable	Default
-pid	integer	true
-ssl	boolean	true
+Name	Type	Nullable
+pid	int4	true
+ssl	bool	true
 version	text	true
 cipher	text	true
-bits	integer	true
+bits	int4	true
 client_dn	text	true
 client_serial	numeric	true
 issuer_dn	text	true

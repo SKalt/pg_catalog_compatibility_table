@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,7 +9,7 @@ oid	oid	false
 amopfamily	oid	false
 amoplefttype	oid	false
 amoprighttype	oid	false
-amopstrategy	smallint	false
+amopstrategy	int2	false
 amoppurpose	"""char"""	false
 amopopr	oid	false
 amopmethod	oid	false

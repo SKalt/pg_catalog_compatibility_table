@@ -1,0 +1,5 @@
+relid	oid	true		
+schemaname	name	true		
+relname	name	true		
+blks_read	int8	true		
+blks_hit	int8	true		

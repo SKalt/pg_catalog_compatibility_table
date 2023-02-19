@@ -1,0 +1,13 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		
+stxrelid	oid	false	pg_class.oid	"table containing the columns described by this objec"
+stxname	name	false		"name of the statistics objec"
+stxnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this statistics objec"
+stxowner	oid	false	pg_authid.oid	"owner of the statistics objec"
+stxkeys	int2vector	false	pg_attribute.attnum	"an array of attribute numbers, indicating which table columns are covered by this statistics object; for example a value of 1 3 would mean that the first and the third table columns are covere"
+stxkind	char[]	false		"an array containing codes for the enabled statistics kinds; valid values are: d for n-distinct statistics, f for functional dependency statistics, and m for most common values (mcv) list statistic"

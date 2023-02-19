@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -10,7 +10,7 @@ collname	name	false
 collnamespace	oid	false
 collowner	oid	false
 collprovider	"""char"""	false
-collencoding	integer	false
+collencoding	int4	false
 collcollate	name	false
 collctype	name	false
 collversion	text	true

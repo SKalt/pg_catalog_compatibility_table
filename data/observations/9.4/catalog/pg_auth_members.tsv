@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -8,4 +8,4 @@ ctid	tid	false
 roleid	oid	false
 member	oid	false
 grantor	oid	false
-admin_option	boolean	false
+admin_option	bool	false

@@ -1,0 +1,3 @@
+pubname	name	true		"name of publicatio"
+schemaname	name	true		"name of schema containing tabl"
+tablename	name	true		"name of tabl"

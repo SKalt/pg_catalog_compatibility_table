@@ -1,0 +1,14 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+prsname	name	false		"text search parser nam"
+prsnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this parse"
+prsstart	regproc	false	pg_proc.oid	"oid of the parser's startup functio"
+prstoken	regproc	false	pg_proc.oid	"oid of the parser's next-token functio"
+prsend	regproc	false	pg_proc.oid	"oid of the parser's shutdown functio"
+prsheadline	regproc	false	pg_proc.oid	"oid of the parser's headline functio"
+prslextype	regproc	false	pg_proc.oid	"oid of the parser's lextype functio"

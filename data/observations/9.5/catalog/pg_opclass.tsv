@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -12,5 +12,5 @@ opcnamespace	oid	false
 opcowner	oid	false
 opcfamily	oid	false
 opcintype	oid	false
-opcdefault	boolean	false
+opcdefault	bool	false
 opckeytype	oid	false

@@ -1,0 +1,13 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+fdwname	name	false		"name of the foreign-data wrappe"
+fdwowner	oid	false	pg_authid.oid	"owner of the foreign-data wrappe"
+fdwhandler	oid	false	pg_proc.oid	"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provide"
+fdwvalidator	oid	false	pg_proc.oid	"references a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provide"
+fdwacl	aclitem[]	true		"access privilege"
+fdwoptions	text[]	true		"foreign-data wrapper specific options, as ""keyword=value"" string"

@@ -1,0 +1,15 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+amopfamily	oid	false		"the operator family this entry is fo"
+amoplefttype	oid	false		"left-hand input data type of operato"
+amoprighttype	oid	false		"right-hand input data type of operato"
+amopstrategy	int2	false		"operator strategy numbe"
+amoppurpose	char	false		"operator purpose, either s for search or o for orderin"
+amopopr	oid	false		"oid of the operato"
+amopmethod	oid	false		"index access method operator family is fo"
+amopsortfamily	oid	false		"the b-tree operator family this entry sorts according to, if an ordering operator; zero if a search operato"

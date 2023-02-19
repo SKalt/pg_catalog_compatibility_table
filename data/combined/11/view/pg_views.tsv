@@ -1,0 +1,4 @@
+schemaname	name	true	pg_namespace.nspname	"name of schema containing vie"
+viewname	name	true	pg_class.relname	"name of vie"
+viewowner	name	true	pg_authid.rolname	"name of view's owne"
+definition	text	true		"view definition (a reconstructed select query"

@@ -1,0 +1,12 @@
+pid	int4	true		
+datid	oid	true		
+datname	name	true		
+relid	oid	true		
+command	text	true		
+phase	text	true		
+cluster_index_relid	oid	true		
+heap_tuples_scanned	int8	true		
+heap_tuples_written	int8	true		
+heap_blks_total	int8	true		
+heap_blks_scanned	int8	true		
+index_rebuild_count	int8	true		

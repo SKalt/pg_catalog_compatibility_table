@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 schemaname	name	true
 tablename	name	true
 statistics_schemaname	name	true
@@ -7,7 +7,7 @@ statistics_owner	name	true
 attnames	name[]	true
 exprs	text[]	true
 kinds	"""char""[]"	true
-inherited	boolean	true
+inherited	bool	true
 n_distinct	pg_ndistinct	true
 dependencies	pg_dependencies	true
 most_common_vals	text[]	true

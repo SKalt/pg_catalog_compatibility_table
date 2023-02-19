@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -10,6 +10,6 @@ rulename	name	false
 ev_class	oid	false
 ev_type	"""char"""	false
 ev_enabled	"""char"""	false
-is_instead	boolean	false
+is_instead	bool	false
 ev_qual	pg_node_tree	true
 ev_action	pg_node_tree	true

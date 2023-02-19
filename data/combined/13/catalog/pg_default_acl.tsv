@@ -1,0 +1,11 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+defaclrole	oid	false		"the oid of the role associated with this entr"
+defaclnamespace	oid	false		"the oid of the namespace associated with this entry, or 0 if non"
+defaclobjtype	char	false		"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schem"
+defaclacl	aclitem[]	false		"access privileges that this type of object should have on creatio"

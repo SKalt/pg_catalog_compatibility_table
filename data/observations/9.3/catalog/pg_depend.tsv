@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -7,8 +7,8 @@ xmin	xid	false
 ctid	tid	false
 classid	oid	false
 objid	oid	false
-objsubid	integer	false
+objsubid	int4	false
 refclassid	oid	false
 refobjid	oid	false
-refobjsubid	integer	false
+refobjsubid	int4	false
 deptype	"""char"""	false

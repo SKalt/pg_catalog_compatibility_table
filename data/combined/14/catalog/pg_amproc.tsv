@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+amprocfamily	oid	false		"the operator family this entry is fo"
+amproclefttype	oid	false		"left-hand input data type of associated operato"
+amprocrighttype	oid	false		"right-hand input data type of associated operato"
+amprocnum	int2	false		"support function numbe"
+amproc	regproc	false		"oid of the functio"

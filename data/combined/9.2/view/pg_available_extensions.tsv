@@ -1,0 +1,4 @@
+name	name	true		"extension nam"
+default_version	text	true		"name of default version, or null if none is specifie"
+installed_version	text	true		"currently installed version of the extension, or null if not installe"
+comment	text	true		"comment string from the extension's control fil"

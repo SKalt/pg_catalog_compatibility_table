@@ -1,10 +1,10 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
-blks_zeroed	bigint	true
-blks_hit	bigint	true
-blks_read	bigint	true
-blks_written	bigint	true
-blks_exists	bigint	true
-flushes	bigint	true
-truncates	bigint	true
-stats_reset	"timestamp with time zone"	true
+blks_zeroed	int8	true
+blks_hit	int8	true
+blks_read	int8	true
+blks_written	int8	true
+blks_exists	int8	true
+flushes	int8	true
+truncates	int8	true
+stats_reset	timestamptz	true

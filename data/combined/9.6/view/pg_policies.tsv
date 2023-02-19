@@ -1,0 +1,7 @@
+schemaname	name	true	pg_namespace.nspname	"name of schema containing table policy is o"
+tablename	name	true	pg_class.relname	"name of table policy is o"
+policyname	name	true	pg_policy.polname	"name of polic"
+roles	name[]	true		"the roles to which this policy applie"
+cmd	text	true		"the command type to which the policy is applie"
+qual	text	true		"the expression added to the security barrier qualifications for queries that this policy applies t"
+with_check	text	true		"the expression added to the with check qualifications for queries that attempt to add rows to this tabl"

@@ -1,0 +1,8 @@
+relid	oid	true		
+indexrelid	oid	true		
+schemaname	name	true		
+relname	name	true		
+indexrelname	name	true		
+idx_scan	int8	true		
+idx_tup_read	int8	true		
+idx_tup_fetch	int8	true		

@@ -1,0 +1,11 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+trftype	oid	false		"oid of the data type this transform is fo"
+trflang	oid	false		"oid of the language this transform is fo"
+trffromsql	regproc	false		"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if this operation is not supported"
+trftosql	regproc	false		"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if this operation is not supported"

@@ -1,5 +1,5 @@
 Name	Type	References	Description
-line_number	integer		"line number of this rule in pg_hba.conf"
+line_number	int4		"line number of this rule in pg_hba.conf"
 type	text		"type of connection"
 database	text[]		"list of database name(s) to which this rule applies"
 user_name	text[]		"list of user and group name(s) to which this rule applies"

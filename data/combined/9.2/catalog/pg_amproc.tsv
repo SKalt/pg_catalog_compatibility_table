@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+amprocfamily	oid	false	pg_opfamily.oid	"the operator family this entry is fo"
+amproclefttype	oid	false	pg_type.oid	"left-hand input data type of associated operato"
+amprocrighttype	oid	false	pg_type.oid	"right-hand input data type of associated operato"
+amprocnum	int2	false		"support procedure numbe"
+amproc	regproc	false	pg_proc.oid	"oid of the procedur"

@@ -1,10 +1,10 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 usename	name	true
 usesysid	oid	true
-usecreatedb	boolean	true
-usesuper	boolean	true
-userepl	boolean	true
-usebypassrls	boolean	true
+usecreatedb	bool	true
+usesuper	bool	true
+userepl	bool	true
+usebypassrls	bool	true
 passwd	text	true
 valuntil	abstime	true
 useconfig	text[]	true

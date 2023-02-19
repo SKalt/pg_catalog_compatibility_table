@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -7,13 +7,13 @@ xmin	xid	false
 ctid	tid	false
 oid	oid	false
 rolname	name	false
-rolsuper	boolean	false
-rolinherit	boolean	false
-rolcreaterole	boolean	false
-rolcreatedb	boolean	false
-rolcanlogin	boolean	false
-rolreplication	boolean	false
-rolbypassrls	boolean	false
-rolconnlimit	integer	false
+rolsuper	bool	false
+rolinherit	bool	false
+rolcreaterole	bool	false
+rolcreatedb	bool	false
+rolcanlogin	bool	false
+rolreplication	bool	false
+rolbypassrls	bool	false
+rolconnlimit	int4	false
 rolpassword	text	true
-rolvaliduntil	"timestamp with time zone"	true
+rolvaliduntil	timestamptz	true

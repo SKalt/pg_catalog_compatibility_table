@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -7,18 +7,18 @@ xmin	xid	false
 ctid	tid	false
 indexrelid	oid	false
 indrelid	oid	false
-indnatts	smallint	false
-indnkeyatts	smallint	false
-indisunique	boolean	false
-indisprimary	boolean	false
-indisexclusion	boolean	false
-indimmediate	boolean	false
-indisclustered	boolean	false
-indisvalid	boolean	false
-indcheckxmin	boolean	false
-indisready	boolean	false
-indislive	boolean	false
-indisreplident	boolean	false
+indnatts	int2	false
+indnkeyatts	int2	false
+indisunique	bool	false
+indisprimary	bool	false
+indisexclusion	bool	false
+indimmediate	bool	false
+indisclustered	bool	false
+indisvalid	bool	false
+indcheckxmin	bool	false
+indisready	bool	false
+indislive	bool	false
+indisreplident	bool	false
 indkey	int2vector	false
 indcollation	oidvector	false
 indclass	oidvector	false

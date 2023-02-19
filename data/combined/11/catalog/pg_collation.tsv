@@ -1,0 +1,15 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+collname	name	false		"collation name (unique per namespace and encoding"
+collnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this collatio"
+collowner	oid	false	pg_authid.oid	"owner of the collatio"
+collprovider	char	false		"provider of the collation: d = database default, c = libc, i = ic"
+collencoding	int4	false		"encoding in which the collation is applicable, or -1 if it works for any encodin"
+collcollate	name	false		"lc_collate for this collation objec"
+collctype	name	false		"lc_ctype for this collation objec"
+collversion	text	true		"provider-specific version of the collation. this is recorded when the collation is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption"

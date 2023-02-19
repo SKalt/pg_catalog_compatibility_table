@@ -1,8 +1,8 @@
-Name	Type	Nullable	Default
-archived_count	bigint	true
+Name	Type	Nullable
+archived_count	int8	true
 last_archived_wal	text	true
-last_archived_time	"timestamp with time zone"	true
-failed_count	bigint	true
+last_archived_time	timestamptz	true
+failed_count	int8	true
 last_failed_wal	text	true
-last_failed_time	"timestamp with time zone"	true
-stats_reset	"timestamp with time zone"	true
+last_failed_time	timestamptz	true
+stats_reset	timestamptz	true

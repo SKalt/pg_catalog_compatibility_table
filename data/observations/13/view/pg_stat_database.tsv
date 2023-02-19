@@ -1,22 +1,22 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 datid	oid	true
 datname	name	true
-numbackends	integer	true
-xact_commit	bigint	true
-xact_rollback	bigint	true
-blks_read	bigint	true
-blks_hit	bigint	true
-tup_returned	bigint	true
-tup_fetched	bigint	true
-tup_inserted	bigint	true
-tup_updated	bigint	true
-tup_deleted	bigint	true
-conflicts	bigint	true
-temp_files	bigint	true
-temp_bytes	bigint	true
-deadlocks	bigint	true
-checksum_failures	bigint	true
-checksum_last_failure	"timestamp with time zone"	true
+numbackends	int4	true
+xact_commit	int8	true
+xact_rollback	int8	true
+blks_read	int8	true
+blks_hit	int8	true
+tup_returned	int8	true
+tup_fetched	int8	true
+tup_inserted	int8	true
+tup_updated	int8	true
+tup_deleted	int8	true
+conflicts	int8	true
+temp_files	int8	true
+temp_bytes	int8	true
+deadlocks	int8	true
+checksum_failures	int8	true
+checksum_last_failure	timestamptz	true
 blk_read_time	"double precision"	true
 blk_write_time	"double precision"	true
-stats_reset	"timestamp with time zone"	true
+stats_reset	timestamptz	true

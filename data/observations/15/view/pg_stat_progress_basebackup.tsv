@@ -1,7 +1,7 @@
-Name	Type	Nullable	Default
-pid	integer	true
+Name	Type	Nullable
+pid	int4	true
 phase	text	true
-backup_total	bigint	true
-backup_streamed	bigint	true
-tablespaces_total	bigint	true
-tablespaces_streamed	bigint	true
+backup_total	int8	true
+backup_streamed	int8	true
+tablespaces_total	int8	true
+tablespaces_streamed	int8	true

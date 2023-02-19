@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION pg_catalog.integer_pl_date(integer, date)
+ RETURNS date
+ LANGUAGE sql
+ IMMUTABLE PARALLEL SAFE STRICT COST 1
+RETURN ($2 + $1)
+;

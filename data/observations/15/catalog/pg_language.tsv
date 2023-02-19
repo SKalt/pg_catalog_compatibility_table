@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -8,8 +8,8 @@ ctid	tid	false
 oid	oid	false
 lanname	name	false
 lanowner	oid	false
-lanispl	boolean	false
-lanpltrusted	boolean	false
+lanispl	bool	false
+lanpltrusted	bool	false
 lanplcallfoid	oid	false
 laninline	oid	false
 lanvalidator	oid	false

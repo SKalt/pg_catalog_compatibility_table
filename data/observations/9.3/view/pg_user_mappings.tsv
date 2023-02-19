@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 umid	oid	true
 srvid	oid	true
 srvname	name	true

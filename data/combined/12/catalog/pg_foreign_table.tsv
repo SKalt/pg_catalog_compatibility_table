@@ -1,0 +1,9 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+ftrelid	oid	false	pg_class.oid	"oid of the pg_class entry for this foreign tabl"
+ftserver	oid	false	pg_foreign_server.oid	"oid of the foreign server for this foreign tabl"
+ftoptions	text[]	true		"foreign table options, as ""keyword=value"" string"

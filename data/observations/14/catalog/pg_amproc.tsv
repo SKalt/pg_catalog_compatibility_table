@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,5 +9,5 @@ oid	oid	false
 amprocfamily	oid	false
 amproclefttype	oid	false
 amprocrighttype	oid	false
-amprocnum	smallint	false
+amprocnum	int2	false
 amproc	regproc	false

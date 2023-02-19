@@ -1,0 +1,20 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+subdbid	oid	false		"oid of the database that the subscription resides i"
+subskiplsn	pg_lsn	false		"finish lsn of the transaction whose changes are to be skipped, if a valid lsn; otherwise 0/0"
+subname	name	false		"name of the subscriptio"
+subowner	oid	false		"owner of the subscriptio"
+subenabled	bool	false		"if true, the subscription is enabled and should be replicatin"
+subbinary	bool	false		"if true, the subscription will request that the publisher send data in binary forma"
+substream	bool	false		"if true, the subscription will allow streaming of in-progress transaction"
+subtwophasestate	char	false		"state codes for two-phase mode: d = disabled, p = pending enablement, e = enable"
+subdisableonerr	bool	false		"if true, the subscription will be disabled if one of its workers detects an erro"
+subconninfo	text	false		"connection string to the upstream databas"
+subslotname	name	true		"name of the replication slot in the upstream database (also used for the local replication origin name); null represents non"
+subsynccommit	text	false		"the synchronous_commit setting for the subscription's workers to us"
+subpublications	text[]	false		"array of subscribed publication names. these reference publications defined in the upstream database. for more on publication"

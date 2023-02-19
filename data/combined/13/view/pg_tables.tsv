@@ -1,0 +1,8 @@
+schemaname	name	true		"name of schema containing tabl"
+tablename	name	true		"name of tabl"
+tableowner	name	true		"name of table's owne"
+tablespace	name	true		"name of tablespace containing table (null if default for database"
+hasindexes	bool	true		"true if table has (or recently had) any indexe"
+hasrules	bool	true		"true if table has (or once had) rule"
+hastriggers	bool	true		"true if table has (or once had) trigger"
+rowsecurity	bool	true		"true if row security is enabled on the tabl"

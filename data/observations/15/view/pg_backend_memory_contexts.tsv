@@ -1,10 +1,10 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
 ident	text	true
 parent	text	true
-level	integer	true
-total_bytes	bigint	true
-total_nblocks	bigint	true
-free_bytes	bigint	true
-free_chunks	bigint	true
-used_bytes	bigint	true
+level	int4	true
+total_bytes	int8	true
+total_nblocks	int8	true
+free_bytes	int8	true
+free_chunks	int8	true
+used_bytes	int8	true

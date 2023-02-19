@@ -1,0 +1,6 @@
+pid	int4	true		
+phase	text	true		
+backup_total	int8	true		
+backup_streamed	int8	true		
+tablespaces_total	int8	true		
+tablespaces_streamed	int8	true		

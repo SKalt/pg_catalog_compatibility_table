@@ -1,0 +1,3 @@
+groname	name	true	pg_authid.rolname	"name of the grou"
+grosysid	oid	true	pg_authid.oid	"id of this grou"
+grolist	oid[]	true	pg_authid.oid	"an array containing the ids of the roles in this grou"

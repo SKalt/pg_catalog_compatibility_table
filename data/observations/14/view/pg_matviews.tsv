@@ -1,8 +1,8 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 schemaname	name	true
 matviewname	name	true
 matviewowner	name	true
 tablespace	name	true
-hasindexes	boolean	true
-ispopulated	boolean	true
+hasindexes	bool	true
+ispopulated	bool	true
 definition	text	true

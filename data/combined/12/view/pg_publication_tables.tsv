@@ -1,0 +1,3 @@
+pubname	name	true	pg_publication.pubname	"name of publicatio"
+schemaname	name	true	pg_namespace.nspname	"name of schema containing tabl"
+tablename	name	true	pg_class.relname	"name of tabl"

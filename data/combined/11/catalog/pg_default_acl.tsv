@@ -1,0 +1,11 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+defaclrole	oid	false	pg_authid.oid	"the oid of the role associated with this entr"
+defaclnamespace	oid	false	pg_namespace.oid	"the oid of the namespace associated with this entry, or 0 if non"
+defaclobjtype	char	false		"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schem"
+defaclacl	aclitem[]	true		"access privileges that this type of object should have on creatio"

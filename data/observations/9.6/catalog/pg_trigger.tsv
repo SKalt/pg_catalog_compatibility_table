@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,15 +9,15 @@ ctid	tid	false
 tgrelid	oid	false
 tgname	name	false
 tgfoid	oid	false
-tgtype	smallint	false
+tgtype	int2	false
 tgenabled	"""char"""	false
-tgisinternal	boolean	false
+tgisinternal	bool	false
 tgconstrrelid	oid	false
 tgconstrindid	oid	false
 tgconstraint	oid	false
-tgdeferrable	boolean	false
-tginitdeferred	boolean	false
-tgnargs	smallint	false
+tgdeferrable	bool	false
+tginitdeferred	bool	false
+tgnargs	int2	false
 tgattr	int2vector	false
 tgargs	bytea	false
 tgqual	pg_node_tree	true

@@ -1,0 +1,15 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+opcmethod	oid	false	pg_am.oid	"index access method operator class is fo"
+opcname	name	false		"name of this operator clas"
+opcnamespace	oid	false	pg_namespace.oid	"namespace of this operator clas"
+opcowner	oid	false	pg_authid.oid	"owner of the operator clas"
+opcfamily	oid	false	pg_opfamily.oid	"operator family containing the operator clas"
+opcintype	oid	false	pg_type.oid	"data type that the operator class indexe"
+opcdefault	bool	false		"true if this operator class is the default for opcintyp"
+opckeytype	oid	false	pg_type.oid	"type of data stored in index, or zero if same as opcintyp"

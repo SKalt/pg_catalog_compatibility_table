@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	name	true
 default_version	text	true
 installed_version	text	true

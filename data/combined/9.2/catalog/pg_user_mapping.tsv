@@ -1,0 +1,10 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+umuser	oid	false	pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is publi"
+umserver	oid	false	pg_foreign_server.oid	"the oid of the foreign server that contains this mappin"
+umoptions	text[]	true		"user mapping specific options, as ""keyword=value"" string"

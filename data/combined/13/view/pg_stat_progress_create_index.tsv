@@ -1,0 +1,16 @@
+pid	int4	true		
+datid	oid	true		
+datname	name	true		
+relid	oid	true		
+index_relid	oid	true		
+command	text	true		
+phase	text	true		
+lockers_total	int8	true		
+lockers_done	int8	true		
+current_locker_pid	int8	true		
+blocks_total	int8	true		
+blocks_done	int8	true		
+tuples_total	int8	true		
+tuples_done	int8	true		
+partitions_total	int8	true		
+partitions_done	int8	true		

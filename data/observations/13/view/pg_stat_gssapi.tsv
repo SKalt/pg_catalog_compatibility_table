@@ -1,5 +1,5 @@
-Name	Type	Nullable	Default
-pid	integer	true
-gss_authenticated	boolean	true
+Name	Type	Nullable
+pid	int4	true
+gss_authenticated	bool	true
 principal	text	true
-encrypted	boolean	true
+encrypted	bool	true

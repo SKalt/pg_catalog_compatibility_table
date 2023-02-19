@@ -1,0 +1,6 @@
+funcid	oid	true		
+schemaname	name	true		
+funcname	name	true		
+calls	int8	true		
+total_time	"double precisio"	true		
+self_time	"double precisio"	true		

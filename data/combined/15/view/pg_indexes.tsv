@@ -1,0 +1,5 @@
+schemaname	name	true		"name of schema containing table and inde"
+tablename	name	true		"name of table the index is fo"
+indexname	name	true		"name of inde"
+tablespace	name	true		"name of tablespace containing index (null if default for database"
+indexdef	text	true		"index definition (a reconstructed create index command"

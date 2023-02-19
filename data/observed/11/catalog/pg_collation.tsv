@@ -1,0 +1,16 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+oid	oid	false
+ctid	tid	false
+collname	name	false
+collnamespace	oid	false
+collowner	oid	false
+collprovider	char	false
+collencoding	int4	false
+collcollate	name	false
+collctype	name	false
+collversion	text	true

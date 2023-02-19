@@ -1,12 +1,12 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 relid	oid	true
 schemaname	name	true
 relname	name	true
-heap_blks_read	bigint	true
-heap_blks_hit	bigint	true
-idx_blks_read	bigint	true
-idx_blks_hit	bigint	true
-toast_blks_read	bigint	true
-toast_blks_hit	bigint	true
-tidx_blks_read	bigint	true
-tidx_blks_hit	bigint	true
+heap_blks_read	int8	true
+heap_blks_hit	int8	true
+idx_blks_read	int8	true
+idx_blks_hit	int8	true
+toast_blks_read	int8	true
+toast_blks_hit	int8	true
+tidx_blks_read	int8	true
+tidx_blks_hit	int8	true

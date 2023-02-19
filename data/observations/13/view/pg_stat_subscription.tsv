@@ -1,10 +1,10 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 subid	oid	true
 subname	name	true
-pid	integer	true
+pid	int4	true
 relid	oid	true
 received_lsn	pg_lsn	true
-last_msg_send_time	"timestamp with time zone"	true
-last_msg_receipt_time	"timestamp with time zone"	true
+last_msg_send_time	timestamptz	true
+last_msg_receipt_time	timestamptz	true
 latest_end_lsn	pg_lsn	true
-latest_end_time	"timestamp with time zone"	true
+latest_end_time	timestamptz	true

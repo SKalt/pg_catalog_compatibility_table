@@ -1,0 +1,9 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+pnpubid	oid	false		"reference to publicatio"
+pnnspid	oid	false		"reference to schem"

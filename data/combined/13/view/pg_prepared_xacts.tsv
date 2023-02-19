@@ -1,0 +1,5 @@
+transaction	xid	true		"numeric transaction identifier of the prepared transactio"
+gid	text	true		"global transaction identifier that was assigned to the transactio"
+prepared	timestamptz	true		"time at which the transaction was prepared for commi"
+owner	name	true		"name of the user that executed the transactio"
+database	name	true		"name of the database in which the transaction was execute"

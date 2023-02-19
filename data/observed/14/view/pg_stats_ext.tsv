@@ -1,0 +1,15 @@
+Name	Type	Nullable
+schemaname	name	true
+tablename	name	true
+statistics_schemaname	name	true
+statistics_name	name	true
+statistics_owner	name	true
+attnames	name[]	true
+exprs	text[]	true
+kinds	char[]	true
+n_distinct	pg_ndistinct	true
+dependencies	pg_dependencies	true
+most_common_vals	text[]	true
+most_common_val_nulls	bool[]	true
+most_common_freqs	float8[]	true
+most_common_base_freqs	float8[]	true

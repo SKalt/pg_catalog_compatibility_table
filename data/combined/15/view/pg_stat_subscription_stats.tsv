@@ -1,0 +1,5 @@
+subid	oid	true		
+subname	name	true		
+apply_error_count	int8	true		
+sync_error_count	int8	true		
+stats_reset	timestamptz	true		

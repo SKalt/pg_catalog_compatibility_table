@@ -1,0 +1,9 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+objoid	oid	false	"any oid colum"	"the oid of the object this description pertains t"
+classoid	oid	false	pg_class.oid	"the oid of the system catalog this object appears i"
+description	text	true		"arbitrary text that serves as the description of this objec"

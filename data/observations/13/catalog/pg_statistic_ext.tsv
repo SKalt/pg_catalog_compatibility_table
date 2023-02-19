@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -10,6 +10,6 @@ stxrelid	oid	false
 stxname	name	false
 stxnamespace	oid	false
 stxowner	oid	false
-stxstattarget	integer	false
+stxstattarget	int4	false
 stxkeys	int2vector	false
 stxkind	"""char""[]"	false

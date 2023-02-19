@@ -1,0 +1,15 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+partrelid	oid	false
+partstrat	char	false
+partnatts	int2	false
+partdefid	oid	false
+partattrs	int2vector	false
+partclass	oidvector	false
+partcollation	oidvector	false
+partexprs	pg_node_tree	true

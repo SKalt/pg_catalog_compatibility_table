@@ -1,0 +1,19 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+datname	name	false		"database nam"
+datdba	oid	false	pg_authid.oid	"owner of the database, usually the user who created i"
+encoding	int4	false		"character encoding for this database (pg_encoding_to_char() can translate this number to the encoding name"
+datcollate	name	false		"lc_collate for this databas"
+datctype	name	false		"lc_ctype for this databas"
+datistemplate	bool	false		"if true then this database can be used in the template clause of create database to create a new database as a clone of this on"
+datallowconn	bool	false		"if false then no one can connect to this database. this is used to protect the template0 database from being altered"
+datconnlimit	int4	false		"sets maximum number of concurrent connections that can be made to this database. -1 means no limit"
+datlastsysoid	oid	false		"last system oid in the database; useful particularly to pg_dum"
+datfrozenxid	xid	false		"all transaction ids before this one have been replaced with a permanent (""frozen"") transaction id in this database. this is used to track whether the database needs to be vacuumed in order to prevent transaction id wraparound or to allow pg_clog to be shrunk. it is the minimum of the per-table pg_class.relfrozenxid values"
+dattablespace	oid	false	pg_tablespace.oid	"the default tablespace for the database. within this database, all tables for which pg_class.reltablespace is zero will be stored in this tablespace; in particular, all the non-shared system catalogs will be there"
+datacl	aclitem[]	true		"access privileges; see grant and revoke for detail"

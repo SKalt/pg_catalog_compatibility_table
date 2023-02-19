@@ -1,12 +1,12 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 slot_name	name	true
 plugin	name	true
 slot_type	text	true
 datoid	oid	true
 database	name	true
-temporary	boolean	true
-active	boolean	true
-active_pid	integer	true
+temporary	bool	true
+active	bool	true
+active_pid	int4	true
 xmin	xid	true
 catalog_xmin	xid	true
 restart_lsn	pg_lsn	true

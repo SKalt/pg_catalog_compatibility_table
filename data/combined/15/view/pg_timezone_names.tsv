@@ -1,0 +1,4 @@
+name	text	true		"time zone nam"
+abbrev	text	true		"time zone abbreviatio"
+utc_offset	interval	true		"offset from utc (positive means east of greenwich"
+is_dst	bool	true		"true if currently observing daylight saving"

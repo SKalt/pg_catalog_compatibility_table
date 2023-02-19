@@ -1,0 +1,14 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+srvname	name	false		"name of the foreign serve"
+srvowner	oid	false	pg_authid.oid	"owner of the foreign serve"
+srvfdw	oid	false	pg_foreign_data_wrapper.oid	"oid of the foreign-data wrapper of this foreign serve"
+srvtype	text	true		"type of the server (optional"
+srvversion	text	true		"version of the server (optional"
+srvacl	aclitem[]	true		"access privileges; see grant and revoke for detail"
+srvoptions	text[]	true		"foreign server specific options, as ""keyword=value"" string"

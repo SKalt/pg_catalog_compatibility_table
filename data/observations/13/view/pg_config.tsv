@@ -1,3 +1,3 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
 setting	text	true

@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 schemaname	name	true
 tablename	name	true
 statistics_schemaname	name	true

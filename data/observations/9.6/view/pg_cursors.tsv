@@ -1,7 +1,7 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
 statement	text	true
-is_holdable	boolean	true
-is_binary	boolean	true
-is_scrollable	boolean	true
-creation_time	"timestamp with time zone"	true
+is_holdable	bool	true
+is_binary	bool	true
+is_scrollable	bool	true
+creation_time	timestamptz	true

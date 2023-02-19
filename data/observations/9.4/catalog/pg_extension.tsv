@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,7 +9,7 @@ ctid	tid	false
 extname	name	false
 extowner	oid	false
 extnamespace	oid	false
-extrelocatable	boolean	false
+extrelocatable	bool	false
 extversion	text	true
 extconfig	oid[]	true
 extcondition	text[]	true

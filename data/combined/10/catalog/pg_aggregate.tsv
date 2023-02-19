@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+aggfnoid	regproc	false	pg_proc.oid	"pg_proc oid of the aggregate functio"
+aggtransfn	regproc	false	pg_proc.oid	"transition functio"
+aggfinalfn	regproc	false	pg_proc.oid	"final function (zero if none"
+aggsortop	oid	false	pg_operator.oid	"associated sort operator (zero if none"
+aggtranstype	oid	false	pg_type.oid	"data type of the aggregate function's internal transition (state) dat"
+agginitval	text	true		"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if this field is null, the transition state value starts out null"

@@ -10,5 +10,5 @@ n_distinct	pg_ndistinct		"n-distinct counts for combinations of column values. i
 dependencies	pg_dependencies		"functional dependency statistics"
 most_common_vals	anyarray		"a list of the most common combinations of values in the columns. (null if no combinations seem to be more common than any others.)"
 most_common_val_nulls	anyarray		"a list of null flags for the most common combinations of values. (null when most_common_vals is.)"
-most_common_freqs	real[]		"a list of the frequencies of the most common combinations, i.e., number of occurrences of each divided by total number of rows. (null when most_common_vals is.)"
-most_common_base_freqs	real[]		"a list of the base frequencies of the most common combinations, i.e., product of per-value frequencies. (null when most_common_vals is.)"
+most_common_freqs	float4[]		"a list of the frequencies of the most common combinations, i.e., number of occurrences of each divided by total number of rows. (null when most_common_vals is.)"
+most_common_base_freqs	float4[]		"a list of the base frequencies of the most common combinations, i.e., product of per-value frequencies. (null when most_common_vals is.)"

@@ -1,0 +1,10 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+nspname	name	false		"name of the namespac"
+nspowner	oid	false	pg_authid.oid	"owner of the namespac"
+nspacl	aclitem[]	true		"access privileges; see grant and revoke for detail"

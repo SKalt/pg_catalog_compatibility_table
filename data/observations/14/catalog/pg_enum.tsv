@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -7,5 +7,5 @@ xmin	xid	false
 ctid	tid	false
 oid	oid	false
 enumtypid	oid	false
-enumsortorder	real	false
+enumsortorder	float4	false
 enumlabel	name	false

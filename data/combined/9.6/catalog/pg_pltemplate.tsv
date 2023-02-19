@@ -1,0 +1,14 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+tmplname	name	false		"name of the language this template is fo"
+tmpltrusted	bool	false		"true if language is considered truste"
+tmpldbacreate	bool	false		"true if language may be created by a database owne"
+tmplhandler	text	false		"name of call handler functio"
+tmplinline	text	true		"name of anonymous-block handler function, or null if non"
+tmplvalidator	text	true		"name of validator function, or null if non"
+tmpllibrary	text	false		"path of shared library that implements languag"
+tmplacl	aclitem[]	true		"access privileges for template (not actually used"

@@ -1,0 +1,9 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+prpubid	oid	false	pg_publication.oid	"reference to publicatio"
+prrelid	oid	false	pg_class.oid	"reference to relatio"

@@ -1,0 +1,15 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+subdbid	oid	false		"oid of the database which the subscription resides i"
+subname	name	false		"name of the subscriptio"
+subowner	oid	false		"owner of the subscriptio"
+subenabled	bool	false		"if true, the subscription is enabled and should be replicating"
+subconninfo	text	false		"connection string to the upstream databas"
+subslotname	name	true		"name of the replication slot in the upstream database (also used for the local replication origin name); null represents non"
+subsynccommit	text	false		"contains the value of the synchronous_commit setting for the subscription workers"
+subpublications	text[]	false		"array of subscribed publication names. these reference the publications on the publisher server. for more on publication"

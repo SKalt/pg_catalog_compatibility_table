@@ -1,0 +1,14 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+ctid	tid	false		
+conname	name	false		"conversion name (unique within a namespace"
+connamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this conversio"
+conowner	oid	false	pg_authid.oid	"owner of the conversio"
+conforencoding	int4	false		"source encoding i"
+contoencoding	int4	false		"destination encoding i"
+conproc	regproc	false	pg_proc.oid	"conversion functio"
+condefault	bool	false		"true if this is the default conversio"

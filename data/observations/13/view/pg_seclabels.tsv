@@ -1,7 +1,7 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 objoid	oid	true
 classoid	oid	true
-objsubid	integer	true
+objsubid	int4	true
 objtype	text	true
 objnamespace	oid	true
 objname	text	true

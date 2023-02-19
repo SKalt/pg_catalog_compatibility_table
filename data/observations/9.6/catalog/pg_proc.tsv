@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -10,20 +10,20 @@ proname	name	false
 pronamespace	oid	false
 proowner	oid	false
 prolang	oid	false
-procost	real	false
-prorows	real	false
+procost	float4	false
+prorows	float4	false
 provariadic	oid	false
 protransform	regproc	false
-proisagg	boolean	false
-proiswindow	boolean	false
-prosecdef	boolean	false
-proleakproof	boolean	false
-proisstrict	boolean	false
-proretset	boolean	false
+proisagg	bool	false
+proiswindow	bool	false
+prosecdef	bool	false
+proleakproof	bool	false
+proisstrict	bool	false
+proretset	bool	false
 provolatile	"""char"""	false
 proparallel	"""char"""	false
-pronargs	smallint	false
-pronargdefaults	smallint	false
+pronargs	int2	false
+pronargdefaults	int2	false
 prorettype	oid	false
 proargtypes	oidvector	false
 proallargtypes	oid[]	true

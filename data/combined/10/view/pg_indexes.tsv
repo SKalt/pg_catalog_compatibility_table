@@ -1,0 +1,5 @@
+schemaname	name	true	pg_namespace.nspname	"name of schema containing table and inde"
+tablename	name	true	pg_class.relname	"name of table the index is fo"
+indexname	name	true	pg_class.relname	"name of inde"
+tablespace	name	true	pg_tablespace.spcname	"name of tablespace containing index (null if default for database"
+indexdef	text	true		"index definition (a reconstructed create index command"

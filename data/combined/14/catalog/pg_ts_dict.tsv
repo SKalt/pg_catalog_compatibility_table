@@ -1,0 +1,12 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+dictname	name	false		"text search dictionary nam"
+dictnamespace	oid	false		"the oid of the namespace that contains this dictionar"
+dictowner	oid	false		"owner of the dictionar"
+dicttemplate	oid	false		"the oid of the text search template for this dictionar"
+dictinitoption	text	true		"initialization option string for the templat"

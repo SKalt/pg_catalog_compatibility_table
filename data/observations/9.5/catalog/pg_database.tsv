@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -8,12 +8,12 @@ oid	oid	false
 ctid	tid	false
 datname	name	false
 datdba	oid	false
-encoding	integer	false
+encoding	int4	false
 datcollate	name	false
 datctype	name	false
-datistemplate	boolean	false
-datallowconn	boolean	false
-datconnlimit	integer	false
+datistemplate	bool	false
+datallowconn	bool	false
+datconnlimit	int4	false
 datlastsysoid	oid	false
 datfrozenxid	xid	false
 datminmxid	xid	false

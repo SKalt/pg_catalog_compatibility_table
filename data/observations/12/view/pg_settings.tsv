@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 name	text	true
 setting	text	true
 unit	text	true
@@ -14,5 +14,5 @@ enumvals	text[]	true
 boot_val	text	true
 reset_val	text	true
 sourcefile	text	true
-sourceline	integer	true
-pending_restart	boolean	true
+sourceline	int4	true
+pending_restart	bool	true

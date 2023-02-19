@@ -1,0 +1,11 @@
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifie"
+tmplname	name	false		"text search template nam"
+tmplnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this templat"
+tmplinit	regproc	false	pg_proc.oid	"oid of the template's initialization functio"
+tmpllexize	regproc	false	pg_proc.oid	"oid of the template's lexize functio"

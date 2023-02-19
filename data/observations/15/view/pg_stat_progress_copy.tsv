@@ -1,11 +1,11 @@
-Name	Type	Nullable	Default
-pid	integer	true
+Name	Type	Nullable
+pid	int4	true
 datid	oid	true
 datname	name	true
 relid	oid	true
 command	text	true
 type	text	true
-bytes_processed	bigint	true
-bytes_total	bigint	true
-tuples_processed	bigint	true
-tuples_excluded	bigint	true
+bytes_processed	int8	true
+bytes_total	int8	true
+tuples_processed	int8	true
+tuples_excluded	int8	true

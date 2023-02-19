@@ -1,4 +1,4 @@
-Name	Type	Nullable	Default
+Name	Type	Nullable
 tableoid	oid	false
 cmax	cid	false
 xmax	xid	false
@@ -9,9 +9,9 @@ oid	oid	false
 conname	name	false
 connamespace	oid	false
 contype	"""char"""	false
-condeferrable	boolean	false
-condeferred	boolean	false
-convalidated	boolean	false
+condeferrable	bool	false
+condeferred	bool	false
+convalidated	bool	false
 conrelid	oid	false
 contypid	oid	false
 conindid	oid	false
@@ -20,14 +20,14 @@ confrelid	oid	false
 confupdtype	"""char"""	false
 confdeltype	"""char"""	false
 confmatchtype	"""char"""	false
-conislocal	boolean	false
-coninhcount	integer	false
-connoinherit	boolean	false
-conkey	smallint[]	true
-confkey	smallint[]	true
+conislocal	bool	false
+coninhcount	int4	false
+connoinherit	bool	false
+conkey	int2[]	true
+confkey	int2[]	true
 conpfeqop	oid[]	true
 conppeqop	oid[]	true
 conffeqop	oid[]	true
-confdelsetcols	smallint[]	true
+confdelsetcols	int2[]	true
 conexclop	oid[]	true
 conbin	pg_node_tree	true

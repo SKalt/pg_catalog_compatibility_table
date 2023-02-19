@@ -1,5 +1,5 @@
-Name	Type	Nullable	Default
-line_number	integer	true
+Name	Type	Nullable
+line_number	int4	true
 type	text	true
 database	text[]	true
 user_name	text[]	true
