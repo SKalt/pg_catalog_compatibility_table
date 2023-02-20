@@ -187,7 +187,43 @@ func mergeVersion(dataDir, version, scrapedVersionDir, observedVersionDir string
 	scrapedViews := getViews(scrapedVersionDir)
 	observedViews := getViews(observedVersionDir)
 	mergeRelations(dataDir, version, "view", scrapedViews, observedViews)
-	// TODO: symlink fn def, view def, index inventory, fn inventory
+	combinedDir := filepath.Join(dataDir, "combined", version)
+
+	link := func(names ...string) {
+		obsPath, err := filepath.Abs(filepath.Join(append([]string{observedVersionDir}, names...)...))
+		if err != nil {
+			log.Panic(err)
+		}
+		comboPath, err := filepath.Abs(filepath.Join(append([]string{combinedDir}, names...)...))
+		if err != nil {
+			log.Panic(err)
+		}
+		relPath, err := filepath.Rel(filepath.Dir(comboPath), obsPath)
+		if err != nil {
+			log.Panic(err)
+		}
+		// relPath := filepath.Join(append([]string{"..", "..", "observed", version}, names...)...)
+		// combinedPath := filepath.Join(append([]string{combinedDir}, names...)...)
+		if err := os.Symlink(relPath, comboPath); err != nil {
+			log.Panic(err)
+		}
+	}
+	link("indices.tsv")
+	link("functions.tsv")
+	link("functions")
+	comboViewDir := filepath.Join(combinedDir, "view")
+	mkdir(comboViewDir)
+	observedViewDir := filepath.Join(observedVersionDir, "view")
+
+	entries, err := os.ReadDir(observedViewDir)
+	if err == nil {
+		for _, f := range entries {
+			if f.Type().IsRegular() && strings.HasSuffix(f.Name(), ".sql") {
+				link("view", f.Name())
+			}
+		}
+	} // ok for no observations to be present
+
 }
 
 func main() {
