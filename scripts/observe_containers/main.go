@@ -194,8 +194,7 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 			}
 		}
 		if defaultExpr != nil {
-			log.Fatalf("%s.%s has default '%s'", "pg_proc", result.Name, *defaultExpr)
-			// result.defaultExpr = *defaultExpr
+			log.Fatalf("%s.%s has default '%s'", relation, result.Name, *defaultExpr)
 		}
 		if _, err = tsv.WriteString(result.TsvRow()); err != nil {
 			log.Fatal(err)
@@ -330,6 +329,9 @@ func observeIndices(observationDir, version string, db *sql.DB, waiter *sync.Wai
 		log.Fatal(err)
 	}
 	tsv := bufio.NewWriter(file)
+	if _, err = tsv.WriteString("Name\tRelation\tDefinition\n"); err != nil {
+		log.Fatal(err)
+	}
 	var indexName string
 	var indexDef string
 	for row.Next() {

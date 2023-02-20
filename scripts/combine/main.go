@@ -23,6 +23,13 @@ func mergeCol(scraped *common.ScrapedColData, observed *common.ObservedColData) 
 	if scraped == nil && observed == nil {
 		log.Fatal("need at least one of scraped and observed")
 	}
+	if observed != nil {
+		result.Name = observed.Name
+		result.Type = observed.Type
+		result.Nullable = observed.Nullable
+	} else {
+		result.Description = "<unobserved>"
+	}
 	if scraped != nil {
 		if observed != nil {
 			if scraped.Name != observed.Name {
@@ -36,13 +43,6 @@ func mergeCol(scraped *common.ScrapedColData, observed *common.ObservedColData) 
 		result.Type = scraped.Type
 		result.References = scraped.References
 		result.Description = scraped.Description
-	}
-	if observed != nil {
-		result.Name = observed.Name
-		result.Type = observed.Type
-		result.Nullable = observed.Nullable
-	} else {
-		result.Description = "<unobserved>"
 	}
 	return
 }
@@ -91,20 +91,21 @@ func mergeRelation(dataDir, version, kind, name, scrapedTsvPath, observedTsvPath
 		targetTsvFile.Close()
 		waiter.Done()
 	}()
+	if _, err = tsv.WriteString(common.CombinedColTsvHeader); err != nil {
+		log.Fatal(err)
+	}
 	for _, observedCol := range observed {
 		name := observedCol.Name
 		i, ok := scraped[name]
 		var s *common.ScrapedColData = nil
 		if ok {
 			s = &scrapedCols[i]
+			delete(scraped, name)
 		}
 
 		_, err = tsv.WriteString(mergeCol(s, &observedCol).TsvRow())
 		if err != nil {
 			log.Fatal(err)
-		}
-		if ok {
-			delete(scraped, name)
 		}
 	}
 	if len(scraped) > 0 {
@@ -115,6 +116,12 @@ func mergeRelation(dataDir, version, kind, name, scrapedTsvPath, observedTsvPath
 		sort.SliceStable(remaining, func(i, j int) bool {
 			return remaining[i].Name < remaining[j].Name
 		})
+		for _, combo := range remaining {
+			_, err = tsv.WriteString(combo.TsvRow())
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
 	}
 }
 func getVersions(dataDir, source string) map[string]string {
