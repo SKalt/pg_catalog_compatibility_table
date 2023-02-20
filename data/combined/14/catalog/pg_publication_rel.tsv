@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-prpubid	oid	false		"reference to publicatio"
-prrelid	oid	false		"reference to relatio"
+oid	oid	false		"row identifier"
+prpubid	oid	false		"reference to publication"
+prrelid	oid	false		"reference to relation"

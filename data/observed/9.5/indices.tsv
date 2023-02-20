@@ -1,3 +1,4 @@
+Name	Relation	Definition
 pg_aggregate_fnoid_index	pg_aggregate	CREATE UNIQUE INDEX pg_aggregate_fnoid_index ON pg_catalog.pg_aggregate USING btree (aggfnoid);
 pg_am_name_index	pg_am	CREATE UNIQUE INDEX pg_am_name_index ON pg_catalog.pg_am USING btree (amname);
 pg_am_oid_index	pg_am	CREATE UNIQUE INDEX pg_am_oid_index ON pg_catalog.pg_am USING btree (oid);

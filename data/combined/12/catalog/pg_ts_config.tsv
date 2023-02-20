@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-cfgname	name	false		"text search configuration nam"
-cfgnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this configuratio"
-cfgowner	oid	false	pg_authid.oid	"owner of the configuratio"
-cfgparser	oid	false	pg_ts_parser.oid	"the oid of the text search parser for this configuratio"
+oid	oid	false		"row identifier"
+cfgname	name	false		"text search configuration name"
+cfgnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this configuration"
+cfgowner	oid	false	pg_authid.oid	"owner of the configuration"
+cfgparser	oid	false	pg_ts_parser.oid	"the oid of the text search parser for this configuration"

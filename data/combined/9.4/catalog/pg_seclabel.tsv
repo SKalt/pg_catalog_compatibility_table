@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-objoid	oid	false	"any oid colum"	"the oid of the object this security label pertains t"
-classoid	oid	false	pg_class.oid	"the oid of the system catalog this object appears i"
-objsubid	int4	false		"for a security label on a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero"
-provider	text	true		"the label provider associated with this label"
-label	text	true		"the security label applied to this object"
+objoid	oid	false	"any oid column"	"the oid of the object this security label pertains to"
+classoid	oid	false	pg_class.oid	"the oid of the system catalog this object appears in"
+objsubid	int4	false		"for a security label on a table column, this is the column number (the objoid and classoid refer to the table itself). for all other object types, this column is zero."
+provider	text	true		"the label provider associated with this label."
+label	text	true		"the security label applied to this object."

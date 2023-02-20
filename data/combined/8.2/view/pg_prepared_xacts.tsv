@@ -1,0 +1,6 @@
+Name	Type	Nullable	References	Description
+database	name		pg_database.datname	"name of the database in which the transaction was executed"
+gid	text			"global transaction identifier that was assigned to the transaction"
+owner	name		pg_authid.rolname	"name of the user that executed the transaction"
+prepared	timestamptz			"time at which the transaction was prepared for commit"
+transaction	xid			"numeric transaction identifier of the prepared transaction"

@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 archived_count	int8	true		
 last_archived_wal	text	true		
 last_archived_time	timestamptz	true		

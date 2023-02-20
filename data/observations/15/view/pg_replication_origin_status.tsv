@@ -1,5 +1,0 @@
-Name	Type	Nullable
-local_id	oid	true
-external_id	text	true
-remote_lsn	pg_lsn	true
-local_lsn	pg_lsn	true

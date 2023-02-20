@@ -1,5 +1,6 @@
-pubname	name	true		"name of publicatio"
-schemaname	name	true		"name of schema containing tabl"
-tablename	name	true		"name of tabl"
-attnames	name[]	true		"names of table columns included in the publication. this contains all the columns of the table when the user didn't specify the column list for the table"
-rowfilter	text	true		"expression for the table's publication qualifying conditio"
+Name	Type	Nullable	References	Description
+pubname	name	true		"name of publication"
+schemaname	name	true		"name of schema containing table"
+tablename	name	true		"name of table"
+attnames	name[]	true		"names of table columns included in the publication. this contains all the columns of the table when the user didn't specify the column list for the table."
+rowfilter	text	true		"expression for the table's publication qualifying condition"

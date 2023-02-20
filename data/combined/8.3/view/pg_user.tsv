@@ -1,0 +1,9 @@
+Name	Type	Nullable	References	Description
+passwd	text			"not the password (always reads as ********)"
+usecatupd	bool			"user can update system catalogs. (even a superuser cannot do this unless this column is true.)"
+useconfig	text[]			"session defaults for run-time configuration variables"
+usecreatedb	bool			"user can create databases"
+usename	name			"user name"
+usesuper	bool			"user is a superuser"
+usesysid	int4			"user id (arbitrary number used to reference this user)"
+valuntil	abstime			"password expiry time (only used for password authentication)"

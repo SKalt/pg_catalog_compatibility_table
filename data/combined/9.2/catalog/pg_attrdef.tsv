@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
@@ -5,7 +6,7 @@ cmin	cid	false
 xmin	xid	false		
 oid	oid	false		
 ctid	tid	false		
-adrelid	oid	false	pg_class.oid	"the table this column belongs t"
-adnum	int2	false	pg_attribute.attnum	"the number of the colum"
-adbin	pg_node_tree	true		"the internal representation of the column default valu"
-adsrc	text	true		"a human-readable representation of the default valu"
+adrelid	oid	false	pg_class.oid	"the table this column belongs to"
+adnum	int2	false	pg_attribute.attnum	"the number of the column"
+adbin	pg_node_tree	true		"the internal representation of the column default value"
+adsrc	text	true		"a human-readable representation of the default value"

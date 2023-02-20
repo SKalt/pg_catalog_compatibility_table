@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+hasindexes	bool		pg_class.relhasindex	"true if table has (or recently had) any indexes"
+hasrules	bool		pg_class.relhasrules	"true if table has (or once had) rules"
+hastriggers	bool		pg_class.relhastriggers	"true if table has (or once had) triggers"
+schemaname	name		pg_namespace.nspname	"name of schema containing table"
+tablename	name		pg_class.relname	"name of table"
+tableowner	name		pg_authid.rolname	"name of table's owner"
+tablespace	name		pg_tablespace.spcname	"name of tablespace containing table (null if default for database)"

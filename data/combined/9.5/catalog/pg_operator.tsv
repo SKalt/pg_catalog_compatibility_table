@@ -1,21 +1,22 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-oprname	name	false		"name of the operato"
-oprnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this operato"
-oprowner	oid	false	pg_authid.oid	"owner of the operato"
-oprkind	char	false		"b = infix (""both""), l = prefix (""left""), r = postfix (""right"""
-oprcanmerge	bool	false		"this operator supports merge join"
-oprcanhash	bool	false		"this operator supports hash join"
-oprleft	oid	false	pg_type.oid	"type of the left operan"
-oprright	oid	false	pg_type.oid	"type of the right operan"
-oprresult	oid	false	pg_type.oid	"type of the resul"
-oprcom	oid	false	pg_operator.oid	"commutator of this operator, if an"
-oprnegate	oid	false	pg_operator.oid	"negator of this operator, if an"
-oprcode	regproc	false	pg_proc.oid	"function that implements this operato"
-oprrest	regproc	false	pg_proc.oid	"restriction selectivity estimation function for this operato"
-oprjoin	regproc	false	pg_proc.oid	"join selectivity estimation function for this operato"
+oprname	name	false		"name of the operator"
+oprnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this operator"
+oprowner	oid	false	pg_authid.oid	"owner of the operator"
+oprkind	char	false		"b = infix (""both""), l = prefix (""left""), r = postfix (""right"")"
+oprcanmerge	bool	false		"this operator supports merge joins"
+oprcanhash	bool	false		"this operator supports hash joins"
+oprleft	oid	false	pg_type.oid	"type of the left operand"
+oprright	oid	false	pg_type.oid	"type of the right operand"
+oprresult	oid	false	pg_type.oid	"type of the result"
+oprcom	oid	false	pg_operator.oid	"commutator of this operator, if any"
+oprnegate	oid	false	pg_operator.oid	"negator of this operator, if any"
+oprcode	regproc	false	pg_proc.oid	"function that implements this operator"
+oprrest	regproc	false	pg_proc.oid	"restriction selectivity estimation function for this operator"
+oprjoin	regproc	false	pg_proc.oid	"join selectivity estimation function for this operator"

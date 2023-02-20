@@ -1,21 +1,22 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-oprname	name	false		"name of the operato"
-oprnamespace	oid	false		"the oid of the namespace that contains this operato"
-oprowner	oid	false		"owner of the operato"
-oprkind	char	false		"b = infix (""both""), l = prefix (""left""), r = postfix (""right"""
-oprcanmerge	bool	false		"this operator supports merge join"
-oprcanhash	bool	false		"this operator supports hash join"
-oprleft	oid	false		"type of the left operan"
-oprright	oid	false		"type of the right operan"
-oprresult	oid	false		"type of the resul"
-oprcom	oid	false		"commutator of this operator, if an"
-oprnegate	oid	false		"negator of this operator, if an"
-oprcode	regproc	false		"function that implements this operato"
-oprrest	regproc	false		"restriction selectivity estimation function for this operato"
-oprjoin	regproc	false		"join selectivity estimation function for this operato"
+oid	oid	false		"row identifier"
+oprname	name	false		"name of the operator"
+oprnamespace	oid	false		"the oid of the namespace that contains this operator"
+oprowner	oid	false		"owner of the operator"
+oprkind	char	false		"b = infix (""both""), l = prefix (""left""), r = postfix (""right"")"
+oprcanmerge	bool	false		"this operator supports merge joins"
+oprcanhash	bool	false		"this operator supports hash joins"
+oprleft	oid	false		"type of the left operand"
+oprright	oid	false		"type of the right operand"
+oprresult	oid	false		"type of the result"
+oprcom	oid	false		"commutator of this operator, if any"
+oprnegate	oid	false		"negator of this operator, if any"
+oprcode	regproc	false		"function that implements this operator"
+oprrest	regproc	false		"restriction selectivity estimation function for this operator"
+oprjoin	regproc	false		"join selectivity estimation function for this operator"

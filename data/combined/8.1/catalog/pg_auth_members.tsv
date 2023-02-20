@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+admin_option	bool			"true if member may grant membership in roleid to others"
+grantor	oid		pg_authid.oid	"id of the role that granted this membership"
+member	oid		pg_authid.oid	"id of a role that is a member of roleid"
+roleid	oid		pg_authid.oid	"id of a role that has a member"

@@ -1,0 +1,7 @@
+Name	Type	Nullable	References	Description
+aggfinalfn	regproc		pg_proc.oid	"final function (zero if none)"
+aggfnoid	regproc		pg_proc.oid	"pg_proc oid of the aggregate function"
+agginitval	text			"the initial value of the transition state. this is a text field containing the initial value in its external string representation. if this field is null, the transition state value starts out null."
+aggsortop	oid		pg_operator.oid	"associated sort operator (zero if none)"
+aggtransfn	regproc		pg_proc.oid	"transition function"
+aggtranstype	oid		pg_type.oid	"data type of the aggregate function's internal transition (state) data"

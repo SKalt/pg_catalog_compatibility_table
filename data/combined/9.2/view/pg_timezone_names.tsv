@@ -1,4 +1,5 @@
-name	text	true		"time zone nam"
-abbrev	text	true		"time zone abbreviatio"
-utc_offset	interval	true		"offset from utc (positive means east of greenwich"
-is_dst	bool	true		"true if currently observing daylight saving"
+Name	Type	Nullable	References	Description
+name	text	true		"time zone name"
+abbrev	text	true		"time zone abbreviation"
+utc_offset	interval	true		"offset from utc (positive means east of greenwich)"
+is_dst	bool	true		"true if currently observing daylight savings"

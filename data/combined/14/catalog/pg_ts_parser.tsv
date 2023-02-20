@@ -1,14 +1,15 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-prsname	name	false		"text search parser nam"
-prsnamespace	oid	false		"the oid of the namespace that contains this parse"
-prsstart	regproc	false		"oid of the parser's startup functio"
-prstoken	regproc	false		"oid of the parser's next-token functio"
-prsend	regproc	false		"oid of the parser's shutdown functio"
-prsheadline	regproc	false		"oid of the parser's headline function (zero if none"
-prslextype	regproc	false		"oid of the parser's lextype functio"
+oid	oid	false		"row identifier"
+prsname	name	false		"text search parser name"
+prsnamespace	oid	false		"the oid of the namespace that contains this parser"
+prsstart	regproc	false		"oid of the parser's startup function"
+prstoken	regproc	false		"oid of the parser's next-token function"
+prsend	regproc	false		"oid of the parser's shutdown function"
+prsheadline	regproc	false		"oid of the parser's headline function (zero if none)"
+prslextype	regproc	false		"oid of the parser's lextype function"

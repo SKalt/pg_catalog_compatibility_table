@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-lomowner	oid	false	pg_authid.oid	"owner of the large objec"
-lomacl	aclitem[]	true		"access privileges; see grant and revoke for detail"
+lomowner	oid	false	pg_authid.oid	"owner of the large object"
+lomacl	aclitem[]	true		"access privileges; see grant and revoke for details"

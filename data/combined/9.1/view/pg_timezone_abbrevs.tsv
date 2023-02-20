@@ -1,0 +1,4 @@
+Name	Type	Nullable	References	Description
+abbrev	text			"time zone abbreviation"
+is_dst	bool			"true if this is a daylight-savings abbreviation"
+utc_offset	interval			"offset from utc (positive means east of greenwich)"

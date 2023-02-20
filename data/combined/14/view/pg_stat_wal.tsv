@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 wal_records	int8	true		
 wal_fpi	int8	true		
 wal_bytes	numeric	true		
 wal_buffers_full	int8	true		
 wal_write	int8	true		
 wal_sync	int8	true		
-wal_write_time	"double precisio"	true		
-wal_sync_time	"double precisio"	true		
+wal_write_time	"double precision"	true		
+wal_sync_time	"double precision"	true		
 stats_reset	timestamptz	true		

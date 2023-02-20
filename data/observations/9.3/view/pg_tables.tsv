@@ -1,8 +1,0 @@
-Name	Type	Nullable
-schemaname	name	true
-tablename	name	true
-tableowner	name	true
-tablespace	name	true
-hasindexes	bool	true
-hasrules	bool	true
-hastriggers	bool	true

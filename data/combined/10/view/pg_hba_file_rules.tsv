@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+address	text			"host name or ip address, or one of all, samehost, or samenet, or null for local connections"
+auth_method	text			"authentication method"
+database	text[]			"list of database name(s) to which this rule applies"
+error	text			"if not null, an error message indicating why this line could not be processed"
+line_number	int4			"line number of this rule in pg_hba.conf"
+netmask	text			"ip address mask, or null if not applicable"
+options	text[]			"options specified for authentication method, if any"
+type	text			"type of connection"
+user_name	text[]			"list of user and group name(s) to which this rule applies"

@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+opcamid	oid		pg_am.oid	"index access method operator class is for"
+opcdefault	bool			"true if this operator class is the default for opcintype"
+opcintype	oid		pg_type.oid	"input data type of the operator class"
+opckeytype	oid		pg_type.oid	"type of index data, or zero if same as opcintype"
+opcname	name			"name of this operator class"
+opcnamespace	oid		pg_namespace.oid	"namespace of this operator class"
+opcowner	int4		pg_shadow.usesysid	"operator class owner"

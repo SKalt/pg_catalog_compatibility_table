@@ -1,0 +1,3 @@
+Name	Type	Nullable	References	Description
+name	text			"the parameter name"
+setting	text			"the parameter value"

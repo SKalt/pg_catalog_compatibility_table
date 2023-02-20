@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 datid	oid	true		
 datname	name	true		
 numbackends	int4	true		
@@ -16,11 +17,11 @@ temp_bytes	int8	true
 deadlocks	int8	true		
 checksum_failures	int8	true		
 checksum_last_failure	timestamptz	true		
-blk_read_time	"double precisio"	true		
-blk_write_time	"double precisio"	true		
-session_time	"double precisio"	true		
-active_time	"double precisio"	true		
-idle_in_transaction_time	"double precisio"	true		
+blk_read_time	"double precision"	true		
+blk_write_time	"double precision"	true		
+session_time	"double precision"	true		
+active_time	"double precision"	true		
+idle_in_transaction_time	"double precision"	true		
 sessions	int8	true		
 sessions_abandoned	int8	true		
 sessions_fatal	int8	true		

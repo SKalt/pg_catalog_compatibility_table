@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 pid	int4	true		
 ssl	bool	true		
 version	text	true		

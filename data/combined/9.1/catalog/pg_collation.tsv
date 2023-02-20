@@ -1,0 +1,7 @@
+Name	Type	Nullable	References	Description
+collcollate	name			"lc_collate for this collation object"
+collctype	name			"lc_ctype for this collation object"
+collencoding	int4			"encoding in which the collation is applicable, or -1 if it works for any encoding"
+collname	name			"collation name (unique per namespace and encoding)"
+collnamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this collation"
+collowner	oid		pg_authid.oid	"owner of the collation"

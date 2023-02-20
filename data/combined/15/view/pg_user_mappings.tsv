@@ -1,6 +1,7 @@
-umid	oid	true		"oid of the user mappin"
-srvid	oid	true		"the oid of the foreign server that contains this mappin"
-srvname	name	true		"name of the foreign serve"
-umuser	oid	true		"oid of the local role being mapped, or zero if the user mapping is publi"
-usename	name	true		"name of the local user to be mappe"
-umoptions	text[]	true		"user mapping specific options, as ""keyword=value"" string"
+Name	Type	Nullable	References	Description
+umid	oid	true		"oid of the user mapping"
+srvid	oid	true		"the oid of the foreign server that contains this mapping"
+srvname	name	true		"name of the foreign server"
+umuser	oid	true		"oid of the local role being mapped, or zero if the user mapping is public"
+usename	name	true		"name of the local user to be mapped"
+umoptions	text[]	true		"user mapping specific options, as ""keyword=value"" strings"

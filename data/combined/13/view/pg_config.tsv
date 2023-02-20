@@ -1,2 +1,3 @@
-name	text	true		"the parameter nam"
-setting	text	true		"the parameter valu"
+Name	Type	Nullable	References	Description
+name	text	true		"the parameter name"
+setting	text	true		"the parameter value"

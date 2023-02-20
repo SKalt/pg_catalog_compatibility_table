@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+amopclaid	oid		pg_opclass.oid	"the index opclass this entry is for"
+amopopr	oid		pg_operator.oid	"the operator's pg_operator oid"
+amopreqcheck	bool			"index hit must be rechecked"
+amopstrategy	int2			"operator strategy number"

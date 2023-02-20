@@ -1,5 +1,6 @@
-transaction	xid	true		"numeric transaction identifier of the prepared transactio"
-gid	text	true		"global transaction identifier that was assigned to the transactio"
-prepared	timestamptz	true		"time at which the transaction was prepared for commi"
-owner	name	true	pg_authid.rolname	"name of the user that executed the transactio"
-database	name	true	pg_database.datname	"name of the database in which the transaction was execute"
+Name	Type	Nullable	References	Description
+transaction	xid	true		"numeric transaction identifier of the prepared transaction"
+gid	text	true		"global transaction identifier that was assigned to the transaction"
+prepared	timestamptz	true		"time at which the transaction was prepared for commit"
+owner	name	true	pg_authid.rolname	"name of the user that executed the transaction"
+database	name	true	pg_database.datname	"name of the database in which the transaction was executed"

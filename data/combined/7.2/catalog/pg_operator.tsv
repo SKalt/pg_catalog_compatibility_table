@@ -1,0 +1,17 @@
+Name	Type	Nullable	References	Description
+oprcanhash	bool			"this operator supports hash joins."
+oprcode	regproc			"function that implements this operator"
+oprcom	oid		pg_operator.oid	"commutator of this operator, if any"
+oprisleft	bool			unused
+oprjoin	regproc			"join selectivity estimation function for this operator"
+oprkind	char			"'b' = infix (""both""), 'l' = prefix (""left""), 'r' = postfix (""right"")"
+oprleft	oid		pg_type.oid	"type of the left operand"
+oprlsortop	oid		pg_operator.oid	"if this operator supports merge joins, the operator that sorts the type of the left-hand operand"
+oprname	name			"name of the operator"
+oprnegate	oid		pg_operator.oid	"negator of this operator, if any"
+oprowner	int4		pg_shadow.usesysid	"owner (creator) of the operator"
+oprprec	int2			unused
+oprrest	regproc			"restriction selectivity estimation function for this operator"
+oprresult	oid		pg_type.oid	"type of the result"
+oprright	oid		pg_type.oid	"type of the right operand"
+oprrsortop	oid		pg_operator.oid	"if this operator supports merge joins, the operator that sorts the type of the right-hand operand"

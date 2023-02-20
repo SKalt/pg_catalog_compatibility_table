@@ -1,7 +1,0 @@
-Name	Type	Nullable
-funcid	oid	true
-schemaname	name	true
-funcname	name	true
-calls	int8	true
-total_time	"double precision"	true
-self_time	"double precision"	true

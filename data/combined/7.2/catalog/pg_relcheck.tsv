@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+rcbin	text			"an internal representation of the constraint expression"
+rcname	name			"constraint name"
+rcrelid	oid		pg_class.oid	"the table this check constraint is on"
+rcsrc	text			"a human-readable representation of the constraint expression"

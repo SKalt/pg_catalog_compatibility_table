@@ -1,8 +1,0 @@
-Name	Type	Nullable
-schemaname	name	true
-matviewname	name	true
-matviewowner	name	true
-tablespace	name	true
-hasindexes	bool	true
-ispopulated	bool	true
-definition	text	true

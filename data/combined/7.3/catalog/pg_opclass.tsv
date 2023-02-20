@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+opcamid	oid		pg_am.oid	"index access method opclass is for"
+opcdefault	bool			"true if opclass is default for opcintype"
+opcintype	oid		pg_type.oid	"type of input data for opclass"
+opckeytype	oid		pg_type.oid	"type of index data, or zero if same as opcintype"
+opcname	name			"name of this opclass"
+opcnamespace	oid		pg_namespace.oid	"namespace of this opclass"
+opcowner	int4		pg_shadow.usesysid	"opclass owner"

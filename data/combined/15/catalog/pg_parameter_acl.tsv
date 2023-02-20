@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-parname	text	false		"the name of a configuration parameter for which privileges are grante"
-paracl	aclitem[]	true		"access privilege"
+oid	oid	false		"row identifier"
+parname	text	false		"the name of a configuration parameter for which privileges are granted"
+paracl	aclitem[]	true		"access privileges"

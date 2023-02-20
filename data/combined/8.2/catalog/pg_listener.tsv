@@ -1,0 +1,4 @@
+Name	Type	Nullable	References	Description
+listenerpid	int4		"pid of the server process that created this\n          entry"	
+notification	int4		"zero if no event is pending for this listener. if an\n          event is pending, the pid of the server process that sent\n          the notification"	
+relname	name		"notify condition name. (the name need not match any\n          actual relation in the database; the name relname is historical.)"	

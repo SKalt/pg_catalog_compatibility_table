@@ -1,0 +1,6 @@
+Name	Type	Nullable	References	Description
+amproc	regproc		pg_proc.oid	"oid of the procedure"
+amprocfamily	oid		pg_opfamily.oid	"the operator family this entry is for"
+amproclefttype	oid		pg_type.oid	"left-hand input data type of associated operator"
+amprocnum	int2			"support procedure number"
+amprocrighttype	oid		pg_type.oid	"right-hand input data type of associated operator"

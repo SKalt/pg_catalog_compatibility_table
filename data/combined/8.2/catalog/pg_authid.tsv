@@ -1,0 +1,12 @@
+Name	Type	Nullable	References	Description
+rolcanlogin	bool			"role may log in. that is, this role can be given as the initial session authorization identifier"
+rolcatupdate	bool			"role may update system catalogs directly. (even a superuser may not do this unless this column is true)"
+rolconfig	text[]			"session defaults for run-time configuration variables"
+rolconnlimit	int4			"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit"
+rolcreatedb	bool			"role may create databases"
+rolcreaterole	bool			"role may create more roles"
+rolinherit	bool			"role automatically inherits privileges of roles it is a member of"
+rolname	name			"role name"
+rolpassword	text			"password (possibly encrypted); null if none"
+rolsuper	bool			"role has superuser privileges"
+rolvaliduntil	timestamptz			"password expiry time (only used for password authentication); null if no expiration"

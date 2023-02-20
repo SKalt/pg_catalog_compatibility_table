@@ -1,4 +1,5 @@
-schemaname	name	true	pg_namespace.nspname	"name of schema containing vie"
-viewname	name	true	pg_class.relname	"name of vie"
-viewowner	name	true	pg_authid.rolname	"name of view's owne"
-definition	text	true		"view definition (a reconstructed select query"
+Name	Type	Nullable	References	Description
+schemaname	name	true	pg_namespace.nspname	"name of schema containing view"
+viewname	name	true	pg_class.relname	"name of view"
+viewowner	name	true	pg_authid.rolname	"name of view's owner"
+definition	text	true		"view definition (a reconstructed select query)"

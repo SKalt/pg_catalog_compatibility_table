@@ -1,18 +1,19 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-rolname	name	false		"role nam"
-rolsuper	bool	false		"role has superuser privilege"
-rolinherit	bool	false		"role automatically inherits privileges of roles it is a member o"
-rolcreaterole	bool	false		"role can create more role"
-rolcreatedb	bool	false		"role can create database"
-rolcanlogin	bool	false		"role can log in. that is, this role can be given as the initial session authorization identifier"
-rolreplication	bool	false		"role is a replication role. that is, this role can initiate streaming replication and set/unset the system backup mode using pg_start_backup and pg_stop_backu"
-rolbypassrls	bool	false		"role bypasses every row level security polic"
-rolconnlimit	int4	false		"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit"
-rolpassword	text	true		"password (possibly encrypted); null if none. if the password is encrypted, this column will begin with the string md5 followed by a 32-character hexadecimal md5 hash. the md5 hash will be of the user's password concatenated to their user name. for example, if user joe has password xyzzy, postgresql will store the md5 hash of xyzzyjoe. a password that does not follow that format is assumed to be unencrypted"
-rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiratio"
+rolname	name	false		"role name"
+rolsuper	bool	false		"role has superuser privileges"
+rolinherit	bool	false		"role automatically inherits privileges of roles it is a member of"
+rolcreaterole	bool	false		"role can create more roles"
+rolcreatedb	bool	false		"role can create databases"
+rolcanlogin	bool	false		"role can log in. that is, this role can be given as the initial session authorization identifier."
+rolreplication	bool	false		"role is a replication role. that is, this role can initiate streaming replication and set/unset the system backup mode using pg_start_backup and pg_stop_backup"
+rolbypassrls	bool	false		"role bypasses every row level security policy"
+rolconnlimit	int4	false		"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit."
+rolpassword	text	true		"password (possibly encrypted); null if none. if the password is encrypted, this column will begin with the string md5 followed by a 32-character hexadecimal md5 hash. the md5 hash will be of the user's password concatenated to their user name. for example, if user joe has password xyzzy, postgresql will store the md5 hash of xyzzyjoe. a password that does not follow that format is assumed to be unencrypted."
+rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiration"

@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-ftrelid	oid	false		"oid of the pg_class entry for this foreign tabl"
-ftserver	oid	false		"oid of the foreign server for this foreign tabl"
-ftoptions	text[]	true		"foreign table options, as ""keyword=value"" string"
+ftrelid	oid	false		"oid of the pg_class entry for this foreign table"
+ftserver	oid	false		"oid of the foreign server for this foreign table"
+ftoptions	text[]	true		"foreign table options, as ""keyword=value"" strings"

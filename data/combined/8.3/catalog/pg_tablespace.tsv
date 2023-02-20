@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+spcacl	aclitem[]			"access privileges; see grant and revoke for details"
+spclocation	text			"location (directory path) of the tablespace"
+spcname	name			"tablespace name"
+spcowner	oid		pg_authid.oid	"owner of the tablespace, usually the user who created it"

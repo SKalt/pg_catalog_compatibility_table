@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+definition	text			"view definition (a reconstructed select query)"
+schemaname	name		pg_namespace.nspname	"name of schema containing view"
+viewname	name		pg_class.relname	"name of view"
+viewowner	name		pg_authid.rolname	"name of view's owner"

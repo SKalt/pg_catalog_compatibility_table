@@ -1,0 +1,6 @@
+Name	Type	Nullable	References	Description
+indexdef	text			"index definition (a reconstructed creation command)"
+indexname	name		pg_class.relname	"name of index"
+schemaname	name		pg_namespace.nspname	"name of schema containing table and index"
+tablename	name		pg_class.relname	"name of table the index is for"
+tablespace	name		pg_tablespace.spcname	"name of tablespace containing index (null if default for database)"

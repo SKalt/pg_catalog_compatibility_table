@@ -1,13 +1,14 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-collname	name	false		"collation name (unique per namespace and encoding"
-collnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this collatio"
-collowner	oid	false	pg_authid.oid	"owner of the collatio"
-collencoding	int4	false		"encoding in which the collation is applicable, or -1 if it works for any encodin"
-collcollate	name	false		"lc_collate for this collation objec"
-collctype	name	false		"lc_ctype for this collation objec"
+collname	name	false		"collation name (unique per namespace and encoding)"
+collnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this collation"
+collowner	oid	false	pg_authid.oid	"owner of the collation"
+collencoding	int4	false		"encoding in which the collation is applicable, or -1 if it works for any encoding"
+collcollate	name	false		"lc_collate for this collation object"
+collctype	name	false		"lc_ctype for this collation object"

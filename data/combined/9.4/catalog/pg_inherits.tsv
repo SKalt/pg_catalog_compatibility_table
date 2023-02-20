@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-inhrelid	oid	false	pg_class.oid	"the oid of the child tabl"
-inhparent	oid	false	pg_class.oid	"the oid of the parent tabl"
-inhseqno	int4	false		"if there is more than one direct parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. the count starts at 1"
+inhrelid	oid	false	pg_class.oid	"the oid of the child table"
+inhparent	oid	false	pg_class.oid	"the oid of the parent table"
+inhseqno	int4	false		"if there is more than one direct parent for a child table (multiple inheritance), this number tells the order in which the inherited columns are to be arranged. the count starts at 1."

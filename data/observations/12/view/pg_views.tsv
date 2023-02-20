@@ -1,5 +1,0 @@
-Name	Type	Nullable
-schemaname	name	true
-viewname	name	true
-viewowner	name	true
-definition	text	true

@@ -1,0 +1,11 @@
+Name	Type	Nullable	References	Description
+anl_base_thresh	int4			"minimum number of modified tuples before analyze"
+anl_scale_factor	float4			"multiplier for reltuples to add to anl_base_thresh"
+enabled	bool			"if false, this table will not be autovacuumed, except to prevent transaction id wraparound"
+freeze_max_age	int4			"custom autovacuum_freeze_max_age parameter"
+freeze_min_age	int4			"custom vacuum_freeze_min_age parameter"
+vac_base_thresh	int4			"minimum number of modified tuples before vacuum"
+vac_cost_delay	int4			"custom vacuum_cost_delay parameter"
+vac_cost_limit	int4			"custom vacuum_cost_limit parameter"
+vac_scale_factor	float4			"multiplier for reltuples to add to vac_base_thresh"
+vacrelid	oid		pg_class.oid	"the table this entry is for"

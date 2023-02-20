@@ -1,6 +1,0 @@
-Name	Type	Nullable
-name	text	true
-statement	text	true
-prepare_time	timestamptz	true
-parameter_types	regtype[]	true
-from_sql	bool	true

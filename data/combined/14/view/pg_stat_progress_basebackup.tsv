@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 pid	int4	true		
 phase	text	true		
 backup_total	int8	true		

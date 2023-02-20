@@ -1,14 +1,15 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-pubname	name	false		"name of the publicatio"
-pubowner	oid	false	pg_authid.oid	"owner of the publicatio"
-puballtables	bool	false		"if true, this publication automatically includes all tables in the database, including any that will be created in the future"
-pubinsert	bool	false		"if true, insert operations are replicated for tables in the publication"
-pubupdate	bool	false		"if true, update operations are replicated for tables in the publication"
-pubdelete	bool	false		"if true, delete operations are replicated for tables in the publication"
-pubtruncate	bool	false		"if true, truncate operations are replicated for tables in the publication"
+pubname	name	false		"name of the publication"
+pubowner	oid	false	pg_authid.oid	"owner of the publication"
+puballtables	bool	false		"if true, this publication automatically includes all tables in the database, including any that will be created in the future."
+pubinsert	bool	false		"if true, insert operations are replicated for tables in the publication."
+pubupdate	bool	false		"if true, update operations are replicated for tables in the publication."
+pubdelete	bool	false		"if true, delete operations are replicated for tables in the publication."
+pubtruncate	bool	false		"if true, truncate operations are replicated for tables in the publication."

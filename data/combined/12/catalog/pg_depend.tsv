@@ -1,13 +1,14 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-classid	oid	false	pg_class.oid	"the oid of the system catalog the dependent object is i"
-objid	oid	false	"any oid colum"	"the oid of the specific dependent objec"
-objsubid	int4	false		"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero"
-refclassid	oid	false	pg_class.oid	"the oid of the system catalog the referenced object is i"
-refobjid	oid	false	"any oid colum"	"the oid of the specific referenced objec"
-refobjsubid	int4	false		"for a table column, this is the column number (the refobjid and refclassid refer to the table itself). for all other object types, this column is zero"
-deptype	char	false		"a code defining the specific semantics of this dependency relationship; see tex"
+classid	oid	false	pg_class.oid	"the oid of the system catalog the dependent object is in"
+objid	oid	false	"any oid column"	"the oid of the specific dependent object"
+objsubid	int4	false		"for a table column, this is the column number (the objid and classid refer to the table itself). for all other object types, this column is zero."
+refclassid	oid	false	pg_class.oid	"the oid of the system catalog the referenced object is in"
+refobjid	oid	false	"any oid column"	"the oid of the specific referenced object"
+refobjsubid	int4	false		"for a table column, this is the column number (the refobjid and refclassid refer to the table itself). for all other object types, this column is zero."
+deptype	char	false		"a code defining the specific semantics of this dependency relationship; see text"

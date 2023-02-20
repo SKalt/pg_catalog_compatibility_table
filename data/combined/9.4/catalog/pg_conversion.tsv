@@ -1,14 +1,15 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-conname	name	false		"conversion name (unique within a namespace"
-connamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this conversio"
-conowner	oid	false	pg_authid.oid	"owner of the conversio"
-conforencoding	int4	false		"source encoding i"
-contoencoding	int4	false		"destination encoding i"
-conproc	regproc	false	pg_proc.oid	"conversion procedur"
-condefault	bool	false		"true if this is the default conversio"
+conname	name	false		"conversion name (unique within a namespace)"
+connamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this conversion"
+conowner	oid	false	pg_authid.oid	"owner of the conversion"
+conforencoding	int4	false		"source encoding id"
+contoencoding	int4	false		"destination encoding id"
+conproc	regproc	false	pg_proc.oid	"conversion procedure"
+condefault	bool	false		"true if this is the default conversion"

@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 slot_name	name	true		
 plugin	name	true		
 slot_type	text	true		

@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+staattnum	int2		pg_attribute.attnum	"the number of the described column"
+stadistinct	float4			"the number of distinct non-null data values in the column. a value greater than zero is the actual number of distinct values. a value less than zero is the negative of a fraction of the number of rows in the table (for example, a column in which values appear about twice on the average could be represented by stadistinct = -0.5). a zero value means the number of distinct values is unknown."
+stakindn	int2			"a code number indicating the kind of statistics stored in the nth ""slot"" of the pg_statistic row."
+stanullfrac	float4			"the fraction of the column's entries that are null"
+stanumbersn	float4[]			"numerical statistics of the appropriate kind for the nth ""slot"", or null if the slot kind does not involve numerical values."
+staopn	oid		pg_operator.oid	"an operator used to derive the statistics stored in the nth ""slot"". for example, a histogram slot would show the < operator that defines the sort order of the data."
+starelid	oid		pg_class.oid	"the table that the described column belongs to"
+stavaluesn	text[]			"column data values of the appropriate kind for the nth ""slot"", or null if the slot kind does not store any data values. for data-type independence, all column data values are converted to external textual form and stored as text datums."
+stawidth	int4			"the average stored width, in bytes, of non-null entries"

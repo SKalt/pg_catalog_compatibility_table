@@ -1,10 +1,11 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-mapcfg	oid	false	pg_ts_config.oid	"the oid of the pg_ts_config entry owning this map entr"
-maptokentype	int4	false		"a token type emitted by the configuration's parse"
-mapseqno	int4	false		"order in which to consult this entry (lower mapseqnos first"
-mapdict	oid	false	pg_ts_dict.oid	"the oid of the text search dictionary to consul"
+mapcfg	oid	false	pg_ts_config.oid	"the oid of the pg_ts_config entry owning this map entry"
+maptokentype	int4	false		"a token type emitted by the configuration's parser"
+mapseqno	int4	false		"order in which to consult this entry (lower mapseqnos first)"
+mapdict	oid	false	pg_ts_dict.oid	"the oid of the text search dictionary to consult"

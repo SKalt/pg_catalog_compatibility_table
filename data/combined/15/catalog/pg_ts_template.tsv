@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-tmplname	name	false		"text search template nam"
-tmplnamespace	oid	false		"the oid of the namespace that contains this templat"
-tmplinit	regproc	false		"oid of the template's initialization function (zero if none"
-tmpllexize	regproc	false		"oid of the template's lexize functio"
+oid	oid	false		"row identifier"
+tmplname	name	false		"text search template name"
+tmplnamespace	oid	false		"the oid of the namespace that contains this template"
+tmplinit	regproc	false		"oid of the template's initialization function (zero if none)"
+tmpllexize	regproc	false		"oid of the template's lexize function"

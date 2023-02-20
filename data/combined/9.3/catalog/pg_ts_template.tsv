@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-tmplname	name	false		"text search template nam"
-tmplnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this templat"
-tmplinit	regproc	false	pg_proc.oid	"oid of the template's initialization functio"
-tmpllexize	regproc	false	pg_proc.oid	"oid of the template's lexize functio"
+tmplname	name	false		"text search template name"
+tmplnamespace	oid	false	pg_namespace.oid	"the oid of the namespace that contains this template"
+tmplinit	regproc	false	pg_proc.oid	"oid of the template's initialization function"
+tmpllexize	regproc	false	pg_proc.oid	"oid of the template's lexize function"

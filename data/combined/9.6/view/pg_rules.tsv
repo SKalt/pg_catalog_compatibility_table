@@ -1,4 +1,5 @@
-schemaname	name	true	pg_namespace.nspname	"name of schema containing tabl"
-tablename	name	true	pg_class.relname	"name of table the rule is fo"
-rulename	name	true	pg_rewrite.rulename	"name of rul"
-definition	text	true		"rule definition (a reconstructed creation command"
+Name	Type	Nullable	References	Description
+schemaname	name	true	pg_namespace.nspname	"name of schema containing table"
+tablename	name	true	pg_class.relname	"name of table the rule is for"
+rulename	name	true	pg_rewrite.rulename	"name of rule"
+definition	text	true		"rule definition (a reconstructed creation command)"

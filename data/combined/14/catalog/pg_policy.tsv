@@ -1,14 +1,15 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-polname	name	false		"the name of the polic"
-polrelid	oid	false		"the table to which the policy applie"
-polcmd	char	false		"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for al"
-polpermissive	bool	false		"is the policy permissive or restrictive"
-polroles	oid[]	false		"the roles to which the policy is applied; zero means public (and normally appears alone in the array"
-polqual	pg_node_tree	true		"the expression tree to be added to the security barrier qualifications for queries that use the tabl"
-polwithcheck	pg_node_tree	true		"the expression tree to be added to the with check qualifications for queries that attempt to add rows to the tabl"
+oid	oid	false		"row identifier"
+polname	name	false		"the name of the policy"
+polrelid	oid	false		"the table to which the policy applies"
+polcmd	char	false		"the command type to which the policy is applied: r for select, a for insert, w for update, d for delete, or * for all"
+polpermissive	bool	false		"is the policy permissive or restrictive?"
+polroles	oid[]	false		"the roles to which the policy is applied; zero means public (and normally appears alone in the array)"
+polqual	pg_node_tree	true		"the expression tree to be added to the security barrier qualifications for queries that use the table"
+polwithcheck	pg_node_tree	true		"the expression tree to be added to the with check qualifications for queries that attempt to add rows to the table"

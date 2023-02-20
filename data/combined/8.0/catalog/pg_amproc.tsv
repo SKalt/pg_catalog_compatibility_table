@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+amopclaid	oid		pg_opclass.oid	"the index operator class this entry is for"
+amproc	regproc		pg_proc.oid	"oid of the procedure"
+amprocnum	int2			"support procedure number"
+amprocsubtype	oid		pg_type.oid	"subtype, if cross-type routine, else zero"

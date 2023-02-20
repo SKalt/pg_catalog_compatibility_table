@@ -1,0 +1,9 @@
+Name	Type	Nullable	References	Description
+passwd	text			"password (possibly encrypted)"
+usecatupd	bool			"user may update system catalogs. (even a superuser may not do this unless this column is true.)"
+useconfig	text[]			"session defaults for run-time configuration variables"
+usecreatedb	bool			"user may create databases"
+usename	name		pg_authid.rolname	"user name"
+usesuper	bool			"user is a superuser"
+usesysid	oid		pg_authid.oid	"id of this user"
+valuntil	abstime			"password expiry time (only used for password authentication)"

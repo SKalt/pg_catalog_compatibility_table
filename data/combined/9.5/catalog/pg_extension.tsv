@@ -1,14 +1,15 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-extname	name	false		"name of the extensio"
-extowner	oid	false	pg_authid.oid	"owner of the extensio"
-extnamespace	oid	false	pg_namespace.oid	"schema containing the extension's exported object"
-extrelocatable	bool	false		"true if extension can be relocated to another schem"
-extversion	text	false		"version name for the extensio"
-extconfig	oid[]	true	pg_class.oid	"array of regclass oids for the extension's configuration table(s), or null if non"
-extcondition	text[]	true		"array of where-clause filter conditions for the extension's configuration table(s), or null if non"
+extname	name	false		"name of the extension"
+extowner	oid	false	pg_authid.oid	"owner of the extension"
+extnamespace	oid	false	pg_namespace.oid	"schema containing the extension's exported objects"
+extrelocatable	bool	false		"true if extension can be relocated to another schema"
+extversion	text	false		"version name for the extension"
+extconfig	oid[]	true	pg_class.oid	"array of regclass oids for the extension's configuration table(s), or null if none"
+extcondition	text[]	true		"array of where-clause filter conditions for the extension's configuration table(s), or null if none"

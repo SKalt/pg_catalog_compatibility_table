@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-amname	name	false		"name of the access metho"
+amname	name	false		"name of the access method"
 amstrategies	int2	false		
 amsupport	int2	false		
 amcanorder	bool	false		
@@ -35,3 +36,5 @@ amvacuumcleanup	regproc	false
 amcanreturn	regproc	false		
 amcostestimate	regproc	false		
 amoptions	regproc	false		
+amhandler	regproc		pg_proc.oid	"oid of a handler function that is responsible for supplying information about the access method"
+amtype	char			"currently always i to indicate an index access method; other values may be allowed in future"

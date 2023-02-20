@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-loid	oid	false		"identifier of the large object that includes this pag"
-pageno	int4	false		"page number of this page within its large object (counting from zero"
-data	bytea	false		"actual data stored in the large object. this will never be more than loblksize bytes and might be less"
+loid	oid	false		"identifier of the large object that includes this page"
+pageno	int4	false		"page number of this page within its large object (counting from zero)"
+data	bytea	false		"actual data stored in the large object. this will never be more than loblksize bytes and might be less."

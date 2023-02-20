@@ -1,6 +1,7 @@
-name	text	true		"the name of the curso"
-statement	text	true		"the verbatim query string submitted to declare this curso"
-is_holdable	bool	true		"true if the cursor is holdable (that is, it can be accessed after the transaction that declared the cursor has committed); false otherwis"
-is_binary	bool	true		"true if the cursor was declared binary; false otherwis"
-is_scrollable	bool	true		"true if the cursor is scrollable (that is, it allows rows to be retrieved in a nonsequential manner); false otherwis"
-creation_time	timestamptz	true		"the time at which the cursor was declare"
+Name	Type	Nullable	References	Description
+name	text	true		"the name of the cursor"
+statement	text	true		"the verbatim query string submitted to declare this cursor"
+is_holdable	bool	true		"true if the cursor is holdable (that is, it can be accessed after the transaction that declared the cursor has committed); false otherwise"
+is_binary	bool	true		"true if the cursor was declared binary; false otherwise"
+is_scrollable	bool	true		"true if the cursor is scrollable (that is, it allows rows to be retrieved in a nonsequential manner); false otherwise"
+creation_time	timestamptz	true		"the time at which the cursor was declared"

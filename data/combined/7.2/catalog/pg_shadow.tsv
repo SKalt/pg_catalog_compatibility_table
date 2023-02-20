@@ -1,0 +1,9 @@
+Name	Type	Nullable	References	Description
+passwd	text			password
+usecatupd	bool			"user may update system catalogs. (even a superuser may not do this unless this attribute is true.)"
+usecreatedb	bool			"user may create databases"
+usename	name			"user name"
+usesuper	bool			"user is a superuser"
+usesysid	int4			"user id (arbitrary number used to reference this user)"
+usetrace	bool			"not used"
+valuntil	abstime			"account expiry time (only used for password authentication)"

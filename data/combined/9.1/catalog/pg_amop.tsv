@@ -1,0 +1,9 @@
+Name	Type	Nullable	References	Description
+amopfamily	oid		pg_opfamily.oid	"the operator family this entry is for"
+amoplefttype	oid		pg_type.oid	"left-hand input data type of operator"
+amopmethod	oid		pg_am.oid	"index access method operator family is for"
+amopopr	oid		pg_operator.oid	"oid of the operator"
+amoppurpose	char			"operator purpose, either s for search or o for ordering"
+amoprighttype	oid		pg_type.oid	"right-hand input data type of operator"
+amopsortfamily	oid		pg_opfamily.oid	"the btree operator family this entry sorts according to, if an ordering operator; zero if a search operator"
+amopstrategy	int2			"operator strategy number"

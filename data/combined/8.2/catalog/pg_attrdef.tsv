@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+adbin	text			"the internal representation of the column default value"
+adnum	int2		pg_attribute.attnum	"the number of the column"
+adrelid	oid		pg_class.oid	"the table this column belongs to"
+adsrc	text			"a human-readable representation of the default value"

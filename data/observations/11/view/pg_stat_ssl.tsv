@@ -1,8 +1,0 @@
-Name	Type	Nullable
-pid	int4	true
-ssl	bool	true
-version	text	true
-cipher	text	true
-bits	int4	true
-compression	bool	true
-clientdn	text	true

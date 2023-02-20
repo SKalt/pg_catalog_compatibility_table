@@ -1,9 +1,0 @@
-Name	Type	Nullable
-tableoid	oid	false
-cmax	cid	false
-xmax	xid	false
-cmin	cid	false
-xmin	xid	false
-ctid	tid	false
-roident	oid	false
-roname	text	false

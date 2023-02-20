@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+condefault	bool			"true if this is the default conversion"
+conforencoding	int4			"source encoding id"
+conname	name			"conversion name (unique within a namespace)"
+connamespace	oid		pg_namespace.oid	"the oid of the namespace that contains this conversion"
+conowner	oid		pg_authid.oid	"owner of the conversion"
+conproc	regproc		pg_proc.oid	"conversion procedure"
+contoencoding	int4			"destination encoding id"

@@ -1,15 +1,16 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-amopfamily	oid	false	pg_opfamily.oid	"the operator family this entry is fo"
-amoplefttype	oid	false	pg_type.oid	"left-hand input data type of operato"
-amoprighttype	oid	false	pg_type.oid	"right-hand input data type of operato"
-amopstrategy	int2	false		"operator strategy numbe"
-amoppurpose	char	false		"operator purpose, either s for search or o for orderin"
-amopopr	oid	false	pg_operator.oid	"oid of the operato"
-amopmethod	oid	false	pg_am.oid	"index access method operator family is fo"
-amopsortfamily	oid	false	pg_opfamily.oid	"the b-tree operator family this entry sorts according to, if an ordering operator; zero if a search operato"
+oid	oid	false		"row identifier"
+amopfamily	oid	false	pg_opfamily.oid	"the operator family this entry is for"
+amoplefttype	oid	false	pg_type.oid	"left-hand input data type of operator"
+amoprighttype	oid	false	pg_type.oid	"right-hand input data type of operator"
+amopstrategy	int2	false		"operator strategy number"
+amoppurpose	char	false		"operator purpose, either s for search or o for ordering"
+amopopr	oid	false	pg_operator.oid	"oid of the operator"
+amopmethod	oid	false	pg_am.oid	"index access method operator family is for"
+amopsortfamily	oid	false	pg_opfamily.oid	"the b-tree operator family this entry sorts according to, if an ordering operator; zero if a search operator"

@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
+puballtables	bool			"if true, this publication automatically includes all tables in the database, including any that will be created in the future."
+pubdelete	bool			"if true, delete operations are replicated for tables in the publication."
+pubinsert	bool			"if true, insert operations are replicated for tables in the publication."
+pubname	name			"name of the publication"
+pubowner	oid		pg_authid.oid	"owner of the publication"
+pubupdate	bool			"if true, update operations are replicated for tables in the publication."

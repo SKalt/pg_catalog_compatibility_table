@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
@@ -5,7 +6,7 @@ cmin	cid	false
 xmin	xid	false		
 oid	oid	false		
 ctid	tid	false		
-spcname	name	false		"tablespace nam"
-spcowner	oid	false	pg_authid.oid	"owner of the tablespace, usually the user who created i"
-spcacl	aclitem[]	true		"access privileges; see grant and revoke for detail"
-spcoptions	text[]	true		"tablespace-level options, as ""keyword=value"" string"
+spcname	name	false		"tablespace name"
+spcowner	oid	false	pg_authid.oid	"owner of the tablespace, usually the user who created it"
+spcacl	aclitem[]	true		"access privileges; see grant and revoke for details"
+spcoptions	text[]	true		"tablespace-level options, as ""keyword=value"" strings"

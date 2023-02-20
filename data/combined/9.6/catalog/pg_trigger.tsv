@@ -1,22 +1,23 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
-oid	oid	false		"row identifier (hidden attribute; must be explicitly selected"
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
 ctid	tid	false		
-tgrelid	oid	false	pg_class.oid	"the table this trigger is o"
-tgname	name	false		"trigger name (must be unique among triggers of same table"
-tgfoid	oid	false	pg_proc.oid	"the function to be calle"
-tgtype	int2	false		"bit mask identifying trigger firing condition"
-tgenabled	char	false		"controls in which session_replication_role modes the trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always"
-tgisinternal	bool	false		"true if trigger is internally generated (usually, to enforce the constraint identified by tgconstraint"
-tgconstrrelid	oid	false	pg_class.oid	"the table referenced by a referential integrity constrain"
-tgconstrindid	oid	false	pg_class.oid	"the index supporting a unique, primary key, referential integrity, or exclusion constrain"
-tgconstraint	oid	false	pg_constraint.oid	"the pg_constraint entry associated with the trigger, if an"
-tgdeferrable	bool	false		"true if constraint trigger is deferrabl"
-tginitdeferred	bool	false		"true if constraint trigger is initially deferre"
-tgnargs	int2	false		"number of argument strings passed to trigger functio"
-tgattr	int2vector	false	pg_attribute.attnum	"column numbers, if trigger is column-specific; otherwise an empty arra"
-tgargs	bytea	false		"argument strings to pass to trigger, each null-terminate"
-tgqual	pg_node_tree	true		"expression tree (in nodetostring() representation) for the trigger's when condition, or null if non"
+tgrelid	oid	false	pg_class.oid	"the table this trigger is on"
+tgname	name	false		"trigger name (must be unique among triggers of same table)"
+tgfoid	oid	false	pg_proc.oid	"the function to be called"
+tgtype	int2	false		"bit mask identifying trigger firing conditions"
+tgenabled	char	false		"controls in which session_replication_role modes the trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
+tgisinternal	bool	false		"true if trigger is internally generated (usually, to enforce the constraint identified by tgconstraint)"
+tgconstrrelid	oid	false	pg_class.oid	"the table referenced by a referential integrity constraint"
+tgconstrindid	oid	false	pg_class.oid	"the index supporting a unique, primary key, referential integrity, or exclusion constraint"
+tgconstraint	oid	false	pg_constraint.oid	"the pg_constraint entry associated with the trigger, if any"
+tgdeferrable	bool	false		"true if constraint trigger is deferrable"
+tginitdeferred	bool	false		"true if constraint trigger is initially deferred"
+tgnargs	int2	false		"number of argument strings passed to trigger function"
+tgattr	int2vector	false	pg_attribute.attnum	"column numbers, if trigger is column-specific; otherwise an empty array"
+tgargs	bytea	false		"argument strings to pass to trigger, each null-terminated"
+tgqual	pg_node_tree	true		"expression tree (in nodetostring() representation) for the trigger's when condition, or null if none"

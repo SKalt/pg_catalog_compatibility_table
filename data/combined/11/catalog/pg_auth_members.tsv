@@ -1,10 +1,11 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-roleid	oid	false	pg_authid.oid	"id of a role that has a membe"
-member	oid	false	pg_authid.oid	"id of a role that is a member of rolei"
-grantor	oid	false	pg_authid.oid	"id of the role that granted this membershi"
-admin_option	bool	false		"true if member can grant membership in roleid to other"
+roleid	oid	false	pg_authid.oid	"id of a role that has a member"
+member	oid	false	pg_authid.oid	"id of a role that is a member of roleid"
+grantor	oid	false	pg_authid.oid	"id of the role that granted this membership"
+admin_option	bool	false		"true if member can grant membership in roleid to others"

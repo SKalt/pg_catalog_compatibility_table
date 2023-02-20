@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-opfmethod	oid	false		"index access method operator family is fo"
-opfname	name	false		"name of this operator famil"
-opfnamespace	oid	false		"namespace of this operator famil"
-opfowner	oid	false		"owner of the operator famil"
+oid	oid	false		"row identifier"
+opfmethod	oid	false		"index access method operator family is for"
+opfname	name	false		"name of this operator family"
+opfnamespace	oid	false		"namespace of this operator family"
+opfowner	oid	false		"owner of the operator family"

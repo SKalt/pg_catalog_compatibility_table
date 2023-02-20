@@ -1,10 +1,11 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-nspname	name	false		"name of the namespac"
-nspowner	oid	false		"owner of the namespac"
-nspacl	aclitem[]	true		"access privilege"
+oid	oid	false		"row identifier"
+nspname	name	false		"name of the namespace"
+nspowner	oid	false		"owner of the namespace"
+nspacl	aclitem[]	true		"access privileges"

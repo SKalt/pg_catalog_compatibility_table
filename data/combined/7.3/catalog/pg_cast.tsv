@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+castcontext	char			"indicates what contexts the cast may be invoked in. e means only as an explicit cast (using cast, ::, or function-call syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases."
+castfunc	oid		pg_proc.oid	"the oid of the function to use to perform this cast. zero is stored if the data types are binary coercible (that is, no run-time operation is needed to perform the cast)."
+castsource	oid		pg_type.oid	"oid of the source data type"
+casttarget	oid		pg_type.oid	"oid of the target data type"

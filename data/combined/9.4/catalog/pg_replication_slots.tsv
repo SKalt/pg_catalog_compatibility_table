@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+active	bool			"true if this slot is currently actively being used"
+catalog_xmin	xid			"the oldest transaction affecting the system catalogs that this slot needs the database to retain. vacuum cannot remove catalog tuples deleted by any later transaction."
+database	text		pg_database.datname	"the name of the database this slot is associated with, or null. only logical slots have an associated database."
+datoid	oid		pg_database.oid	"the oid of the database this slot is associated with, or null. only logical slots have an associated database."
+plugin	name			"the base name of the shared object containing the output plugin this logical slot is using, or null for physical slots."
+restart_lsn	pg_lsn			"the address (lsn) of oldest wal which still might be required by the consumer of this slot and thus won't be automatically removed during checkpoints."
+slot_name	name			"a unique, cluster-wide identifier for the replication slot"
+slot_type	text			"the slot type - physical or logical"
+xmin	xid			"the oldest transaction that this slot needs the database to retain. vacuum cannot remove tuples deleted by any later transaction."

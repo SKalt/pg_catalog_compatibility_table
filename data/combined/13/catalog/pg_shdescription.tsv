@@ -1,9 +1,10 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-objoid	oid	false		"the oid of the object this description pertains t"
-classoid	oid	false		"the oid of the system catalog this object appears i"
-description	text	false		"arbitrary text that serves as the description of this objec"
+objoid	oid	false		"the oid of the object this description pertains to"
+classoid	oid	false		"the oid of the system catalog this object appears in"
+description	text	false		"arbitrary text that serves as the description of this object"

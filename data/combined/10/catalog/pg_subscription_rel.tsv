@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+srrelid	oid		pg_class.oid	"reference to relation"
+srsubid	oid		pg_subscription.oid	"reference to subscription"
+srsublsn	pg_lsn			"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"
+srsubstate	char			"state code: i = initialize, d = data is being copied, s = synchronized, r = ready (normal replication)"

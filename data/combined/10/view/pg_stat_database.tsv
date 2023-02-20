@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 datid	oid	true		
 datname	name	true		
 numbackends	int4	true		
@@ -14,6 +15,6 @@ conflicts	int8	true
 temp_files	int8	true		
 temp_bytes	int8	true		
 deadlocks	int8	true		
-blk_read_time	"double precisio"	true		
-blk_write_time	"double precisio"	true		
+blk_read_time	"double precision"	true		
+blk_write_time	"double precision"	true		
 stats_reset	timestamptz	true		

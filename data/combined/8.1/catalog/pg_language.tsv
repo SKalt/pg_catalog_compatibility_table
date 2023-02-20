@@ -1,0 +1,7 @@
+Name	Type	Nullable	References	Description
+lanacl	aclitem[]			"access privileges; see grant and revoke for details."
+lanispl	bool			"this is false for internal languages (such as sql) and true for user-defined languages. currently, pg_dump still uses this to determine which languages need to be dumped, but this may be replaced by a different mechanism sometime."
+lanname	name			"name of the language"
+lanplcallfoid	oid		pg_proc.oid	"for noninternal languages this references the language handler, which is a special function that is responsible for executing all functions that are written in the particular language."
+lanpltrusted	bool			"true if this is a trusted language, which means that it is believed not to grant access to anything outside the normal sql execution environment. only superusers may create functions in untrusted languages."
+lanvalidator	oid		pg_proc.oid	"this references a language validator function that is responsible for checking the syntax and validity of new functions when they are created. zero if no validator is provided."

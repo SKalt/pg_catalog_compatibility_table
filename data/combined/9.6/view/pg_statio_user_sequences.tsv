@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 relid	oid	true		
 schemaname	name	true		
 relname	name	true		

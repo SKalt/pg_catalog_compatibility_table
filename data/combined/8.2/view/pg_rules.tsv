@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+definition	text			"rule definition (a reconstructed creation command)"
+rulename	name		pg_rewrite.rulename	"name of rule"
+schemaname	name		pg_namespace.nspname	"name of schema containing table"
+tablename	name		pg_class.relname	"name of table the rule is for"

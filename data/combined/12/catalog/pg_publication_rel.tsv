@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
@@ -5,5 +6,5 @@ cmin	cid	false
 xmin	xid	false		
 ctid	tid	false		
 oid	oid	false		
-prpubid	oid	false	pg_publication.oid	"reference to publicatio"
-prrelid	oid	false	pg_class.oid	"reference to relatio"
+prpubid	oid	false	pg_publication.oid	"reference to publication"
+prrelid	oid	false	pg_class.oid	"reference to relation"

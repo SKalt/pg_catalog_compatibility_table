@@ -1,10 +1,11 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-amname	name	false		"name of the access metho"
-amhandler	regproc	false		"oid of a handler function that is responsible for supplying information about the access metho"
-amtype	char	false		"t = table (including materialized views), i = index"
+oid	oid	false		"row identifier"
+amname	name	false		"name of the access method"
+amhandler	regproc	false		"oid of a handler function that is responsible for supplying information about the access method"
+amtype	char	false		"t = table (including materialized views), i = index."

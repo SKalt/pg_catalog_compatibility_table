@@ -1,10 +1,11 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-enumtypid	oid	false	pg_type.oid	"the oid of the pg_type entry owning this enum valu"
-enumsortorder	float4	false		"the sort position of this enum value within its enum typ"
-enumlabel	name	false		"the textual label for this enum valu"
+oid	oid	false		"row identifier"
+enumtypid	oid	false	pg_type.oid	"the oid of the pg_type entry owning this enum value"
+enumsortorder	float4	false		"the sort position of this enum value within its enum type"
+enumlabel	name	false		"the textual label for this enum value"

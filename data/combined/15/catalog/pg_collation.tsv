@@ -1,17 +1,18 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-collname	name	false		"collation name (unique per namespace and encoding"
-collnamespace	oid	false		"the oid of the namespace that contains this collatio"
-collowner	oid	false		"owner of the collatio"
-collprovider	char	false		"provider of the collation: d = database default, c = libc, i = ic"
-collisdeterministic	bool	false		"is the collation deterministic"
-collencoding	int4	false		"encoding in which the collation is applicable, or -1 if it works for any encodin"
-collcollate	text	true		"lc_collate for this collation objec"
-collctype	text	true		"lc_ctype for this collation objec"
-colliculocale	text	true		"icu locale id for this collation objec"
-collversion	text	true		"provider-specific version of the collation. this is recorded when the collation is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption"
+oid	oid	false		"row identifier"
+collname	name	false		"collation name (unique per namespace and encoding)"
+collnamespace	oid	false		"the oid of the namespace that contains this collation"
+collowner	oid	false		"owner of the collation"
+collprovider	char	false		"provider of the collation: d = database default, c = libc, i = icu"
+collisdeterministic	bool	false		"is the collation deterministic?"
+collencoding	int4	false		"encoding in which the collation is applicable, or -1 if it works for any encoding"
+collcollate	text	true		"lc_collate for this collation object"
+collctype	text	true		"lc_ctype for this collation object"
+colliculocale	text	true		"icu locale id for this collation object"
+collversion	text	true		"provider-specific version of the collation. this is recorded when the collation is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption."

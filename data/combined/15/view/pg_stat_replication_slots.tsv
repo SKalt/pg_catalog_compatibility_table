@@ -1,3 +1,4 @@
+Name	Type	Nullable	References	Description
 slot_name	text	true		
 spill_txns	int8	true		
 spill_count	int8	true		

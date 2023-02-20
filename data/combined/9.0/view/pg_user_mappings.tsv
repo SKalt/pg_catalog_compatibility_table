@@ -1,0 +1,7 @@
+Name	Type	Nullable	References	Description
+srvid	oid		pg_foreign_server.oid	"the oid of the foreign server that contains this mapping"
+srvname	text			"name of the foreign server"
+umid	oid		pg_user_mapping.oid	"oid of the user mapping"
+umoptions	text[]			"user mapping specific options, as ""keyword=value"" strings, if the current user is the owner of the foreign server, else null"
+umuser	oid		pg_authid.oid	"oid of the local role being mapped, 0 if the user mapping is public"
+usename	name			"name of the local user to be mapped"

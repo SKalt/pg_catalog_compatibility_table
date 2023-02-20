@@ -1,0 +1,7 @@
+Name	Type	Nullable	References	Description
+creation_time	timestamptz			"the time at which the cursor was declared"
+is_binary	bool			"true if the cursor was declared binary; false otherwise"
+is_holdable	bool			"true if the cursor is holdable (that is, it can be accessed after the transaction that declared the cursor has committed); false otherwise"
+is_scrollable	bool			"true if the cursor is scrollable (that is, it allows rows to be retrieved in a nonsequential manner); false otherwise"
+name	text			"the name of the cursor"
+statement	text			"the verbatim query string submitted to declare this cursor"

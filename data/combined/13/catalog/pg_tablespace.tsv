@@ -1,11 +1,12 @@
+Name	Type	Nullable	References	Description
 tableoid	oid	false		
 cmax	cid	false		
 xmax	xid	false		
 cmin	cid	false		
 xmin	xid	false		
 ctid	tid	false		
-oid	oid	false		"row identifie"
-spcname	name	false		"tablespace nam"
-spcowner	oid	false		"owner of the tablespace, usually the user who created i"
-spcacl	aclitem[]	true		"access privilege"
-spcoptions	text[]	true		"tablespace-level options, as ""keyword=value"" string"
+oid	oid	false		"row identifier"
+spcname	name	false		"tablespace name"
+spcowner	oid	false		"owner of the tablespace, usually the user who created it"
+spcacl	aclitem[]	true		"access privileges"
+spcoptions	text[]	true		"tablespace-level options, as ""keyword=value"" strings"
