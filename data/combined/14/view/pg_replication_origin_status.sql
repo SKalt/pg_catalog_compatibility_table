@@ -1,0 +1,1 @@
+../../../observed/14/view/pg_replication_origin_status.sql

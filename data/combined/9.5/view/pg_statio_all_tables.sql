@@ -1,0 +1,1 @@
+../../../observed/9.5/view/pg_statio_all_tables.sql

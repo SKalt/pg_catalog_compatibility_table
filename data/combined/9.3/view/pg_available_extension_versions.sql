@@ -1,0 +1,1 @@
+../../../observed/9.3/view/pg_available_extension_versions.sql

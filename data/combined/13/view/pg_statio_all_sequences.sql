@@ -1,0 +1,1 @@
+../../../observed/13/view/pg_statio_all_sequences.sql

@@ -1,0 +1,1 @@
+../../../observed/13/view/pg_stat_sys_indexes.sql

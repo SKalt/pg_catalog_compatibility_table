@@ -1,0 +1,1 @@
+../../../observed/14/view/pg_stat_gssapi.sql

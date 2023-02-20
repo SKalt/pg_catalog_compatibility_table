@@ -1,0 +1,1 @@
+../../../observed/9.6/view/pg_stat_user_tables.sql

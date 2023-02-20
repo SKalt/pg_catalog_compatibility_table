@@ -1,0 +1,1 @@
+../../../observed/11/view/pg_replication_slots.sql

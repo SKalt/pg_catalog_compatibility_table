@@ -1,0 +1,1 @@
+../../../observed/12/view/pg_stat_progress_create_index.sql

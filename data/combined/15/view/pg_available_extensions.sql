@@ -1,0 +1,1 @@
+../../../observed/15/view/pg_available_extensions.sql

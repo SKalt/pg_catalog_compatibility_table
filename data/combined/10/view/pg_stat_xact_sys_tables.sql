@@ -1,0 +1,1 @@
+../../../observed/10/view/pg_stat_xact_sys_tables.sql

@@ -1,0 +1,1 @@
+../../../observed/11/view/pg_stat_progress_vacuum.sql
