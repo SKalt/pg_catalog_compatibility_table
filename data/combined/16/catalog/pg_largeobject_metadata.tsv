@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+lomowner	oid	false		"owner of the large object"
+lomacl	aclitem[]	true		"access privileges"

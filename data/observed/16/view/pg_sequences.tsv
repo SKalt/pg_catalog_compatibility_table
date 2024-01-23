@@ -1,0 +1,12 @@
+Name	Type	Nullable
+schemaname	name	true
+sequencename	name	true
+sequenceowner	name	true
+data_type	regtype	true
+start_value	int8	true
+min_value	int8	true
+max_value	int8	true
+increment_by	int8	true
+cycle	bool	true
+cache_size	int8	true
+last_value	int8	true

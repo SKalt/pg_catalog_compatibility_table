@@ -1,0 +1,11 @@
+Name	Type	Nullable	References	Description
+pid	int4	true		
+datid	oid	true		
+datname	name	true		
+relid	oid	true		
+command	text	true		
+type	text	true		
+bytes_processed	int8	true		
+bytes_total	int8	true		
+tuples_processed	int8	true		
+tuples_excluded	int8	true		

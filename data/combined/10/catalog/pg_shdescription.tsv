@@ -7,4 +7,4 @@ xmin	xid	false
 ctid	tid	false		
 objoid	oid	false	"any oid column"	"the oid of the object this description pertains to"
 classoid	oid	false	pg_class.oid	"the oid of the system catalog this object appears in"
-description	text	true		"arbitrary text that serves as the description of this object"
+description	text	false		"arbitrary text that serves as the description of this object"

@@ -1,0 +1,5 @@
+Name	Type	Nullable
+name	text	true
+off	int8	true
+size	int8	true
+allocated_size	int8	true

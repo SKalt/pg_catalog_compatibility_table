@@ -1,0 +1,5 @@
+Name	Type	References	Description
+schemaname	name		"name of schema containing table"
+tablename	name		"name of table the rule is for"
+rulename	name		"name of rule"
+definition	text		"rule definition (a reconstructed creation command)"

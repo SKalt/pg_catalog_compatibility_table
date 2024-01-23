@@ -16,5 +16,6 @@ datallowconn	bool	false
 datconnlimit	int4	false
 datlastsysoid	oid	false
 datfrozenxid	xid	false
+datminmxid	xid	false
 dattablespace	oid	false
 datacl	aclitem[]	true

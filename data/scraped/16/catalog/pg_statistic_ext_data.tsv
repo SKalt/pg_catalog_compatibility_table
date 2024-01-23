@@ -1,0 +1,7 @@
+Name	Type	References	Description
+stxoid	oid		"extended statistics object containing the definition for this data"
+stxdinherit	bool		"if true, the stats include values from child tables, not just the values in the specified relation"
+stxdndistinct	pg_ndistinct		"n-distinct counts, serialized as pg_ndistinct type"
+stxddependencies	pg_dependencies		"functional dependency statistics, serialized as pg_dependencies type"
+stxdmcv	pg_mcv_list		"mcv (most-common values) list statistics, serialized as pg_mcv_list type"
+stxdexpr	pg_statistic[]		"per-expression statistics, serialized as an array of pg_statistic type"

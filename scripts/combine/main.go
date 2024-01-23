@@ -188,7 +188,8 @@ func mergeVersion(dataDir, version, scrapedVersionDir, observedVersionDir string
 	observedViews := getViews(observedVersionDir)
 	mergeRelations(dataDir, version, "view", scrapedViews, observedViews)
 	combinedDir := filepath.Join(dataDir, "combined", version)
-
+	// create relative symlinks pointing from the combined to the corresponding files in the
+	// observation dir
 	link := func(names ...string) {
 		obsPath, err := filepath.Abs(filepath.Join(append([]string{observedVersionDir}, names...)...))
 		if err != nil {
@@ -202,8 +203,6 @@ func mergeVersion(dataDir, version, scrapedVersionDir, observedVersionDir string
 		if err != nil {
 			log.Panic(err)
 		}
-		// relPath := filepath.Join(append([]string{"..", "..", "observed", version}, names...)...)
-		// combinedPath := filepath.Join(append([]string{combinedDir}, names...)...)
 		if err := os.Symlink(relPath, comboPath); err != nil {
 			log.Panic(err)
 		}
@@ -223,7 +222,6 @@ func mergeVersion(dataDir, version, scrapedVersionDir, observedVersionDir string
 			}
 		}
 	} // ok for no observations to be present
-
 }
 
 func main() {

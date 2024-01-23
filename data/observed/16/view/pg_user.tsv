@@ -1,0 +1,10 @@
+Name	Type	Nullable
+usename	name	true
+usesysid	oid	true
+usecreatedb	bool	true
+usesuper	bool	true
+userepl	bool	true
+usebypassrls	bool	true
+passwd	text	true
+valuntil	timestamptz	true
+useconfig	text[]	true

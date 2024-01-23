@@ -1,0 +1,14 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+oid	oid	false
+ctid	tid	false
+evtname	name	false
+evtevent	name	false
+evtowner	oid	false
+evtfoid	oid	false
+evtenabled	char	false
+evttags	text[]	true

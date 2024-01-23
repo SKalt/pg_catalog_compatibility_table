@@ -16,6 +16,8 @@ indisclustered	bool	false
 indisvalid	bool	false
 indcheckxmin	bool	false
 indisready	bool	false
+indislive	bool	false
+indisreplident	bool	false
 indkey	int2vector	false
 indcollation	oidvector	false
 indclass	oidvector	false

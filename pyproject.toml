@@ -5,7 +5,6 @@ description = "Illustrates differences in `pg_catalog` between postgres versions
 authors = ["Steven Kalt <kalt.steven@gmail.com>"]
 license = "Postgres"
 readme = "README.md"
-packages = [{include = "pg_catalog_compatibility_table"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

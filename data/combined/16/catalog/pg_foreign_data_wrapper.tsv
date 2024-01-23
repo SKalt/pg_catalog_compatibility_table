@@ -1,0 +1,14 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+fdwname	name	false		"name of the foreign-data wrapper"
+fdwowner	oid	false		"owner of the foreign-data wrapper"
+fdwhandler	oid	false		"references a handler function that is responsible for supplying execution routines for the foreign-data wrapper. zero if no handler is provided"
+fdwvalidator	oid	false		"references a validator function that is responsible for checking the validity of the options given to the foreign-data wrapper, as well as options for foreign servers and user mappings using the foreign-data wrapper. zero if no validator is provided"
+fdwacl	aclitem[]	true		"access privileges"
+fdwoptions	text[]	true		"foreign-data wrapper specific options, as ""keyword=value"" strings"

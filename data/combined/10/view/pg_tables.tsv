@@ -6,4 +6,4 @@ tablespace	name	true	pg_tablespace.spcname	"name of tablespace containing table 
 hasindexes	bool	true	pg_class.relhasindex	"true if table has (or recently had) any indexes"
 hasrules	bool	true	pg_class.relhasrules	"true if table has (or once had) rules"
 hastriggers	bool	true	pg_class.relhastriggers	"true if table has (or once had) triggers"
-rowsecurity	bool		pg_class.relrowsecurity	"true if row security is enabled on the table"
+rowsecurity	bool	true	pg_class.relrowsecurity	"true if row security is enabled on the table"

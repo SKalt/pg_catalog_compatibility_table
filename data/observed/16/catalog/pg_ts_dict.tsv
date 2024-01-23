@@ -1,0 +1,13 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+dictname	name	false
+dictnamespace	oid	false
+dictowner	oid	false
+dicttemplate	oid	false
+dictinitoption	text	true

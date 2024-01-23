@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+trftype	oid		"oid of the data type this transform is for"
+trflang	oid		"oid of the language this transform is for"
+trffromsql	regproc		"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if the default behavior should be used."
+trftosql	regproc		"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if the default behavior should be used."

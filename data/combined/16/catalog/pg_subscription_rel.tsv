@@ -1,0 +1,11 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+srsubid	oid	false		"reference to subscription"
+srrelid	oid	false		"reference to relation"
+srsubstate	char	false		"state code: i = initialize, d = data is being copied, f = finished table copy, s = synchronized, r = ready (normal replication)"
+srsublsn	pg_lsn	true		"remote lsn of the state change used for synchronization coordination when in s or r states, otherwise null"

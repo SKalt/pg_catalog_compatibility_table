@@ -1,0 +1,9 @@
+Name	Type	References	Description
+schemaname	name		"name of schema containing table"
+tablename	name		"name of table"
+tableowner	name		"name of table's owner"
+tablespace	name		"name of tablespace containing table (null if default for database)"
+hasindexes	bool		"true if table has (or recently had) any indexes"
+hasrules	bool		"true if table has (or once had) rules"
+hastriggers	bool		"true if table has (or once had) triggers"
+rowsecurity	bool		"true if row security is enabled on the table"

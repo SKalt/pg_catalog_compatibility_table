@@ -15,4 +15,4 @@ boot_val	text	true		"parameter value assumed at server startup if the parameter 
 reset_val	text	true		"value that reset would reset the parameter to in the current session"
 sourcefile	text	true		"configuration file the current value was set in (null for values set from sources other than configuration files, or when examined by a user who is neither a superuser or a member of pg_read_all_settings); helpful when using include directives in configuration files"
 sourceline	int4	true		"line number within the configuration file the current value was set at (null for values set from sources other than configuration files, or when examined by a user who is neither a superuser or a member of pg_read_all_settings)."
-pending_restart	bool			"true if the value has been changed in the configuration file but needs a restart; or false otherwise."
+pending_restart	bool	true		"true if the value has been changed in the configuration file but needs a restart; or false otherwise."

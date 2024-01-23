@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+pnpubid	oid	false		"reference to publication"
+pnnspid	oid	false		"reference to schema"

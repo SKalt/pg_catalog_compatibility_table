@@ -8,8 +8,8 @@ ctid	tid	false
 tmplname	name	false
 tmpltrusted	bool	false
 tmpldbacreate	bool	false
-tmplhandler	text	true
+tmplhandler	text	false
 tmplinline	text	true
 tmplvalidator	text	true
-tmpllibrary	text	true
+tmpllibrary	text	false
 tmplacl	aclitem[]	true

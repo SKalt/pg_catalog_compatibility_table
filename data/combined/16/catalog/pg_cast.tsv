@@ -1,0 +1,13 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+castsource	oid	false		"oid of the source data type"
+casttarget	oid	false		"oid of the target data type"
+castfunc	oid	false		"the oid of the function to use to perform this cast. zero is stored if the cast method doesn't require a function."
+castcontext	char	false		"indicates what contexts the cast can be invoked in. e means only as an explicit cast (using cast or :: syntax). a means implicitly in assignment to a target column, as well as explicitly. i means implicitly in expressions, as well as the other cases."
+castmethod	char	false		"indicates how the cast is performed. f means that the function specified in the castfunc field is used. i means that the input/output functions are used. b means that the types are binary-coercible, thus no conversion is required."

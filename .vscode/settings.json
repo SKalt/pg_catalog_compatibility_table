@@ -15,5 +15,9 @@
     "CALSTABLE",
     "structfield",
     "structname"
+  ],
+  "python.formatting.provider": "black",
+  "cSpell.enableFiletypes": [
+    "!sql"
   ]
 }

@@ -1,0 +1,9 @@
+Name	Type	Nullable
+name	text	true
+statement	text	true
+prepare_time	timestamptz	true
+parameter_types	regtype[]	true
+result_types	regtype[]	true
+from_sql	bool	true
+generic_plans	int8	true
+custom_plans	int8	true

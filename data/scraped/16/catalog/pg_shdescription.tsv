@@ -1,0 +1,4 @@
+Name	Type	References	Description
+objoid	oid		"the oid of the object this description pertains to"
+classoid	oid		"the oid of the system catalog this object appears in"
+description	text		"arbitrary text that serves as the description of this object"

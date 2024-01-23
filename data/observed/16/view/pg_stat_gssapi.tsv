@@ -1,0 +1,6 @@
+Name	Type	Nullable
+pid	int4	true
+gss_authenticated	bool	true
+principal	text	true
+encrypted	bool	true
+credentials_delegated	bool	true

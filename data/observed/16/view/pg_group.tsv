@@ -1,0 +1,4 @@
+Name	Type	Nullable
+groname	name	true
+grosysid	oid	true
+grolist	oid[]	true

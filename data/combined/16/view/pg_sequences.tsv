@@ -1,0 +1,12 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing sequence"
+sequencename	name	true		"name of sequence"
+sequenceowner	name	true		"name of sequence's owner"
+data_type	regtype	true		"data type of the sequence"
+start_value	int8	true		"start value of the sequence"
+min_value	int8	true		"minimum value of the sequence"
+max_value	int8	true		"maximum value of the sequence"
+increment_by	int8	true		"increment value of the sequence"
+cycle	bool	true		"whether the sequence cycles"
+cache_size	int8	true		"cache size of the sequence"
+last_value	int8	true		"the last sequence value written to disk. if caching is used, this value can be greater than the last value handed out from the sequence. null if the sequence has not been read from yet. also, if the current user does not have usage or select privilege on the sequence, the value is null."

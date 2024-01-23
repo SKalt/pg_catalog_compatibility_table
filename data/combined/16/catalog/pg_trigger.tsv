@@ -1,0 +1,26 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+tgrelid	oid	false		"the table this trigger is on"
+tgparentid	oid	false		"parent trigger that this trigger is cloned from (this happens when partitions are created or attached to a partitioned table); zero if not a clone"
+tgname	name	false		"trigger name (must be unique among triggers of same table)"
+tgfoid	oid	false		"the function to be called"
+tgtype	int2	false		"bit mask identifying trigger firing conditions"
+tgenabled	char	false		"controls in which session_replication_role modes the trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
+tgisinternal	bool	false		"true if trigger is internally generated (usually, to enforce the constraint identified by tgconstraint)"
+tgconstrrelid	oid	false		"the table referenced by a referential integrity constraint (zero if trigger is not for a referential integrity constraint)"
+tgconstrindid	oid	false		"the index supporting a unique, primary key, referential integrity, or exclusion constraint (zero if trigger is not for one of these types of constraint)"
+tgconstraint	oid	false		"the pg_constraint entry associated with the trigger (zero if trigger is not for a constraint)"
+tgdeferrable	bool	false		"true if constraint trigger is deferrable"
+tginitdeferred	bool	false		"true if constraint trigger is initially deferred"
+tgnargs	int2	false		"number of argument strings passed to trigger function"
+tgattr	int2vector	false		"column numbers, if trigger is column-specific; otherwise an empty array"
+tgargs	bytea	false		"argument strings to pass to trigger, each null-terminated"
+tgqual	pg_node_tree	true		"expression tree (in nodetostring() representation) for the trigger's when condition, or null if none"
+tgoldtable	name	true		"referencing clause name for old table, or null if none"
+tgnewtable	name	true		"referencing clause name for new table, or null if none"

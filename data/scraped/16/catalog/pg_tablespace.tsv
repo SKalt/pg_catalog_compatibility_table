@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+spcname	name		"tablespace name"
+spcowner	oid		"owner of the tablespace, usually the user who created it"
+spcacl	aclitem[]		"access privileges"
+spcoptions	text[]		"tablespace-level options, as ""keyword=value"" strings"

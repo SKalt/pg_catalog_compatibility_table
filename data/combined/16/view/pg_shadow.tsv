@@ -1,0 +1,10 @@
+Name	Type	Nullable	References	Description
+usename	name	true		"user name"
+usesysid	oid	true		"id of this user"
+usecreatedb	bool	true		"user can create databases"
+usesuper	bool	true		"user is a superuser"
+userepl	bool	true		"user can initiate streaming replication and put the system in and out of backup mode."
+usebypassrls	bool	true		"user bypasses every row-level security policy"
+passwd	text	true		"password (possibly encrypted); null if none. see pg_authid for details of how encrypted passwords are stored."
+valuntil	timestamptz	true		"password expiry time (only used for password authentication)"
+useconfig	text[]	true		"session defaults for run-time configuration variables"

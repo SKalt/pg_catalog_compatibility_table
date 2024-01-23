@@ -1,0 +1,6 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing table and index"
+tablename	name	true		"name of table the index is for"
+indexname	name	true		"name of index"
+tablespace	name	true		"name of tablespace containing index (null if default for database)"
+indexdef	text	true		"index definition (a reconstructed create index command)"

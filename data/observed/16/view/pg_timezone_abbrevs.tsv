@@ -1,0 +1,4 @@
+Name	Type	Nullable
+abbrev	text	true
+utc_offset	interval	true
+is_dst	bool	true

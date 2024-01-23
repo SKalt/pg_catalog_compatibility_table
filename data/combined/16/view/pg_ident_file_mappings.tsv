@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+map_number	int4	true		"number of this map, in priority order, if valid, otherwise null"
+file_name	text	true		"name of the file containing this map"
+line_number	int4	true		"line number of this map in file_name"
+map_name	text	true		"name of the map"
+sys_name	text	true		"detected user name of the client"
+pg_username	text	true		"requested postgresql user name"
+error	text	true		"if not null, an error message indicating why this line could not be processed"

@@ -1,0 +1,15 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+extname	name	false
+extowner	oid	false
+extnamespace	oid	false
+extrelocatable	bool	false
+extversion	text	false
+extconfig	oid[]	true
+extcondition	text[]	true

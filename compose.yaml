@@ -1,0 +1,77 @@
+version: "3"
+services:
+  pg-9.2:  &_base
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - PGUSER=postgres
+      - PG_COLOR=auto
+    image: docker.io/library/postgres:9.2-alpine
+    ports:
+      - 50092:5432
+    healthcheck: # pg_isready is not available in 9.2, so we use psql
+      test: ["CMD", "psql", "--quiet", "-c", "SELECT 1"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+  pg-9.3: &base
+    <<: *_base
+    image: docker.io/library/postgres:9.3-alpine
+    ports:
+      - 50093:5432
+    healthcheck: # pg_isready is not available in 9.2, so we use psql
+      test: ["CMD", "pg_isready"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+  pg-9.4:
+    <<: *base
+    image: docker.io/library/postgres:9.4-alpine
+    ports:
+      - 50094:5432
+  pg-9.5:
+    <<: *base
+    image: docker.io/library/postgres:9.5-alpine
+    ports:
+      - 50095:5432
+  pg-9.6:
+    <<: *base
+    image: docker.io/library/postgres:9.6-alpine
+    ports:
+      - 50096:5432
+  pg-10:
+    image: docker.io/library/postgres:10-alpine
+    <<: *base
+    ports:
+      - 50100:5432
+  pg-11:
+    <<: *base
+    image: docker.io/library/postgres:11-alpine
+    ports:
+      - 50110:5432
+  pg-12:
+    <<: *base
+    image: docker.io/library/postgres:12-alpine
+    ports:
+      - 50120:5432
+  pg-13:
+    <<: *base
+    image: docker.io/library/postgres:13-alpine
+    ports:
+      - 50130:5432
+  pg-14:
+    <<: *base
+    image: docker.io/library/postgres:14-alpine
+    ports:
+      - 50140:5432
+  pg-15:
+    <<: *base
+    image: docker.io/library/postgres:15-alpine
+    ports:
+      - 50150:5432
+  pg-16:
+    <<: *base
+    image: docker.io/library/postgres:16-alpine
+    ports:
+      - 50160:5432

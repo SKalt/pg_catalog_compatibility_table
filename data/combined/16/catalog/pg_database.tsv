@@ -1,0 +1,24 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+datname	name	false		"database name"
+datdba	oid	false		"owner of the database, usually the user who created it"
+encoding	int4	false		"character encoding for this database (pg_encoding_to_char() can translate this number to the encoding name)"
+datlocprovider	char	false		"locale provider for this database: c = libc, i = icu"
+datistemplate	bool	false		"if true, then this database can be cloned by any user with createdb privileges; if false, then only superusers or the owner of the database can clone it."
+datallowconn	bool	false		"if false then no one can connect to this database. this is used to protect the template0 database from being altered."
+datconnlimit	int4	false		"sets maximum number of concurrent connections that can be made to this database. -1 means no limit, -2 indicates the database is invalid."
+datfrozenxid	xid	false		"all transaction ids before this one have been replaced with a permanent (""frozen"") transaction id in this database. this is used to track whether the database needs to be vacuumed in order to prevent transaction id wraparound or to allow pg_xact to be shrunk. it is the minimum of the per-table pg_class.relfrozenxid values."
+datminmxid	xid	false		"all multixact ids before this one have been replaced with a transaction id in this database. this is used to track whether the database needs to be vacuumed in order to prevent multixact id wraparound or to allow pg_multixact to be shrunk. it is the minimum of the per-table pg_class.relminmxid values."
+dattablespace	oid	false		"the default tablespace for the database. within this database, all tables for which pg_class.reltablespace is zero will be stored in this tablespace; in particular, all the non-shared system catalogs will be there."
+datcollate	text	false		"lc_collate for this database"
+datctype	text	false		"lc_ctype for this database"
+daticulocale	text	true		"icu locale id for this database"
+daticurules	text	true		"icu collation rules for this database"
+datcollversion	text	true		"provider-specific version of the collation. this is recorded when the database is created and then checked when it is used, to detect changes in the collation definition that could lead to data corruption."
+datacl	aclitem[]	true		"access privileges"

@@ -1,0 +1,11 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+srsubid	oid	false
+srrelid	oid	false
+srsubstate	char	false
+srsublsn	pg_lsn	false

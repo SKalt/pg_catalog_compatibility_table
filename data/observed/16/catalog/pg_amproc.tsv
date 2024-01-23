@@ -1,0 +1,13 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+amprocfamily	oid	false
+amproclefttype	oid	false
+amprocrighttype	oid	false
+amprocnum	int2	false
+amproc	regproc	false

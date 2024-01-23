@@ -1,0 +1,10 @@
+Name	Type	Nullable
+name	text	true
+blks_zeroed	int8	true
+blks_hit	int8	true
+blks_read	int8	true
+blks_written	int8	true
+blks_exists	int8	true
+flushes	int8	true
+truncates	int8	true
+stats_reset	timestamptz	true

@@ -1,0 +1,19 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+rolname	name	false		"role name"
+rolsuper	bool	false		"role has superuser privileges"
+rolinherit	bool	false		"role automatically inherits privileges of roles it is a member of"
+rolcreaterole	bool	false		"role can create more roles"
+rolcreatedb	bool	false		"role can create databases"
+rolcanlogin	bool	false		"role can log in. that is, this role can be given as the initial session authorization identifier."
+rolreplication	bool	false		"role is a replication role. a replication role can initiate replication connections and create and drop replication slots."
+rolbypassrls	bool	false		"role bypasses every row-level security policy"
+rolconnlimit	int4	false		"for roles that can log in, this sets maximum number of concurrent connections this role can make. -1 means no limit."
+rolpassword	text	true		"password (possibly encrypted); null if none. the format depends on the form of encryption used."
+rolvaliduntil	timestamptz	true		"password expiry time (only used for password authentication); null if no expiration"

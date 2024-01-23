@@ -1,0 +1,14 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+roleid	oid	false
+member	oid	false
+grantor	oid	false
+admin_option	bool	false
+inherit_option	bool	false
+set_option	bool	false
