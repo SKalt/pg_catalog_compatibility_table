@@ -1,0 +1,12 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+opfmethod	oid	false
+opfname	name	false
+opfnamespace	oid	false
+opfowner	oid	false

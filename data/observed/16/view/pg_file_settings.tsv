@@ -1,0 +1,8 @@
+Name	Type	Nullable
+sourcefile	text	true
+sourceline	int4	true
+seqno	int4	true
+name	text	true
+setting	text	true
+applied	bool	true
+error	text	true

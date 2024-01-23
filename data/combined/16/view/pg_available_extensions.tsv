@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+name	name	true		"extension name"
+default_version	text	true		"name of default version, or null if none is specified"
+installed_version	text	true		"currently installed version of the extension, or null if not installed"
+comment	text	true		"comment string from the extension's control file"

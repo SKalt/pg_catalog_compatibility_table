@@ -1,0 +1,5 @@
+Name	Type	Nullable
+schemaname	name	true
+tablename	name	true
+rulename	name	true
+definition	text	true

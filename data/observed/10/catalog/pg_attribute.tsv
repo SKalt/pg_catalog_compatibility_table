@@ -19,6 +19,7 @@ attstorage	char	false
 attalign	char	false
 attnotnull	bool	false
 atthasdef	bool	false
+attidentity	char	false
 attisdropped	bool	false
 attislocal	bool	false
 attinhcount	int4	false

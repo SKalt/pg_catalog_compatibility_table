@@ -1,0 +1,1 @@
+../../../observed/16/view/pg_stat_xact_all_tables.sql

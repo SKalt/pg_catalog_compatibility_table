@@ -1,0 +1,8 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing materialized view"
+matviewname	name	true		"name of materialized view"
+matviewowner	name	true		"name of materialized view's owner"
+tablespace	name	true		"name of tablespace containing materialized view (null if default for database)"
+hasindexes	bool	true		"true if materialized view has (or recently had) any indexes"
+ispopulated	bool	true		"true if materialized view is currently populated"
+definition	text	true		"materialized view definition (a reconstructed select query)"

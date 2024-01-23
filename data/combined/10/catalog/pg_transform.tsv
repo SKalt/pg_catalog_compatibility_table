@@ -1,5 +1,12 @@
 Name	Type	Nullable	References	Description
-trffromsql	regproc		pg_proc.oid	"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if this operation is not supported."
-trflang	oid		pg_language.oid	"oid of the language this transform is for"
-trftosql	regproc		pg_proc.oid	"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if this operation is not supported."
-trftype	oid		pg_type.oid	"oid of the data type this transform is for"
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		
+ctid	tid	false		
+trftype	oid	false	pg_type.oid	"oid of the data type this transform is for"
+trflang	oid	false	pg_language.oid	"oid of the language this transform is for"
+trffromsql	regproc	false	pg_proc.oid	"the oid of the function to use when converting the data type for input to the procedural language (e.g., function parameters). zero is stored if this operation is not supported."
+trftosql	regproc	false	pg_proc.oid	"the oid of the function to use when converting output from the procedural language (e.g., return values) to the data type. zero is stored if this operation is not supported."

@@ -10,6 +10,6 @@ extname	name	false
 extowner	oid	false
 extnamespace	oid	false
 extrelocatable	bool	false
-extversion	text	true
+extversion	text	false
 extconfig	oid[]	true
 extcondition	text[]	true

@@ -1,0 +1,12 @@
+Name	Type	Nullable
+rule_number	int4	true
+file_name	text	true
+line_number	int4	true
+type	text	true
+database	text[]	true
+user_name	text[]	true
+address	text	true
+netmask	text	true
+auth_method	text	true
+options	text[]	true
+error	text	true

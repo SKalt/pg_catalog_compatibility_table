@@ -1,0 +1,5 @@
+[[nix]]
+name = "nix"
+scope = "source.nix"
+file-types = ["nix"]
+# language-server = { command = "nil", args}

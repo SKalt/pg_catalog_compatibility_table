@@ -1,0 +1,13 @@
+Name	Type	Nullable	References	Description
+pid	int4	true		
+status	text	true		
+receive_start_lsn	pg_lsn	true		
+receive_start_tli	int4	true		
+received_lsn	pg_lsn	true		
+received_tli	int4	true		
+last_msg_send_time	timestamptz	true		
+last_msg_receipt_time	timestamptz	true		
+latest_end_lsn	pg_lsn	true		
+latest_end_time	timestamptz	true		
+slot_name	text	true		
+conninfo	text	true		

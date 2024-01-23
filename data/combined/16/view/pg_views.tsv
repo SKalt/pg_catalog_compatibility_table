@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing view"
+viewname	name	true		"name of view"
+viewowner	name	true		"name of view's owner"
+definition	text	true		"view definition (a reconstructed select query)"

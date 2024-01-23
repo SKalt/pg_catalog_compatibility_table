@@ -12,6 +12,7 @@ n_tup_del	int8	true
 n_tup_hot_upd	int8	true		
 n_live_tup	int8	true		
 n_dead_tup	int8	true		
+n_mod_since_analyze	int8	true		
 last_vacuum	timestamptz	true		
 last_autovacuum	timestamptz	true		
 last_analyze	timestamptz	true		

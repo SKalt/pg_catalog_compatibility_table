@@ -1,0 +1,4 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+pnpubid	oid		"reference to publication"
+pnnspid	oid		"reference to schema"

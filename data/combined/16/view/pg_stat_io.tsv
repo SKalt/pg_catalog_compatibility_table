@@ -1,0 +1,19 @@
+Name	Type	Nullable	References	Description
+backend_type	text	true		
+object	text	true		
+context	text	true		
+reads	int8	true		
+read_time	"double precision"	true		
+writes	int8	true		
+write_time	"double precision"	true		
+writebacks	int8	true		
+writeback_time	"double precision"	true		
+extends	int8	true		
+extend_time	"double precision"	true		
+op_bytes	int8	true		
+hits	int8	true		
+evictions	int8	true		
+reuses	int8	true		
+fsyncs	int8	true		
+fsync_time	"double precision"	true		
+stats_reset	timestamptz	true		

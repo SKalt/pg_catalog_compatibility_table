@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION pg_catalog.tintervalin(cstring)
  RETURNS tinterval
  LANGUAGE internal
- STABLE STRICT
+ STABLE PARALLEL SAFE STRICT
 AS $function$tintervalin$function$
 ;

@@ -1,0 +1,11 @@
+Name	Type	Nullable
+stats_reset	timestamptz	true
+prefetch	int8	true
+hit	int8	true
+skip_init	int8	true
+skip_new	int8	true
+skip_fpw	int8	true
+skip_rep	int8	true
+wal_distance	int4	true
+block_distance	int4	true
+io_depth	int4	true

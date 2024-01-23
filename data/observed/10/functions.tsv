@@ -40,11 +40,13 @@ aclitemin	cstring	aclitem
 aclitemout	aclitem	cstring
 aclremove	"aclitem[], aclitem"	aclitem[]
 acos	"double precision"	"double precision"
+acosd	"double precision"	"double precision"
 age	"timestamp with time zone"	interval
 age	"timestamp with time zone, timestamp with time zone"	interval
 age	"timestamp without time zone"	interval
 age	"timestamp without time zone, timestamp without time zone"	interval
 age	xid	integer
+amvalidate	oid	boolean
 any_in	cstring	"""any"""
 any_out	"""any"""	cstring
 anyarray_in	cstring	anyarray
@@ -65,9 +67,12 @@ area	circle	"double precision"
 area	path	"double precision"
 areajoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 areasel	"internal, oid, internal, integer"	"double precision"
-array_agg	anyelement	anyarray
-array_agg_finalfn	internal	anyarray
-array_agg_transfn	"internal, anyelement"	internal
+array_agg	anyarray	anyarray
+array_agg	anynonarray	anyarray
+array_agg_array_finalfn	"internal, anyarray"	anyarray
+array_agg_array_transfn	"internal, anyarray"	internal
+array_agg_finalfn	"internal, anynonarray"	anyarray
+array_agg_transfn	"internal, anynonarray"	internal
 array_append	"anyarray, anyelement"	anyarray
 array_cat	"anyarray, anyarray"	anyarray
 array_dims	anyarray	text
@@ -85,14 +90,20 @@ array_lt	"anyarray, anyarray"	boolean
 array_ndims	anyarray	integer
 array_ne	"anyarray, anyarray"	boolean
 array_out	anyarray	cstring
+array_position	"anyarray, anyelement"	integer
+array_position	"anyarray, anyelement, integer"	integer
+array_positions	"anyarray, anyelement"	integer[]
 array_prepend	"anyelement, anyarray"	anyarray
 array_recv	"internal, oid, integer"	anyarray
+array_remove	"anyarray, anyelement"	anyarray
+array_replace	"anyarray, anyelement, anyelement"	anyarray
 array_send	anyarray	bytea
 array_smaller	"anyarray, anyarray"	anyarray
 array_to_json	anyarray	json
 array_to_json	"anyarray, boolean"	json
 array_to_string	"anyarray, text"	text
 array_to_string	"anyarray, text, text"	text
+array_to_tsvector	text[]	tsvector
 array_typanalyze	internal	boolean
 array_upper	"anyarray, integer"	integer
 arraycontained	"anyarray, anyarray"	boolean
@@ -104,8 +115,11 @@ ascii	text	integer
 ascii_to_mic	"integer, integer, cstring, internal, integer"	void
 ascii_to_utf8	"integer, integer, cstring, internal, integer"	void
 asin	"double precision"	"double precision"
+asind	"double precision"	"double precision"
 atan	"double precision"	"double precision"
 atan2	"double precision, double precision"	"double precision"
+atan2d	"double precision, double precision"	"double precision"
+atand	"double precision"	"double precision"
 avg	bigint	numeric
 avg	"double precision"	"double precision"
 avg	integer	numeric
@@ -113,9 +127,20 @@ avg	interval	interval
 avg	numeric	numeric
 avg	real	"double precision"
 avg	smallint	numeric
+bernoulli	internal	tsm_handler
 big5_to_euc_tw	"integer, integer, cstring, internal, integer"	void
 big5_to_mic	"integer, integer, cstring, internal, integer"	void
 big5_to_utf8	"integer, integer, cstring, internal, integer"	void
+binary_upgrade_create_empty_extension	"text, text, boolean, text, oid[], text[], text[]"	void
+binary_upgrade_set_next_array_pg_type_oid	oid	void
+binary_upgrade_set_next_heap_pg_class_oid	oid	void
+binary_upgrade_set_next_index_pg_class_oid	oid	void
+binary_upgrade_set_next_pg_authid_oid	oid	void
+binary_upgrade_set_next_pg_enum_oid	oid	void
+binary_upgrade_set_next_pg_type_oid	oid	void
+binary_upgrade_set_next_toast_pg_class_oid	oid	void
+binary_upgrade_set_next_toast_pg_type_oid	oid	void
+binary_upgrade_set_record_init_privs	boolean	void
 bit	"bigint, integer"	bit
 bit	"bit, integer, boolean"	bit
 bit	"integer, integer"	bit
@@ -151,7 +176,11 @@ bittypmodin	cstring[]	integer
 bittypmodout	integer	cstring
 bitxor	"bit, bit"	bit
 bool	integer	boolean
+bool_accum	"internal, boolean"	internal
+bool_accum_inv	"internal, boolean"	internal
+bool_alltrue	internal	boolean
 bool_and	boolean	boolean
+bool_anytrue	internal	boolean
 bool_or	boolean	boolean
 booland_statefunc	"boolean, boolean"	boolean
 booleq	"boolean, boolean"	boolean
@@ -165,7 +194,9 @@ boolor_statefunc	"boolean, boolean"	boolean
 boolout	boolean	cstring
 boolrecv	internal	boolean
 boolsend	boolean	bytea
+bound_box	"box, box"	box
 box	circle	box
+box	point	box
 box	"point, point"	box
 box	polygon	box
 box_above	"box, box"	boolean
@@ -208,6 +239,7 @@ bpchar_pattern_gt	"character, character"	boolean
 bpchar_pattern_le	"character, character"	boolean
 bpchar_pattern_lt	"character, character"	boolean
 bpchar_smaller	"character, character"	character
+bpchar_sortsupport	internal	void
 bpcharcmp	"character, character"	integer
 bpchareq	"character, character"	boolean
 bpcharge	"character, character"	boolean
@@ -229,28 +261,32 @@ bpcharregexne	"character, text"	boolean
 bpcharsend	character	bytea
 bpchartypmodin	cstring[]	integer
 bpchartypmodout	integer	cstring
+brin_desummarize_range	"regclass, bigint"	void
+brin_inclusion_add_value	"internal, internal, internal, internal"	boolean
+brin_inclusion_consistent	"internal, internal, internal"	boolean
+brin_inclusion_opcinfo	internal	internal
+brin_inclusion_union	"internal, internal, internal"	boolean
+brin_minmax_add_value	"internal, internal, internal, internal"	boolean
+brin_minmax_consistent	"internal, internal, internal"	boolean
+brin_minmax_opcinfo	internal	internal
+brin_minmax_union	"internal, internal, internal"	boolean
+brin_summarize_new_values	regclass	integer
+brin_summarize_range	"regclass, bigint"	integer
+brinhandler	internal	index_am_handler
 broadcast	inet	inet
 btabstimecmp	"abstime, abstime"	integer
 btarraycmp	"anyarray, anyarray"	integer
-btbeginscan	"internal, internal, internal"	internal
 btboolcmp	"boolean, boolean"	integer
 btbpchar_pattern_cmp	"character, character"	integer
-btbuild	"internal, internal, internal"	internal
-btbuildempty	internal	void
-btbulkdelete	"internal, internal, internal, internal"	internal
-btcanreturn	internal	boolean
+btbpchar_pattern_sortsupport	internal	void
 btcharcmp	"""char"", ""char"""	integer
-btcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
-btendscan	internal	void
 btfloat48cmp	"real, double precision"	integer
 btfloat4cmp	"real, real"	integer
 btfloat4sortsupport	internal	void
 btfloat84cmp	"double precision, real"	integer
 btfloat8cmp	"double precision, double precision"	integer
 btfloat8sortsupport	internal	void
-btgetbitmap	"internal, internal"	bigint
-btgettuple	"internal, internal"	boolean
-btinsert	"internal, internal, internal, internal, internal, internal"	boolean
+bthandler	internal	index_am_handler
 btint24cmp	"smallint, integer"	integer
 btint28cmp	"smallint, bigint"	integer
 btint2cmp	"smallint, smallint"	integer
@@ -263,25 +299,24 @@ btint82cmp	"bigint, smallint"	integer
 btint84cmp	"bigint, integer"	integer
 btint8cmp	"bigint, bigint"	integer
 btint8sortsupport	internal	void
-btmarkpos	internal	void
 btnamecmp	"name, name"	integer
 btnamesortsupport	internal	void
 btoidcmp	"oid, oid"	integer
 btoidsortsupport	internal	void
 btoidvectorcmp	"oidvector, oidvector"	integer
-btoptions	"text[], boolean"	bytea
 btrecordcmp	"record, record"	integer
+btrecordimagecmp	"record, record"	integer
 btreltimecmp	"reltime, reltime"	integer
-btrescan	"internal, internal, internal, internal, internal"	void
-btrestrpos	internal	void
 btrim	"bytea, bytea"	bytea
 btrim	text	text
 btrim	"text, text"	text
 bttext_pattern_cmp	"text, text"	integer
+bttext_pattern_sortsupport	internal	void
 bttextcmp	"text, text"	integer
+bttextsortsupport	internal	void
 bttidcmp	"tid, tid"	integer
 bttintervalcmp	"tinterval, tinterval"	integer
-btvacuumcleanup	"internal, internal"	internal
+bytea_sortsupport	internal	void
 bytea_string_agg_finalfn	internal	bytea
 bytea_string_agg_transfn	"internal, bytea, bytea"	internal
 byteacat	"bytea, bytea"	bytea
@@ -298,12 +333,14 @@ byteanlike	"bytea, bytea"	boolean
 byteaout	bytea	cstring
 bytearecv	internal	bytea
 byteasend	bytea	bytea
+cardinality	anyarray	integer
 cash_cmp	"money, money"	integer
 cash_div_cash	"money, money"	"double precision"
 cash_div_flt4	"money, real"	money
 cash_div_flt8	"money, double precision"	money
 cash_div_int2	"money, smallint"	money
 cash_div_int4	"money, integer"	money
+cash_div_int8	"money, bigint"	money
 cash_eq	"money, money"	boolean
 cash_ge	"money, money"	boolean
 cash_gt	"money, money"	boolean
@@ -315,6 +352,7 @@ cash_mul_flt4	"money, real"	money
 cash_mul_flt8	"money, double precision"	money
 cash_mul_int2	"money, smallint"	money
 cash_mul_int4	"money, integer"	money
+cash_mul_int8	"money, bigint"	money
 cash_ne	"money, money"	boolean
 cash_out	money	cstring
 cash_pl	"money, money"	money
@@ -408,7 +446,9 @@ convert_from	"bytea, name"	text
 convert_to	"text, name"	bytea
 corr	"double precision, double precision"	"double precision"
 cos	"double precision"	"double precision"
+cosd	"double precision"	"double precision"
 cot	"double precision"	"double precision"
+cotd	"double precision"	"double precision"
 count		bigint
 count	"""any"""	bigint
 covar_pop	"double precision, double precision"	"double precision"
@@ -418,11 +458,14 @@ cstring_out	cstring	cstring
 cstring_recv	internal	cstring
 cstring_send	cstring	bytea
 cume_dist		"double precision"
+cume_dist	"VARIADIC ""any"" ORDER BY VARIADIC ""any"""	"double precision"
+cume_dist_final	"internal, VARIADIC ""any"""	"double precision"
 current_database		name
 current_query		text
 current_schema		name
 current_schemas	boolean	name[]
 current_setting	text	text
+current_setting	"text, boolean"	text
 current_user		name
 currtid	"oid, tid"	tid
 currtid2	"text, tid"	tid
@@ -489,17 +532,22 @@ dcbrt	"double precision"	"double precision"
 decode	"text, text"	bytea
 degrees	"double precision"	"double precision"
 dense_rank		bigint
+dense_rank	"VARIADIC ""any"" ORDER BY VARIADIC ""any"""	bigint
+dense_rank_final	"internal, VARIADIC ""any"""	bigint
 dexp	"double precision"	"double precision"
 diagonal	box	lseg
 diameter	circle	"double precision"
 dispell_init	internal	internal
 dispell_lexize	"internal, internal, internal, internal"	internal
+dist_cpoint	"circle, point"	"double precision"
 dist_cpoly	"circle, polygon"	"double precision"
 dist_lb	"line, box"	"double precision"
 dist_pb	"point, box"	"double precision"
 dist_pc	"point, circle"	"double precision"
 dist_pl	"point, line"	"double precision"
+dist_polyp	"polygon, point"	"double precision"
 dist_ppath	"point, path"	"double precision"
+dist_ppoly	"point, polygon"	"double precision"
 dist_ps	"point, lseg"	"double precision"
 dist_sb	"lseg, box"	"double precision"
 dist_sl	"lseg, line"	"double precision"
@@ -534,7 +582,7 @@ enum_ne	"anyenum, anyenum"	boolean
 enum_out	anyenum	cstring
 enum_range	anyenum	anyarray
 enum_range	"anyenum, anyenum"	anyarray
-enum_recv	"cstring, oid"	anyenum
+enum_recv	"internal, oid"	anyenum
 enum_send	anyenum	bytea
 enum_smaller	"anyenum, anyenum"	anyenum
 eqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
@@ -551,6 +599,8 @@ euc_kr_to_utf8	"integer, integer, cstring, internal, integer"	void
 euc_tw_to_big5	"integer, integer, cstring, internal, integer"	void
 euc_tw_to_mic	"integer, integer, cstring, internal, integer"	void
 euc_tw_to_utf8	"integer, integer, cstring, internal, integer"	void
+event_trigger_in	cstring	event_trigger
+event_trigger_out	event_trigger	cstring
 every	boolean	boolean
 exp	"double precision"	"double precision"
 exp	numeric	numeric
@@ -611,12 +661,14 @@ float84ne	"double precision, real"	boolean
 float84pl	"double precision, real"	"double precision"
 float8_accum	"double precision[], double precision"	"double precision[]"
 float8_avg	"double precision[]"	"double precision"
+float8_combine	"double precision[], double precision[]"	"double precision[]"
 float8_corr	"double precision[]"	"double precision"
 float8_covar_pop	"double precision[]"	"double precision"
 float8_covar_samp	"double precision[]"	"double precision"
 float8_regr_accum	"double precision[], double precision, double precision"	"double precision[]"
 float8_regr_avgx	"double precision[]"	"double precision"
 float8_regr_avgy	"double precision[]"	"double precision"
+float8_regr_combine	"double precision[], double precision[]"	"double precision[]"
 float8_regr_intercept	"double precision[]"	"double precision"
 float8_regr_r2	"double precision[]"	"double precision"
 float8_regr_slope	"double precision[]"	"double precision"
@@ -662,6 +714,8 @@ generate_series	"bigint, bigint"	"SETOF bigint"
 generate_series	"bigint, bigint, bigint"	"SETOF bigint"
 generate_series	"integer, integer"	"SETOF integer"
 generate_series	"integer, integer, integer"	"SETOF integer"
+generate_series	"numeric, numeric"	"SETOF numeric"
+generate_series	"numeric, numeric, numeric"	"SETOF numeric"
 generate_series	"timestamp with time zone, timestamp with time zone, interval"	"SETOF timestamp with time zone"
 generate_series	"timestamp without time zone, timestamp without time zone, interval"	"SETOF timestamp without time zone"
 generate_subscripts	"anyarray, integer"	"SETOF integer"
@@ -672,73 +726,68 @@ get_byte	"bytea, integer"	integer
 get_current_ts_config		regconfig
 getdatabaseencoding		name
 getpgusername		name
+gin_clean_pending_list	regclass	bigint
 gin_cmp_prefix	"text, text, smallint, internal"	integer
 gin_cmp_tslexeme	"text, text"	integer
+gin_compare_jsonb	"text, text"	integer
+gin_consistent_jsonb	"internal, smallint, jsonb, integer, internal, internal, internal, internal"	boolean
+gin_consistent_jsonb_path	"internal, smallint, jsonb, integer, internal, internal, internal, internal"	boolean
+gin_extract_jsonb	"jsonb, internal, internal"	internal
+gin_extract_jsonb_path	"jsonb, internal, internal"	internal
+gin_extract_jsonb_query	"jsonb, internal, smallint, internal, internal, internal, internal"	internal
+gin_extract_jsonb_query_path	"jsonb, internal, smallint, internal, internal, internal, internal"	internal
 gin_extract_tsquery	"tsquery, internal, smallint, internal, internal"	internal
 gin_extract_tsquery	"tsquery, internal, smallint, internal, internal, internal, internal"	internal
+gin_extract_tsquery	"tsvector, internal, smallint, internal, internal, internal, internal"	internal
 gin_extract_tsvector	"tsvector, internal"	internal
 gin_extract_tsvector	"tsvector, internal, internal"	internal
+gin_triconsistent_jsonb	"internal, smallint, jsonb, integer, internal, internal, internal"	"""char"""
+gin_triconsistent_jsonb_path	"internal, smallint, jsonb, integer, internal, internal, internal"	"""char"""
 gin_tsquery_consistent	"internal, smallint, tsquery, integer, internal, internal"	boolean
 gin_tsquery_consistent	"internal, smallint, tsquery, integer, internal, internal, internal, internal"	boolean
+gin_tsquery_consistent	"internal, smallint, tsvector, integer, internal, internal, internal, internal"	boolean
+gin_tsquery_triconsistent	"internal, smallint, tsvector, integer, internal, internal, internal"	"""char"""
 ginarrayconsistent	"internal, smallint, anyarray, integer, internal, internal, internal, internal"	boolean
 ginarrayextract	"anyarray, internal"	internal
 ginarrayextract	"anyarray, internal, internal"	internal
-ginbeginscan	"internal, internal, internal"	internal
-ginbuild	"internal, internal, internal"	internal
-ginbuildempty	internal	void
-ginbulkdelete	"internal, internal, internal, internal"	internal
-gincostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
-ginendscan	internal	void
-gingetbitmap	"internal, internal"	bigint
-gininsert	"internal, internal, internal, internal, internal, internal"	boolean
-ginmarkpos	internal	void
-ginoptions	"text[], boolean"	bytea
+ginarraytriconsistent	"internal, smallint, anyarray, integer, internal, internal, internal"	"""char"""
+ginhandler	internal	index_am_handler
 ginqueryarrayextract	"anyarray, internal, smallint, internal, internal, internal, internal"	internal
-ginrescan	"internal, internal, internal, internal, internal"	void
-ginrestrpos	internal	void
-ginvacuumcleanup	"internal, internal"	internal
 gist_box_compress	internal	internal
-gist_box_consistent	"internal, box, integer, oid, internal"	boolean
+gist_box_consistent	"internal, box, smallint, oid, internal"	boolean
 gist_box_decompress	internal	internal
+gist_box_fetch	internal	internal
 gist_box_penalty	"internal, internal, internal"	internal
 gist_box_picksplit	"internal, internal"	internal
 gist_box_same	"box, box, internal"	internal
 gist_box_union	"internal, internal"	box
 gist_circle_compress	internal	internal
-gist_circle_consistent	"internal, circle, integer, oid, internal"	boolean
+gist_circle_consistent	"internal, circle, smallint, oid, internal"	boolean
+gist_circle_distance	"internal, circle, smallint, oid, internal"	"double precision"
 gist_point_compress	internal	internal
-gist_point_consistent	"internal, point, integer, oid, internal"	boolean
-gist_point_distance	"internal, point, integer, oid"	"double precision"
+gist_point_consistent	"internal, point, smallint, oid, internal"	boolean
+gist_point_distance	"internal, point, smallint, oid, internal"	"double precision"
+gist_point_fetch	internal	internal
 gist_poly_compress	internal	internal
-gist_poly_consistent	"internal, polygon, integer, oid, internal"	boolean
-gistbeginscan	"internal, internal, internal"	internal
-gistbuild	"internal, internal, internal"	internal
-gistbuildempty	internal	void
-gistbulkdelete	"internal, internal, internal, internal"	internal
-gistcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
-gistendscan	internal	void
-gistgetbitmap	"internal, internal"	bigint
-gistgettuple	"internal, internal"	boolean
-gistinsert	"internal, internal, internal, internal, internal, internal"	boolean
-gistmarkpos	internal	void
-gistoptions	"text[], boolean"	bytea
-gistrescan	"internal, internal, internal, internal, internal"	void
-gistrestrpos	internal	void
-gistvacuumcleanup	"internal, internal"	internal
+gist_poly_consistent	"internal, polygon, smallint, oid, internal"	boolean
+gist_poly_distance	"internal, polygon, smallint, oid, internal"	"double precision"
+gisthandler	internal	index_am_handler
 gtsquery_compress	internal	internal
 gtsquery_consistent	"internal, internal, integer, oid, internal"	boolean
+gtsquery_consistent	"internal, tsquery, smallint, oid, internal"	boolean
 gtsquery_decompress	internal	internal
 gtsquery_penalty	"internal, internal, internal"	internal
 gtsquery_picksplit	"internal, internal"	internal
 gtsquery_same	"bigint, bigint, internal"	internal
-gtsquery_union	"internal, internal"	internal
+gtsquery_union	"internal, internal"	bigint
 gtsvector_compress	internal	internal
 gtsvector_consistent	"internal, gtsvector, integer, oid, internal"	boolean
+gtsvector_consistent	"internal, tsvector, smallint, oid, internal"	boolean
 gtsvector_decompress	internal	internal
 gtsvector_penalty	"internal, internal, internal"	internal
 gtsvector_picksplit	"internal, internal"	internal
 gtsvector_same	"gtsvector, gtsvector, internal"	internal
-gtsvector_union	"internal, internal"	internal
+gtsvector_union	"internal, internal"	gtsvector
 gtsvectorin	cstring	gtsvector
 gtsvectorout	gtsvector	cstring
 has_any_column_privilege	"name, oid, text"	boolean
@@ -823,35 +872,22 @@ hash_aclitem	aclitem	integer
 hash_array	anyarray	integer
 hash_numeric	numeric	integer
 hash_range	anyrange	integer
-hashbeginscan	"internal, internal, internal"	internal
 hashbpchar	character	integer
-hashbuild	"internal, internal, internal"	internal
-hashbuildempty	internal	void
-hashbulkdelete	"internal, internal, internal, internal"	internal
 hashchar	"""char"""	integer
-hashcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
-hashendscan	internal	void
 hashenum	anyenum	integer
 hashfloat4	real	integer
 hashfloat8	"double precision"	integer
-hashgetbitmap	"internal, internal"	bigint
-hashgettuple	"internal, internal"	boolean
+hashhandler	internal	index_am_handler
 hashinet	inet	integer
-hashinsert	"internal, internal, internal, internal, internal, internal"	boolean
 hashint2	smallint	integer
-hashint2vector	int2vector	integer
 hashint4	integer	integer
 hashint8	bigint	integer
 hashmacaddr	macaddr	integer
-hashmarkpos	internal	void
+hashmacaddr8	macaddr8	integer
 hashname	name	integer
 hashoid	oid	integer
 hashoidvector	oidvector	integer
-hashoptions	"text[], boolean"	bytea
-hashrescan	"internal, internal, internal, internal, internal"	void
-hashrestrpos	internal	void
 hashtext	text	integer
-hashvacuumcleanup	"internal, internal"	internal
 hashvarlena	internal	integer
 height	box	"double precision"
 host	inet	text
@@ -864,14 +900,31 @@ icregexeqjoinsel	"internal, oid, internal, smallint, internal"	"double precision
 icregexeqsel	"internal, oid, internal, integer"	"double precision"
 icregexnejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 icregexnesel	"internal, oid, internal, integer"	"double precision"
+index_am_handler_in	cstring	index_am_handler
+index_am_handler_out	index_am_handler	cstring
 inet_client_addr		inet
 inet_client_port		integer
+inet_gist_compress	internal	internal
+inet_gist_consistent	"internal, inet, smallint, oid, internal"	boolean
+inet_gist_decompress	internal	internal
+inet_gist_fetch	internal	internal
+inet_gist_penalty	"internal, internal, internal"	internal
+inet_gist_picksplit	"internal, internal"	internal
+inet_gist_same	"inet, inet, internal"	internal
+inet_gist_union	"internal, internal"	inet
 inet_in	cstring	inet
+inet_merge	"inet, inet"	cidr
 inet_out	inet	cstring
 inet_recv	internal	inet
+inet_same_family	"inet, inet"	boolean
 inet_send	inet	bytea
 inet_server_addr		inet
 inet_server_port		integer
+inet_spg_choose	"internal, internal"	void
+inet_spg_config	"internal, internal"	void
+inet_spg_inner_consistent	"internal, internal"	void
+inet_spg_leaf_consistent	"internal, internal"	boolean
+inet_spg_picksplit	"internal, internal"	void
 inetand	"inet, inet"	inet
 inetmi	"inet, inet"	bigint
 inetmi_int8	"inet, bigint"	inet
@@ -904,8 +957,10 @@ int28mi	"smallint, bigint"	bigint
 int28mul	"smallint, bigint"	bigint
 int28ne	"smallint, bigint"	boolean
 int28pl	"smallint, bigint"	bigint
-int2_accum	"numeric[], smallint"	numeric[]
+int2_accum	"internal, smallint"	internal
+int2_accum_inv	"internal, smallint"	internal
 int2_avg_accum	"bigint[], smallint"	bigint[]
+int2_avg_accum_inv	"bigint[], smallint"	bigint[]
 int2_mul_cash	"smallint, money"	money
 int2_sum	"bigint, smallint"	bigint
 int2abs	smallint	smallint
@@ -915,6 +970,7 @@ int2eq	"smallint, smallint"	boolean
 int2ge	"smallint, smallint"	boolean
 int2gt	"smallint, smallint"	boolean
 int2in	cstring	smallint
+int2int4_sum	bigint[]	bigint
 int2larger	"smallint, smallint"	smallint
 int2le	"smallint, smallint"	boolean
 int2lt	"smallint, smallint"	boolean
@@ -933,7 +989,6 @@ int2shr	"smallint, integer"	smallint
 int2smaller	"smallint, smallint"	smallint
 int2um	smallint	smallint
 int2up	smallint	smallint
-int2vectoreq	"int2vector, int2vector"	boolean
 int2vectorin	cstring	int2vector
 int2vectorout	int2vector	cstring
 int2vectorrecv	internal	int2vector
@@ -967,8 +1022,11 @@ int48mi	"integer, bigint"	bigint
 int48mul	"integer, bigint"	bigint
 int48ne	"integer, bigint"	boolean
 int48pl	"integer, bigint"	bigint
-int4_accum	"numeric[], integer"	numeric[]
+int4_accum	"internal, integer"	internal
+int4_accum_inv	"internal, integer"	internal
 int4_avg_accum	"bigint[], integer"	bigint[]
+int4_avg_accum_inv	"bigint[], integer"	bigint[]
+int4_avg_combine	"bigint[], bigint[]"	bigint[]
 int4_mul_cash	"integer, money"	money
 int4_sum	"bigint, integer"	bigint
 int4abs	integer	integer
@@ -1029,12 +1087,20 @@ int84mi	"bigint, integer"	bigint
 int84mul	"bigint, integer"	bigint
 int84ne	"bigint, integer"	boolean
 int84pl	"bigint, integer"	bigint
-int8_accum	"numeric[], bigint"	numeric[]
+int8_accum	"internal, bigint"	internal
+int8_accum_inv	"internal, bigint"	internal
 int8_avg	bigint[]	numeric
-int8_avg_accum	"numeric[], bigint"	numeric[]
+int8_avg_accum	"internal, bigint"	internal
+int8_avg_accum_inv	"internal, bigint"	internal
+int8_avg_combine	"internal, internal"	internal
+int8_avg_deserialize	"bytea, internal"	internal
+int8_avg_serialize	internal	bytea
+int8_mul_cash	"bigint, money"	money
 int8_sum	"numeric, bigint"	numeric
 int8abs	bigint	bigint
 int8and	"bigint, bigint"	bigint
+int8dec	bigint	bigint
+int8dec_any	"bigint, ""any"""	bigint
 int8div	"bigint, bigint"	bigint
 int8eq	"bigint, bigint"	boolean
 int8ge	"bigint, bigint"	boolean
@@ -1077,8 +1143,10 @@ interval	"interval, integer"	interval
 interval	reltime	interval
 interval	"time without time zone"	interval
 interval_accum	"interval[], interval"	interval[]
+interval_accum_inv	"interval[], interval"	interval[]
 interval_avg	interval[]	interval
 interval_cmp	"interval, interval"	integer
+interval_combine	"interval[], interval[]"	interval[]
 interval_div	"interval, double precision"	interval
 interval_eq	"interval, interval"	boolean
 interval_ge	"interval, interval"	boolean
@@ -1131,10 +1199,95 @@ isvertical	line	boolean
 isvertical	lseg	boolean
 isvertical	"point, point"	boolean
 johab_to_utf8	"integer, integer, cstring, internal, integer"	void
+json_agg	anyelement	json
+json_agg_finalfn	internal	json
+json_agg_transfn	"internal, anyelement"	internal
+json_array_element	"from_json json, element_index integer"	json
+json_array_element_text	"from_json json, element_index integer"	text
+json_array_elements	"from_json json, OUT value json"	"SETOF json"
+json_array_elements_text	"from_json json, OUT value text"	"SETOF text"
+json_array_length	json	integer
+json_build_array		json
+json_build_array	"VARIADIC ""any"""	json
+json_build_object		json
+json_build_object	"VARIADIC ""any"""	json
+json_each	"from_json json, OUT key text, OUT value json"	"SETOF record"
+json_each_text	"from_json json, OUT key text, OUT value text"	"SETOF record"
+json_extract_path	"from_json json, VARIADIC path_elems text[]"	json
+json_extract_path_text	"from_json json, VARIADIC path_elems text[]"	text
 json_in	cstring	json
+json_object	text[]	json
+json_object	"text[], text[]"	json
+json_object_agg	"""any"", ""any"""	json
+json_object_agg_finalfn	internal	json
+json_object_agg_transfn	"internal, ""any"", ""any"""	internal
+json_object_field	"from_json json, field_name text"	json
+json_object_field_text	"from_json json, field_name text"	text
+json_object_keys	json	"SETOF text"
 json_out	json	cstring
+json_populate_record	"base anyelement, from_json json, use_json_as_text boolean"	anyelement
+json_populate_recordset	"base anyelement, from_json json, use_json_as_text boolean"	"SETOF anyelement"
 json_recv	internal	json
 json_send	json	bytea
+json_strip_nulls	json	json
+json_to_record	json	record
+json_to_recordset	json	"SETOF record"
+json_typeof	json	text
+jsonb_agg	anyelement	jsonb
+jsonb_agg_finalfn	internal	jsonb
+jsonb_agg_transfn	"internal, anyelement"	internal
+jsonb_array_element	"from_json jsonb, element_index integer"	jsonb
+jsonb_array_element_text	"from_json jsonb, element_index integer"	text
+jsonb_array_elements	"from_json jsonb, OUT value jsonb"	"SETOF jsonb"
+jsonb_array_elements_text	"from_json jsonb, OUT value text"	"SETOF text"
+jsonb_array_length	jsonb	integer
+jsonb_build_array		jsonb
+jsonb_build_array	"VARIADIC ""any"""	jsonb
+jsonb_build_object		jsonb
+jsonb_build_object	"VARIADIC ""any"""	jsonb
+jsonb_cmp	"jsonb, jsonb"	integer
+jsonb_concat	"jsonb, jsonb"	jsonb
+jsonb_contained	"jsonb, jsonb"	boolean
+jsonb_contains	"jsonb, jsonb"	boolean
+jsonb_delete	"from_json jsonb, VARIADIC path_elems text[]"	jsonb
+jsonb_delete	"jsonb, integer"	jsonb
+jsonb_delete	"jsonb, text"	jsonb
+jsonb_delete_path	"jsonb, text[]"	jsonb
+jsonb_each	"from_json jsonb, OUT key text, OUT value jsonb"	"SETOF record"
+jsonb_each_text	"from_json jsonb, OUT key text, OUT value text"	"SETOF record"
+jsonb_eq	"jsonb, jsonb"	boolean
+jsonb_exists	"jsonb, text"	boolean
+jsonb_exists_all	"jsonb, text[]"	boolean
+jsonb_exists_any	"jsonb, text[]"	boolean
+jsonb_extract_path	"from_json jsonb, VARIADIC path_elems text[]"	jsonb
+jsonb_extract_path_text	"from_json jsonb, VARIADIC path_elems text[]"	text
+jsonb_ge	"jsonb, jsonb"	boolean
+jsonb_gt	"jsonb, jsonb"	boolean
+jsonb_hash	jsonb	integer
+jsonb_in	cstring	jsonb
+jsonb_insert	"jsonb_in jsonb, path text[], replacement jsonb, insert_after boolean"	jsonb
+jsonb_le	"jsonb, jsonb"	boolean
+jsonb_lt	"jsonb, jsonb"	boolean
+jsonb_ne	"jsonb, jsonb"	boolean
+jsonb_object	text[]	jsonb
+jsonb_object	"text[], text[]"	jsonb
+jsonb_object_agg	"""any"", ""any"""	jsonb
+jsonb_object_agg_finalfn	internal	jsonb
+jsonb_object_agg_transfn	"internal, ""any"", ""any"""	internal
+jsonb_object_field	"from_json jsonb, field_name text"	jsonb
+jsonb_object_field_text	"from_json jsonb, field_name text"	text
+jsonb_object_keys	jsonb	"SETOF text"
+jsonb_out	jsonb	cstring
+jsonb_populate_record	"anyelement, jsonb"	anyelement
+jsonb_populate_recordset	"anyelement, jsonb"	"SETOF anyelement"
+jsonb_pretty	jsonb	text
+jsonb_recv	internal	jsonb
+jsonb_send	jsonb	bytea
+jsonb_set	"jsonb_in jsonb, path text[], replacement jsonb, create_if_missing boolean"	jsonb
+jsonb_strip_nulls	jsonb	jsonb
+jsonb_to_record	jsonb	record
+jsonb_to_recordset	jsonb	"SETOF record"
+jsonb_typeof	jsonb	text
 justify_days	interval	interval
 justify_hours	interval	interval
 justify_interval	interval	interval
@@ -1194,12 +1347,19 @@ lo_close	integer	integer
 lo_creat	integer	oid
 lo_create	oid	oid
 lo_export	"oid, text"	integer
+lo_from_bytea	"oid, bytea"	oid
+lo_get	oid	bytea
+lo_get	"oid, bigint, integer"	bytea
 lo_import	text	oid
 lo_import	"text, oid"	oid
 lo_lseek	"integer, integer, integer"	integer
+lo_lseek64	"integer, bigint, integer"	bigint
 lo_open	"oid, integer"	integer
+lo_put	"oid, bigint, bytea"	void
 lo_tell	integer	integer
+lo_tell64	integer	bigint
 lo_truncate	"integer, integer"	integer
+lo_truncate64	"integer, bigint"	integer
 lo_unlink	oid	integer
 log	"double precision"	"double precision"
 log	numeric	numeric
@@ -1235,6 +1395,23 @@ lseg_send	lseg	bytea
 lseg_vertical	lseg	boolean
 ltrim	text	text
 ltrim	"text, text"	text
+macaddr	macaddr8	macaddr
+macaddr8	macaddr	macaddr8
+macaddr8_and	"macaddr8, macaddr8"	macaddr8
+macaddr8_cmp	"macaddr8, macaddr8"	integer
+macaddr8_eq	"macaddr8, macaddr8"	boolean
+macaddr8_ge	"macaddr8, macaddr8"	boolean
+macaddr8_gt	"macaddr8, macaddr8"	boolean
+macaddr8_in	cstring	macaddr8
+macaddr8_le	"macaddr8, macaddr8"	boolean
+macaddr8_lt	"macaddr8, macaddr8"	boolean
+macaddr8_ne	"macaddr8, macaddr8"	boolean
+macaddr8_not	macaddr8	macaddr8
+macaddr8_or	"macaddr8, macaddr8"	macaddr8
+macaddr8_out	macaddr8	cstring
+macaddr8_recv	internal	macaddr8
+macaddr8_send	macaddr8	bytea
+macaddr8_set7bit	macaddr8	macaddr8
 macaddr_and	"macaddr, macaddr"	macaddr
 macaddr_cmp	"macaddr, macaddr"	integer
 macaddr_eq	"macaddr, macaddr"	boolean
@@ -1249,6 +1426,13 @@ macaddr_or	"macaddr, macaddr"	macaddr
 macaddr_out	macaddr	cstring
 macaddr_recv	internal	macaddr
 macaddr_send	macaddr	bytea
+macaddr_sortsupport	internal	void
+make_date	"year integer, month integer, day integer"	date
+make_interval	"years integer, months integer, weeks integer, days integer, hours integer, mins integer, secs double precision"	interval
+make_time	"hour integer, min integer, sec double precision"	"time without time zone"
+make_timestamp	"year integer, month integer, mday integer, hour integer, min integer, sec double precision"	"timestamp without time zone"
+make_timestamptz	"year integer, month integer, mday integer, hour integer, min integer, sec double precision"	"timestamp with time zone"
+make_timestamptz	"year integer, month integer, mday integer, hour integer, min integer, sec double precision, timezone text"	"timestamp with time zone"
 makeaclitem	"oid, oid, text, boolean"	aclitem
 masklen	inet	integer
 max	abstime	abstime
@@ -1258,6 +1442,7 @@ max	bigint	bigint
 max	character	character
 max	date	date
 max	"double precision"	"double precision"
+max	inet	inet
 max	integer	integer
 max	interval	interval
 max	money	money
@@ -1296,6 +1481,7 @@ min	bigint	bigint
 min	character	character
 min	date	date
 min	"double precision"	"double precision"
+min	inet	inet
 min	integer	integer
 min	interval	interval
 min	money	money
@@ -1314,10 +1500,13 @@ mod	"bigint, bigint"	bigint
 mod	"integer, integer"	integer
 mod	"numeric, numeric"	numeric
 mod	"smallint, smallint"	smallint
+mode	"ORDER BY anyelement"	anyelement
+mode_final	"internal, anyelement"	anyelement
 money	bigint	money
 money	integer	money
 money	numeric	money
 mul_d_interval	"double precision, interval"	interval
+mxid_age	xid	integer
 name	character	name
 name	"character varying"	name
 name	text	name
@@ -1347,13 +1536,18 @@ network_cmp	"inet, inet"	integer
 network_eq	"inet, inet"	boolean
 network_ge	"inet, inet"	boolean
 network_gt	"inet, inet"	boolean
+network_larger	"inet, inet"	inet
 network_le	"inet, inet"	boolean
 network_lt	"inet, inet"	boolean
 network_ne	"inet, inet"	boolean
+network_overlap	"inet, inet"	boolean
+network_smaller	"inet, inet"	inet
 network_sub	"inet, inet"	boolean
 network_subeq	"inet, inet"	boolean
 network_sup	"inet, inet"	boolean
 network_supeq	"inet, inet"	boolean
+networkjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
+networksel	"internal, oid, internal, integer"	"double precision"
 nextval	regclass	bigint
 nlikejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 nlikesel	"internal, oid, internal, integer"	"double precision"
@@ -1365,6 +1559,8 @@ npoints	path	integer
 npoints	polygon	integer
 nth_value	"anyelement, integer"	anyelement
 ntile	integer	integer
+num_nonnulls	"VARIADIC ""any"""	integer
+num_nulls	"VARIADIC ""any"""	integer
 numeric	bigint	numeric
 numeric	"double precision"	numeric
 numeric	integer	numeric
@@ -1373,11 +1569,17 @@ numeric	"numeric, integer"	numeric
 numeric	real	numeric
 numeric	smallint	numeric
 numeric_abs	numeric	numeric
-numeric_accum	"numeric[], numeric"	numeric[]
+numeric_accum	"internal, numeric"	internal
+numeric_accum_inv	"internal, numeric"	internal
 numeric_add	"numeric, numeric"	numeric
-numeric_avg	numeric[]	numeric
-numeric_avg_accum	"numeric[], numeric"	numeric[]
+numeric_avg	internal	numeric
+numeric_avg_accum	"internal, numeric"	internal
+numeric_avg_combine	"internal, internal"	internal
+numeric_avg_deserialize	"bytea, internal"	internal
+numeric_avg_serialize	internal	bytea
 numeric_cmp	"numeric, numeric"	integer
+numeric_combine	"internal, internal"	internal
+numeric_deserialize	"bytea, internal"	internal
 numeric_div	"numeric, numeric"	numeric
 numeric_div_trunc	"numeric, numeric"	numeric
 numeric_eq	"numeric, numeric"	boolean
@@ -1396,19 +1598,31 @@ numeric_mod	"numeric, numeric"	numeric
 numeric_mul	"numeric, numeric"	numeric
 numeric_ne	"numeric, numeric"	boolean
 numeric_out	numeric	cstring
+numeric_poly_avg	internal	numeric
+numeric_poly_combine	"internal, internal"	internal
+numeric_poly_deserialize	"bytea, internal"	internal
+numeric_poly_serialize	internal	bytea
+numeric_poly_stddev_pop	internal	numeric
+numeric_poly_stddev_samp	internal	numeric
+numeric_poly_sum	internal	numeric
+numeric_poly_var_pop	internal	numeric
+numeric_poly_var_samp	internal	numeric
 numeric_power	"numeric, numeric"	numeric
 numeric_recv	"internal, oid, integer"	numeric
 numeric_send	numeric	bytea
+numeric_serialize	internal	bytea
 numeric_smaller	"numeric, numeric"	numeric
+numeric_sortsupport	internal	void
 numeric_sqrt	numeric	numeric
-numeric_stddev_pop	numeric[]	numeric
-numeric_stddev_samp	numeric[]	numeric
+numeric_stddev_pop	internal	numeric
+numeric_stddev_samp	internal	numeric
 numeric_sub	"numeric, numeric"	numeric
+numeric_sum	internal	numeric
 numeric_transform	internal	internal
 numeric_uminus	numeric	numeric
 numeric_uplus	numeric	numeric
-numeric_var_pop	numeric[]	numeric
-numeric_var_samp	numeric[]	numeric
+numeric_var_pop	internal	numeric
+numeric_var_samp	internal	numeric
 numerictypmodin	cstring[]	integer
 numerictypmodout	integer	cstring
 numnode	tsquery	integer
@@ -1453,6 +1667,8 @@ on_sb	"lseg, box"	boolean
 on_sl	"lseg, line"	boolean
 opaque_in	cstring	opaque
 opaque_out	opaque	cstring
+ordered_set_transition	"internal, ""any"""	internal
+ordered_set_transition_multi	"internal, VARIADIC ""any"""	internal
 overlaps	"time with time zone, time with time zone, time with time zone, time with time zone"	boolean
 overlaps	"time without time zone, interval, time without time zone, interval"	boolean
 overlaps	"time without time zone, interval, time without time zone, time without time zone"	boolean
@@ -1472,6 +1688,7 @@ overlay	"bytea, bytea, integer"	bytea
 overlay	"bytea, bytea, integer, integer"	bytea
 overlay	"text, text, integer"	text
 overlay	"text, text, integer, integer"	text
+parse_ident	"str text, strict boolean"	text[]
 path	polygon	path
 path_add	"path, path"	path
 path_add_pt	"path, point"	path
@@ -1495,6 +1712,20 @@ path_send	path	bytea
 path_sub_pt	"path, point"	path
 pclose	path	path
 percent_rank		"double precision"
+percent_rank	"VARIADIC ""any"" ORDER BY VARIADIC ""any"""	"double precision"
+percent_rank_final	"internal, VARIADIC ""any"""	"double precision"
+percentile_cont	"double precision ORDER BY double precision"	"double precision"
+percentile_cont	"double precision ORDER BY interval"	interval
+percentile_cont	"double precision[] ORDER BY double precision"	"double precision[]"
+percentile_cont	"double precision[] ORDER BY interval"	interval[]
+percentile_cont_float8_final	"internal, double precision"	"double precision"
+percentile_cont_float8_multi_final	"internal, double precision[]"	"double precision[]"
+percentile_cont_interval_final	"internal, double precision"	interval
+percentile_cont_interval_multi_final	"internal, double precision[]"	interval[]
+percentile_disc	"double precision ORDER BY anyelement"	anyelement
+percentile_disc	"double precision[] ORDER BY anyelement"	anyarray
+percentile_disc_final	"internal, double precision, anyelement"	anyelement
+percentile_disc_multi_final	"internal, double precision[], anyelement"	anyarray
 pg_advisory_lock	bigint	void
 pg_advisory_lock	"integer, integer"	void
 pg_advisory_lock_shared	bigint	void
@@ -1511,31 +1742,60 @@ pg_advisory_xact_lock_shared	"integer, integer"	void
 pg_available_extension_versions	"OUT name name, OUT version text, OUT superuser boolean, OUT relocatable boolean, OUT schema name, OUT requires name[], OUT comment text"	"SETOF record"
 pg_available_extensions	"OUT name name, OUT default_version text, OUT comment text"	"SETOF record"
 pg_backend_pid		integer
+pg_backup_start_time		"timestamp with time zone"
+pg_blocking_pids	integer	integer[]
 pg_cancel_backend	integer	boolean
 pg_char_to_encoding	name	integer
 pg_client_encoding		name
+pg_collation_actual_version	oid	text
 pg_collation_for	"""any"""	text
 pg_collation_is_visible	oid	boolean
+pg_column_is_updatable	"regclass, smallint, boolean"	boolean
 pg_column_size	"""any"""	integer
 pg_conf_load_time		"timestamp with time zone"
+pg_config	"OUT name text, OUT setting text"	"SETOF record"
+pg_control_checkpoint	"OUT checkpoint_lsn pg_lsn, OUT prior_lsn pg_lsn, OUT redo_lsn pg_lsn, OUT redo_wal_file text, OUT timeline_id integer, OUT prev_timeline_id integer, OUT full_page_writes boolean, OUT next_xid text, OUT next_oid oid, OUT next_multixact_id xid, OUT next_multi_offset xid, OUT oldest_xid xid, OUT oldest_xid_dbid oid, OUT oldest_active_xid xid, OUT oldest_multi_xid xid, OUT oldest_multi_dbid oid, OUT oldest_commit_ts_xid xid, OUT newest_commit_ts_xid xid, OUT checkpoint_time timestamp with time zone"	record
+pg_control_init	"OUT max_data_alignment integer, OUT database_block_size integer, OUT blocks_per_segment integer, OUT wal_block_size integer, OUT bytes_per_wal_segment integer, OUT max_identifier_length integer, OUT max_index_columns integer, OUT max_toast_chunk_size integer, OUT large_object_chunk_size integer, OUT float4_pass_by_value boolean, OUT float8_pass_by_value boolean, OUT data_page_checksum_version integer"	record
+pg_control_recovery	"OUT min_recovery_end_lsn pg_lsn, OUT min_recovery_end_timeline integer, OUT backup_start_lsn pg_lsn, OUT backup_end_lsn pg_lsn, OUT end_of_backup_record_required boolean"	record
+pg_control_system	"OUT pg_control_version integer, OUT catalog_version_no integer, OUT system_identifier bigint, OUT pg_control_last_modified timestamp with time zone"	record
 pg_conversion_is_visible	oid	boolean
-pg_create_restore_point	text	text
-pg_current_xlog_insert_location		text
-pg_current_xlog_location		text
+pg_create_logical_replication_slot	"slot_name name, plugin name, temporary boolean, OUT slot_name text, OUT lsn pg_lsn"	record
+pg_create_physical_replication_slot	"slot_name name, immediately_reserve boolean, temporary boolean, OUT slot_name name, OUT lsn pg_lsn"	record
+pg_create_restore_point	text	pg_lsn
+pg_current_logfile		text
+pg_current_logfile	text	text
+pg_current_wal_flush_lsn		pg_lsn
+pg_current_wal_insert_lsn		pg_lsn
+pg_current_wal_lsn		pg_lsn
 pg_cursor	"OUT name text, OUT statement text, OUT is_holdable boolean, OUT is_binary boolean, OUT is_scrollable boolean, OUT creation_time timestamp with time zone"	"SETOF record"
 pg_database_size	name	bigint
 pg_database_size	oid	bigint
+pg_ddl_command_in	cstring	pg_ddl_command
+pg_ddl_command_out	pg_ddl_command	cstring
+pg_ddl_command_recv	internal	pg_ddl_command
+pg_ddl_command_send	pg_ddl_command	bytea
+pg_dependencies_in	cstring	pg_dependencies
+pg_dependencies_out	pg_dependencies	cstring
+pg_dependencies_recv	internal	pg_dependencies
+pg_dependencies_send	pg_dependencies	bytea
 pg_describe_object	"oid, oid, integer"	text
+pg_drop_replication_slot	name	void
 pg_encoding_max_length	integer	integer
 pg_encoding_to_char	integer	name
+pg_event_trigger_ddl_commands	"OUT classid oid, OUT objid oid, OUT objsubid integer, OUT command_tag text, OUT object_type text, OUT schema_name text, OUT object_identity text, OUT in_extension boolean, OUT command pg_ddl_command"	"SETOF record"
+pg_event_trigger_dropped_objects	"OUT classid oid, OUT objid oid, OUT objsubid integer, OUT original boolean, OUT normal boolean, OUT is_temporary boolean, OUT object_type text, OUT schema_name text, OUT object_name text, OUT object_identity text, OUT address_names text[], OUT address_args text[]"	"SETOF record"
+pg_event_trigger_table_rewrite_oid	"OUT oid oid"	oid
+pg_event_trigger_table_rewrite_reason		integer
 pg_export_snapshot		text
 pg_extension_config_dump	"regclass, text"	void
 pg_extension_update_paths	"name name, OUT source text, OUT target text, OUT path text"	"SETOF record"
+pg_filenode_relation	"oid, oid"	regclass
 pg_function_is_visible	oid	boolean
 pg_get_constraintdef	oid	text
 pg_get_constraintdef	"oid, boolean"	text
 pg_get_expr	"pg_node_tree, oid"	text
 pg_get_expr	"pg_node_tree, oid, boolean"	text
+pg_get_function_arg_default	"oid, integer"	text
 pg_get_function_arguments	oid	text
 pg_get_function_identity_arguments	oid	text
 pg_get_function_result	oid	text
@@ -1543,9 +1803,17 @@ pg_get_functiondef	oid	text
 pg_get_indexdef	oid	text
 pg_get_indexdef	"oid, integer, boolean"	text
 pg_get_keywords	"OUT word text, OUT catcode ""char"", OUT catdesc text"	"SETOF record"
+pg_get_multixact_members	"multixid xid, OUT xid xid, OUT mode text"	"SETOF record"
+pg_get_object_address	"type text, name text[], args text[], OUT classid oid, OUT objid oid, OUT objsubid integer"	record
+pg_get_partition_constraintdef	oid	text
+pg_get_partkeydef	oid	text
+pg_get_publication_tables	"pubname text, OUT relid oid"	"SETOF oid"
+pg_get_replica_identity_index	regclass	regclass
+pg_get_replication_slots	"OUT slot_name name, OUT plugin name, OUT slot_type text, OUT datoid oid, OUT temporary boolean, OUT active boolean, OUT active_pid integer, OUT xmin xid, OUT catalog_xmin xid, OUT restart_lsn pg_lsn, OUT confirmed_flush_lsn pg_lsn"	"SETOF record"
 pg_get_ruledef	oid	text
 pg_get_ruledef	"oid, boolean"	text
 pg_get_serial_sequence	"text, text"	text
+pg_get_statisticsobjdef	oid	text
 pg_get_triggerdef	oid	text
 pg_get_triggerdef	"oid, boolean"	text
 pg_get_userbyid	oid	name
@@ -1560,21 +1828,58 @@ pg_has_role	"name, text"	boolean
 pg_has_role	"oid, name, text"	boolean
 pg_has_role	"oid, oid, text"	boolean
 pg_has_role	"oid, text"	boolean
+pg_hba_file_rules	"OUT line_number integer, OUT type text, OUT database text[], OUT user_name text[], OUT address text, OUT netmask text, OUT auth_method text, OUT options text[], OUT error text"	"SETOF record"
+pg_identify_object	"classid oid, objid oid, objsubid integer, OUT type text, OUT schema text, OUT name text, OUT identity text"	record
+pg_identify_object_as_address	"classid oid, objid oid, objsubid integer, OUT type text, OUT object_names text[], OUT object_args text[]"	record
+pg_import_system_collations	regnamespace	integer
+pg_index_column_has_property	"regclass, integer, text"	boolean
+pg_index_has_property	"regclass, text"	boolean
+pg_indexam_has_property	"oid, text"	boolean
 pg_indexes_size	regclass	bigint
+pg_is_in_backup		boolean
 pg_is_in_recovery		boolean
 pg_is_other_temp_schema	oid	boolean
-pg_is_xlog_replay_paused		boolean
+pg_is_wal_replay_paused		boolean
+pg_isolation_test_session_is_blocked	"integer, integer[]"	boolean
+pg_last_committed_xact	"OUT xid xid, OUT ""timestamp"" timestamp with time zone"	record
+pg_last_wal_receive_lsn		pg_lsn
+pg_last_wal_replay_lsn		pg_lsn
 pg_last_xact_replay_timestamp		"timestamp with time zone"
-pg_last_xlog_receive_location		text
-pg_last_xlog_replay_location		text
 pg_listening_channels		"SETOF text"
 pg_lock_status	"OUT locktype text, OUT database oid, OUT relation oid, OUT page integer, OUT tuple smallint, OUT virtualxid text, OUT transactionid xid, OUT classid oid, OUT objid oid, OUT objsubid smallint, OUT virtualtransaction text, OUT pid integer, OUT mode text, OUT granted boolean, OUT fastpath boolean"	"SETOF record"
+pg_logical_emit_message	"boolean, text, bytea"	pg_lsn
+pg_logical_emit_message	"boolean, text, text"	pg_lsn
+pg_logical_slot_get_binary_changes	"slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[], OUT lsn pg_lsn, OUT xid xid, OUT data bytea"	"SETOF record"
+pg_logical_slot_get_changes	"slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[], OUT lsn pg_lsn, OUT xid xid, OUT data text"	"SETOF record"
+pg_logical_slot_peek_binary_changes	"slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[], OUT lsn pg_lsn, OUT xid xid, OUT data bytea"	"SETOF record"
+pg_logical_slot_peek_changes	"slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[], OUT lsn pg_lsn, OUT xid xid, OUT data text"	"SETOF record"
 pg_ls_dir	text	"SETOF text"
+pg_ls_dir	"text, boolean, boolean"	"SETOF text"
+pg_ls_logdir	"OUT name text, OUT size bigint, OUT modification timestamp with time zone"	"SETOF record"
+pg_ls_waldir	"OUT name text, OUT size bigint, OUT modification timestamp with time zone"	"SETOF record"
+pg_lsn_cmp	"pg_lsn, pg_lsn"	integer
+pg_lsn_eq	"pg_lsn, pg_lsn"	boolean
+pg_lsn_ge	"pg_lsn, pg_lsn"	boolean
+pg_lsn_gt	"pg_lsn, pg_lsn"	boolean
+pg_lsn_hash	pg_lsn	integer
+pg_lsn_in	cstring	pg_lsn
+pg_lsn_le	"pg_lsn, pg_lsn"	boolean
+pg_lsn_lt	"pg_lsn, pg_lsn"	boolean
+pg_lsn_mi	"pg_lsn, pg_lsn"	numeric
+pg_lsn_ne	"pg_lsn, pg_lsn"	boolean
+pg_lsn_out	pg_lsn	cstring
+pg_lsn_recv	internal	pg_lsn
+pg_lsn_send	pg_lsn	bytea
 pg_my_temp_schema		oid
+pg_ndistinct_in	cstring	pg_ndistinct
+pg_ndistinct_out	pg_ndistinct	cstring
+pg_ndistinct_recv	internal	pg_ndistinct
+pg_ndistinct_send	pg_ndistinct	bytea
 pg_node_tree_in	cstring	pg_node_tree
 pg_node_tree_out	pg_node_tree	cstring
 pg_node_tree_recv	internal	pg_node_tree
 pg_node_tree_send	pg_node_tree	bytea
+pg_notification_queue_usage		"double precision"
 pg_notify	"text, text"	void
 pg_opclass_is_visible	oid	boolean
 pg_operator_is_visible	oid	boolean
@@ -1585,24 +1890,48 @@ pg_prepared_statement	"OUT name text, OUT statement text, OUT prepare_time times
 pg_prepared_xact	"OUT transaction xid, OUT gid text, OUT prepared timestamp with time zone, OUT ownerid oid, OUT dbid oid"	"SETOF record"
 pg_read_binary_file	text	bytea
 pg_read_binary_file	"text, bigint, bigint"	bytea
+pg_read_binary_file	"text, bigint, bigint, boolean"	bytea
 pg_read_file	text	text
 pg_read_file	"text, bigint, bigint"	text
+pg_read_file	"text, bigint, bigint, boolean"	text
 pg_relation_filenode	regclass	oid
 pg_relation_filepath	regclass	text
+pg_relation_is_publishable	regclass	boolean
+pg_relation_is_updatable	"regclass, boolean"	integer
 pg_relation_size	regclass	bigint
 pg_relation_size	"regclass, text"	bigint
 pg_reload_conf		boolean
+pg_replication_origin_advance	"text, pg_lsn"	void
+pg_replication_origin_create	text	oid
+pg_replication_origin_drop	text	void
+pg_replication_origin_oid	text	oid
+pg_replication_origin_progress	"text, boolean"	pg_lsn
+pg_replication_origin_session_is_setup		boolean
+pg_replication_origin_session_progress	boolean	pg_lsn
+pg_replication_origin_session_reset		void
+pg_replication_origin_session_setup	text	void
+pg_replication_origin_xact_reset		void
+pg_replication_origin_xact_setup	"pg_lsn, timestamp with time zone"	void
 pg_rotate_logfile		boolean
-pg_sequence_parameters	"sequence_oid oid, OUT start_value bigint, OUT minimum_value bigint, OUT maximum_value bigint, OUT increment bigint, OUT cycle_option boolean"	record
-pg_show_all_settings	"OUT name text, OUT setting text, OUT unit text, OUT category text, OUT short_desc text, OUT extra_desc text, OUT context text, OUT vartype text, OUT source text, OUT min_val text, OUT max_val text, OUT enumvals text[], OUT boot_val text, OUT reset_val text, OUT sourcefile text, OUT sourceline integer"	"SETOF record"
+pg_safe_snapshot_blocking_pids	integer	integer[]
+pg_sequence_last_value	regclass	bigint
+pg_sequence_parameters	"sequence_oid oid, OUT start_value bigint, OUT minimum_value bigint, OUT maximum_value bigint, OUT increment bigint, OUT cycle_option boolean, OUT cache_size bigint, OUT data_type oid"	record
+pg_show_all_file_settings	"OUT sourcefile text, OUT sourceline integer, OUT seqno integer, OUT name text, OUT setting text, OUT applied boolean, OUT error text"	"SETOF record"
+pg_show_all_settings	"OUT name text, OUT setting text, OUT unit text, OUT category text, OUT short_desc text, OUT extra_desc text, OUT context text, OUT vartype text, OUT source text, OUT min_val text, OUT max_val text, OUT enumvals text[], OUT boot_val text, OUT reset_val text, OUT sourcefile text, OUT sourceline integer, OUT pending_restart boolean"	"SETOF record"
+pg_show_replication_origin_status	"OUT local_id oid, OUT external_id text, OUT remote_lsn pg_lsn, OUT local_lsn pg_lsn"	"SETOF record"
+pg_size_bytes	text	bigint
 pg_size_pretty	bigint	text
 pg_size_pretty	numeric	text
 pg_sleep	"double precision"	void
-pg_start_backup	"label text, fast boolean"	text
+pg_sleep_for	interval	void
+pg_sleep_until	"timestamp with time zone"	void
+pg_start_backup	"label text, fast boolean, exclusive boolean"	pg_lsn
 pg_stat_clear_snapshot		void
 pg_stat_file	"filename text, OUT size bigint, OUT access timestamp with time zone, OUT modification timestamp with time zone, OUT change timestamp with time zone, OUT creation timestamp with time zone, OUT isdir boolean"	record
-pg_stat_get_activity	"pid integer, OUT datid oid, OUT pid integer, OUT usesysid oid, OUT application_name text, OUT state text, OUT query text, OUT waiting boolean, OUT xact_start timestamp with time zone, OUT query_start timestamp with time zone, OUT backend_start timestamp with time zone, OUT state_change timestamp with time zone, OUT client_addr inet, OUT client_hostname text, OUT client_port integer"	"SETOF record"
+pg_stat_file	"filename text, missing_ok boolean, OUT size bigint, OUT access timestamp with time zone, OUT modification timestamp with time zone, OUT change timestamp with time zone, OUT creation timestamp with time zone, OUT isdir boolean"	record
+pg_stat_get_activity	"pid integer, OUT datid oid, OUT pid integer, OUT usesysid oid, OUT application_name text, OUT state text, OUT query text, OUT wait_event_type text, OUT wait_event text, OUT xact_start timestamp with time zone, OUT query_start timestamp with time zone, OUT backend_start timestamp with time zone, OUT state_change timestamp with time zone, OUT client_addr inet, OUT client_hostname text, OUT client_port integer, OUT backend_xid xid, OUT backend_xmin xid, OUT backend_type text, OUT ssl boolean, OUT sslversion text, OUT sslcipher text, OUT sslbits integer, OUT sslcompression boolean, OUT sslclientdn text"	"SETOF record"
 pg_stat_get_analyze_count	oid	bigint
+pg_stat_get_archiver	"OUT archived_count bigint, OUT last_archived_wal text, OUT last_archived_time timestamp with time zone, OUT failed_count bigint, OUT last_failed_wal text, OUT last_failed_time timestamp with time zone, OUT stats_reset timestamp with time zone"	record
 pg_stat_get_autoanalyze_count	oid	bigint
 pg_stat_get_autovacuum_count	oid	bigint
 pg_stat_get_backend_activity	integer	text
@@ -1614,7 +1943,8 @@ pg_stat_get_backend_idset		"SETOF integer"
 pg_stat_get_backend_pid	integer	integer
 pg_stat_get_backend_start	integer	"timestamp with time zone"
 pg_stat_get_backend_userid	integer	oid
-pg_stat_get_backend_waiting	integer	boolean
+pg_stat_get_backend_wait_event	integer	text
+pg_stat_get_backend_wait_event_type	integer	text
 pg_stat_get_backend_xact_start	integer	"timestamp with time zone"
 pg_stat_get_bgwriter_buf_written_checkpoints		bigint
 pg_stat_get_bgwriter_buf_written_clean		bigint
@@ -1660,7 +1990,11 @@ pg_stat_get_last_autoanalyze_time	oid	"timestamp with time zone"
 pg_stat_get_last_autovacuum_time	oid	"timestamp with time zone"
 pg_stat_get_last_vacuum_time	oid	"timestamp with time zone"
 pg_stat_get_live_tuples	oid	bigint
+pg_stat_get_mod_since_analyze	oid	bigint
 pg_stat_get_numscans	oid	bigint
+pg_stat_get_progress_info	"cmdtype text, OUT pid integer, OUT datid oid, OUT relid oid, OUT param1 bigint, OUT param2 bigint, OUT param3 bigint, OUT param4 bigint, OUT param5 bigint, OUT param6 bigint, OUT param7 bigint, OUT param8 bigint, OUT param9 bigint, OUT param10 bigint"	"SETOF record"
+pg_stat_get_snapshot_timestamp		"timestamp with time zone"
+pg_stat_get_subscription	"subid oid, OUT subid oid, OUT relid oid, OUT pid integer, OUT received_lsn pg_lsn, OUT last_msg_send_time timestamp with time zone, OUT last_msg_receipt_time timestamp with time zone, OUT latest_end_lsn pg_lsn, OUT latest_end_time timestamp with time zone"	record
 pg_stat_get_tuples_deleted	oid	bigint
 pg_stat_get_tuples_fetched	oid	bigint
 pg_stat_get_tuples_hot_updated	oid	bigint
@@ -1668,7 +2002,8 @@ pg_stat_get_tuples_inserted	oid	bigint
 pg_stat_get_tuples_returned	oid	bigint
 pg_stat_get_tuples_updated	oid	bigint
 pg_stat_get_vacuum_count	oid	bigint
-pg_stat_get_wal_senders	"OUT pid integer, OUT state text, OUT sent_location text, OUT write_location text, OUT flush_location text, OUT replay_location text, OUT sync_priority integer, OUT sync_state text"	"SETOF record"
+pg_stat_get_wal_receiver	"OUT pid integer, OUT status text, OUT receive_start_lsn pg_lsn, OUT receive_start_tli integer, OUT received_lsn pg_lsn, OUT received_tli integer, OUT last_msg_send_time timestamp with time zone, OUT last_msg_receipt_time timestamp with time zone, OUT latest_end_lsn pg_lsn, OUT latest_end_time timestamp with time zone, OUT slot_name text, OUT conninfo text"	record
+pg_stat_get_wal_senders	"OUT pid integer, OUT state text, OUT sent_lsn pg_lsn, OUT write_lsn pg_lsn, OUT flush_lsn pg_lsn, OUT replay_lsn pg_lsn, OUT write_lag interval, OUT flush_lag interval, OUT replay_lag interval, OUT sync_priority integer, OUT sync_state text"	"SETOF record"
 pg_stat_get_xact_blocks_fetched	oid	bigint
 pg_stat_get_xact_blocks_hit	oid	bigint
 pg_stat_get_xact_function_calls	oid	bigint
@@ -1685,8 +2020,10 @@ pg_stat_reset		void
 pg_stat_reset_shared	text	void
 pg_stat_reset_single_function_counters	oid	void
 pg_stat_reset_single_table_counters	oid	void
-pg_stop_backup		text
-pg_switch_xlog		text
+pg_statistics_obj_is_visible	oid	boolean
+pg_stop_backup		pg_lsn
+pg_stop_backup	"exclusive boolean, wait_for_archive boolean, OUT lsn pg_lsn, OUT labelfile text, OUT spcmapfile text"	"SETOF record"
+pg_switch_wal		pg_lsn
 pg_table_is_visible	oid	boolean
 pg_table_size	regclass	bigint
 pg_tablespace_databases	oid	"SETOF oid"
@@ -1712,11 +2049,14 @@ pg_ts_parser_is_visible	oid	boolean
 pg_ts_template_is_visible	oid	boolean
 pg_type_is_visible	oid	boolean
 pg_typeof	"""any"""	regtype
-pg_xlog_location_diff	"text, text"	numeric
-pg_xlog_replay_pause		void
-pg_xlog_replay_resume		void
-pg_xlogfile_name	text	text
-pg_xlogfile_name_offset	"wal_location text, OUT file_name text, OUT file_offset integer"	record
+pg_wal_lsn_diff	"pg_lsn, pg_lsn"	numeric
+pg_wal_replay_pause		void
+pg_wal_replay_resume		void
+pg_walfile_name	pg_lsn	text
+pg_walfile_name_offset	"lsn pg_lsn, OUT file_name text, OUT file_offset integer"	record
+pg_xact_commit_timestamp	xid	"timestamp with time zone"
+phraseto_tsquery	"regconfig, text"	tsquery
+phraseto_tsquery	text	tsquery
 pi		"double precision"
 plainto_tsquery	"regconfig, text"	tsquery
 plainto_tsquery	text	tsquery
@@ -1810,17 +2150,19 @@ range_contains_elem	"anyrange, anyelement"	boolean
 range_eq	"anyrange, anyrange"	boolean
 range_ge	"anyrange, anyrange"	boolean
 range_gist_compress	internal	internal
-range_gist_consistent	"internal, anyrange, integer, oid, internal"	boolean
+range_gist_consistent	"internal, anyrange, smallint, oid, internal"	boolean
 range_gist_decompress	internal	internal
+range_gist_fetch	internal	internal
 range_gist_penalty	"internal, internal, internal"	internal
 range_gist_picksplit	"internal, internal"	internal
 range_gist_same	"anyrange, anyrange, internal"	internal
-range_gist_union	"internal, internal"	internal
+range_gist_union	"internal, internal"	anyrange
 range_gt	"anyrange, anyrange"	boolean
 range_in	"cstring, oid, integer"	anyrange
 range_intersect	"anyrange, anyrange"	anyrange
 range_le	"anyrange, anyrange"	boolean
 range_lt	"anyrange, anyrange"	boolean
+range_merge	"anyrange, anyrange"	anyrange
 range_minus	"anyrange, anyrange"	anyrange
 range_ne	"anyrange, anyrange"	boolean
 range_out	anyrange	cstring
@@ -1831,10 +2173,19 @@ range_recv	"internal, oid, integer"	anyrange
 range_send	anyrange	bytea
 range_typanalyze	internal	boolean
 range_union	"anyrange, anyrange"	anyrange
+rangesel	"internal, oid, internal, integer"	"double precision"
 rank		bigint
+rank	"VARIADIC ""any"" ORDER BY VARIADIC ""any"""	bigint
+rank_final	"internal, VARIADIC ""any"""	bigint
 record_eq	"record, record"	boolean
 record_ge	"record, record"	boolean
 record_gt	"record, record"	boolean
+record_image_eq	"record, record"	boolean
+record_image_ge	"record, record"	boolean
+record_image_gt	"record, record"	boolean
+record_image_le	"record, record"	boolean
+record_image_lt	"record, record"	boolean
+record_image_ne	"record, record"	boolean
 record_in	"cstring, oid, integer"	record
 record_le	"record, record"	boolean
 record_lt	"record, record"	boolean
@@ -1859,6 +2210,8 @@ regexeqjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 regexeqsel	"internal, oid, internal, integer"	"double precision"
 regexnejoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 regexnesel	"internal, oid, internal, integer"	"double precision"
+regexp_match	"text, text"	text[]
+regexp_match	"text, text, text"	text[]
 regexp_matches	"text, text"	"SETOF text[]"
 regexp_matches	"text, text, text"	"SETOF text[]"
 regexp_replace	"text, text, text"	text
@@ -1867,6 +2220,10 @@ regexp_split_to_array	"text, text"	text[]
 regexp_split_to_array	"text, text, text"	text[]
 regexp_split_to_table	"text, text"	"SETOF text"
 regexp_split_to_table	"text, text, text"	"SETOF text"
+regnamespacein	cstring	regnamespace
+regnamespaceout	regnamespace	cstring
+regnamespacerecv	internal	regnamespace
+regnamespacesend	regnamespace	bytea
 regoperatorin	cstring	regoperator
 regoperatorout	regoperator	cstring
 regoperatorrecv	internal	regoperator
@@ -1892,6 +2249,10 @@ regr_slope	"double precision, double precision"	"double precision"
 regr_sxx	"double precision, double precision"	"double precision"
 regr_sxy	"double precision, double precision"	"double precision"
 regr_syy	"double precision, double precision"	"double precision"
+regrolein	cstring	regrole
+regroleout	regrole	cstring
+regrolerecv	internal	regrole
+regrolesend	regrole	bytea
 regtypein	cstring	regtype
 regtypeout	regtype	cstring
 regtyperecv	internal	regtype
@@ -1915,6 +2276,8 @@ round	"double precision"	"double precision"
 round	numeric	numeric
 round	"numeric, integer"	numeric
 row_number		bigint
+row_security_active	oid	boolean
+row_security_active	text	boolean
 row_to_json	record	json
 row_to_json	"record, boolean"	json
 rpad	"text, integer"	text
@@ -1925,6 +2288,7 @@ scalargtjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 scalargtsel	"internal, oid, internal, integer"	"double precision"
 scalarltjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 scalarltsel	"internal, oid, internal, integer"	"double precision"
+scale	numeric	integer
 schema_to_xml	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
 schema_to_xml_and_xmlschema	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
 schema_to_xmlschema	"schema name, nulls boolean, tableforest boolean, targetns text"	xml
@@ -1939,6 +2303,7 @@ setseed	"double precision"	void
 setval	"regclass, bigint"	bigint
 setval	"regclass, bigint, boolean"	bigint
 setweight	"tsvector, ""char"""	tsvector
+setweight	"tsvector, ""char"", text[]"	tsvector
 shell_in	cstring	opaque
 shell_out	opaque	cstring
 shift_jis_2004_to_euc_jis_2004	"integer, integer, cstring, internal, integer"	void
@@ -1948,6 +2313,7 @@ sign	"double precision"	"double precision"
 sign	numeric	numeric
 similar_escape	"text, text"	text
 sin	"double precision"	"double precision"
+sind	"double precision"	"double precision"
 sjis_to_euc_jp	"integer, integer, cstring, internal, integer"	void
 sjis_to_mic	"integer, integer, cstring, internal, integer"	void
 sjis_to_utf8	"integer, integer, cstring, internal, integer"	void
@@ -1956,6 +2322,11 @@ smgreq	"smgr, smgr"	boolean
 smgrin	cstring	smgr
 smgrne	"smgr, smgr"	boolean
 smgrout	smgr	cstring
+spg_box_quad_choose	"internal, internal"	void
+spg_box_quad_config	"internal, internal"	void
+spg_box_quad_inner_consistent	"internal, internal"	void
+spg_box_quad_leaf_consistent	"internal, internal"	boolean
+spg_box_quad_picksplit	"internal, internal"	void
 spg_kd_choose	"internal, internal"	void
 spg_kd_config	"internal, internal"	void
 spg_kd_inner_consistent	"internal, internal"	void
@@ -1965,26 +2336,17 @@ spg_quad_config	"internal, internal"	void
 spg_quad_inner_consistent	"internal, internal"	void
 spg_quad_leaf_consistent	"internal, internal"	boolean
 spg_quad_picksplit	"internal, internal"	void
+spg_range_quad_choose	"internal, internal"	void
+spg_range_quad_config	"internal, internal"	void
+spg_range_quad_inner_consistent	"internal, internal"	void
+spg_range_quad_leaf_consistent	"internal, internal"	boolean
+spg_range_quad_picksplit	"internal, internal"	void
 spg_text_choose	"internal, internal"	void
 spg_text_config	"internal, internal"	void
 spg_text_inner_consistent	"internal, internal"	void
 spg_text_leaf_consistent	"internal, internal"	boolean
 spg_text_picksplit	"internal, internal"	void
-spgbeginscan	"internal, internal, internal"	internal
-spgbuild	"internal, internal, internal"	internal
-spgbuildempty	internal	void
-spgbulkdelete	"internal, internal, internal, internal"	internal
-spgcanreturn	internal	boolean
-spgcostestimate	"internal, internal, internal, internal, internal, internal, internal"	void
-spgendscan	internal	void
-spggetbitmap	"internal, internal"	bigint
-spggettuple	"internal, internal"	boolean
-spginsert	"internal, internal, internal, internal, internal, internal"	boolean
-spgmarkpos	internal	void
-spgoptions	"text[], boolean"	bytea
-spgrescan	"internal, internal, internal, internal, internal"	void
-spgrestrpos	internal	void
-spgvacuumcleanup	"internal, internal"	internal
+spghandler	internal	index_am_handler
 split_part	"text, text, integer"	text
 sqrt	"double precision"	"double precision"
 sqrt	numeric	numeric
@@ -2036,10 +2398,12 @@ sum	numeric	numeric
 sum	real	real
 sum	smallint	bigint
 suppress_redundant_updates_trigger		trigger
+system	internal	tsm_handler
 table_to_xml	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
 table_to_xml_and_xmlschema	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
 table_to_xmlschema	"tbl regclass, nulls boolean, tableforest boolean, targetns text"	xml
 tan	"double precision"	"double precision"
+tand	"double precision"	"double precision"
 text	"""char"""	text
 text	boolean	text
 text	character	text
@@ -2135,6 +2499,7 @@ timestamp_gt_date	"timestamp without time zone, date"	boolean
 timestamp_gt_timestamptz	"timestamp without time zone, timestamp with time zone"	boolean
 timestamp_hash	"timestamp without time zone"	integer
 timestamp_in	"cstring, oid, integer"	"timestamp without time zone"
+timestamp_izone_transform	internal	internal
 timestamp_larger	"timestamp without time zone, timestamp without time zone"	"timestamp without time zone"
 timestamp_le	"timestamp without time zone, timestamp without time zone"	boolean
 timestamp_le_date	"timestamp without time zone, date"	boolean
@@ -2154,6 +2519,7 @@ timestamp_send	"timestamp without time zone"	bytea
 timestamp_smaller	"timestamp without time zone, timestamp without time zone"	"timestamp without time zone"
 timestamp_sortsupport	internal	void
 timestamp_transform	internal	internal
+timestamp_zone_transform	internal	internal
 timestamptypmodin	cstring[]	integer
 timestamptypmodout	integer	cstring
 timestamptz	abstime	"timestamp with time zone"
@@ -2261,11 +2627,25 @@ to_char	"timestamp without time zone, text"	text
 to_date	"text, text"	date
 to_hex	bigint	text
 to_hex	integer	text
+to_json	anyelement	json
+to_jsonb	anyelement	jsonb
 to_number	"text, text"	numeric
+to_regclass	text	regclass
+to_regnamespace	text	regnamespace
+to_regoper	text	regoper
+to_regoperator	text	regoperator
+to_regproc	text	regproc
+to_regprocedure	text	regprocedure
+to_regrole	text	regrole
+to_regtype	text	regtype
 to_timestamp	"double precision"	"timestamp with time zone"
 to_timestamp	"text, text"	"timestamp with time zone"
 to_tsquery	"regconfig, text"	tsquery
 to_tsquery	text	tsquery
+to_tsvector	json	tsvector
+to_tsvector	jsonb	tsvector
+to_tsvector	"regconfig, json"	tsvector
+to_tsvector	"regconfig, jsonb"	tsvector
 to_tsvector	"regconfig, text"	tsvector
 to_tsvector	text	tsvector
 transaction_timestamp		"timestamp with time zone"
@@ -2274,10 +2654,22 @@ trigger_in	cstring	trigger
 trigger_out	trigger	cstring
 trunc	"double precision"	"double precision"
 trunc	macaddr	macaddr
+trunc	macaddr8	macaddr8
 trunc	numeric	numeric
 trunc	"numeric, integer"	numeric
 ts_debug	"config regconfig, document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary[], OUT dictionary regdictionary, OUT lexemes text[]"	"SETOF record"
 ts_debug	"document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary[], OUT dictionary regdictionary, OUT lexemes text[]"	"SETOF record"
+ts_delete	"tsvector, text"	tsvector
+ts_delete	"tsvector, text[]"	tsvector
+ts_filter	"tsvector, ""char""[]"	tsvector
+ts_headline	"json, tsquery"	json
+ts_headline	"json, tsquery, text"	json
+ts_headline	"jsonb, tsquery"	jsonb
+ts_headline	"jsonb, tsquery, text"	jsonb
+ts_headline	"regconfig, json, tsquery"	json
+ts_headline	"regconfig, json, tsquery, text"	json
+ts_headline	"regconfig, jsonb, tsquery"	jsonb
+ts_headline	"regconfig, jsonb, tsquery, text"	jsonb
 ts_headline	"regconfig, text, tsquery"	text
 ts_headline	"regconfig, text, tsquery, text"	text
 ts_headline	"text, tsquery"	text
@@ -2304,6 +2696,8 @@ ts_stat	"query text, weights text, OUT word text, OUT ndoc integer, OUT nentry i
 ts_token_type	"parser_name text, OUT tokid integer, OUT alias text, OUT description text"	"SETOF record"
 ts_token_type	"parser_oid oid, OUT tokid integer, OUT alias text, OUT description text"	"SETOF record"
 ts_typanalyze	internal	boolean
+tsm_handler_in	cstring	tsm_handler
+tsm_handler_out	tsm_handler	cstring
 tsmatchjoinsel	"internal, oid, internal, smallint, internal"	"double precision"
 tsmatchsel	"internal, oid, internal, integer"	"double precision"
 tsq_mcontained	"tsquery, tsquery"	boolean
@@ -2318,6 +2712,8 @@ tsquery_lt	"tsquery, tsquery"	boolean
 tsquery_ne	"tsquery, tsquery"	boolean
 tsquery_not	tsquery	tsquery
 tsquery_or	"tsquery, tsquery"	tsquery
+tsquery_phrase	"tsquery, tsquery"	tsquery
+tsquery_phrase	"tsquery, tsquery, integer"	tsquery
 tsqueryin	cstring	tsquery
 tsqueryout	tsquery	cstring
 tsqueryrecv	internal	tsquery
@@ -2336,6 +2732,7 @@ tsvector_gt	"tsvector, tsvector"	boolean
 tsvector_le	"tsvector, tsvector"	boolean
 tsvector_lt	"tsvector, tsvector"	boolean
 tsvector_ne	"tsvector, tsvector"	boolean
+tsvector_to_array	tsvector	text[]
 tsvector_update_trigger		trigger
 tsvector_update_trigger_column		trigger
 tsvectorin	cstring	tsvector
@@ -2343,6 +2740,7 @@ tsvectorout	tsvector	cstring
 tsvectorrecv	internal	tsvector
 tsvectorsend	tsvector	bytea
 txid_current		bigint
+txid_current_if_assigned		bigint
 txid_current_snapshot		txid_snapshot
 txid_snapshot_in	cstring	txid_snapshot
 txid_snapshot_out	txid_snapshot	cstring
@@ -2351,6 +2749,7 @@ txid_snapshot_send	txid_snapshot	bytea
 txid_snapshot_xip	txid_snapshot	"SETOF bigint"
 txid_snapshot_xmax	txid_snapshot	bigint
 txid_snapshot_xmin	txid_snapshot	bigint
+txid_status	bigint	text
 txid_visible_in_snapshot	"bigint, txid_snapshot"	boolean
 uhc_to_utf8	"integer, integer, cstring, internal, integer"	void
 unique_key_recheck		trigger
@@ -2359,6 +2758,7 @@ unknownout	unknown	cstring
 unknownrecv	internal	unknown
 unknownsend	unknown	bytea
 unnest	anyarray	"SETOF anyelement"
+unnest	"tsvector tsvector, OUT lexeme text, OUT positions smallint[], OUT weights text[]"	"SETOF record"
 upper	anyrange	anyelement
 upper	text	text
 upper_inc	anyrange	boolean
@@ -2393,6 +2793,7 @@ uuid_ne	"uuid, uuid"	boolean
 uuid_out	uuid	cstring
 uuid_recv	internal	uuid
 uuid_send	uuid	bytea
+uuid_sortsupport	internal	void
 var_pop	bigint	numeric
 var_pop	"double precision"	"double precision"
 var_pop	integer	numeric
@@ -2441,6 +2842,7 @@ void_out	void	cstring
 void_recv	internal	void
 void_send	void	bytea
 width	box	"double precision"
+width_bucket	"anyelement, anyarray"	integer
 width_bucket	"double precision, double precision, double precision, integer"	integer
 width_bucket	"numeric, numeric, numeric, integer"	integer
 win1250_to_latin2	"integer, integer, cstring, internal, integer"	void
@@ -2457,6 +2859,8 @@ win_to_utf8	"integer, integer, cstring, internal, integer"	void
 xideq	"xid, xid"	boolean
 xideqint4	"xid, integer"	boolean
 xidin	cstring	xid
+xidneq	"xid, xid"	boolean
+xidneqint4	"xid, integer"	boolean
 xidout	xid	cstring
 xidrecv	internal	xid
 xidsend	xid	bytea

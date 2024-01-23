@@ -1,10 +1,16 @@
 Name	Type	Nullable	References	Description
-oid	oid			"row identifier (hidden attribute; must be explicitly selected)"
-subconninfo	text			"connection string to the upstream database"
-subdbid	oid		pg_database.oid	"oid of the database which the subscription resides in"
-subenabled	bool			"if true, the subscription is enabled and should be replicating."
-subname	name			"name of the subscription"
-subowner	oid		pg_authid.oid	"owner of the subscription"
-subpublications	text[]			"array of subscribed publication names. these reference the publications on the publisher server. for more on publications"
-subslotname	name			"name of the replication slot in the upstream database (also used for the local replication origin name); null represents none"
-subsynccommit	text			"contains the value of the synchronous_commit setting for the subscription workers."
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+oid	oid	false		"row identifier (hidden attribute; must be explicitly selected)"
+ctid	tid	false		
+subdbid	oid	false	pg_database.oid	"oid of the database which the subscription resides in"
+subname	name	false		"name of the subscription"
+subowner	oid	false	pg_authid.oid	"owner of the subscription"
+subenabled	bool	false		"if true, the subscription is enabled and should be replicating."
+subconninfo	text	false		"connection string to the upstream database"
+subslotname	name	false		"name of the replication slot in the upstream database (also used for the local replication origin name); null represents none"
+subsynccommit	text	false		"contains the value of the synchronous_commit setting for the subscription workers."
+subpublications	text[]	false		"array of subscribed publication names. these reference the publications on the publisher server. for more on publications"

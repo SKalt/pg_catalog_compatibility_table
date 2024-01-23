@@ -1,0 +1,9 @@
+## commit_convention.yml
+## omit the commit_types to use the default angular-style commit types
+# commit_types:
+#   - type: description of what the short-form "type" means
+scopes:
+  devtools: description of what short-form "devtools" represents
+  scraper: documentation scraper
+  observer: container-observer
+  combine: script to combine observed + scraped data

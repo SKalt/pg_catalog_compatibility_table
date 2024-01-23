@@ -1,0 +1,14 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+evtname	name	false		"trigger name (must be unique)"
+evtevent	name	false		"identifies the event for which this trigger fires"
+evtowner	oid	false		"owner of the event trigger"
+evtfoid	oid	false		"the function to be called"
+evtenabled	char	false		"controls in which session_replication_role modes the event trigger fires. o = trigger fires in ""origin"" and ""local"" modes, d = trigger is disabled, r = trigger fires in ""replica"" mode, a = trigger fires always."
+evttags	text[]	true		"command tags for which this trigger will fire. if null, the firing of this trigger is not restricted on the basis of the command tag."

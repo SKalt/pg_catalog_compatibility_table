@@ -1,0 +1,4 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+parname	text		"the name of a configuration parameter for which privileges are granted"
+paracl	aclitem[]		"access privileges"

@@ -1,0 +1,12 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+defaclrole	oid	false		"the oid of the role associated with this entry"
+defaclnamespace	oid	false		"the oid of the namespace associated with this entry, or zero if none"
+defaclobjtype	char	false		"type of object this entry is for: r = relation (table, view), s = sequence, f = function, t = type, n = schema"
+defaclacl	aclitem[]	false		"access privileges that this type of object should have on creation"

@@ -1,22 +1,38 @@
-.PHONY: all
-all:
-	rm -rf data/scrape*
-	LOG_LEVEL=INFO go run scripts/scrape_site/main.go
+.PHONY: all lint scrape observe combine erd clean site services
 
-	rm -rf data/observe*
-	docker compose up -d
+all: combine
 
-	LOG_LEVEL=INFO go run scripts/observe_containers/main.go
-	rm -rf ./data/combine*
+site: ./data/site/license.txt
+./data/site/license.txt: ./data/site/site.tar.gz
+	rm -rf ./data/site/{about,dyncss,docs,media,license.txt}
+	tar -xf ./data/site/site.tar.gz -C ./data/site
+	touch -m ./data/site/license.txt
+./data/site/site.tar.gz:
+	./scripts/download_site_archive.js
 
-	LOG_LEVEL=DEBUG go run scripts/combine/main.go
+bin/scrape: ./scripts/scrape_site/* pkg/common/* pkg/tsv_utils/*
+	go build -o bin/scrape ./scripts/scrape_site/main.go
+bin/observe: ./scripts/observe_containers/* pkg/common/* pkg/tsv_utils/*
+	go build -o bin/observe ./scripts/observe_containers/main.go
+bin/combine: ./scripts/combine/* pkg/common/* pkg/tsv_utils/*
+	go build -o bin/combine ./scripts/combine/main.go
 
-.PHONY: lint scrape
+services:
+	docker compose up --wait --wait-timeout 60
 
+scrape: ./data/scraped/10/catalog/pg_class.tsv
+./data/scraped/10/catalog/pg_class.tsv: ./data/site/license.txt ./bin/scrape
+	LOG_LEVEL=INFO ./bin/scrape
 
-scrape: ./data/columns.tsv
-./data/columns.tsv: ./index.ts ./package.json ./pnpm-lock.yaml
-	pnpx esbuild ./index.ts --format=cjs | node
+observe: ./data/observed/10/catalog/pg_class.tsv
+./data/observed/10/catalog/pg_class.tsv: ./bin/observe services
+	LOG_LEVEL=INFO ./bin/observe
+
+combine: ./data/columns.tsv
+./data/columns.tsv: ./bin/combine ./data/scraped/10/catalog/pg_class.tsv ./data/observed/10/catalog/pg_class.tsv
+	rm -rf ./data/combined ./data/columns.tsv ./data/tables.tsv
+	LOG_LEVEL=DEBUG ./bin/combine
+
 lint:
 	pnpx tsc --noEmit --strict ./index.ts ./scripts/make_erd.ts
 clean:

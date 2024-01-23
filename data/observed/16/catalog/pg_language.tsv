@@ -1,0 +1,16 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+lanname	name	false
+lanowner	oid	false
+lanispl	bool	false
+lanpltrusted	bool	false
+lanplcallfoid	oid	false
+laninline	oid	false
+lanvalidator	oid	false
+lanacl	aclitem[]	true

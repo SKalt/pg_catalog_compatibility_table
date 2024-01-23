@@ -1,5 +1,6 @@
 # pg_catalog_compatibility_table
-Illustrates differences in pg_catalog between postgres versions
+
+Illustrates differences in `pg_catalog` between postgres versions
 
 See [./data/tables.tsv](./data/tables.tsv) and [./data/columns.tsv](./data/columns.tsv).
 

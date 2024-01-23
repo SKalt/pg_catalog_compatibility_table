@@ -1,0 +1,12 @@
+Name	Type	Nullable
+pid	int4	true
+datid	oid	true
+datname	name	true
+relid	oid	true
+phase	text	true
+heap_blks_total	int8	true
+heap_blks_scanned	int8	true
+heap_blks_vacuumed	int8	true
+index_vacuum_count	int8	true
+max_dead_tuples	int8	true
+num_dead_tuples	int8	true

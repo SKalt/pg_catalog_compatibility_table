@@ -1,0 +1,16 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+amopfamily	oid	false		"the operator family this entry is for"
+amoplefttype	oid	false		"left-hand input data type of operator"
+amoprighttype	oid	false		"right-hand input data type of operator"
+amopstrategy	int2	false		"operator strategy number"
+amoppurpose	char	false		"operator purpose, either s for search or o for ordering"
+amopopr	oid	false		"oid of the operator"
+amopmethod	oid	false		"index access method operator family is for"
+amopsortfamily	oid	false		"the b-tree operator family this entry sorts according to, if an ordering operator; zero if a search operator"

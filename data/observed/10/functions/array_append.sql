@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION pg_catalog.array_append(anyarray, anyelement)
  RETURNS anyarray
  LANGUAGE internal
- IMMUTABLE
-AS $function$array_push$function$
+ IMMUTABLE PARALLEL SAFE
+AS $function$array_append$function$
 ;

@@ -1,0 +1,11 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+adrelid	oid	false		"the table this column belongs to"
+adnum	int2	false		"the number of the column"
+adbin	pg_node_tree	false		"the column default value, in nodetostring() representation. use pg_get_expr(adbin, adrelid) to convert it to an sql expression."

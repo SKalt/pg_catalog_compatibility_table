@@ -1,4 +1,4 @@
 Name	Type	Nullable	References	Description
-pubname	name		pg_publication.pubname	"name of publication"
-schemaname	name		pg_namespace.nspname	"name of schema containing table"
-tablename	name		pg_class.relname	"name of table"
+pubname	name	true	pg_publication.pubname	"name of publication"
+schemaname	name	true	pg_namespace.nspname	"name of schema containing table"
+tablename	name	true	pg_class.relname	"name of table"

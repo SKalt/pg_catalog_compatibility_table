@@ -1,0 +1,7 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+amprocfamily	oid		"the operator family this entry is for"
+amproclefttype	oid		"left-hand input data type of associated operator"
+amprocrighttype	oid		"right-hand input data type of associated operator"
+amprocnum	int2		"support function number"
+amproc	regproc		"oid of the function"

@@ -1,0 +1,17 @@
+ SELECT locktype,
+    database,
+    relation,
+    page,
+    tuple,
+    virtualxid,
+    transactionid,
+    classid,
+    objid,
+    objsubid,
+    virtualtransaction,
+    pid,
+    mode,
+    granted,
+    fastpath,
+    waitstart
+   FROM pg_lock_status() l(locktype, database, relation, page, tuple, virtualxid, transactionid, classid, objid, objsubid, virtualtransaction, pid, mode, granted, fastpath, waitstart);

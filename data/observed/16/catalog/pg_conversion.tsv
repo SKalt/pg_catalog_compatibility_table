@@ -1,0 +1,15 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+conname	name	false
+connamespace	oid	false
+conowner	oid	false
+conforencoding	int4	false
+contoencoding	int4	false
+conproc	regproc	false
+condefault	bool	false

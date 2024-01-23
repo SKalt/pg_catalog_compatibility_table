@@ -1,0 +1,33 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+oid	oid	false		"row identifier"
+conname	name	false		"constraint name (not necessarily unique!)"
+connamespace	oid	false		"the oid of the namespace that contains this constraint"
+contype	char	false		"c = check constraint, f = foreign key constraint, p = primary key constraint, u = unique constraint, t = constraint trigger, x = exclusion constraint"
+condeferrable	bool	false		"is the constraint deferrable?"
+condeferred	bool	false		"is the constraint deferred by default?"
+convalidated	bool	false		"has the constraint been validated? currently, can be false only for foreign keys and check constraints"
+conrelid	oid	false		"the table this constraint is on; zero if not a table constraint"
+contypid	oid	false		"the domain this constraint is on; zero if not a domain constraint"
+conindid	oid	false		"the index supporting this constraint, if it's a unique, primary key, foreign key, or exclusion constraint; else zero"
+conparentid	oid	false		"the corresponding constraint of the parent partitioned table, if this is a constraint on a partition; else zero"
+confrelid	oid	false		"if a foreign key, the referenced table; else zero"
+confupdtype	char	false		"foreign key update action code: a = no action, r = restrict, c = cascade, n = set null, d = set default"
+confdeltype	char	false		"foreign key deletion action code: a = no action, r = restrict, c = cascade, n = set null, d = set default"
+confmatchtype	char	false		"foreign key match type: f = full, p = partial, s = simple"
+conislocal	bool	false		"this constraint is defined locally for the relation. note that a constraint can be locally defined and inherited simultaneously."
+coninhcount	int2	false		"the number of direct inheritance ancestors this constraint has. a constraint with a nonzero number of ancestors cannot be dropped nor renamed."
+connoinherit	bool	false		"this constraint is defined locally for the relation. it is a non-inheritable constraint."
+conkey	int2[]	true		"if a table constraint (including foreign keys, but not constraint triggers), list of the constrained columns"
+confkey	int2[]	true		"if a foreign key, list of the referenced columns"
+conpfeqop	oid[]	true		"if a foreign key, list of the equality operators for pk = fk comparisons"
+conppeqop	oid[]	true		"if a foreign key, list of the equality operators for pk = pk comparisons"
+conffeqop	oid[]	true		"if a foreign key, list of the equality operators for fk = fk comparisons"
+confdelsetcols	int2[]	true		"if a foreign key with a set null or set default delete action, the columns that will be updated. if null, all of the referencing columns will be updated."
+conexclop	oid[]	true		"if an exclusion constraint, list of the per-column exclusion operators"
+conbin	pg_node_tree	true		"if a check constraint, an internal representation of the expression. (it's recommended to use pg_get_constraintdef() to extract the definition of a check constraint.)"

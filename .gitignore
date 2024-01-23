@@ -1,2 +1,8 @@
 *.html
 node_modules
+.direnv
+data/site
+data/site/*
+bin
+functions/*.sql
+view/*.sql

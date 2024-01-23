@@ -43,6 +43,8 @@ var idxQuery string
 // https://hub.docker.com/_/postgres/tags?page=1&ordering=last_updated&name=9.2-alpine
 const minAlpineVersion = "9.2"
 
+// given a version number, deterministically generate the port number
+// without needing to parse compose.yaml
 func getPort(version string) string {
 	parts := strings.Split(version, ".")
 	major, err := strconv.ParseInt(parts[0], 10, 32)
@@ -178,7 +180,7 @@ func observeRelation(relationsDir string, relation string, stmt *sql.Stmt, waite
 		log.Fatal(err)
 	}
 	for rows.Next() {
-		var n int
+		var n int // this is `attnum`, and it seems to keep changing between versions
 		var name, kind string
 		var defaultExpr *string
 		var notNullable *bool
@@ -360,18 +362,25 @@ func auditContainer(observationDir string, version string, waiter *sync.WaitGrou
 		waiter.Done()
 	}()
 	inner := sync.WaitGroup{} // defines the lifetime of the database connection
+
 	inner.Add(1)
 	observeRelationKind(observationDir, version, "catalog", conn, &inner)
+
 	inner.Add(1)
 	observeRelationKind(observationDir, version, "view", conn, &inner)
+
 	inner.Add(1)
 	observeFns(observationDir, version, conn, &inner)
+
 	inner.Add(1)
 	observeViewDefs(observationDir, version, conn, &inner)
+
 	inner.Add(1)
 	observeFnDefs(observationDir, version, conn, &inner)
+
 	inner.Add(1)
 	observeIndices(observationDir, version, conn, &inner)
+
 	inner.Wait()
 }
 

@@ -1,0 +1,5 @@
+Name	Type	References	Description
+objoid	oid		"the oid of the object this security label pertains to"
+classoid	oid		"the oid of the system catalog this object appears in"
+provider	text		"the label provider associated with this label."
+label	text		"the security label applied to this object."

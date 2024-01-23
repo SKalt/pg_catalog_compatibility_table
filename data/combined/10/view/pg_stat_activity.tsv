@@ -12,6 +12,10 @@ backend_start	timestamptz	true
 xact_start	timestamptz	true		
 query_start	timestamptz	true		
 state_change	timestamptz	true		
-waiting	bool	true		
+wait_event_type	text	true		
+wait_event	text	true		
 state	text	true		
+backend_xid	xid	true		
+backend_xmin	xid	true		
 query	text	true		
+backend_type	text	true		

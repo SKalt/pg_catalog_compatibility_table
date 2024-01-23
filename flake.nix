@@ -41,6 +41,7 @@
                   nodePackages.pnpm
                   helix
                   bashInteractive
+                  # sqitchPg
                   # myPoetryEnv
                   # (pkgs.poetry2nix.mkPoetryEnv {
                   #   python = pkgs.python310;

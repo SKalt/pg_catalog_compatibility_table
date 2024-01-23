@@ -1,0 +1,11 @@
+Name	Type	Nullable	References	Description
+slot_name	text	true		
+spill_txns	int8	true		
+spill_count	int8	true		
+spill_bytes	int8	true		
+stream_txns	int8	true		
+stream_count	int8	true		
+stream_bytes	int8	true		
+total_txns	int8	true		
+total_bytes	int8	true		
+stats_reset	timestamptz	true		

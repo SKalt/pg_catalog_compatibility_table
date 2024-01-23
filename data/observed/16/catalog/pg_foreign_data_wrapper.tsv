@@ -1,0 +1,14 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+fdwname	name	false
+fdwowner	oid	false
+fdwhandler	oid	false
+fdwvalidator	oid	false
+fdwacl	aclitem[]	true
+fdwoptions	text[]	true

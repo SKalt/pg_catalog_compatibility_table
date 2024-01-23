@@ -8,7 +8,6 @@ oid	oid	false
 ctid	tid	false
 rulename	name	false
 ev_class	oid	false
-ev_attr	int2	false
 ev_type	char	false
 ev_enabled	char	false
 is_instead	bool	false

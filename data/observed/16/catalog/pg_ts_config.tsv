@@ -1,0 +1,12 @@
+Name	Type	Nullable
+tableoid	oid	false
+cmax	cid	false
+xmax	xid	false
+cmin	cid	false
+xmin	xid	false
+ctid	tid	false
+oid	oid	false
+cfgname	name	false
+cfgnamespace	oid	false
+cfgowner	oid	false
+cfgparser	oid	false

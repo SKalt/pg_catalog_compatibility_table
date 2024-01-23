@@ -1,0 +1,15 @@
+Name	Type	Nullable	References	Description
+tableoid	oid	false		
+cmax	cid	false		
+xmax	xid	false		
+cmin	cid	false		
+xmin	xid	false		
+ctid	tid	false		
+seqrelid	oid	false		"the oid of the pg_class entry for this sequence"
+seqtypid	oid	false		"data type of the sequence"
+seqstart	int8	false		"start value of the sequence"
+seqincrement	int8	false		"increment value of the sequence"
+seqmax	int8	false		"maximum value of the sequence"
+seqmin	int8	false		"minimum value of the sequence"
+seqcache	int8	false		"cache size of the sequence"
+seqcycle	bool	false		"whether the sequence cycles"

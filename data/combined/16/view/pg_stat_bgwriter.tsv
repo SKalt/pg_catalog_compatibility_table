@@ -1,0 +1,12 @@
+Name	Type	Nullable	References	Description
+checkpoints_timed	int8	true		
+checkpoints_req	int8	true		
+checkpoint_write_time	"double precision"	true		
+checkpoint_sync_time	"double precision"	true		
+buffers_checkpoint	int8	true		
+buffers_clean	int8	true		
+maxwritten_clean	int8	true		
+buffers_backend	int8	true		
+buffers_backend_fsync	int8	true		
+buffers_alloc	int8	true		
+stats_reset	timestamptz	true		

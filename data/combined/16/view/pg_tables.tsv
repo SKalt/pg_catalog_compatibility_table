@@ -1,0 +1,9 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing table"
+tablename	name	true		"name of table"
+tableowner	name	true		"name of table's owner"
+tablespace	name	true		"name of tablespace containing table (null if default for database)"
+hasindexes	bool	true		"true if table has (or recently had) any indexes"
+hasrules	bool	true		"true if table has (or once had) rules"
+hastriggers	bool	true		"true if table has (or once had) triggers"
+rowsecurity	bool	true		"true if row security is enabled on the table"

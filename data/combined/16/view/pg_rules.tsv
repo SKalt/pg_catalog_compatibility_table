@@ -1,0 +1,5 @@
+Name	Type	Nullable	References	Description
+schemaname	name	true		"name of schema containing table"
+tablename	name	true		"name of table the rule is for"
+rulename	name	true		"name of rule"
+definition	text	true		"rule definition (a reconstructed creation command)"

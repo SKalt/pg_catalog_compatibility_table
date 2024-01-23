@@ -18,7 +18,6 @@ relpages	int4	false
 reltuples	float4	false
 relallvisible	int4	false
 reltoastrelid	oid	false
-reltoastidxid	oid	false
 relhasindex	bool	false
 relisshared	bool	false
 relpersistence	char	false
@@ -30,6 +29,13 @@ relhaspkey	bool	false
 relhasrules	bool	false
 relhastriggers	bool	false
 relhassubclass	bool	false
+relrowsecurity	bool	false
+relforcerowsecurity	bool	false
+relispopulated	bool	false
+relreplident	char	false
+relispartition	bool	false
 relfrozenxid	xid	false
+relminmxid	xid	false
 relacl	aclitem[]	true
 reloptions	text[]	true
+relpartbound	pg_node_tree	true

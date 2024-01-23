@@ -1,0 +1,6 @@
+Name	Type	References	Description
+oid	oid		"row identifier"
+prpubid	oid		"reference to publication"
+prrelid	oid		"reference to relation"
+prqual	pg_node_tree		"expression tree (in nodetostring() representation) for the relation's publication qualifying condition. null if there is no publication qualifying condition."
+prattrs	int2vector		"this is an array of values that indicates which table columns are part of the publication. for example, a value of 1 3 would mean that the first and the third table columns are published. a null value indicates that all columns are published."
