@@ -34,6 +34,7 @@ combine: ./data/columns.tsv
 	LOG_LEVEL=DEBUG ./bin/combine
 
 lint:
+	go vet ./...
 	pnpx tsc --noEmit --strict ./index.ts ./scripts/make_erd.ts
 clean:
 	rm -f ./data/*.tsv ./data/**/*.tsv

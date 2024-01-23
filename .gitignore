@@ -6,3 +6,4 @@ data/site/*
 bin
 functions/*.sql
 view/*.sql
+.mypy_cache
